@@ -1,0 +1,54 @@
+fs/seq_file.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/seq_file.acc:8139:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+fs/seq_file.acc:8140:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/seq_file.acc: In function ‘thread_info* current_thread_info()’:
+fs/seq_file.acc:8589:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_477(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_478(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_479(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+fs/seq_file.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+fs/seq_file.acc:13416:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+fs/seq_file.acc:13409:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+fs/seq_file.acc: In function ‘int timer_pending(timer_list*)’:
+fs/seq_file.acc:13558:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_700(&__get__ZN10timer_list5entryE_701(&timer->entry).next) != 0;
+                                                                                        ^
+fs/seq_file.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/seq_file.acc:14856:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+fs/seq_file.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/seq_file.acc:14942:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+fs/seq_file.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/seq_file.acc:15072:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/seq_file.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/seq_file.acc:15154:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+fs/seq_file.acc: In function ‘int dname_external(dentry*)’:
+fs/seq_file.acc:15617:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_728(&__get__ZN6dentry6d_nameE_729(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_730(dentry->d_iname);
+                                                                                 ^
+fs/seq_file.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/seq_file.acc:16302:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_738(&__get__ZN3pid7numbersE_739(&pid->numbers[__get__ZN3pid5levelE_740(&pid->level)]).ns);
+                                                                                                                 ^
+fs/seq_file.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/seq_file.acc:16379:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_741(&__get__ZN3pid7numbersE_742(&pid->numbers[0]).nr);
+                                                                             ^
+fs/seq_file.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+fs/seq_file.acc:19751:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^

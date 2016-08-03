@@ -1,0 +1,116 @@
+utils.acc: In function ‘void hlist_del(hlist_node*)’:
+utils.acc:8101:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+utils.acc:8102:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+utils.acc: In function ‘thread_info* current_thread_info()’:
+utils.acc:9686:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_546(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_547(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_548(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+utils.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+utils.acc:14409:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+utils.acc:14402:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+utils.acc: In function ‘int timer_pending(timer_list*)’:
+utils.acc:14551:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_715(&__get__ZN10timer_list5entryE_716(&timer->entry).next) != 0;
+                                                                                        ^
+utils.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+utils.acc:16349:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_768(&__get__ZN3pid7numbersE_769(&pid->numbers[__get__ZN3pid5levelE_770(&pid->level)]).ns);
+                                                                                                                 ^
+utils.acc: In function ‘pid_t pid_nr(pid*)’:
+utils.acc:16426:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_771(&__get__ZN3pid7numbersE_772(&pid->numbers[0]).nr);
+                                                                             ^
+utils.acc: In function ‘task_struct* next_thread(task_struct*)’:
+utils.acc:20092:165: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_815(&__get__ZN11task_struct12thread_groupE_816(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                     ^
+utils.acc: In function ‘void list_del_rcu(list_head*)’:
+utils.acc:20930:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+utils.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+utils.acc:21016:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+utils.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+utils.acc:21146:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+utils.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+utils.acc:21228:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+utils.acc: In function ‘int dname_external(dentry*)’:
+utils.acc:21691:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_843(&__get__ZN6dentry6d_nameE_844(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_845(dentry->d_iname);
+                                                                                 ^
+utils.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+utils.acc:24988:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+utils.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+utils.acc:25837:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+utils.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+utils.acc:25924:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+utils.acc: In function ‘zone_type page_zonenum(page*)’:
+utils.acc:25928:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+utils.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+utils.acc:26103:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1055(&vm_stat[item]));
+                                                       ^
+utils.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+utils.acc:26143:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1056(&vm_stat[item]));
+                                                              ^
+utils.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+utils.acc:27250:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+utils.acc:27251:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+utils.acc: In function ‘void copy_highpage(page*, page*)’:
+utils.acc:27263:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+utils.acc:27264:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+utils.acc: In function ‘journal_head* bh2jh(buffer_head*)’:
+utils.acc:29475:13: warning: invalid conversion from ‘void*’ to ‘journal_head*’ [-fpermissive]
+  return bh->b_private;
+             ^
+utils.acc: In function ‘handle_t* journal_current_handle()’:
+utils.acc:29930:80: warning: invalid conversion from ‘void*’ to ‘handle_t* {aka handle_s*}’ [-fpermissive]
+  return __get__ZN11task_struct12journal_infoE_1253(&get_current()->journal_info);
+                                                                                ^
+utils.acc: In function ‘handle_t* jbd_alloc_handle(gfp_t)’:
+utils.acc:29998:53: warning: invalid conversion from ‘void*’ to ‘handle_t* {aka handle_s*}’ [-fpermissive]
+  return kmem_cache_alloc(jbd_handle_cache, gfp_flags);
+                                                     ^
+utils.acc: In function ‘ext3_sb_info* EXT3_SB(super_block*)’:
+utils.acc:30519:62: warning: invalid conversion from ‘void*’ to ‘ext3_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1264(&sb->s_fs_info);
+                                                              ^
+utils.acc: In function ‘task_struct* get_current()’:
+utils.acc:31149:159: warning: taking address of temporary [-fpermissive]
+     return ({ typeof( ((struct task_struct *)0)->tasks ) *__mptr = ((__get__ZN9list_head4nextE_1275(&__get__ZN11task_struct5tasksE_1276(&(&init_task)->tasks).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->tasks) );});
+                                                                                                                                                               ^
+utils.acc: In function ‘char* anon_inodefs_dname(dentry*, char*, int)’:
+utils.acc:31237:100: warning: taking address of temporary [-fpermissive]
+                          __get__ZN4qstr4nameE_1277(&__get__ZN6dentry6d_nameE_1278(&dentry->d_name).name));
+                                                                                                    ^

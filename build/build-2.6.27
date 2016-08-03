@@ -1,0 +1,37 @@
+AC = $(TOP)/bin/ac++
+AG = $(TOP)/bin/ag++
+REM_WARN = $(TOP)/bin/rem_warn
+
+OSDIR = $(TOP)/libos/$(OSVER)
+OSDIR_C = $(TOP)/libos/common
+
+ASPECT = MyIntrospect.ah
+LDS = $(OSDIR)/symbols.lds
+OBJS = $(KSRCS:.c=.o) $(SRCS:.cc=.o)
+ACCS = $(KSRCS:.c=.acc)
+CXXS = $(KSRCS:.c=.cxx)
+LOGS = $(KSRCS:.c=.log)
+
+CPPFLAGS = -x c++ -nostdinc -isystem `g++ -print-file-name=include` \
+	-I. -I$(OSDIR) -I$(OSDIR_C) \
+	-I$(OSDIR)/include -I$(OSDIR)/include/asm/mach-default \
+	-include $(OSDIR)/include/linux/autoconf.h \
+	-D__KERNEL__ -imacros $(OSDIR_C)/cxx_glues.h \
+	-include $(OSDIR_C)/addr.h -include $(OSDIR)/symbols.h \
+        -include $(OSDIR)/utils.h
+
+CFLAGS = -g -fpermissive -Wno-pointer-arith -Wno-write-strings \
+	-mcmodel=large -I$(OSDIR) -I$(OSDIR_C)
+
+CCFLAGS = $(CFLAGS) -include $(OSDIR)/include/linux/autoconf.h
+
+LDFLAGS = -L$(OSDIR) -los -lxenguest -lxenctrl
+
+%.o: %.cc
+	g++ $(CCFLAGS) -c $< 2>&1 | tee $(subst .o,.log,$@) | $(REM_WARN)
+
+%.o: %.c $(ASPECT)
+#	g++ $(CPPFLAGS) $(CFLAGS) -I$(dir $@) -c $< -o $@ 2>&1 | $(REM_WARN)
+	cpp $(CPPFLAGS) -I$(dir $@) $< -o $(subst .o,.cxx,$@)
+	sed -i '/^#/d' $(subst .o,.cxx,$@)
+	$(AG) --ac_compiler $(AC) --dynamic --keep_woven --no_line -a $(ASPECT) $(CFLAGS) -c $(subst .o,.cxx,$@) -o $@ 2>&1 | tee $(subst .o,.log,$@) | $(REM_WARN)

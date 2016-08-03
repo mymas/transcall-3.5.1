@@ -1,0 +1,10 @@
+misc.cc: In function ‘char* strdup_until(const char*, const char*)’:
+misc.cc:57:39: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     char *endloc = strpbrk(s, endchars);
+                                       ^
+misc.cc:60:52: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+         ret = malloc((strlen(s) + 1) * sizeof(char));
+                                                    ^
+misc.cc:64:53: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+         ret = malloc((endloc - s + 1) * sizeof(char));
+                                                     ^

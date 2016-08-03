@@ -1,0 +1,257 @@
+lib/vsprintf.acc: In function ‘void list_del(list_head*)’:
+lib/vsprintf.acc:787:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+lib/vsprintf.acc:788:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+lib/vsprintf.acc: In function ‘void hlist_del(hlist_node*)’:
+lib/vsprintf.acc:1763:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+lib/vsprintf.acc:1764:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+lib/vsprintf.acc: In function ‘int timer_pending(timer_list*)’:
+lib/vsprintf.acc:15317:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_326(&__get__ZN10timer_list5entryE_327(&timer->entry).next) != 0;
+                                                                                        ^
+lib/vsprintf.acc: At global scope:
+lib/vsprintf.acc:19320:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+lib/vsprintf.acc:19321:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+lib/vsprintf.acc:19322:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+lib/vsprintf.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+lib/vsprintf.acc:21227:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+lib/vsprintf.acc: At global scope:
+lib/vsprintf.acc:22300:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+lib/vsprintf.acc:22256:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+lib/vsprintf.acc: In function ‘void list_del_rcu(list_head*)’:
+lib/vsprintf.acc:24878:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+lib/vsprintf.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+lib/vsprintf.acc:24964:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+lib/vsprintf.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+lib/vsprintf.acc:25098:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+lib/vsprintf.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+lib/vsprintf.acc:25180:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+lib/vsprintf.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+lib/vsprintf.acc:25701:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+lib/vsprintf.acc:25702:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+lib/vsprintf.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+lib/vsprintf.acc:25789:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+lib/vsprintf.acc: In function ‘int dname_external(dentry*)’:
+lib/vsprintf.acc:26085:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_540(&__get__ZN6dentry6d_nameE_541(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_542(dentry->d_iname);
+                                                                                 ^
+lib/vsprintf.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+lib/vsprintf.acc:28492:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_592(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+lib/vsprintf.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+lib/vsprintf.acc:28710:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+lib/vsprintf.acc:28716:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+lib/vsprintf.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+lib/vsprintf.acc:28742:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+lib/vsprintf.acc:28748:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+lib/vsprintf.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+lib/vsprintf.acc:31445:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_659(&__get__ZN3pid7numbersE_660(&pid->numbers[__get__ZN3pid5levelE_661(&pid->level)]).ns);
+                                                                                                                 ^
+lib/vsprintf.acc: In function ‘bool is_child_reaper(pid*)’:
+lib/vsprintf.acc:31562:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_662(&__get__ZN3pid7numbersE_663(&pid->numbers[__get__ZN3pid5levelE_664(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+lib/vsprintf.acc: In function ‘pid_t pid_nr(pid*)’:
+lib/vsprintf.acc:31638:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_665(&__get__ZN3pid7numbersE_666(&pid->numbers[0]).nr);
+                                                                             ^
+lib/vsprintf.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+lib/vsprintf.acc:36183:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_760(&__get__ZN6dentry7d_inodeE_761(&__get__ZN4path6dentryE_762(&__get__ZN4file6f_pathE_763(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+lib/vsprintf.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+lib/vsprintf.acc:36258:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_766(&__get__ZN4file6f_pathE_767(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+lib/vsprintf.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+lib/vsprintf.acc:38012:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+lib/vsprintf.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+lib/vsprintf.acc:38099:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+lib/vsprintf.acc: In function ‘zone_type page_zonenum(page*)’:
+lib/vsprintf.acc:38144:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+lib/vsprintf.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+lib/vsprintf.acc:38389:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1176(&vm_stat[item]));
+                                                       ^
+lib/vsprintf.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+lib/vsprintf.acc:38429:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1177(&vm_stat[item]));
+                                                              ^
+lib/vsprintf.acc: In function ‘bool dmaf_p_disabled_continue(dma_ctrl_flags)’:
+lib/vsprintf.acc:41508:49: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  enum dma_ctrl_flags mask = DMA_PREP_CONTINUE | DMA_PREP_PQ_DISABLE_P;
+                                                 ^
+lib/vsprintf.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+lib/vsprintf.acc:41569:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+lib/vsprintf.acc: In function ‘void async_tx_clear_ack(dma_async_tx_descriptor*)’:
+lib/vsprintf.acc:41574:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags &= ~DMA_CTRL_ACK;
+            ^
+lib/vsprintf.acc: In function ‘task_struct* next_thread(task_struct*)’:
+lib/vsprintf.acc:47465:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1548(&__get__ZN11task_struct12thread_groupE_1549(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+lib/vsprintf.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+lib/vsprintf.acc:48860:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1568(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1569(&__get__ZN11task_struct6threadE_1570(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+lib/vsprintf.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+lib/vsprintf.acc:50416:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+lib/vsprintf.acc:50418:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+lib/vsprintf.acc: In function ‘void hlist_nulls_del(hlist_nulls_node*)’:
+lib/vsprintf.acc:56262:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+lib/vsprintf.acc: In function ‘netdev_queue* netdev_get_tx_queue(net_device*, unsigned int)’:
+lib/vsprintf.acc:63327:92: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10net_device3_txE_2028(&__get__ZN10net_device3_txE_2029(&dev->_tx)[index]);
+                                                                                            ^
+lib/vsprintf.acc: In function ‘void netdev_for_each_tx_queue(net_device*, void (*)(net_device*, netdev_queue*, void*), void*)’:
+lib/vsprintf.acc:63444:89: warning: taking address of temporary [-fpermissive]
+   f(dev, &__get__ZN10net_device3_txE_2031(&__get__ZN10net_device3_txE_2032(&dev->_tx)[i]), arg);
+                                                                                         ^
+lib/vsprintf.acc: In function ‘net_device* next_net_device(net_device*)’:
+lib/vsprintf.acc:63917:92: warning: taking address of temporary [-fpermissive]
+  lh = __get__ZN9list_head4nextE_2039(&__get__ZN10net_device8dev_listE_2040(&dev->dev_list).next);
+                                                                                            ^
+lib/vsprintf.acc: In function ‘net_device* first_net_device(net*)’:
+lib/vsprintf.acc:64004:150: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct net_device *)0)->dev_list ) *__mptr = (__get__ZN9list_head4nextE_2041(&__get__ZN3net13dev_base_headE_2042(&net->dev_base_head).next)); (struct net_device *)( (char *)__mptr - ((size_t) &((struct net_device *)0)->dev_list) );});
+                                                                                                                                                      ^
+lib/vsprintf.acc: In function ‘void hlist_nulls_del_rcu(hlist_nulls_node*)’:
+lib/vsprintf.acc:67692:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+lib/vsprintf.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+lib/vsprintf.acc:68649:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+lib/vsprintf.acc: In function ‘sock* sk_next(sock*)’:
+lib/vsprintf.acc:70977:104: warning: taking address of temporary [-fpermissive]
+  return __get__ZN10hlist_node4nextE_2309(&__get__ZN4sock11__sk_commonE_2311(&sk->__sk_common).skc_node.next) ?
+                                                                                                        ^
+lib/vsprintf.acc:70978:163: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_node ) *__mptr = (__get__ZN10hlist_node4nextE_2312(&__get__ZN4sock11__sk_commonE_2314(&sk->__sk_common).skc_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_node) );}) : 0;
+                                                                                                                                                                   ^
+lib/vsprintf.acc: In function ‘sock* sk_nulls_next(sock*)’:
+lib/vsprintf.acc:71123:129: warning: taking address of temporary [-fpermissive]
+  return (!is_a_nulls(__get__ZN16hlist_nulls_node4nextE_2315(&__get__ZN4sock11__sk_commonE_2317(&sk->__sk_common).skc_nulls_node.next))) ?
+                                                                                                                                 ^
+lib/vsprintf.acc:71124:181: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_nulls_node ) *__mptr = (__get__ZN16hlist_nulls_node4nextE_2318(&__get__ZN4sock11__sk_commonE_2320(&sk->__sk_common).skc_nulls_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_nulls_node) );})
+                                                                                                                                                                                     ^
+lib/vsprintf.acc: In function ‘u32 jhash(void*, u32, u32)’:
+lib/vsprintf.acc:75581:10: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+  u8 *k = key;
+          ^
+lib/vsprintf.acc: In function ‘request_sock* reqsk_alloc(request_sock_ops*)’:
+lib/vsprintf.acc:75776:115: warning: invalid conversion from ‘void*’ to ‘request_sock*’ [-fpermissive]
+  struct request_sock *req = kmem_cache_alloc(__get__ZN16request_sock_ops4slabE_2525(&ops->slab), ((( gfp_t)0x20u)));
+                                                                                                                   ^
+lib/vsprintf.acc: In function ‘int fastopen_init_queue(sock*, int)’:
+lib/vsprintf.acc:78950:62: warning: invalid conversion from ‘void*’ to ‘fastopen_queue*’ [-fpermissive]
+       __get__ZN4sock13sk_allocationE_2605(&sk->sk_allocation));
+                                                              ^
+lib/vsprintf.acc: In function ‘u32 ndisc_hashfn(void*, net_device*, __u32*)’:
+lib/vsprintf.acc:80359:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+lib/vsprintf.acc: In function ‘neighbour* __ipv6_neigh_lookup_noref(net_device*, void*)’:
+lib/vsprintf.acc:80370:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+lib/vsprintf.acc: In function ‘int __ipv6_addr_diff32(void*, void*, int)’:
+lib/vsprintf.acc:81306:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+               ^
+lib/vsprintf.acc:81306:29: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+                             ^
+lib/vsprintf.acc: In function ‘int __ipv6_addr_diff64(void*, void*, int)’:
+lib/vsprintf.acc:81322:15: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+               ^
+lib/vsprintf.acc:81322:29: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+                             ^
+lib/vsprintf.acc: In function ‘char* number(char*, char*, long long unsigned int, printf_spec)’:
+lib/vsprintf.acc:82165:27: warning: initializer-string for array of chars is too long [-fpermissive]
+  static char digits[16] = "0123456789ABCDEF";
+                           ^
+lib/vsprintf.acc: In function ‘char* dentry_name(char*, char*, dentry*, printf_spec, char*)’:
+lib/vsprintf.acc:82459:84: warning: taking address of temporary [-fpermissive]
+   array[i] = (__get__ZN4qstr4nameE_2712(&__get__ZN6dentry6d_nameE_2713(&d->d_name).name));
+                                                                                    ^
+lib/vsprintf.acc:82459:88: warning: invalid conversion from ‘unsigned char*’ to ‘char*’ [-fpermissive]
+   array[i] = (__get__ZN4qstr4nameE_2712(&__get__ZN6dentry6d_nameE_2713(&d->d_name).name));
+                                                                                        ^
+lib/vsprintf.acc: In function ‘char* pointer(char*, char*, char*, void*, printf_spec)’:
+lib/vsprintf.acc:83578:12: warning: invalid conversion from ‘void*’ to ‘pointer(char*, char*, char*, void*, printf_spec)::<anonymous union>*’ [-fpermissive]
+    } *sa = ptr;
+            ^
+lib/vsprintf.acc:83663:97: warning: taking address of temporary [-fpermissive]
+        __get__ZN4path6dentryE_2800(&__get__ZN4file6f_pathE_2801(&(( struct file *)ptr)->f_path).dentry),
+                                                                                                 ^
+lib/vsprintf.acc: In function ‘int vsnprintf(char*, size_t, char*, __va_list_tag*)’:
+lib/vsprintf.acc:83869:7: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   end = ((void *)-1);
+       ^
+lib/vsprintf.acc: In function ‘int bstr_printf(char*, size_t, char*, u32*)’:
+lib/vsprintf.acc:84175:7: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   end = ((void *)-1);
+       ^

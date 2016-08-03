@@ -1,0 +1,162 @@
+fs/exec.acc: In function ‘thread_info* current_thread_info()’:
+fs/exec.acc:7021:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+fs/exec.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/exec.acc:8344:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+fs/exec.acc:8345:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/exec.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+fs/exec.acc:13310:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+fs/exec.acc:13303:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+fs/exec.acc: In function ‘int timer_pending(timer_list*)’:
+fs/exec.acc:13452:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_700(&__get__ZN10timer_list5entryE_701(&timer->entry).next) != 0;
+                                                                                        ^
+fs/exec.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/exec.acc:15968:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/exec.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/exec.acc:16055:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/exec.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/exec.acc:16059:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/exec.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/exec.acc:16234:54: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_882(&vm_stat[item]));
+                                                      ^
+fs/exec.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/exec.acc:16274:61: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_883(&vm_stat[item]));
+                                                             ^
+fs/exec.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/exec.acc:18418:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_954(&__get__ZN3pid7numbersE_955(&pid->numbers[__get__ZN3pid5levelE_956(&pid->level)]).ns);
+                                                                                                                 ^
+fs/exec.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/exec.acc:18495:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_957(&__get__ZN3pid7numbersE_958(&pid->numbers[0]).nr);
+                                                                             ^
+fs/exec.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/exec.acc:22161:167: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_1001(&__get__ZN11task_struct12thread_groupE_1002(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                       ^
+fs/exec.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/exec.acc:23440:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+fs/exec.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/exec.acc:23526:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+fs/exec.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/exec.acc:23656:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/exec.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/exec.acc:23738:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+fs/exec.acc: In function ‘int dname_external(dentry*)’:
+fs/exec.acc:24201:83: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_1033(&__get__ZN6dentry6d_nameE_1034(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_1035(dentry->d_iname);
+                                                                                   ^
+fs/exec.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+fs/exec.acc:27402:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+fs/exec.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+fs/exec.acc:27830:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/exec.acc:27831:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/exec.acc: In function ‘void copy_highpage(page*, page*)’:
+fs/exec.acc:27843:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/exec.acc:27844:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/exec.acc: At global scope:
+fs/exec.acc:30048:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/exec.acc:30008:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+fs/exec.acc: In function ‘net* PDE_NET(proc_dir_entry*)’:
+fs/exec.acc:32369:22: warning: invalid conversion from ‘void*’ to ‘net*’ [-fpermissive]
+  return pde->parent->data;
+                      ^
+fs/exec.acc: In function ‘int desc_empty(void*)’:
+fs/exec.acc:36315:14: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *desc = ptr;
+              ^
+fs/exec.acc: In function ‘void set_tssldt_descriptor(void*, long unsigned int, unsigned int, unsigned int)’:
+fs/exec.acc:36364:31: warning: invalid conversion from ‘void*’ to ‘ldttss_desc64*’ [-fpermissive]
+  struct ldttss_desc64 *desc = d;
+                               ^
+fs/exec.acc: In function ‘void enter_lazy_tlb(mm_struct*, task_struct*)’:
+fs/exec.acc:37123:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1236(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1237(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1238(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+fs/exec.acc:37123:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1236(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1237(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1238(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+fs/exec.acc:37123:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1236(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1237(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1238(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+fs/exec.acc: In function ‘void switch_mm(mm_struct*, mm_struct*, task_struct*)’:
+fs/exec.acc:37903:82: warning: taking address of temporary [-fpermissive]
+   __cpu_clear((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1242(&prev->cpu_vm_mask)));
+                                                                                  ^
+fs/exec.acc:37905:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1243(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1244(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1245(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+fs/exec.acc:37905:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1243(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1244(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1245(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+fs/exec.acc:37905:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1243(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1244(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1245(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+fs/exec.acc:37906:288: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1246(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1247(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1248(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                ^
+fs/exec.acc:37906:458: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1246(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1247(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1248(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+fs/exec.acc:37906:626: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1246(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1247(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1248(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+fs/exec.acc:37908:80: warning: taking address of temporary [-fpermissive]
+   __cpu_set((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1249(&next->cpu_vm_mask)));
+                                                                                ^
+fs/exec.acc:37916:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1255(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1256(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1257(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+fs/exec.acc:37916:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1255(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1256(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1257(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+fs/exec.acc:37916:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1255(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1256(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1257(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+fs/exec.acc:37919:94: warning: taking address of temporary [-fpermissive]
+   if (!__cpu_test_and_set((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1261(&next->cpu_vm_mask)))) {
+                                                                                              ^
+fs/exec.acc: In function ‘mmu_gather* tlb_gather_mmu(mm_struct*, unsigned int)’:
+fs/exec.acc:38097:70: warning: taking address of temporary [-fpermissive]
+  tlb->nr = __cpus_weight(&(__get_cpu_online_map_1266(&cpu_online_map)), 64) > 1 ? 0U : ~0U;
+                                                                      ^

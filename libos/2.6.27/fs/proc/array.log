@@ -1,0 +1,151 @@
+fs/proc/array.acc: In function ‘thread_info* current_thread_info()’:
+fs/proc/array.acc:7013:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+fs/proc/array.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/proc/array.acc:8336:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+fs/proc/array.acc:8337:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/proc/array.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+fs/proc/array.acc:13326:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+fs/proc/array.acc:13319:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+fs/proc/array.acc: In function ‘int timer_pending(timer_list*)’:
+fs/proc/array.acc:13468:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_700(&__get__ZN10timer_list5entryE_701(&timer->entry).next) != 0;
+                                                                                        ^
+fs/proc/array.acc: In function ‘int kstat_irqs(int)’:
+fs/proc/array.acc:14476:102: warning: taking address of temporary [-fpermissive]
+  for (((cpu)) = -1; ((cpu)) = __next_cpu((((cpu))), &((__get_cpu_possible_map_706(&cpu_possible_map)))), ((cpu)) < 64; )
+                                                                                                      ^
+fs/proc/array.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/proc/array.acc:15127:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+fs/proc/array.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/proc/array.acc:15213:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+fs/proc/array.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/proc/array.acc:15343:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/proc/array.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/proc/array.acc:15425:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+fs/proc/array.acc: In function ‘int dname_external(dentry*)’:
+fs/proc/array.acc:15888:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_733(&__get__ZN6dentry6d_nameE_734(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_735(dentry->d_iname);
+                                                                                 ^
+fs/proc/array.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/proc/array.acc:16573:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_743(&__get__ZN3pid7numbersE_744(&pid->numbers[__get__ZN3pid5levelE_745(&pid->level)]).ns);
+                                                                                                                 ^
+fs/proc/array.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/proc/array.acc:16650:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_746(&__get__ZN3pid7numbersE_747(&pid->numbers[0]).nr);
+                                                                             ^
+fs/proc/array.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+fs/proc/array.acc:20022:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+fs/proc/array.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/proc/array.acc:21871:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/proc/array.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/proc/array.acc:21958:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/proc/array.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/proc/array.acc:21962:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/proc/array.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/proc/array.acc:22137:54: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_972(&vm_stat[item]));
+                                                      ^
+fs/proc/array.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/proc/array.acc:22177:61: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_973(&vm_stat[item]));
+                                                             ^
+fs/proc/array.acc: In function ‘net* PDE_NET(proc_dir_entry*)’:
+fs/proc/array.acc:23133:22: warning: invalid conversion from ‘void*’ to ‘net*’ [-fpermissive]
+  return pde->parent->data;
+                      ^
+fs/proc/array.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+fs/proc/array.acc:23723:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/proc/array.acc:23724:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/proc/array.acc: In function ‘void copy_highpage(page*, page*)’:
+fs/proc/array.acc:23736:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/proc/array.acc:23737:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/proc/array.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/proc/array.acc:28061:167: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_1099(&__get__ZN11task_struct12thread_groupE_1100(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                       ^
+fs/proc/array.acc: In function ‘hugetlbfs_sb_info* HUGETLBFS_SB(super_block*)’:
+fs/proc/array.acc:30527:62: warning: invalid conversion from ‘void*’ to ‘hugetlbfs_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1153(&sb->s_fs_info);
+                                                              ^
+fs/proc/array.acc: At global scope:
+fs/proc/array.acc:33913:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/proc/array.acc:33873:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+fs/proc/array.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+fs/proc/array.acc:35324:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+fs/proc/array.acc:35326:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+fs/proc/array.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+fs/proc/array.acc:37173:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+fs/proc/array.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+fs/proc/array.acc:38729:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+fs/proc/array.acc: In function ‘int nla_nest_compat_end(sk_buff*, nlattr*)’:
+fs/proc/array.acc:39162:38: warning: invalid conversion from ‘void*’ to ‘nlattr*’ [-fpermissive]
+  struct nlattr *nest = (void *)start + ( ((start->nla_len)+4 -1) & ~(4 -1) );
+                                      ^
+fs/proc/array.acc: In function ‘void* genlmsg_put(sk_buff*, u32, u32, genl_family*, int, u8)’:
+fs/proc/array.acc:39258:22: warning: invalid conversion from ‘void*’ to ‘genlmsghdr*’ [-fpermissive]
+  hdr = nlmsg_data(nlh);
+                      ^
+fs/proc/array.acc: In function ‘void task_sig(seq_file*, task_struct*)’:
+fs/proc/array.acc:44535:147: warning: taking address of temporary [-fpermissive]
+   num_threads = (__get__ZN7_atomic7counterE_1535(&(&(__get__ZN13signal_struct5countE_1536(&__get__ZN11task_struct6signalE_1537(&p->signal)->count)))->counter));
+                                                                                                                                                   ^
+fs/proc/array.acc:44535:151: warning: taking address of temporary [-fpermissive]
+   num_threads = (__get__ZN7_atomic7counterE_1535(&(&(__get__ZN13signal_struct5countE_1536(&__get__ZN11task_struct6signalE_1537(&p->signal)->count)))->counter));
+                                                                                                                                                       ^
+fs/proc/array.acc:44536:146: warning: taking address of temporary [-fpermissive]
+   qsize = (__get__ZN7_atomic7counterE_1538(&(&(__get__ZN11user_struct10sigpendingE_1539(&__get__ZN11task_struct4userE_1540(&p->user)->sigpending)))->counter));
+                                                                                                                                                  ^
+fs/proc/array.acc:44536:150: warning: taking address of temporary [-fpermissive]
+   qsize = (__get__ZN7_atomic7counterE_1538(&(&(__get__ZN11user_struct10sigpendingE_1539(&__get__ZN11task_struct4userE_1540(&p->user)->sigpending)))->counter));
+                                                                                                                                                      ^
+fs/proc/array.acc: In function ‘int do_task_stat(seq_file*, pid_namespace*, pid*, task_struct*, int)’:
+fs/proc/array.acc:45963:147: warning: taking address of temporary [-fpermissive]
+    eip = (__get__ZN7pt_regs2ipE_1548(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1549(&__get__ZN11task_struct6threadE_1550(&(task)->thread).sp0) - 1)->ip));
+                                                                                                                                                   ^

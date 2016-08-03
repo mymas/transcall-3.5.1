@@ -1,0 +1,1 @@
+cmd_/usr/local/etc/transcall-3.5.1/kmod/shadowfs.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.13.0-24-generic/scripts/module-common.lds --build-id  -o /usr/local/etc/transcall-3.5.1/kmod/shadowfs.ko /usr/local/etc/transcall-3.5.1/kmod/shadowfs.o /usr/local/etc/transcall-3.5.1/kmod/shadowfs.mod.o

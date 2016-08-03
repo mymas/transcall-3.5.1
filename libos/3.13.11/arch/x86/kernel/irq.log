@@ -1,0 +1,123 @@
+arch/x86/kernel/irq.acc: In function ‘void list_del(list_head*)’:
+arch/x86/kernel/irq.acc:893:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+arch/x86/kernel/irq.acc:894:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+arch/x86/kernel/irq.acc: In function ‘void hlist_del(hlist_node*)’:
+arch/x86/kernel/irq.acc:1869:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+arch/x86/kernel/irq.acc:1870:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/kernel/irq.acc: In function ‘int timer_pending(timer_list*)’:
+arch/x86/kernel/irq.acc:12895:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_241(&__get__ZN10timer_list5entryE_242(&timer->entry).next) != 0;
+                                                                                        ^
+arch/x86/kernel/irq.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+arch/x86/kernel/irq.acc:15857:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_332(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+arch/x86/kernel/irq.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+arch/x86/kernel/irq.acc:16075:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+arch/x86/kernel/irq.acc:16081:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+arch/x86/kernel/irq.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+arch/x86/kernel/irq.acc:16107:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+arch/x86/kernel/irq.acc:16113:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+arch/x86/kernel/irq.acc: At global scope:
+arch/x86/kernel/irq.acc:20409:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+arch/x86/kernel/irq.acc:20410:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+arch/x86/kernel/irq.acc:20411:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+arch/x86/kernel/irq.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+arch/x86/kernel/irq.acc:22316:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+arch/x86/kernel/irq.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+arch/x86/kernel/irq.acc:27936:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_759(&__get__ZN3pid7numbersE_760(&pid->numbers[__get__ZN3pid5levelE_761(&pid->level)]).ns);
+                                                                                                                 ^
+arch/x86/kernel/irq.acc: In function ‘bool is_child_reaper(pid*)’:
+arch/x86/kernel/irq.acc:28053:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_762(&__get__ZN3pid7numbersE_763(&pid->numbers[__get__ZN3pid5levelE_764(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+arch/x86/kernel/irq.acc: In function ‘pid_t pid_nr(pid*)’:
+arch/x86/kernel/irq.acc:28129:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_765(&__get__ZN3pid7numbersE_766(&pid->numbers[0]).nr);
+                                                                             ^
+arch/x86/kernel/irq.acc: In function ‘void list_del_rcu(list_head*)’:
+arch/x86/kernel/irq.acc:28613:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+arch/x86/kernel/irq.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+arch/x86/kernel/irq.acc:28699:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+arch/x86/kernel/irq.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+arch/x86/kernel/irq.acc:28833:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/kernel/irq.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+arch/x86/kernel/irq.acc:28915:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+arch/x86/kernel/irq.acc: At global scope:
+arch/x86/kernel/irq.acc:30361:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+arch/x86/kernel/irq.acc:30317:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+arch/x86/kernel/irq.acc: In function ‘task_struct* next_thread(task_struct*)’:
+arch/x86/kernel/irq.acc:33731:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_846(&__get__ZN11task_struct12thread_groupE_847(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+arch/x86/kernel/irq.acc: At global scope:
+arch/x86/kernel/irq.acc:37134:10: warning: declaration of ‘phandle device_node::phandle’ [-fpermissive]
+  phandle phandle;
+          ^
+arch/x86/kernel/irq.acc:37108:13: warning: changes meaning of ‘phandle’ from ‘typedef u32 phandle’ [-fpermissive]
+ typedef u32 phandle;
+             ^
+arch/x86/kernel/irq.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+arch/x86/kernel/irq.acc:38431:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+arch/x86/kernel/irq.acc:38432:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/kernel/irq.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+arch/x86/kernel/irq.acc:38519:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/kernel/irq.acc: In function ‘int dname_external(dentry*)’:
+arch/x86/kernel/irq.acc:38815:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_940(&__get__ZN6dentry6d_nameE_941(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_942(dentry->d_iname);
+                                                                                 ^
+arch/x86/kernel/irq.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+arch/x86/kernel/irq.acc:44067:139: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_1055(&__get__ZN6dentry7d_inodeE_1056(&__get__ZN4path6dentryE_1057(&__get__ZN4file6f_pathE_1058(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                           ^
+arch/x86/kernel/irq.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+arch/x86/kernel/irq.acc:44142:89: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_1061(&__get__ZN4file6f_pathE_1062(&file->f_path).dentry)), 4) == 0;
+                                                                                         ^
+arch/x86/kernel/irq.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+arch/x86/kernel/irq.acc:44752:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1069(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1070(&__get__ZN11task_struct6threadE_1071(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^

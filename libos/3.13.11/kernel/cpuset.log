@@ -1,0 +1,153 @@
+kernel/cpuset.acc: In function ‘void list_del(list_head*)’:
+kernel/cpuset.acc:890:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/cpuset.acc:891:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/cpuset.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/cpuset.acc:1866:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/cpuset.acc:1867:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/cpuset.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/cpuset.acc:12892:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_241(&__get__ZN10timer_list5entryE_242(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/cpuset.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+kernel/cpuset.acc:15854:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_332(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+kernel/cpuset.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+kernel/cpuset.acc:16072:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+kernel/cpuset.acc:16078:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/cpuset.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+kernel/cpuset.acc:16104:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+kernel/cpuset.acc:16110:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/cpuset.acc: At global scope:
+kernel/cpuset.acc:20406:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/cpuset.acc:20407:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/cpuset.acc:20408:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/cpuset.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/cpuset.acc:22313:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/cpuset.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/cpuset.acc:27056:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_676(&__get__ZN3pid7numbersE_677(&pid->numbers[__get__ZN3pid5levelE_678(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/cpuset.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/cpuset.acc:27173:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_679(&__get__ZN3pid7numbersE_680(&pid->numbers[__get__ZN3pid5levelE_681(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/cpuset.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/cpuset.acc:27249:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_682(&__get__ZN3pid7numbersE_683(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/cpuset.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/cpuset.acc:27733:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/cpuset.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/cpuset.acc:27819:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/cpuset.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/cpuset.acc:27953:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/cpuset.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/cpuset.acc:28035:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/cpuset.acc: At global scope:
+kernel/cpuset.acc:29847:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/cpuset.acc:29803:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/cpuset.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/cpuset.acc:33217:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_803(&__get__ZN11task_struct12thread_groupE_804(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+kernel/cpuset.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kernel/cpuset.acc:34536:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/cpuset.acc:34537:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/cpuset.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kernel/cpuset.acc:34624:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/cpuset.acc: In function ‘int dname_external(dentry*)’:
+kernel/cpuset.acc:34920:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_830(&__get__ZN6dentry6d_nameE_831(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_832(dentry->d_iname);
+                                                                                 ^
+kernel/cpuset.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kernel/cpuset.acc:40270:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_947(&__get__ZN6dentry7d_inodeE_948(&__get__ZN4path6dentryE_949(&__get__ZN4file6f_pathE_950(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+kernel/cpuset.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kernel/cpuset.acc:40345:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_953(&__get__ZN4file6f_pathE_954(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+kernel/cpuset.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/cpuset.acc:42099:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/cpuset.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/cpuset.acc:42186:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/cpuset.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/cpuset.acc:42231:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/cpuset.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/cpuset.acc:42476:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1363(&vm_stat[item]));
+                                                       ^
+kernel/cpuset.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/cpuset.acc:42516:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1364(&vm_stat[item]));
+                                                              ^
+kernel/cpuset.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+kernel/cpuset.acc:46196:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kernel/cpuset.acc:46197:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kernel/cpuset.acc: In function ‘void copy_highpage(page*, page*)’:
+kernel/cpuset.acc:46209:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kernel/cpuset.acc:46210:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kernel/cpuset.acc: At global scope:
+kernel/cpuset.acc:48505:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+kernel/cpuset.acc:48468:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^

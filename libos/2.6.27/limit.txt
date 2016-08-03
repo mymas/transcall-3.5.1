@@ -1,0 +1,43 @@
+- allow only one-hop pointer dereference
+  + e.g., a->b->c  =>  f(a->b, &(f(a, &(a->b))->c))
+    - crash in a->b access
+  + SOLVED
+
+- typedef cannot be pointcutted
+  + e.g., typedef of struct, atomic_t
+
+- primitive type cannot be pointcutted
+  + difficult to distinguish
+
+- need the name for anonymous nested struct
+  + e.g., struct "struct_xxx" { ... } xxx;
+
+- array size is unknown
+  + resulttype()
+  + needs to obtain type size (e.g., upid)
+
+- p->tasks is copied by using aspect?
+  + semantically no problem when no writes
+
+- C++ keywords
+  + private -> _private
+  + class -> _class
+  + catch -> _catch
+
+- utils.c cannot be weaved
+  + why?
+
+- process's memory access?
+
+- remove "const" struct task_struct in arg
+
+- &a->b->c->d => __get(obj, &((obj = (&a->b->c))->d))
+  + a->b->c fails
+  + &(a->b->c->d) avoids the problem
+
+- dom number in aspect
+
+- disallow the same name function as struct name
+
+- char * member should be dereferenced?
+  + often used as string

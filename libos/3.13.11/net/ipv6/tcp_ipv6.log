@@ -1,0 +1,296 @@
+net/ipv6/tcp_ipv6.acc: In function ‘void list_del(list_head*)’:
+net/ipv6/tcp_ipv6.acc:792:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+net/ipv6/tcp_ipv6.acc:793:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+net/ipv6/tcp_ipv6.acc: In function ‘void hlist_del(hlist_node*)’:
+net/ipv6/tcp_ipv6.acc:1768:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+net/ipv6/tcp_ipv6.acc:1769:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv6/tcp_ipv6.acc: In function ‘int timer_pending(timer_list*)’:
+net/ipv6/tcp_ipv6.acc:15317:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_326(&__get__ZN10timer_list5entryE_327(&timer->entry).next) != 0;
+                                                                                        ^
+net/ipv6/tcp_ipv6.acc: At global scope:
+net/ipv6/tcp_ipv6.acc:19320:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+net/ipv6/tcp_ipv6.acc:19321:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+net/ipv6/tcp_ipv6.acc:19322:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+net/ipv6/tcp_ipv6.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+net/ipv6/tcp_ipv6.acc:21227:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+net/ipv6/tcp_ipv6.acc: At global scope:
+net/ipv6/tcp_ipv6.acc:22300:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+net/ipv6/tcp_ipv6.acc:22256:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+net/ipv6/tcp_ipv6.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+net/ipv6/tcp_ipv6.acc:26405:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_553(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+net/ipv6/tcp_ipv6.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+net/ipv6/tcp_ipv6.acc:26623:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+net/ipv6/tcp_ipv6.acc:26629:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+net/ipv6/tcp_ipv6.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+net/ipv6/tcp_ipv6.acc:26655:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+net/ipv6/tcp_ipv6.acc:26661:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+net/ipv6/tcp_ipv6.acc: In function ‘void list_del_rcu(list_head*)’:
+net/ipv6/tcp_ipv6.acc:27906:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+net/ipv6/tcp_ipv6.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+net/ipv6/tcp_ipv6.acc:27992:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+net/ipv6/tcp_ipv6.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+net/ipv6/tcp_ipv6.acc:28126:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv6/tcp_ipv6.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+net/ipv6/tcp_ipv6.acc:28208:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+net/ipv6/tcp_ipv6.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+net/ipv6/tcp_ipv6.acc:28833:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+net/ipv6/tcp_ipv6.acc:28834:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv6/tcp_ipv6.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+net/ipv6/tcp_ipv6.acc:28921:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv6/tcp_ipv6.acc: In function ‘int dname_external(dentry*)’:
+net/ipv6/tcp_ipv6.acc:29217:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_619(&__get__ZN6dentry6d_nameE_620(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_621(dentry->d_iname);
+                                                                                 ^
+net/ipv6/tcp_ipv6.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+net/ipv6/tcp_ipv6.acc:30453:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_649(&__get__ZN3pid7numbersE_650(&pid->numbers[__get__ZN3pid5levelE_651(&pid->level)]).ns);
+                                                                                                                 ^
+net/ipv6/tcp_ipv6.acc: In function ‘bool is_child_reaper(pid*)’:
+net/ipv6/tcp_ipv6.acc:30570:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_652(&__get__ZN3pid7numbersE_653(&pid->numbers[__get__ZN3pid5levelE_654(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+net/ipv6/tcp_ipv6.acc: In function ‘pid_t pid_nr(pid*)’:
+net/ipv6/tcp_ipv6.acc:30646:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_655(&__get__ZN3pid7numbersE_656(&pid->numbers[0]).nr);
+                                                                             ^
+net/ipv6/tcp_ipv6.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+net/ipv6/tcp_ipv6.acc:35649:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_759(&__get__ZN6dentry7d_inodeE_760(&__get__ZN4path6dentryE_761(&__get__ZN4file6f_pathE_762(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+net/ipv6/tcp_ipv6.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+net/ipv6/tcp_ipv6.acc:35724:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_765(&__get__ZN4file6f_pathE_766(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+net/ipv6/tcp_ipv6.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+net/ipv6/tcp_ipv6.acc:37478:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+net/ipv6/tcp_ipv6.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+net/ipv6/tcp_ipv6.acc:37565:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+net/ipv6/tcp_ipv6.acc: In function ‘zone_type page_zonenum(page*)’:
+net/ipv6/tcp_ipv6.acc:37610:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+net/ipv6/tcp_ipv6.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+net/ipv6/tcp_ipv6.acc:37855:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1175(&vm_stat[item]));
+                                                       ^
+net/ipv6/tcp_ipv6.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+net/ipv6/tcp_ipv6.acc:37895:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1176(&vm_stat[item]));
+                                                              ^
+net/ipv6/tcp_ipv6.acc: In function ‘bool dmaf_p_disabled_continue(dma_ctrl_flags)’:
+net/ipv6/tcp_ipv6.acc:40974:49: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  enum dma_ctrl_flags mask = DMA_PREP_CONTINUE | DMA_PREP_PQ_DISABLE_P;
+                                                 ^
+net/ipv6/tcp_ipv6.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+net/ipv6/tcp_ipv6.acc:41035:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+net/ipv6/tcp_ipv6.acc: In function ‘void async_tx_clear_ack(dma_async_tx_descriptor*)’:
+net/ipv6/tcp_ipv6.acc:41040:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags &= ~DMA_CTRL_ACK;
+            ^
+net/ipv6/tcp_ipv6.acc: In function ‘task_struct* next_thread(task_struct*)’:
+net/ipv6/tcp_ipv6.acc:47662:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1548(&__get__ZN11task_struct12thread_groupE_1549(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+net/ipv6/tcp_ipv6.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+net/ipv6/tcp_ipv6.acc:49057:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1568(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1569(&__get__ZN11task_struct6threadE_1570(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+net/ipv6/tcp_ipv6.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+net/ipv6/tcp_ipv6.acc:50276:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+net/ipv6/tcp_ipv6.acc:50278:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+net/ipv6/tcp_ipv6.acc: In function ‘void hlist_nulls_del(hlist_nulls_node*)’:
+net/ipv6/tcp_ipv6.acc:56122:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv6/tcp_ipv6.acc: In function ‘netdev_queue* netdev_get_tx_queue(net_device*, unsigned int)’:
+net/ipv6/tcp_ipv6.acc:63187:92: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10net_device3_txE_2026(&__get__ZN10net_device3_txE_2027(&dev->_tx)[index]);
+                                                                                            ^
+net/ipv6/tcp_ipv6.acc: In function ‘void netdev_for_each_tx_queue(net_device*, void (*)(net_device*, netdev_queue*, void*), void*)’:
+net/ipv6/tcp_ipv6.acc:63304:89: warning: taking address of temporary [-fpermissive]
+   f(dev, &__get__ZN10net_device3_txE_2029(&__get__ZN10net_device3_txE_2030(&dev->_tx)[i]), arg);
+                                                                                         ^
+net/ipv6/tcp_ipv6.acc: In function ‘net_device* next_net_device(net_device*)’:
+net/ipv6/tcp_ipv6.acc:63777:92: warning: taking address of temporary [-fpermissive]
+  lh = __get__ZN9list_head4nextE_2037(&__get__ZN10net_device8dev_listE_2038(&dev->dev_list).next);
+                                                                                            ^
+net/ipv6/tcp_ipv6.acc: In function ‘net_device* first_net_device(net*)’:
+net/ipv6/tcp_ipv6.acc:63864:150: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct net_device *)0)->dev_list ) *__mptr = (__get__ZN9list_head4nextE_2039(&__get__ZN3net13dev_base_headE_2040(&net->dev_base_head).next)); (struct net_device *)( (char *)__mptr - ((size_t) &((struct net_device *)0)->dev_list) );});
+                                                                                                                                                      ^
+net/ipv6/tcp_ipv6.acc: In function ‘u32 jhash(void*, u32, u32)’:
+net/ipv6/tcp_ipv6.acc:66489:10: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+  u8 *k = key;
+          ^
+net/ipv6/tcp_ipv6.acc: In function ‘void hlist_nulls_del_rcu(hlist_nulls_node*)’:
+net/ipv6/tcp_ipv6.acc:68112:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv6/tcp_ipv6.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+net/ipv6/tcp_ipv6.acc:69069:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+net/ipv6/tcp_ipv6.acc: In function ‘sock* sk_next(sock*)’:
+net/ipv6/tcp_ipv6.acc:71397:104: warning: taking address of temporary [-fpermissive]
+  return __get__ZN10hlist_node4nextE_2310(&__get__ZN4sock11__sk_commonE_2312(&sk->__sk_common).skc_node.next) ?
+                                                                                                        ^
+net/ipv6/tcp_ipv6.acc:71398:163: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_node ) *__mptr = (__get__ZN10hlist_node4nextE_2313(&__get__ZN4sock11__sk_commonE_2315(&sk->__sk_common).skc_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_node) );}) : 0;
+                                                                                                                                                                   ^
+net/ipv6/tcp_ipv6.acc: In function ‘sock* sk_nulls_next(sock*)’:
+net/ipv6/tcp_ipv6.acc:71543:129: warning: taking address of temporary [-fpermissive]
+  return (!is_a_nulls(__get__ZN16hlist_nulls_node4nextE_2316(&__get__ZN4sock11__sk_commonE_2318(&sk->__sk_common).skc_nulls_node.next))) ?
+                                                                                                                                 ^
+net/ipv6/tcp_ipv6.acc:71544:181: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_nulls_node ) *__mptr = (__get__ZN16hlist_nulls_node4nextE_2319(&__get__ZN4sock11__sk_commonE_2321(&sk->__sk_common).skc_nulls_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_nulls_node) );})
+                                                                                                                                                                                     ^
+net/ipv6/tcp_ipv6.acc: In function ‘request_sock* reqsk_alloc(request_sock_ops*)’:
+net/ipv6/tcp_ipv6.acc:76042:115: warning: invalid conversion from ‘void*’ to ‘request_sock*’ [-fpermissive]
+  struct request_sock *req = kmem_cache_alloc(__get__ZN16request_sock_ops4slabE_2523(&ops->slab), ((( gfp_t)0x20u)));
+                                                                                                                   ^
+net/ipv6/tcp_ipv6.acc: In function ‘int fastopen_init_queue(sock*, int)’:
+net/ipv6/tcp_ipv6.acc:79216:62: warning: invalid conversion from ‘void*’ to ‘fastopen_queue*’ [-fpermissive]
+       __get__ZN4sock13sk_allocationE_2603(&sk->sk_allocation));
+                                                              ^
+net/ipv6/tcp_ipv6.acc: In function ‘ablkcipher_request* ablkcipher_request_alloc(crypto_ablkcipher*, gfp_t)’:
+net/ipv6/tcp_ipv6.acc:80411:44: warning: invalid conversion from ‘void*’ to ‘ablkcipher_request*’ [-fpermissive]
+         crypto_ablkcipher_reqsize(tfm), gfp);
+                                            ^
+net/ipv6/tcp_ipv6.acc: In function ‘aead_request* aead_request_alloc(crypto_aead*, gfp_t)’:
+net/ipv6/tcp_ipv6.acc:80542:60: warning: invalid conversion from ‘void*’ to ‘aead_request*’ [-fpermissive]
+  req = kmalloc(sizeof(*req) + crypto_aead_reqsize(tfm), gfp);
+                                                            ^
+net/ipv6/tcp_ipv6.acc: In function ‘u32 ndisc_hashfn(void*, net_device*, __u32*)’:
+net/ipv6/tcp_ipv6.acc:82443:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+net/ipv6/tcp_ipv6.acc: In function ‘neighbour* __ipv6_neigh_lookup_noref(net_device*, void*)’:
+net/ipv6/tcp_ipv6.acc:82454:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+net/ipv6/tcp_ipv6.acc: In function ‘int __ipv6_addr_diff32(void*, void*, int)’:
+net/ipv6/tcp_ipv6.acc:83390:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+               ^
+net/ipv6/tcp_ipv6.acc:83390:29: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+                             ^
+net/ipv6/tcp_ipv6.acc: In function ‘int __ipv6_addr_diff64(void*, void*, int)’:
+net/ipv6/tcp_ipv6.acc:83406:15: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+               ^
+net/ipv6/tcp_ipv6.acc:83406:29: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+                             ^
+net/ipv6/tcp_ipv6.acc: In function ‘inet_ehash_bucket* inet_ehash_bucket_(inet_hashinfo*, unsigned int)’:
+net/ipv6/tcp_ipv6.acc:84549:176: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN13inet_hashinfo5ehashE_2779(&__get__ZN13inet_hashinfo5ehashE_2780(&hashinfo->ehash)[hash & __get__ZN13inet_hashinfo10ehash_maskE_2781(&hashinfo->ehash_mask)]);
+                                                                                                                                                                                ^
+net/ipv6/tcp_ipv6.acc: In function ‘spinlock_t* inet_ehash_lockp(inet_hashinfo*, unsigned int)’:
+net/ipv6/tcp_ipv6.acc:84661:208: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN13inet_hashinfo11ehash_locksE_2782(&__get__ZN13inet_hashinfo11ehash_locksE_2783(&hashinfo->ehash_locks)[hash & __get__ZN13inet_hashinfo16ehash_locks_maskE_2784(&hashinfo->ehash_locks_mask)]);
+                                                                                                                                                                                                                ^
+net/ipv6/tcp_ipv6.acc: In function ‘int inet_ehash_locks_alloc(inet_hashinfo*)’:
+net/ipv6/tcp_ipv6.acc:84753:61: warning: invalid conversion from ‘void*’ to ‘spinlock_t* {aka spinlock*}’ [-fpermissive]
+    hashinfo->ehash_locks = vmalloc(size * sizeof(spinlock_t));
+                                                             ^
+net/ipv6/tcp_ipv6.acc:84757:60: warning: invalid conversion from ‘void*’ to ‘spinlock_t* {aka spinlock*}’ [-fpermissive]
+       ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                            ^
+net/ipv6/tcp_ipv6.acc: In function ‘int inet_sk_listen_hashfn(sock*)’:
+net/ipv6/tcp_ipv6.acc:85016:118: warning: taking address of temporary [-fpermissive]
+  return inet_lhashfn(sock_net(sk), __get__ZN4sock11__sk_commonE_2792(&__get__ZN9inet_sock2skE_2793(&inet_sk(sk)->sk).__sk_common).skc_num);
+                                                                                                                      ^
+net/ipv6/tcp_ipv6.acc: In function ‘void ip_select_ident(sk_buff*, dst_entry*, sock*)’:
+net/ipv6/tcp_ipv6.acc:85589:102: warning: taking address of temporary [-fpermissive]
+   iph->id = (sk && __get__ZN4sock11__sk_commonE_2817(&__get__ZN9inet_sock2skE_2818(&inet_sk(sk)->sk).__sk_common).skc_daddr) ?
+                                                                                                      ^
+net/ipv6/tcp_ipv6.acc: In function ‘void ip_select_ident_more(sk_buff*, dst_entry*, sock*, int)’:
+net/ipv6/tcp_ipv6.acc:85810:95: warning: taking address of temporary [-fpermissive]
+   if (sk && __get__ZN4sock11__sk_commonE_2822(&__get__ZN9inet_sock2skE_2823(&inet_sk(sk)->sk).__sk_common).skc_daddr) {
+                                                                                               ^
+net/ipv6/tcp_ipv6.acc: In function ‘bool addr_match(void*, void*, int)’:
+net/ipv6/tcp_ipv6.acc:100606:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1;
+               ^
+net/ipv6/tcp_ipv6.acc:100607:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a2 = token2;
+               ^
+net/ipv6/tcp_ipv6.acc: In function ‘void get_tcp6_sock(seq_file*, sock*, int)’:
+net/ipv6/tcp_ipv6.acc:105902:132: warning: taking address of temporary [-fpermissive]
+  destp = (__builtin_constant_p((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3868(&__get__ZN9inet_sock2skE_3869(&inet->sk).__sk_common).skc_dport))) ? ((__u16)( (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3871(&__get__ZN9inet_sock2skE_3872(&inet->sk).__sk_common).skc_dport)) & (__u16)0x00ffU) << 8) | (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3874(&__get__ZN9inet_sock2skE_3875(&inet->sk).__sk_common).skc_dport)) & (__u16)0xff00U) >> 8))) : __fswab16(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3877(&__get__ZN9inet_sock2skE_3878(&inet->sk).__sk_common).skc_dport)));
+                                                                                                                                    ^
+net/ipv6/tcp_ipv6.acc:105902:272: warning: taking address of temporary [-fpermissive]
+  destp = (__builtin_constant_p((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3868(&__get__ZN9inet_sock2skE_3869(&inet->sk).__sk_common).skc_dport))) ? ((__u16)( (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3871(&__get__ZN9inet_sock2skE_3872(&inet->sk).__sk_common).skc_dport)) & (__u16)0x00ffU) << 8) | (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3874(&__get__ZN9inet_sock2skE_3875(&inet->sk).__sk_common).skc_dport)) & (__u16)0xff00U) >> 8))) : __fswab16(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3877(&__get__ZN9inet_sock2skE_3878(&inet->sk).__sk_common).skc_dport)));
+                                                                                                                                                                                                                                                                                ^
+net/ipv6/tcp_ipv6.acc:105902:425: warning: taking address of temporary [-fpermissive]
+  destp = (__builtin_constant_p((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3868(&__get__ZN9inet_sock2skE_3869(&inet->sk).__sk_common).skc_dport))) ? ((__u16)( (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3871(&__get__ZN9inet_sock2skE_3872(&inet->sk).__sk_common).skc_dport)) & (__u16)0x00ffU) << 8) | (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3874(&__get__ZN9inet_sock2skE_3875(&inet->sk).__sk_common).skc_dport)) & (__u16)0xff00U) >> 8))) : __fswab16(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3877(&__get__ZN9inet_sock2skE_3878(&inet->sk).__sk_common).skc_dport)));
+                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+net/ipv6/tcp_ipv6.acc:105902:580: warning: taking address of temporary [-fpermissive]
+  destp = (__builtin_constant_p((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3868(&__get__ZN9inet_sock2skE_3869(&inet->sk).__sk_common).skc_dport))) ? ((__u16)( (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3871(&__get__ZN9inet_sock2skE_3872(&inet->sk).__sk_common).skc_dport)) & (__u16)0x00ffU) << 8) | (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3874(&__get__ZN9inet_sock2skE_3875(&inet->sk).__sk_common).skc_dport)) & (__u16)0xff00U) >> 8))) : __fswab16(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3877(&__get__ZN9inet_sock2skE_3878(&inet->sk).__sk_common).skc_dport)));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^
+net/ipv6/tcp_ipv6.acc:105913:101: warning: taking address of temporary [-fpermissive]
+   timer_expires = __get__ZN10timer_list7expiresE_3887(&__get__ZN4sock8sk_timerE_3888(&sp->sk_timer).expires);
+                                                                                                     ^
+net/ipv6/tcp_ipv6.acc: In function ‘int tcp6_seq_show(seq_file*, void*)’:
+net/ipv6/tcp_ipv6.acc:106638:20: warning: invalid conversion from ‘void*’ to ‘sock*’ [-fpermissive]
+  struct sock *sk = v;
+                    ^
+net/ipv6/tcp_ipv6.acc:106649:5: warning: invalid conversion from ‘void*’ to ‘tcp_iter_state*’ [-fpermissive]
+  st = seq->_private;
+     ^

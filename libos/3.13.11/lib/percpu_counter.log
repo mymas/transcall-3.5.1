@@ -1,0 +1,61 @@
+lib/percpu_counter.acc: In function ‘void list_del(list_head*)’:
+lib/percpu_counter.acc:802:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+lib/percpu_counter.acc:803:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+lib/percpu_counter.acc: In function ‘void hlist_del(hlist_node*)’:
+lib/percpu_counter.acc:1778:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+lib/percpu_counter.acc:1779:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+lib/percpu_counter.acc: In function ‘int timer_pending(timer_list*)’:
+lib/percpu_counter.acc:13605:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_251(&__get__ZN10timer_list5entryE_252(&timer->entry).next) != 0;
+                                                                                        ^
+lib/percpu_counter.acc: At global scope:
+lib/percpu_counter.acc:18073:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+lib/percpu_counter.acc:18074:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+lib/percpu_counter.acc:18075:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+lib/percpu_counter.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+lib/percpu_counter.acc:21232:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_469(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+lib/percpu_counter.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+lib/percpu_counter.acc:21450:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+lib/percpu_counter.acc:21456:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+lib/percpu_counter.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+lib/percpu_counter.acc:21482:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+lib/percpu_counter.acc:21488:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+lib/percpu_counter.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+lib/percpu_counter.acc:22530:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+lib/percpu_counter.acc: At global scope:
+lib/percpu_counter.acc:24619:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+lib/percpu_counter.acc:24575:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+lib/percpu_counter.acc: In function ‘int percpu_counter_hotcpu_callback(notifier_block*, long unsigned int, void*)’:
+lib/percpu_counter.acc:26705:374: warning: taking address of temporary [-fpermissive]
+  for (fbc = ({ typeof( ((typeof(*fbc) *)0)->list ) *__mptr = (__get__ZN9list_head4nextE_577(&(&percpu_counters)->next)); (typeof(*fbc) *)( (char *)__mptr - ((size_t) &((typeof(*fbc) *)0)->list) );}); &fbc->list != (&percpu_counters); fbc = ({ typeof( ((typeof(*(fbc)) *)0)->list ) *__mptr = (__get__ZN9list_head4nextE_578(&__get__ZN14percpu_counter4listE_579(&(fbc)->list).next)); (typeof(*(fbc)) *)( (char *)__mptr - ((size_t) &((typeof(*(fbc)) *)0)->list) );})) {
+                                                                                                                                                                                                                                                                                                                                                                                      ^

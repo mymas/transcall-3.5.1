@@ -1,0 +1,146 @@
+kernel/sched/fair.acc: In function ‘void list_del(list_head*)’:
+kernel/sched/fair.acc:4184:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/sched/fair.acc:4185:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/sched/fair.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/sched/fair.acc:5160:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/sched/fair.acc:5161:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/fair.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/sched/fair.acc:15240:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_303(&__get__ZN10timer_list5entryE_304(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/sched/fair.acc: At global scope:
+kernel/sched/fair.acc:19655:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/sched/fair.acc:19656:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/sched/fair.acc:19657:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/sched/fair.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/sched/fair.acc:22261:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/sched/fair.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/sched/fair.acc:24933:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_627(&__get__ZN3pid7numbersE_628(&pid->numbers[__get__ZN3pid5levelE_629(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/sched/fair.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/sched/fair.acc:25050:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_630(&__get__ZN3pid7numbersE_631(&pid->numbers[__get__ZN3pid5levelE_632(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/sched/fair.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/sched/fair.acc:25126:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_633(&__get__ZN3pid7numbersE_634(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/sched/fair.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/sched/fair.acc:25610:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/sched/fair.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/sched/fair.acc:25696:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/sched/fair.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/sched/fair.acc:25830:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/fair.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/sched/fair.acc:25912:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/sched/fair.acc: At global scope:
+kernel/sched/fair.acc:27694:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/sched/fair.acc:27650:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/sched/fair.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/sched/fair.acc:31064:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_753(&__get__ZN11task_struct12thread_groupE_754(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+kernel/sched/fair.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kernel/sched/fair.acc:33848:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/sched/fair.acc:33849:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/fair.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kernel/sched/fair.acc:33936:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/fair.acc: In function ‘int dname_external(dentry*)’:
+kernel/sched/fair.acc:34232:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_828(&__get__ZN6dentry6d_nameE_829(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_830(dentry->d_iname);
+                                                                                 ^
+kernel/sched/fair.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kernel/sched/fair.acc:39582:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_945(&__get__ZN6dentry7d_inodeE_946(&__get__ZN4path6dentryE_947(&__get__ZN4file6f_pathE_948(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+kernel/sched/fair.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kernel/sched/fair.acc:39657:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_951(&__get__ZN4file6f_pathE_952(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+kernel/sched/fair.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/sched/fair.acc:41411:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/sched/fair.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/sched/fair.acc:41498:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/sched/fair.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/sched/fair.acc:41543:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/sched/fair.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/sched/fair.acc:41788:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1361(&vm_stat[item]));
+                                                       ^
+kernel/sched/fair.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/sched/fair.acc:41828:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1362(&vm_stat[item]));
+                                                              ^
+kernel/sched/fair.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+kernel/sched/fair.acc:44384:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kernel/sched/fair.acc:44385:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kernel/sched/fair.acc: In function ‘void copy_highpage(page*, page*)’:
+kernel/sched/fair.acc:44397:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kernel/sched/fair.acc:44398:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kernel/sched/fair.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+kernel/sched/fair.acc:46294:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1514(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+kernel/sched/fair.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+kernel/sched/fair.acc:46512:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+kernel/sched/fair.acc:46518:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/sched/fair.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+kernel/sched/fair.acc:46544:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+kernel/sched/fair.acc:46550:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^

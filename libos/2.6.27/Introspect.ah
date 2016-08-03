@@ -1,0 +1,44 @@
+#include "addr.h"
+
+aspect Introspect {
+    pointcut virtual kernel_data() = 0;
+
+    advice kernel_data() : around() {
+        void *addr, *obj;
+        bool is_array = tjp->is_array();
+        int dim;
+        unsigned long size;
+        
+        if (is_array && !tjp->with_index()) {
+            dim = tjp->dimension();
+
+            if (dim > 0) {
+                // base[dim]
+                size = tjp->base_size() * dim;
+            }
+            else {
+                // base[]
+                size = 4096; // XXX
+            }
+        }
+        else {
+            // primitive type, struct, and union
+            size = sizeof(JoinPoint::Result);
+        }
+
+        addr = g_map(tjp->source(), size);
+        obj = is_array ? &addr : addr;
+
+        // assume the pointer of a primitive type as an array
+        // excect when it is used with an index
+        if (tjp->is_pointer() && !tjp->with_index() &&
+            !tjp->is_base_record()) {
+            void *ptr = *(void **)obj;
+
+            addr = g_map(ptr, 2048); // XXX
+            obj = &addr;
+        }
+
+        *tjp->result() = *(JoinPoint::Result *)obj;
+    }
+};

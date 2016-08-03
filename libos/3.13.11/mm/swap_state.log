@@ -1,0 +1,319 @@
+mm/swap_state.acc: In function ‘void list_del(list_head*)’:
+mm/swap_state.acc:819:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+mm/swap_state.acc:820:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+mm/swap_state.acc: In function ‘void hlist_del(hlist_node*)’:
+mm/swap_state.acc:1795:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+mm/swap_state.acc:1796:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/swap_state.acc: In function ‘int timer_pending(timer_list*)’:
+mm/swap_state.acc:15136:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_324(&__get__ZN10timer_list5entryE_325(&timer->entry).next) != 0;
+                                                                                        ^
+mm/swap_state.acc: At global scope:
+mm/swap_state.acc:19139:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+mm/swap_state.acc:19140:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+mm/swap_state.acc:19141:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+mm/swap_state.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+mm/swap_state.acc:21046:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+mm/swap_state.acc: In function ‘void list_del_rcu(list_head*)’:
+mm/swap_state.acc:22096:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+mm/swap_state.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+mm/swap_state.acc:22182:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+mm/swap_state.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+mm/swap_state.acc:22316:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/swap_state.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+mm/swap_state.acc:22398:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+mm/swap_state.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+mm/swap_state.acc:22832:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+mm/swap_state.acc:22833:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/swap_state.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+mm/swap_state.acc:22920:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/swap_state.acc: In function ‘int dname_external(dentry*)’:
+mm/swap_state.acc:23216:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_527(&__get__ZN6dentry6d_nameE_528(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_529(dentry->d_iname);
+                                                                                 ^
+mm/swap_state.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+mm/swap_state.acc:24647:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_559(&__get__ZN3pid7numbersE_560(&pid->numbers[__get__ZN3pid5levelE_561(&pid->level)]).ns);
+                                                                                                                 ^
+mm/swap_state.acc: In function ‘bool is_child_reaper(pid*)’:
+mm/swap_state.acc:24764:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_562(&__get__ZN3pid7numbersE_563(&pid->numbers[__get__ZN3pid5levelE_564(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+mm/swap_state.acc: In function ‘pid_t pid_nr(pid*)’:
+mm/swap_state.acc:24840:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_565(&__get__ZN3pid7numbersE_566(&pid->numbers[0]).nr);
+                                                                             ^
+mm/swap_state.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+mm/swap_state.acc:29872:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_669(&__get__ZN6dentry7d_inodeE_670(&__get__ZN4path6dentryE_671(&__get__ZN4file6f_pathE_672(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+mm/swap_state.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+mm/swap_state.acc:29947:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_675(&__get__ZN4file6f_pathE_676(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+mm/swap_state.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+mm/swap_state.acc:31701:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+mm/swap_state.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+mm/swap_state.acc:31788:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+mm/swap_state.acc: In function ‘zone_type page_zonenum(page*)’:
+mm/swap_state.acc:31833:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+mm/swap_state.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+mm/swap_state.acc:32078:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1085(&vm_stat[item]));
+                                                       ^
+mm/swap_state.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+mm/swap_state.acc:32118:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1086(&vm_stat[item]));
+                                                              ^
+mm/swap_state.acc: At global scope:
+mm/swap_state.acc:39202:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+mm/swap_state.acc:39158:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+mm/swap_state.acc: In function ‘task_struct* next_thread(task_struct*)’:
+mm/swap_state.acc:42520:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1424(&__get__ZN11task_struct12thread_groupE_1425(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+mm/swap_state.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+mm/swap_state.acc:48133:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1561(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+mm/swap_state.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+mm/swap_state.acc:48351:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+mm/swap_state.acc:48357:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+mm/swap_state.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+mm/swap_state.acc:48383:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+mm/swap_state.acc:48389:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+mm/swap_state.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+mm/swap_state.acc:50114:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+mm/swap_state.acc:50115:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+mm/swap_state.acc: In function ‘void copy_highpage(page*, page*)’:
+mm/swap_state.acc:50127:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+mm/swap_state.acc:50128:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+mm/swap_state.acc: At global scope:
+mm/swap_state.acc:51155:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+mm/swap_state.acc:51118:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+mm/swap_state.acc: In function ‘partition_meta_info* alloc_part_info(gendisk*)’:
+mm/swap_state.acc:56721:77: warning: invalid conversion from ‘void*’ to ‘partition_meta_info*’ [-fpermissive]
+         ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)), disk->node_id);
+                                                                             ^
+mm/swap_state.acc:56722:106: warning: invalid conversion from ‘void*’ to ‘partition_meta_info*’ [-fpermissive]
+  return kzalloc(sizeof(struct partition_meta_info), ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                                          ^
+mm/swap_state.acc: In function ‘char* bvec_kmap_irq(bio_vec*, long unsigned int*)’:
+mm/swap_state.acc:57488:44: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  return lowmem_page_address(bvec->bv_page) + bvec->bv_offset;
+                                            ^
+mm/swap_state.acc: At global scope:
+mm/swap_state.acc:58119:21: warning: declaration of ‘int (* elevator_ops::elevator_merge_fn)(request_queue*, request**, bio*)’ [-fpermissive]
+  elevator_merge_fn *elevator_merge_fn;
+                     ^
+mm/swap_state.acc:58084:14: warning: changes meaning of ‘elevator_merge_fn’ from ‘typedef int elevator_merge_fn(struct request_queue*, struct request**, struct bio*)’ [-fpermissive]
+ typedef int (elevator_merge_fn) (struct request_queue *, struct request **,
+              ^
+mm/swap_state.acc:58120:22: warning: declaration of ‘void (* elevator_ops::elevator_merged_fn)(request_queue*, request*, int)’ [-fpermissive]
+  elevator_merged_fn *elevator_merged_fn;
+                      ^
+mm/swap_state.acc:58089:15: warning: changes meaning of ‘elevator_merged_fn’ from ‘typedef void elevator_merged_fn(struct request_queue*, struct request*, int)’ [-fpermissive]
+ typedef void (elevator_merged_fn) (struct request_queue *, struct request *, int);
+               ^
+mm/swap_state.acc:58121:25: warning: declaration of ‘void (* elevator_ops::elevator_merge_req_fn)(request_queue*, request*, request*)’ [-fpermissive]
+  elevator_merge_req_fn *elevator_merge_req_fn;
+                         ^
+mm/swap_state.acc:58087:15: warning: changes meaning of ‘elevator_merge_req_fn’ from ‘typedef void elevator_merge_req_fn(struct request_queue*, struct request*, struct request*)’ [-fpermissive]
+ typedef void (elevator_merge_req_fn) (struct request_queue *, struct request *, struct request *);
+               ^
+mm/swap_state.acc:58122:27: warning: declaration of ‘int (* elevator_ops::elevator_allow_merge_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_allow_merge_fn *elevator_allow_merge_fn;
+                           ^
+mm/swap_state.acc:58091:14: warning: changes meaning of ‘elevator_allow_merge_fn’ from ‘typedef int elevator_allow_merge_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef int (elevator_allow_merge_fn) (struct request_queue *, struct request *, struct bio *);
+              ^
+mm/swap_state.acc:58123:26: warning: declaration of ‘void (* elevator_ops::elevator_bio_merged_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_bio_merged_fn *elevator_bio_merged_fn;
+                          ^
+mm/swap_state.acc:58093:15: warning: changes meaning of ‘elevator_bio_merged_fn’ from ‘typedef void elevator_bio_merged_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef void (elevator_bio_merged_fn) (struct request_queue *,
+               ^
+mm/swap_state.acc:58125:24: warning: declaration of ‘int (* elevator_ops::elevator_dispatch_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_dispatch_fn *elevator_dispatch_fn;
+                        ^
+mm/swap_state.acc:58096:14: warning: changes meaning of ‘elevator_dispatch_fn’ from ‘typedef int elevator_dispatch_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_dispatch_fn) (struct request_queue *, int);
+              ^
+mm/swap_state.acc:58126:23: warning: declaration of ‘void (* elevator_ops::elevator_add_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_add_req_fn *elevator_add_req_fn;
+                       ^
+mm/swap_state.acc:58098:15: warning: changes meaning of ‘elevator_add_req_fn’ from ‘typedef void elevator_add_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_add_req_fn) (struct request_queue *, struct request *);
+               ^
+mm/swap_state.acc:58127:28: warning: declaration of ‘void (* elevator_ops::elevator_activate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_activate_req_fn *elevator_activate_req_fn;
+                            ^
+mm/swap_state.acc:58108:15: warning: changes meaning of ‘elevator_activate_req_fn’ from ‘typedef void elevator_activate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_activate_req_fn) (struct request_queue *, struct request *);
+               ^
+mm/swap_state.acc:58128:30: warning: declaration of ‘void (* elevator_ops::elevator_deactivate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_deactivate_req_fn *elevator_deactivate_req_fn;
+                              ^
+mm/swap_state.acc:58109:15: warning: changes meaning of ‘elevator_deactivate_req_fn’ from ‘typedef void elevator_deactivate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_deactivate_req_fn) (struct request_queue *, struct request *);
+               ^
+mm/swap_state.acc:58130:29: warning: declaration of ‘void (* elevator_ops::elevator_completed_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_completed_req_fn *elevator_completed_req_fn;
+                             ^
+mm/swap_state.acc:58100:15: warning: changes meaning of ‘elevator_completed_req_fn’ from ‘typedef void elevator_completed_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_completed_req_fn) (struct request_queue *, struct request *);
+               ^
+mm/swap_state.acc:58135:24: warning: declaration of ‘void (* elevator_ops::elevator_init_icq_fn)(io_cq*)’ [-fpermissive]
+  elevator_init_icq_fn *elevator_init_icq_fn;
+                        ^
+mm/swap_state.acc:58103:15: warning: changes meaning of ‘elevator_init_icq_fn’ from ‘typedef void elevator_init_icq_fn(struct io_cq*)’ [-fpermissive]
+ typedef void (elevator_init_icq_fn) (struct io_cq *);
+               ^
+mm/swap_state.acc:58136:24: warning: declaration of ‘void (* elevator_ops::elevator_exit_icq_fn)(io_cq*)’ [-fpermissive]
+  elevator_exit_icq_fn *elevator_exit_icq_fn;
+                        ^
+mm/swap_state.acc:58104:15: warning: changes meaning of ‘elevator_exit_icq_fn’ from ‘typedef void elevator_exit_icq_fn(struct io_cq*)’ [-fpermissive]
+ typedef void (elevator_exit_icq_fn) (struct io_cq *);
+               ^
+mm/swap_state.acc:58138:23: warning: declaration of ‘int (* elevator_ops::elevator_set_req_fn)(request_queue*, request*, bio*, gfp_t)’ [-fpermissive]
+  elevator_set_req_fn *elevator_set_req_fn;
+                       ^
+mm/swap_state.acc:58105:14: warning: changes meaning of ‘elevator_set_req_fn’ from ‘typedef int elevator_set_req_fn(struct request_queue*, struct request*, struct bio*, gfp_t)’ [-fpermissive]
+ typedef int (elevator_set_req_fn) (struct request_queue *, struct request *,
+              ^
+mm/swap_state.acc:58139:23: warning: declaration of ‘void (* elevator_ops::elevator_put_req_fn)(request*)’ [-fpermissive]
+  elevator_put_req_fn *elevator_put_req_fn;
+                       ^
+mm/swap_state.acc:58107:15: warning: changes meaning of ‘elevator_put_req_fn’ from ‘typedef void elevator_put_req_fn(struct request*)’ [-fpermissive]
+ typedef void (elevator_put_req_fn) (struct request *);
+               ^
+mm/swap_state.acc:58141:25: warning: declaration of ‘int (* elevator_ops::elevator_may_queue_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_may_queue_fn *elevator_may_queue_fn;
+                         ^
+mm/swap_state.acc:58101:14: warning: changes meaning of ‘elevator_may_queue_fn’ from ‘typedef int elevator_may_queue_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_may_queue_fn) (struct request_queue *, int);
+              ^
+mm/swap_state.acc:58143:20: warning: declaration of ‘int (* elevator_ops::elevator_init_fn)(request_queue*, elevator_type*)’ [-fpermissive]
+  elevator_init_fn *elevator_init_fn;
+                    ^
+mm/swap_state.acc:58111:14: warning: changes meaning of ‘elevator_init_fn’ from ‘typedef int elevator_init_fn(struct request_queue*, struct elevator_type*)’ [-fpermissive]
+ typedef int (elevator_init_fn) (struct request_queue *,
+              ^
+mm/swap_state.acc:58144:20: warning: declaration of ‘void (* elevator_ops::elevator_exit_fn)(elevator_queue*)’ [-fpermissive]
+  elevator_exit_fn *elevator_exit_fn;
+                    ^
+mm/swap_state.acc:58113:15: warning: changes meaning of ‘elevator_exit_fn’ from ‘typedef void elevator_exit_fn(struct elevator_queue*)’ [-fpermissive]
+ typedef void (elevator_exit_fn) (struct elevator_queue *);
+               ^
+mm/swap_state.acc:58381:19: warning: declaration of ‘void (* request_queue::make_request_fn)(request_queue*, bio*)’ [-fpermissive]
+  make_request_fn *make_request_fn;
+                   ^
+mm/swap_state.acc:58276:15: warning: changes meaning of ‘make_request_fn’ from ‘typedef void make_request_fn(struct request_queue*, struct bio*)’ [-fpermissive]
+ typedef void (make_request_fn) (struct request_queue *q, struct bio *bio);
+               ^
+mm/swap_state.acc:58382:14: warning: declaration of ‘int (* request_queue::prep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  prep_rq_fn *prep_rq_fn;
+              ^
+mm/swap_state.acc:58277:14: warning: changes meaning of ‘prep_rq_fn’ from ‘typedef int prep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef int (prep_rq_fn) (struct request_queue *, struct request *);
+              ^
+mm/swap_state.acc:58383:16: warning: declaration of ‘void (* request_queue::unprep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  unprep_rq_fn *unprep_rq_fn;
+                ^
+mm/swap_state.acc:58278:15: warning: changes meaning of ‘unprep_rq_fn’ from ‘typedef void unprep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (unprep_rq_fn) (struct request_queue *, struct request *);
+               ^
+mm/swap_state.acc:58384:17: warning: declaration of ‘int (* request_queue::merge_bvec_fn)(request_queue*, bvec_merge_data*, bio_vec*)’ [-fpermissive]
+  merge_bvec_fn *merge_bvec_fn;
+                 ^
+mm/swap_state.acc:58292:14: warning: changes meaning of ‘merge_bvec_fn’ from ‘typedef int merge_bvec_fn(struct request_queue*, struct bvec_merge_data*, struct bio_vec*)’ [-fpermissive]
+ typedef int (merge_bvec_fn) (struct request_queue *, struct bvec_merge_data *,
+              ^
+mm/swap_state.acc:58385:19: warning: declaration of ‘void (* request_queue::softirq_done_fn)(request*)’ [-fpermissive]
+  softirq_done_fn *softirq_done_fn;
+                   ^
+mm/swap_state.acc:58294:15: warning: changes meaning of ‘softirq_done_fn’ from ‘typedef void softirq_done_fn(struct request*)’ [-fpermissive]
+ typedef void (softirq_done_fn)(struct request *);
+               ^
+mm/swap_state.acc:58386:19: warning: declaration of ‘blk_eh_timer_return (* request_queue::rq_timed_out_fn)(request*)’ [-fpermissive]
+  rq_timed_out_fn *rq_timed_out_fn;
+                   ^
+mm/swap_state.acc:58305:35: warning: changes meaning of ‘rq_timed_out_fn’ from ‘typedef enum blk_eh_timer_return rq_timed_out_fn(struct request*)’ [-fpermissive]
+ typedef enum blk_eh_timer_return (rq_timed_out_fn)(struct request *);
+                                   ^
+mm/swap_state.acc:58388:15: warning: declaration of ‘int (* request_queue::lld_busy_fn)(request_queue*)’ [-fpermissive]
+  lld_busy_fn *lld_busy_fn;
+               ^
+mm/swap_state.acc:58296:14: warning: changes meaning of ‘lld_busy_fn’ from ‘typedef int lld_busy_fn(struct request_queue*)’ [-fpermissive]
+ typedef int (lld_busy_fn) (struct request_queue *q);
+              ^
+mm/swap_state.acc:58535:14: warning: declaration of ‘int (* request_queue::bsg_job_fn)(bsg_job*)’ [-fpermissive]
+  bsg_job_fn *bsg_job_fn;
+              ^
+mm/swap_state.acc:58297:14: warning: changes meaning of ‘bsg_job_fn’ from ‘typedef int bsg_job_fn(struct bsg_job*)’ [-fpermissive]
+ typedef int (bsg_job_fn) (struct bsg_job *);
+              ^
+mm/swap_state.acc: In function ‘long unsigned int total_swapcache_pages()’:
+mm/swap_state.acc:60545:96: warning: taking address of temporary [-fpermissive]
+   ret += __get__ZN13address_space7nrpagesE_2057(&__get_swapper_spaces_2058(&swapper_spaces[i]).nrpages);
+                                                                                                ^

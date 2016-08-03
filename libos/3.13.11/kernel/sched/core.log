@@ -1,0 +1,362 @@
+kernel/sched/core.acc: In function ‘void list_del(list_head*)’:
+kernel/sched/core.acc:819:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/sched/core.acc:820:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/sched/core.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/sched/core.acc:1795:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/sched/core.acc:1796:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/core.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/sched/core.acc:15136:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_324(&__get__ZN10timer_list5entryE_325(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/sched/core.acc: At global scope:
+kernel/sched/core.acc:19139:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/sched/core.acc:19140:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/sched/core.acc:19141:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/sched/core.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/sched/core.acc:21046:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/sched/core.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/sched/core.acc:22096:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/sched/core.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/sched/core.acc:22182:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/sched/core.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/sched/core.acc:22316:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/core.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/sched/core.acc:22398:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/sched/core.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kernel/sched/core.acc:22832:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/sched/core.acc:22833:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/core.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kernel/sched/core.acc:22920:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/core.acc: In function ‘int dname_external(dentry*)’:
+kernel/sched/core.acc:23216:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_527(&__get__ZN6dentry6d_nameE_528(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_529(dentry->d_iname);
+                                                                                 ^
+kernel/sched/core.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/sched/core.acc:24647:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_559(&__get__ZN3pid7numbersE_560(&pid->numbers[__get__ZN3pid5levelE_561(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/sched/core.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/sched/core.acc:24764:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_562(&__get__ZN3pid7numbersE_563(&pid->numbers[__get__ZN3pid5levelE_564(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/sched/core.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/sched/core.acc:24840:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_565(&__get__ZN3pid7numbersE_566(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/sched/core.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kernel/sched/core.acc:29872:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_669(&__get__ZN6dentry7d_inodeE_670(&__get__ZN4path6dentryE_671(&__get__ZN4file6f_pathE_672(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+kernel/sched/core.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kernel/sched/core.acc:29947:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_675(&__get__ZN4file6f_pathE_676(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+kernel/sched/core.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/sched/core.acc:31701:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/sched/core.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/sched/core.acc:31788:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/sched/core.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/sched/core.acc:31833:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/sched/core.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/sched/core.acc:32078:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1085(&vm_stat[item]));
+                                                       ^
+kernel/sched/core.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/sched/core.acc:32118:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1086(&vm_stat[item]));
+                                                              ^
+kernel/sched/core.acc: At global scope:
+kernel/sched/core.acc:35409:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/sched/core.acc:35365:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/sched/core.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/sched/core.acc:43853:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1393(&__get__ZN11task_struct12thread_groupE_1394(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+kernel/sched/core.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+kernel/sched/core.acc:45133:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kernel/sched/core.acc:45134:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kernel/sched/core.acc: In function ‘void copy_highpage(page*, page*)’:
+kernel/sched/core.acc:45146:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kernel/sched/core.acc:45147:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kernel/sched/core.acc: In function ‘int desc_empty(void*)’:
+kernel/sched/core.acc:45283:14: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *desc = ptr;
+              ^
+kernel/sched/core.acc: In function ‘void set_tssldt_descriptor(void*, long unsigned int, unsigned int, unsigned int)’:
+kernel/sched/core.acc:45326:31: warning: invalid conversion from ‘void*’ to ‘ldttss_desc64*’ [-fpermissive]
+  struct ldttss_desc64 *desc = d;
+                               ^
+kernel/sched/core.acc: In function ‘long unsigned int stack_frame(task_struct*, pt_regs*)’:
+kernel/sched/core.acc:50234:113: warning: taking address of temporary [-fpermissive]
+  return *(unsigned long *)__get__ZN13thread_struct2spE_1746(&__get__ZN11task_struct6threadE_1747(&task->thread).sp);
+                                                                                                                 ^
+kernel/sched/core.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+kernel/sched/core.acc:51240:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1759(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1760(&__get__ZN11task_struct6threadE_1761(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+kernel/sched/core.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+kernel/sched/core.acc:52078:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1795(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+kernel/sched/core.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+kernel/sched/core.acc:52296:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+kernel/sched/core.acc:52302:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/sched/core.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+kernel/sched/core.acc:52328:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+kernel/sched/core.acc:52334:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/sched/core.acc: In function ‘partition_meta_info* alloc_part_info(gendisk*)’:
+kernel/sched/core.acc:56000:77: warning: invalid conversion from ‘void*’ to ‘partition_meta_info*’ [-fpermissive]
+         ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)), disk->node_id);
+                                                                             ^
+kernel/sched/core.acc:56001:106: warning: invalid conversion from ‘void*’ to ‘partition_meta_info*’ [-fpermissive]
+  return kzalloc(sizeof(struct partition_meta_info), ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                                          ^
+kernel/sched/core.acc: At global scope:
+kernel/sched/core.acc:56616:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+kernel/sched/core.acc:56579:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+kernel/sched/core.acc: In function ‘char* bvec_kmap_irq(bio_vec*, long unsigned int*)’:
+kernel/sched/core.acc:62221:44: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  return lowmem_page_address(bvec->bv_page) + bvec->bv_offset;
+                                            ^
+kernel/sched/core.acc: At global scope:
+kernel/sched/core.acc:62852:21: warning: declaration of ‘int (* elevator_ops::elevator_merge_fn)(request_queue*, request**, bio*)’ [-fpermissive]
+  elevator_merge_fn *elevator_merge_fn;
+                     ^
+kernel/sched/core.acc:62817:14: warning: changes meaning of ‘elevator_merge_fn’ from ‘typedef int elevator_merge_fn(struct request_queue*, struct request**, struct bio*)’ [-fpermissive]
+ typedef int (elevator_merge_fn) (struct request_queue *, struct request **,
+              ^
+kernel/sched/core.acc:62853:22: warning: declaration of ‘void (* elevator_ops::elevator_merged_fn)(request_queue*, request*, int)’ [-fpermissive]
+  elevator_merged_fn *elevator_merged_fn;
+                      ^
+kernel/sched/core.acc:62822:15: warning: changes meaning of ‘elevator_merged_fn’ from ‘typedef void elevator_merged_fn(struct request_queue*, struct request*, int)’ [-fpermissive]
+ typedef void (elevator_merged_fn) (struct request_queue *, struct request *, int);
+               ^
+kernel/sched/core.acc:62854:25: warning: declaration of ‘void (* elevator_ops::elevator_merge_req_fn)(request_queue*, request*, request*)’ [-fpermissive]
+  elevator_merge_req_fn *elevator_merge_req_fn;
+                         ^
+kernel/sched/core.acc:62820:15: warning: changes meaning of ‘elevator_merge_req_fn’ from ‘typedef void elevator_merge_req_fn(struct request_queue*, struct request*, struct request*)’ [-fpermissive]
+ typedef void (elevator_merge_req_fn) (struct request_queue *, struct request *, struct request *);
+               ^
+kernel/sched/core.acc:62855:27: warning: declaration of ‘int (* elevator_ops::elevator_allow_merge_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_allow_merge_fn *elevator_allow_merge_fn;
+                           ^
+kernel/sched/core.acc:62824:14: warning: changes meaning of ‘elevator_allow_merge_fn’ from ‘typedef int elevator_allow_merge_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef int (elevator_allow_merge_fn) (struct request_queue *, struct request *, struct bio *);
+              ^
+kernel/sched/core.acc:62856:26: warning: declaration of ‘void (* elevator_ops::elevator_bio_merged_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_bio_merged_fn *elevator_bio_merged_fn;
+                          ^
+kernel/sched/core.acc:62826:15: warning: changes meaning of ‘elevator_bio_merged_fn’ from ‘typedef void elevator_bio_merged_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef void (elevator_bio_merged_fn) (struct request_queue *,
+               ^
+kernel/sched/core.acc:62858:24: warning: declaration of ‘int (* elevator_ops::elevator_dispatch_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_dispatch_fn *elevator_dispatch_fn;
+                        ^
+kernel/sched/core.acc:62829:14: warning: changes meaning of ‘elevator_dispatch_fn’ from ‘typedef int elevator_dispatch_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_dispatch_fn) (struct request_queue *, int);
+              ^
+kernel/sched/core.acc:62859:23: warning: declaration of ‘void (* elevator_ops::elevator_add_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_add_req_fn *elevator_add_req_fn;
+                       ^
+kernel/sched/core.acc:62831:15: warning: changes meaning of ‘elevator_add_req_fn’ from ‘typedef void elevator_add_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_add_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/sched/core.acc:62860:28: warning: declaration of ‘void (* elevator_ops::elevator_activate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_activate_req_fn *elevator_activate_req_fn;
+                            ^
+kernel/sched/core.acc:62841:15: warning: changes meaning of ‘elevator_activate_req_fn’ from ‘typedef void elevator_activate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_activate_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/sched/core.acc:62861:30: warning: declaration of ‘void (* elevator_ops::elevator_deactivate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_deactivate_req_fn *elevator_deactivate_req_fn;
+                              ^
+kernel/sched/core.acc:62842:15: warning: changes meaning of ‘elevator_deactivate_req_fn’ from ‘typedef void elevator_deactivate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_deactivate_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/sched/core.acc:62863:29: warning: declaration of ‘void (* elevator_ops::elevator_completed_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_completed_req_fn *elevator_completed_req_fn;
+                             ^
+kernel/sched/core.acc:62833:15: warning: changes meaning of ‘elevator_completed_req_fn’ from ‘typedef void elevator_completed_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_completed_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/sched/core.acc:62868:24: warning: declaration of ‘void (* elevator_ops::elevator_init_icq_fn)(io_cq*)’ [-fpermissive]
+  elevator_init_icq_fn *elevator_init_icq_fn;
+                        ^
+kernel/sched/core.acc:62836:15: warning: changes meaning of ‘elevator_init_icq_fn’ from ‘typedef void elevator_init_icq_fn(struct io_cq*)’ [-fpermissive]
+ typedef void (elevator_init_icq_fn) (struct io_cq *);
+               ^
+kernel/sched/core.acc:62869:24: warning: declaration of ‘void (* elevator_ops::elevator_exit_icq_fn)(io_cq*)’ [-fpermissive]
+  elevator_exit_icq_fn *elevator_exit_icq_fn;
+                        ^
+kernel/sched/core.acc:62837:15: warning: changes meaning of ‘elevator_exit_icq_fn’ from ‘typedef void elevator_exit_icq_fn(struct io_cq*)’ [-fpermissive]
+ typedef void (elevator_exit_icq_fn) (struct io_cq *);
+               ^
+kernel/sched/core.acc:62871:23: warning: declaration of ‘int (* elevator_ops::elevator_set_req_fn)(request_queue*, request*, bio*, gfp_t)’ [-fpermissive]
+  elevator_set_req_fn *elevator_set_req_fn;
+                       ^
+kernel/sched/core.acc:62838:14: warning: changes meaning of ‘elevator_set_req_fn’ from ‘typedef int elevator_set_req_fn(struct request_queue*, struct request*, struct bio*, gfp_t)’ [-fpermissive]
+ typedef int (elevator_set_req_fn) (struct request_queue *, struct request *,
+              ^
+kernel/sched/core.acc:62872:23: warning: declaration of ‘void (* elevator_ops::elevator_put_req_fn)(request*)’ [-fpermissive]
+  elevator_put_req_fn *elevator_put_req_fn;
+                       ^
+kernel/sched/core.acc:62840:15: warning: changes meaning of ‘elevator_put_req_fn’ from ‘typedef void elevator_put_req_fn(struct request*)’ [-fpermissive]
+ typedef void (elevator_put_req_fn) (struct request *);
+               ^
+kernel/sched/core.acc:62874:25: warning: declaration of ‘int (* elevator_ops::elevator_may_queue_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_may_queue_fn *elevator_may_queue_fn;
+                         ^
+kernel/sched/core.acc:62834:14: warning: changes meaning of ‘elevator_may_queue_fn’ from ‘typedef int elevator_may_queue_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_may_queue_fn) (struct request_queue *, int);
+              ^
+kernel/sched/core.acc:62876:20: warning: declaration of ‘int (* elevator_ops::elevator_init_fn)(request_queue*, elevator_type*)’ [-fpermissive]
+  elevator_init_fn *elevator_init_fn;
+                    ^
+kernel/sched/core.acc:62844:14: warning: changes meaning of ‘elevator_init_fn’ from ‘typedef int elevator_init_fn(struct request_queue*, struct elevator_type*)’ [-fpermissive]
+ typedef int (elevator_init_fn) (struct request_queue *,
+              ^
+kernel/sched/core.acc:62877:20: warning: declaration of ‘void (* elevator_ops::elevator_exit_fn)(elevator_queue*)’ [-fpermissive]
+  elevator_exit_fn *elevator_exit_fn;
+                    ^
+kernel/sched/core.acc:62846:15: warning: changes meaning of ‘elevator_exit_fn’ from ‘typedef void elevator_exit_fn(struct elevator_queue*)’ [-fpermissive]
+ typedef void (elevator_exit_fn) (struct elevator_queue *);
+               ^
+kernel/sched/core.acc:63114:19: warning: declaration of ‘void (* request_queue::make_request_fn)(request_queue*, bio*)’ [-fpermissive]
+  make_request_fn *make_request_fn;
+                   ^
+kernel/sched/core.acc:63009:15: warning: changes meaning of ‘make_request_fn’ from ‘typedef void make_request_fn(struct request_queue*, struct bio*)’ [-fpermissive]
+ typedef void (make_request_fn) (struct request_queue *q, struct bio *bio);
+               ^
+kernel/sched/core.acc:63115:14: warning: declaration of ‘int (* request_queue::prep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  prep_rq_fn *prep_rq_fn;
+              ^
+kernel/sched/core.acc:63010:14: warning: changes meaning of ‘prep_rq_fn’ from ‘typedef int prep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef int (prep_rq_fn) (struct request_queue *, struct request *);
+              ^
+kernel/sched/core.acc:63116:16: warning: declaration of ‘void (* request_queue::unprep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  unprep_rq_fn *unprep_rq_fn;
+                ^
+kernel/sched/core.acc:63011:15: warning: changes meaning of ‘unprep_rq_fn’ from ‘typedef void unprep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (unprep_rq_fn) (struct request_queue *, struct request *);
+               ^
+kernel/sched/core.acc:63117:17: warning: declaration of ‘int (* request_queue::merge_bvec_fn)(request_queue*, bvec_merge_data*, bio_vec*)’ [-fpermissive]
+  merge_bvec_fn *merge_bvec_fn;
+                 ^
+kernel/sched/core.acc:63025:14: warning: changes meaning of ‘merge_bvec_fn’ from ‘typedef int merge_bvec_fn(struct request_queue*, struct bvec_merge_data*, struct bio_vec*)’ [-fpermissive]
+ typedef int (merge_bvec_fn) (struct request_queue *, struct bvec_merge_data *,
+              ^
+kernel/sched/core.acc:63118:19: warning: declaration of ‘void (* request_queue::softirq_done_fn)(request*)’ [-fpermissive]
+  softirq_done_fn *softirq_done_fn;
+                   ^
+kernel/sched/core.acc:63027:15: warning: changes meaning of ‘softirq_done_fn’ from ‘typedef void softirq_done_fn(struct request*)’ [-fpermissive]
+ typedef void (softirq_done_fn)(struct request *);
+               ^
+kernel/sched/core.acc:63119:19: warning: declaration of ‘blk_eh_timer_return (* request_queue::rq_timed_out_fn)(request*)’ [-fpermissive]
+  rq_timed_out_fn *rq_timed_out_fn;
+                   ^
+kernel/sched/core.acc:63038:35: warning: changes meaning of ‘rq_timed_out_fn’ from ‘typedef enum blk_eh_timer_return rq_timed_out_fn(struct request*)’ [-fpermissive]
+ typedef enum blk_eh_timer_return (rq_timed_out_fn)(struct request *);
+                                   ^
+kernel/sched/core.acc:63121:15: warning: declaration of ‘int (* request_queue::lld_busy_fn)(request_queue*)’ [-fpermissive]
+  lld_busy_fn *lld_busy_fn;
+               ^
+kernel/sched/core.acc:63029:14: warning: changes meaning of ‘lld_busy_fn’ from ‘typedef int lld_busy_fn(struct request_queue*)’ [-fpermissive]
+ typedef int (lld_busy_fn) (struct request_queue *q);
+              ^
+kernel/sched/core.acc:63268:14: warning: declaration of ‘int (* request_queue::bsg_job_fn)(bsg_job*)’ [-fpermissive]
+  bsg_job_fn *bsg_job_fn;
+              ^
+kernel/sched/core.acc:63030:14: warning: changes meaning of ‘bsg_job_fn’ from ‘typedef int bsg_job_fn(struct bsg_job*)’ [-fpermissive]
+ typedef int (bsg_job_fn) (struct bsg_job *);
+              ^
+kernel/sched/core.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+kernel/sched/core.acc:70797:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+kernel/sched/core.acc:70799:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+kernel/sched/core.acc: In function ‘bool dmaf_p_disabled_continue(dma_ctrl_flags)’:
+kernel/sched/core.acc:71696:49: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  enum dma_ctrl_flags mask = DMA_PREP_CONTINUE | DMA_PREP_PQ_DISABLE_P;
+                                                 ^
+kernel/sched/core.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+kernel/sched/core.acc:71757:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+kernel/sched/core.acc: In function ‘void async_tx_clear_ack(dma_async_tx_descriptor*)’:
+kernel/sched/core.acc:71762:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags &= ~DMA_CTRL_ACK;
+            ^
+kernel/sched/core.acc: In function ‘void hlist_nulls_del(hlist_nulls_node*)’:
+kernel/sched/core.acc:76211:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/core.acc: In function ‘ctx_state exception_enter()’:
+kernel/sched/core.acc:77644:10: warning: invalid conversion from ‘int’ to ‘ctx_state’ [-fpermissive]
+   return 0;
+          ^
+kernel/sched/core.acc: In function ‘worker* current_wq_worker()’:
+kernel/sched/core.acc:82392:36: warning: invalid conversion from ‘void*’ to ‘worker*’ [-fpermissive]
+   return kthread_data(get_current());
+                                    ^

@@ -1,0 +1,99 @@
+fs/pipe.acc: In function ‘thread_info* current_thread_info()’:
+fs/pipe.acc:7036:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+fs/pipe.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/pipe.acc:8359:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+fs/pipe.acc:8360:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/pipe.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/pipe.acc:13667:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/pipe.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/pipe.acc:13754:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/pipe.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/pipe.acc:13758:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/pipe.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+fs/pipe.acc:14638:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+fs/pipe.acc:14631:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+fs/pipe.acc: In function ‘int timer_pending(timer_list*)’:
+fs/pipe.acc:14780:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_865(&__get__ZN10timer_list5entryE_866(&timer->entry).next) != 0;
+                                                                                        ^
+fs/pipe.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/pipe.acc:15640:54: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_872(&vm_stat[item]));
+                                                      ^
+fs/pipe.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/pipe.acc:15680:61: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_873(&vm_stat[item]));
+                                                             ^
+fs/pipe.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/pipe.acc:17057:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+fs/pipe.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/pipe.acc:17143:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+fs/pipe.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/pipe.acc:17273:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/pipe.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/pipe.acc:17355:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+fs/pipe.acc: In function ‘int dname_external(dentry*)’:
+fs/pipe.acc:17818:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_916(&__get__ZN6dentry6d_nameE_917(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_918(dentry->d_iname);
+                                                                                 ^
+fs/pipe.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/pipe.acc:18414:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_922(&__get__ZN3pid7numbersE_923(&pid->numbers[__get__ZN3pid5levelE_924(&pid->level)]).ns);
+                                                                                                                 ^
+fs/pipe.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/pipe.acc:18491:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_925(&__get__ZN3pid7numbersE_926(&pid->numbers[0]).nr);
+                                                                             ^
+fs/pipe.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+fs/pipe.acc:21863:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+fs/pipe.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/pipe.acc:26220:167: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_1063(&__get__ZN11task_struct12thread_groupE_1064(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                       ^
+fs/pipe.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+fs/pipe.acc:28682:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/pipe.acc:28683:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/pipe.acc: In function ‘void copy_highpage(page*, page*)’:
+fs/pipe.acc:28695:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/pipe.acc:28696:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/pipe.acc: At global scope:
+fs/pipe.acc:31311:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/pipe.acc:31271:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^

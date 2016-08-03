@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+
+$i = 0;
+$ignore = 0;
+$err = 0;
+
+while (<STDIN>) {
+    if ($ignore == 1) {
+        if (/^\s+.*/) {
+            next;
+        }
+        else {
+            $ignore = 0;
+        }
+    }
+    
+    if (/^[^\s]+ In function .*/ ||
+        /^In file included from/ ||
+        /^[^\s]+ At global scope:/) {
+        $msg[$i] = $_;
+        $i++;
+    }
+    elsif (/^[^\s]+ warning: .* \[-fpermissive\]$/ ||
+           /^[^\s]+ warning: .* \[enabled by default\]$/) {
+        $i = 0;
+        $ignore = 1;
+    }
+    elsif (/^[^\s]+ error: .*/) {
+        $err = 1;
+        &print_msg();
+        print $_;
+    }
+    else {
+        &print_msg();
+        print $_;
+    }
+}
+
+if ($err == 1) {
+    exit -1;
+}
+
+sub print_msg {
+    for ($j = 0; $j < $i; $j++) {
+        print $msg[$j];
+    }
+    $i = 0;
+}

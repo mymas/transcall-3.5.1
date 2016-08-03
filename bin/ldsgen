@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+#
+# usage: ldsgen.pl System.map variable.pc
+#
+
+open(IN1, $ARGV[0]) || die "cannot open file $ARGV[0]";
+open(IN2, $ARGV[1]) || die "cannot open file $ARGV[1]";
+
+while (<IN1>) {
+    if (($addr, $symbol) = /([0-9a-f]+) . ([^\s]+)/) {
+        $vars{$symbol} = $addr;
+    }
+}
+
+while ($symbol = <IN2>) {
+#    print STDERR $symbol;
+    chomp $symbol;
+
+    $addr = $vars{$symbol};
+
+    if (defined($addr)) {
+        print $symbol . " = 0x" . $addr . ";\n";
+    }
+    else {
+        print STDERR "'$symbol' is undefined\n";
+    }
+}
+
+close(IN1);
+close(IN2);

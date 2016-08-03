@@ -1,0 +1,98 @@
+kernel/user_namespace.acc: In function ‘void list_del(list_head*)’:
+kernel/user_namespace.acc:809:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/user_namespace.acc:810:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/user_namespace.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/user_namespace.acc:1785:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/user_namespace.acc:1786:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/user_namespace.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/user_namespace.acc:15216:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_302(&__get__ZN10timer_list5entryE_303(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/user_namespace.acc: At global scope:
+kernel/user_namespace.acc:19631:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/user_namespace.acc:19632:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/user_namespace.acc:19633:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/user_namespace.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/user_namespace.acc:22237:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/user_namespace.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/user_namespace.acc:24909:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_626(&__get__ZN3pid7numbersE_627(&pid->numbers[__get__ZN3pid5levelE_628(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/user_namespace.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/user_namespace.acc:25026:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_629(&__get__ZN3pid7numbersE_630(&pid->numbers[__get__ZN3pid5levelE_631(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/user_namespace.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/user_namespace.acc:25102:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_632(&__get__ZN3pid7numbersE_633(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/user_namespace.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/user_namespace.acc:25586:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/user_namespace.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/user_namespace.acc:25672:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/user_namespace.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/user_namespace.acc:25806:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/user_namespace.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/user_namespace.acc:25888:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/user_namespace.acc: At global scope:
+kernel/user_namespace.acc:27700:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/user_namespace.acc:27656:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/user_namespace.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/user_namespace.acc:31070:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_753(&__get__ZN11task_struct12thread_groupE_754(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+kernel/user_namespace.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+kernel/user_namespace.acc:33442:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_793(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+kernel/user_namespace.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kernel/user_namespace.acc:34052:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/user_namespace.acc:34053:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/user_namespace.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kernel/user_namespace.acc:34140:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/user_namespace.acc: In function ‘int dname_external(dentry*)’:
+kernel/user_namespace.acc:34436:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_804(&__get__ZN6dentry6d_nameE_805(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_806(dentry->d_iname);
+                                                                                 ^
+kernel/user_namespace.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kernel/user_namespace.acc:39688:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_919(&__get__ZN6dentry7d_inodeE_920(&__get__ZN4path6dentryE_921(&__get__ZN4file6f_pathE_922(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+kernel/user_namespace.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kernel/user_namespace.acc:39763:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_925(&__get__ZN4file6f_pathE_926(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^

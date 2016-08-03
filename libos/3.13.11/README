@@ -1,0 +1,5 @@
+- generate or copy include/linux/autoconf.h
+- generate or copy include/generated
+
+- include/linux/cpumask.h
+  + l.243 and -> and0

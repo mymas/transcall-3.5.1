@@ -1,0 +1,157 @@
+fs/open.acc: In function ‘thread_info* current_thread_info()’:
+fs/open.acc:7027:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+fs/open.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/open.acc:8350:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+fs/open.acc:8351:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/open.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/open.acc:13658:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/open.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/open.acc:13745:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/open.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/open.acc:13749:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/open.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+fs/open.acc:14629:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+fs/open.acc:14622:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+fs/open.acc: In function ‘int timer_pending(timer_list*)’:
+fs/open.acc:14771:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_865(&__get__ZN10timer_list5entryE_866(&timer->entry).next) != 0;
+                                                                                        ^
+fs/open.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/open.acc:15631:54: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_872(&vm_stat[item]));
+                                                      ^
+fs/open.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/open.acc:15671:61: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_873(&vm_stat[item]));
+                                                             ^
+fs/open.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/open.acc:18323:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_954(&__get__ZN3pid7numbersE_955(&pid->numbers[__get__ZN3pid5levelE_956(&pid->level)]).ns);
+                                                                                                                 ^
+fs/open.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/open.acc:18400:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_957(&__get__ZN3pid7numbersE_958(&pid->numbers[0]).nr);
+                                                                             ^
+fs/open.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/open.acc:22066:167: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_1001(&__get__ZN11task_struct12thread_groupE_1002(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                       ^
+fs/open.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/open.acc:22965:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+fs/open.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/open.acc:23051:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+fs/open.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/open.acc:23181:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/open.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/open.acc:23263:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+fs/open.acc: In function ‘int dname_external(dentry*)’:
+fs/open.acc:23726:83: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_1030(&__get__ZN6dentry6d_nameE_1031(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_1032(dentry->d_iname);
+                                                                                   ^
+fs/open.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+fs/open.acc:27023:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+fs/open.acc: In function ‘void fsnotify_nameremove(dentry*, int)’:
+fs/open.acc:29095:154: warning: taking address of temporary [-fpermissive]
+  inotify_dentry_parent_queue_event(dentry, (__u32)0x00000200|isdir, 0, (char *)__get__ZN4qstr4nameE_1130(&__get__ZN6dentry6d_nameE_1131(&dentry->d_name).name));
+                                                                                                                                                          ^
+fs/open.acc: In function ‘void fsnotify_create(inode*, dentry*)’:
+fs/open.acc:29296:132: warning: taking address of temporary [-fpermissive]
+  inotify_inode_queue_event(inode, 0x00000100, 0, (char *)__get__ZN4qstr4nameE_1132(&__get__ZN6dentry6d_nameE_1133(&dentry->d_name).name),
+                                                                                                                                    ^
+fs/open.acc:29298:102: warning: taking address of temporary [-fpermissive]
+  audit_inode_child((char *)__get__ZN4qstr4nameE_1135(&__get__ZN6dentry6d_nameE_1136(&dentry->d_name).name), dentry, inode);
+                                                                                                      ^
+fs/open.acc: In function ‘void fsnotify_link(inode*, inode*, dentry*)’:
+fs/open.acc:29449:134: warning: taking address of temporary [-fpermissive]
+  inotify_inode_queue_event(dir, 0x00000100, 0, (char *)__get__ZN4qstr4nameE_1137(&__get__ZN6dentry6d_nameE_1138(&new_dentry->d_name).name),
+                                                                                                                                      ^
+fs/open.acc:29452:106: warning: taking address of temporary [-fpermissive]
+  audit_inode_child((char *)__get__ZN4qstr4nameE_1139(&__get__ZN6dentry6d_nameE_1140(&new_dentry->d_name).name), new_dentry, dir);
+                                                                                                          ^
+fs/open.acc: In function ‘void fsnotify_mkdir(inode*, dentry*)’:
+fs/open.acc:29637:89: warning: taking address of temporary [-fpermissive]
+       (char *)__get__ZN4qstr4nameE_1141(&__get__ZN6dentry6d_nameE_1142(&dentry->d_name).name), __get__ZN6dentry7d_inodeE_1143(&dentry->d_inode));
+                                                                                         ^
+fs/open.acc:29638:102: warning: taking address of temporary [-fpermissive]
+  audit_inode_child((char *)__get__ZN4qstr4nameE_1144(&__get__ZN6dentry6d_nameE_1145(&dentry->d_name).name), dentry, inode);
+                                                                                                      ^
+fs/open.acc: In function ‘void fsnotify_access(dentry*)’:
+fs/open.acc:29793:135: warning: taking address of temporary [-fpermissive]
+  inotify_dentry_parent_queue_event(dentry, mask, 0, (char *)__get__ZN4qstr4nameE_1148(&__get__ZN6dentry6d_nameE_1149(&dentry->d_name).name));
+                                                                                                                                       ^
+fs/open.acc: In function ‘void fsnotify_modify(dentry*)’:
+fs/open.acc:29949:135: warning: taking address of temporary [-fpermissive]
+  inotify_dentry_parent_queue_event(dentry, mask, 0, (char *)__get__ZN4qstr4nameE_1152(&__get__ZN6dentry6d_nameE_1153(&dentry->d_name).name));
+                                                                                                                                       ^
+fs/open.acc: In function ‘void fsnotify_open(dentry*)’:
+fs/open.acc:30104:135: warning: taking address of temporary [-fpermissive]
+  inotify_dentry_parent_queue_event(dentry, mask, 0, (char *)__get__ZN4qstr4nameE_1156(&__get__ZN6dentry6d_nameE_1157(&dentry->d_name).name));
+                                                                                                                                       ^
+fs/open.acc: In function ‘void fsnotify_close(file*)’:
+fs/open.acc:30290:89: warning: taking address of temporary [-fpermissive]
+  char *name = __get__ZN4qstr4nameE_1161(&__get__ZN6dentry6d_nameE_1162(&dentry->d_name).name);
+                                                                                         ^
+fs/open.acc:30290:93: warning: invalid conversion from ‘unsigned char*’ to ‘char*’ [-fpermissive]
+  char *name = __get__ZN4qstr4nameE_1161(&__get__ZN6dentry6d_nameE_1162(&dentry->d_name).name);
+                                                                                             ^
+fs/open.acc: In function ‘void fsnotify_xattr(dentry*)’:
+fs/open.acc:30452:135: warning: taking address of temporary [-fpermissive]
+  inotify_dentry_parent_queue_event(dentry, mask, 0, (char *)__get__ZN4qstr4nameE_1167(&__get__ZN6dentry6d_nameE_1168(&dentry->d_name).name));
+                                                                                                                                       ^
+fs/open.acc: In function ‘void fsnotify_change(dentry*, unsigned int)’:
+fs/open.acc:30642:91: warning: taking address of temporary [-fpermissive]
+         (char *)__get__ZN4qstr4nameE_1171(&__get__ZN6dentry6d_nameE_1172(&dentry->d_name).name));
+                                                                                           ^
+fs/open.acc: At global scope:
+fs/open.acc:32789:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+fs/open.acc:32773:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+fs/open.acc:34323:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/open.acc:34283:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+fs/open.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+fs/open.acc:36236:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/open.acc:36237:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/open.acc: In function ‘void copy_highpage(page*, page*)’:
+fs/open.acc:36249:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/open.acc:36250:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^

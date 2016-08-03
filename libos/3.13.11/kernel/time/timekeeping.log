@@ -1,0 +1,132 @@
+kernel/time/timekeeping.acc: In function ‘void list_del(list_head*)’:
+kernel/time/timekeeping.acc:3648:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/time/timekeeping.acc:3649:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/time/timekeeping.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/time/timekeeping.acc:4624:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/time/timekeeping.acc:4625:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/time/timekeeping.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/time/timekeeping.acc:12071:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_231(&__get__ZN10timer_list5entryE_232(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/time/timekeeping.acc: At global scope:
+kernel/time/timekeeping.acc:19493:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/time/timekeeping.acc:19494:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/time/timekeeping.acc:19495:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/time/timekeeping.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/time/timekeeping.acc:21400:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/time/timekeeping.acc: At global scope:
+kernel/time/timekeeping.acc:22473:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/time/timekeeping.acc:22429:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/time/timekeeping.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/time/timekeeping.acc:27973:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/time/timekeeping.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/time/timekeeping.acc:28059:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/time/timekeeping.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/time/timekeeping.acc:28193:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/time/timekeeping.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/time/timekeeping.acc:28275:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/time/timekeeping.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kernel/time/timekeeping.acc:28709:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/time/timekeeping.acc:28710:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/time/timekeeping.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kernel/time/timekeeping.acc:28797:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/time/timekeeping.acc: In function ‘int dname_external(dentry*)’:
+kernel/time/timekeeping.acc:29093:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_691(&__get__ZN6dentry6d_nameE_692(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_693(dentry->d_iname);
+                                                                                 ^
+kernel/time/timekeeping.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/time/timekeeping.acc:30329:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_721(&__get__ZN3pid7numbersE_722(&pid->numbers[__get__ZN3pid5levelE_723(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/time/timekeeping.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/time/timekeeping.acc:30446:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_724(&__get__ZN3pid7numbersE_725(&pid->numbers[__get__ZN3pid5levelE_726(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/time/timekeeping.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/time/timekeeping.acc:30522:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_727(&__get__ZN3pid7numbersE_728(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/time/timekeeping.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kernel/time/timekeeping.acc:35554:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_831(&__get__ZN6dentry7d_inodeE_832(&__get__ZN4path6dentryE_833(&__get__ZN4file6f_pathE_834(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+kernel/time/timekeeping.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kernel/time/timekeeping.acc:35629:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_837(&__get__ZN4file6f_pathE_838(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+kernel/time/timekeeping.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/time/timekeeping.acc:37383:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/time/timekeeping.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/time/timekeeping.acc:37470:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/time/timekeeping.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/time/timekeeping.acc:37515:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/time/timekeeping.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/time/timekeeping.acc:37760:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1247(&vm_stat[item]));
+                                                       ^
+kernel/time/timekeeping.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/time/timekeeping.acc:37800:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1248(&vm_stat[item]));
+                                                              ^
+kernel/time/timekeeping.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/time/timekeeping.acc:44511:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1439(&__get__ZN11task_struct12thread_groupE_1440(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+kernel/time/timekeeping.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+kernel/time/timekeeping.acc:46535:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1496(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+kernel/time/timekeeping.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+kernel/time/timekeeping.acc:46753:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+kernel/time/timekeeping.acc:46759:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/time/timekeeping.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+kernel/time/timekeeping.acc:46785:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+kernel/time/timekeeping.acc:46791:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^

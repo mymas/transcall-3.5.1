@@ -1,0 +1,174 @@
+fs/namespace.acc: In function ‘void list_del(list_head*)’:
+fs/namespace.acc:1678:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+fs/namespace.acc:1679:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/namespace.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/namespace.acc:2654:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/namespace.acc:2655:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/namespace.acc: In function ‘int timer_pending(timer_list*)’:
+fs/namespace.acc:15382:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_304(&__get__ZN10timer_list5entryE_305(&timer->entry).next) != 0;
+                                                                                        ^
+fs/namespace.acc: At global scope:
+fs/namespace.acc:19597:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+fs/namespace.acc:19598:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+fs/namespace.acc:19599:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+fs/namespace.acc:22956:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/namespace.acc:22912:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+fs/namespace.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+fs/namespace.acc:25361:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+fs/namespace.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/namespace.acc:25755:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/namespace.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/namespace.acc:25841:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+fs/namespace.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/namespace.acc:25975:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/namespace.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/namespace.acc:26057:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+fs/namespace.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+fs/namespace.acc:26491:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/namespace.acc:26492:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/namespace.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+fs/namespace.acc:26579:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/namespace.acc: In function ‘int dname_external(dentry*)’:
+fs/namespace.acc:26875:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_606(&__get__ZN6dentry6d_nameE_607(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_608(dentry->d_iname);
+                                                                                 ^
+fs/namespace.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/namespace.acc:28186:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_636(&__get__ZN3pid7numbersE_637(&pid->numbers[__get__ZN3pid5levelE_638(&pid->level)]).ns);
+                                                                                                                 ^
+fs/namespace.acc: In function ‘bool is_child_reaper(pid*)’:
+fs/namespace.acc:28303:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_639(&__get__ZN3pid7numbersE_640(&pid->numbers[__get__ZN3pid5levelE_641(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+fs/namespace.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/namespace.acc:28379:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_642(&__get__ZN3pid7numbersE_643(&pid->numbers[0]).nr);
+                                                                             ^
+fs/namespace.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+fs/namespace.acc:32154:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_713(&__get__ZN6dentry7d_inodeE_714(&__get__ZN4path6dentryE_715(&__get__ZN4file6f_pathE_716(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+fs/namespace.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+fs/namespace.acc:32229:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_719(&__get__ZN4file6f_pathE_720(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+fs/namespace.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/namespace.acc:33983:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/namespace.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/namespace.acc:34070:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/namespace.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/namespace.acc:34115:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/namespace.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/namespace.acc:34360:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1129(&vm_stat[item]));
+                                                       ^
+fs/namespace.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/namespace.acc:34400:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1130(&vm_stat[item]));
+                                                              ^
+fs/namespace.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+fs/namespace.acc:36931:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1230(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+fs/namespace.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/namespace.acc:43462:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1439(&__get__ZN11task_struct12thread_groupE_1440(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+fs/namespace.acc: In function ‘long unsigned int stack_frame(task_struct*, pt_regs*)’:
+fs/namespace.acc:45016:113: warning: taking address of temporary [-fpermissive]
+  return *(unsigned long *)__get__ZN13thread_struct2spE_1472(&__get__ZN11task_struct6threadE_1473(&task->thread).sp);
+                                                                                                                 ^
+fs/namespace.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+fs/namespace.acc:46140:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1486(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1487(&__get__ZN11task_struct6threadE_1488(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+fs/namespace.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+fs/namespace.acc:47204:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+fs/namespace.acc:47210:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+fs/namespace.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+fs/namespace.acc:47236:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+fs/namespace.acc:47242:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+fs/namespace.acc: At global scope:
+fs/namespace.acc:51758:10: warning: ‘struct fsnotify_group::<anonymous union>::inotify_group_private_data’ invalid; an anonymous union can only have non-static data members [-fpermissive]
+   struct inotify_group_private_data {
+          ^
+fs/namespace.acc:51768:10: warning: ‘struct fsnotify_group::<anonymous union>::fanotify_group_private_data’ invalid; an anonymous union can only have non-static data members [-fpermissive]
+   struct fanotify_group_private_data {
+          ^
+fs/namespace.acc: In function ‘void fsnotify_move(inode*, inode*, unsigned char*, int, inode*, dentry*)’:
+fs/namespace.acc:53149:101: warning: taking address of temporary [-fpermissive]
+  unsigned char *new_name = __get__ZN4qstr4nameE_1585(&__get__ZN6dentry6d_nameE_1586(&moved->d_name).name);
+                                                                                                     ^
+fs/namespace.acc: In function ‘void fsnotify_create(inode*, dentry*)’:
+fs/namespace.acc:53320:157: warning: taking address of temporary [-fpermissive]
+  fsnotify(inode, 0x00000100, __get__ZN6dentry7d_inodeE_1588(&dentry->d_inode), 2, __get__ZN4qstr4nameE_1589(&__get__ZN6dentry6d_nameE_1590(&dentry->d_name).name), 0);
+                                                                                                                                                             ^
+fs/namespace.acc: In function ‘void fsnotify_link(inode*, inode*, dentry*)’:
+fs/namespace.acc:53403:116: warning: taking address of temporary [-fpermissive]
+  fsnotify(dir, 0x00000100, inode, 2, __get__ZN4qstr4nameE_1591(&__get__ZN6dentry6d_nameE_1592(&new_dentry->d_name).name), 0);
+                                                                                                                    ^
+fs/namespace.acc: In function ‘void fsnotify_mkdir(inode*, dentry*)’:
+fs/namespace.acc:53521:110: warning: taking address of temporary [-fpermissive]
+  fsnotify(inode, mask, d_inode, 2, __get__ZN4qstr4nameE_1594(&__get__ZN6dentry6d_nameE_1595(&dentry->d_name).name), 0);
+                                                                                                              ^
+fs/namespace.acc: In function ‘unsigned char* fsnotify_oldname_init(unsigned char*)’:
+fs/namespace.acc:54076:84: warning: invalid conversion from ‘char*’ to ‘unsigned char*’ [-fpermissive]
+  return kstrdup((char *)name, ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                    ^
+fs/namespace.acc: In function ‘hlist_head* m_hash(vfsmount*, dentry*)’:
+fs/namespace.acc:54920:126: warning: taking address of temporary [-fpermissive]
+  return &__get_mount_hashtable_1611(&__get_mount_hashtable_1612(&mount_hashtable)[tmp & __get_m_hash_mask_1613(&m_hash_mask)]);
+                                                                                                                              ^
+fs/namespace.acc: In function ‘mount* __lookup_mnt(vfsmount*, dentry*)’:
+fs/namespace.acc:55192:114: warning: taking address of temporary [-fpermissive]
+         struct hlist_node *next = __get__ZN10hlist_node4nextE_1616(&__get__ZN5mount8mnt_hashE_1617(&p->mnt_hash).next);
+                                                                                                                  ^

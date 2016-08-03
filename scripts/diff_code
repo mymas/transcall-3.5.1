@@ -1,0 +1,7 @@
+#!/bin/sh
+
+orig=$HOME/project/transcall/linux-2.6.27.35-debug
+#orig=$HOME/pub/linux-2.6.27.35
+
+find . -name "*.[ch]" -exec diff -c {} $orig/{} \;
+

@@ -1,0 +1,256 @@
+fs/block_dev.acc: In function ‘thread_info* current_thread_info()’:
+fs/block_dev.acc:7036:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+fs/block_dev.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/block_dev.acc:8359:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+fs/block_dev.acc:8360:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/block_dev.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/block_dev.acc:13667:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/block_dev.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/block_dev.acc:13754:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/block_dev.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/block_dev.acc:13758:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/block_dev.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+fs/block_dev.acc:14638:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+fs/block_dev.acc:14631:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+fs/block_dev.acc: In function ‘int timer_pending(timer_list*)’:
+fs/block_dev.acc:14780:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_865(&__get__ZN10timer_list5entryE_866(&timer->entry).next) != 0;
+                                                                                        ^
+fs/block_dev.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/block_dev.acc:15640:54: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_872(&vm_stat[item]));
+                                                      ^
+fs/block_dev.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/block_dev.acc:15680:61: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_873(&vm_stat[item]));
+                                                             ^
+fs/block_dev.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/block_dev.acc:18147:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_952(&__get__ZN3pid7numbersE_953(&pid->numbers[__get__ZN3pid5levelE_954(&pid->level)]).ns);
+                                                                                                                 ^
+fs/block_dev.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/block_dev.acc:18224:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_955(&__get__ZN3pid7numbersE_956(&pid->numbers[0]).nr);
+                                                                             ^
+fs/block_dev.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/block_dev.acc:21890:166: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_999(&__get__ZN11task_struct12thread_groupE_1000(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                      ^
+fs/block_dev.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/block_dev.acc:24041:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+fs/block_dev.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/block_dev.acc:24127:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+fs/block_dev.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/block_dev.acc:24257:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/block_dev.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/block_dev.acc:24339:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+fs/block_dev.acc: In function ‘int dname_external(dentry*)’:
+fs/block_dev.acc:24802:83: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_1042(&__get__ZN6dentry6d_nameE_1043(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_1044(dentry->d_iname);
+                                                                                   ^
+fs/block_dev.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+fs/block_dev.acc:28003:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+fs/block_dev.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+fs/block_dev.acc:28434:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/block_dev.acc:28435:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/block_dev.acc: In function ‘void copy_highpage(page*, page*)’:
+fs/block_dev.acc:28447:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+fs/block_dev.acc:28448:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+fs/block_dev.acc: In function ‘void disk_stat_set_all(gendisk*, int)’:
+fs/block_dev.acc:29383:97: warning: taking address of temporary [-fpermissive]
+  for (((i)) = -1; ((i)) = __next_cpu((((i))), &((__get_cpu_possible_map_1127(&cpu_possible_map)))), ((i)) < 64; )
+                                                                                                 ^
+fs/block_dev.acc: In function ‘void part_stat_set_all(hd_struct*, int)’:
+fs/block_dev.acc:29461:97: warning: taking address of temporary [-fpermissive]
+  for (((i)) = -1; ((i)) = __next_cpu((((i))), &((__get_cpu_possible_map_1130(&cpu_possible_map)))), ((i)) < 64; )
+                                                                                                 ^
+fs/block_dev.acc: In function ‘int init_disk_stats(gendisk*)’:
+fs/block_dev.acc:29502:195: warning: taking address of temporary [-fpermissive]
+  disk->dkstats = (struct disk_stats *)__percpu_alloc_mask(((sizeof(struct disk_stats))), (((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u))), &(__get_cpu_possible_map_1133(&cpu_possible_map)));
+                                                                                                                                                                                                   ^
+fs/block_dev.acc: In function ‘int init_part_stats(hd_struct*)’:
+fs/block_dev.acc:29550:195: warning: taking address of temporary [-fpermissive]
+  part->dkstats = (struct disk_stats *)__percpu_alloc_mask(((sizeof(struct disk_stats))), (((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u))), &(__get_cpu_possible_map_1136(&cpu_possible_map)));
+                                                                                                                                                                                                   ^
+fs/block_dev.acc: At global scope:
+fs/block_dev.acc:31066:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+fs/block_dev.acc:31050:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+fs/block_dev.acc: In function ‘char* __bio_kmap_irq(bio*, short unsigned int, long unsigned int*)’:
+fs/block_dev.acc:32162:71: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  return (lowmem_page_address(((&((bio)->bi_io_vec[(idx)])))->bv_page) + ((&((bio)->bi_io_vec[(idx)])))->bv_offset);
+                                                                       ^
+fs/block_dev.acc: At global scope:
+fs/block_dev.acc:32521:21: warning: declaration of ‘int (* elevator_ops::elevator_merge_fn)(request_queue*, request**, bio*)’ [-fpermissive]
+  elevator_merge_fn *elevator_merge_fn;
+                     ^
+fs/block_dev.acc:32492:14: warning: changes meaning of ‘elevator_merge_fn’ from ‘typedef int elevator_merge_fn(struct request_queue*, struct request**, struct bio*)’ [-fpermissive]
+ typedef int (elevator_merge_fn) (struct request_queue *, struct request **,
+              ^
+fs/block_dev.acc:32522:22: warning: declaration of ‘void (* elevator_ops::elevator_merged_fn)(request_queue*, request*, int)’ [-fpermissive]
+  elevator_merged_fn *elevator_merged_fn;
+                      ^
+fs/block_dev.acc:32497:15: warning: changes meaning of ‘elevator_merged_fn’ from ‘typedef void elevator_merged_fn(struct request_queue*, struct request*, int)’ [-fpermissive]
+ typedef void (elevator_merged_fn) (struct request_queue *, struct request *, int);
+               ^
+fs/block_dev.acc:32523:25: warning: declaration of ‘void (* elevator_ops::elevator_merge_req_fn)(request_queue*, request*, request*)’ [-fpermissive]
+  elevator_merge_req_fn *elevator_merge_req_fn;
+                         ^
+fs/block_dev.acc:32495:15: warning: changes meaning of ‘elevator_merge_req_fn’ from ‘typedef void elevator_merge_req_fn(struct request_queue*, struct request*, struct request*)’ [-fpermissive]
+ typedef void (elevator_merge_req_fn) (struct request_queue *, struct request *, struct request *);
+               ^
+fs/block_dev.acc:32524:27: warning: declaration of ‘int (* elevator_ops::elevator_allow_merge_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_allow_merge_fn *elevator_allow_merge_fn;
+                           ^
+fs/block_dev.acc:32499:14: warning: changes meaning of ‘elevator_allow_merge_fn’ from ‘typedef int elevator_allow_merge_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef int (elevator_allow_merge_fn) (struct request_queue *, struct request *, struct bio *);
+              ^
+fs/block_dev.acc:32526:24: warning: declaration of ‘int (* elevator_ops::elevator_dispatch_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_dispatch_fn *elevator_dispatch_fn;
+                        ^
+fs/block_dev.acc:32501:14: warning: changes meaning of ‘elevator_dispatch_fn’ from ‘typedef int elevator_dispatch_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_dispatch_fn) (struct request_queue *, int);
+              ^
+fs/block_dev.acc:32527:23: warning: declaration of ‘void (* elevator_ops::elevator_add_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_add_req_fn *elevator_add_req_fn;
+                       ^
+fs/block_dev.acc:32503:15: warning: changes meaning of ‘elevator_add_req_fn’ from ‘typedef void elevator_add_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_add_req_fn) (struct request_queue *, struct request *);
+               ^
+fs/block_dev.acc:32528:28: warning: declaration of ‘void (* elevator_ops::elevator_activate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_activate_req_fn *elevator_activate_req_fn;
+                            ^
+fs/block_dev.acc:32511:15: warning: changes meaning of ‘elevator_activate_req_fn’ from ‘typedef void elevator_activate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_activate_req_fn) (struct request_queue *, struct request *);
+               ^
+fs/block_dev.acc:32529:30: warning: declaration of ‘void (* elevator_ops::elevator_deactivate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_deactivate_req_fn *elevator_deactivate_req_fn;
+                              ^
+fs/block_dev.acc:32512:15: warning: changes meaning of ‘elevator_deactivate_req_fn’ from ‘typedef void elevator_deactivate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_deactivate_req_fn) (struct request_queue *, struct request *);
+               ^
+fs/block_dev.acc:32531:27: warning: declaration of ‘int (* elevator_ops::elevator_queue_empty_fn)(request_queue*)’ [-fpermissive]
+  elevator_queue_empty_fn *elevator_queue_empty_fn;
+                           ^
+fs/block_dev.acc:32504:14: warning: changes meaning of ‘elevator_queue_empty_fn’ from ‘typedef int elevator_queue_empty_fn(struct request_queue*)’ [-fpermissive]
+ typedef int (elevator_queue_empty_fn) (struct request_queue *);
+              ^
+fs/block_dev.acc:32532:29: warning: declaration of ‘void (* elevator_ops::elevator_completed_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_completed_req_fn *elevator_completed_req_fn;
+                             ^
+fs/block_dev.acc:32506:15: warning: changes meaning of ‘elevator_completed_req_fn’ from ‘typedef void elevator_completed_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_completed_req_fn) (struct request_queue *, struct request *);
+               ^
+fs/block_dev.acc:32537:23: warning: declaration of ‘int (* elevator_ops::elevator_set_req_fn)(request_queue*, request*, gfp_t)’ [-fpermissive]
+  elevator_set_req_fn *elevator_set_req_fn;
+                       ^
+fs/block_dev.acc:32509:14: warning: changes meaning of ‘elevator_set_req_fn’ from ‘typedef int elevator_set_req_fn(struct request_queue*, struct request*, gfp_t)’ [-fpermissive]
+ typedef int (elevator_set_req_fn) (struct request_queue *, struct request *, gfp_t);
+              ^
+fs/block_dev.acc:32538:23: warning: declaration of ‘void (* elevator_ops::elevator_put_req_fn)(request*)’ [-fpermissive]
+  elevator_put_req_fn *elevator_put_req_fn;
+                       ^
+fs/block_dev.acc:32510:15: warning: changes meaning of ‘elevator_put_req_fn’ from ‘typedef void elevator_put_req_fn(struct request*)’ [-fpermissive]
+ typedef void (elevator_put_req_fn) (struct request *);
+               ^
+fs/block_dev.acc:32540:25: warning: declaration of ‘int (* elevator_ops::elevator_may_queue_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_may_queue_fn *elevator_may_queue_fn;
+                         ^
+fs/block_dev.acc:32507:14: warning: changes meaning of ‘elevator_may_queue_fn’ from ‘typedef int elevator_may_queue_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_may_queue_fn) (struct request_queue *, int);
+              ^
+fs/block_dev.acc:32542:20: warning: declaration of ‘void* (* elevator_ops::elevator_init_fn)(request_queue*)’ [-fpermissive]
+  elevator_init_fn *elevator_init_fn;
+                    ^
+fs/block_dev.acc:32514:16: warning: changes meaning of ‘elevator_init_fn’ from ‘typedef void* elevator_init_fn(struct request_queue*)’ [-fpermissive]
+ typedef void *(elevator_init_fn) (struct request_queue *);
+                ^
+fs/block_dev.acc:32543:20: warning: declaration of ‘void (* elevator_ops::elevator_exit_fn)(elevator_t*)’ [-fpermissive]
+  elevator_exit_fn *elevator_exit_fn;
+                    ^
+fs/block_dev.acc:32515:15: warning: changes meaning of ‘elevator_exit_fn’ from ‘typedef void elevator_exit_fn(elevator_t*)’ [-fpermissive]
+ typedef void (elevator_exit_fn) (elevator_t *);
+               ^
+fs/block_dev.acc:32730:19: warning: declaration of ‘int (* request_queue::make_request_fn)(request_queue*, bio*)’ [-fpermissive]
+  make_request_fn *make_request_fn;
+                   ^
+fs/block_dev.acc:32658:14: warning: changes meaning of ‘make_request_fn’ from ‘typedef int make_request_fn(struct request_queue*, struct bio*)’ [-fpermissive]
+ typedef int (make_request_fn) (struct request_queue *q, struct bio *bio);
+              ^
+fs/block_dev.acc:32731:14: warning: declaration of ‘int (* request_queue::prep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  prep_rq_fn *prep_rq_fn;
+              ^
+fs/block_dev.acc:32659:14: warning: changes meaning of ‘prep_rq_fn’ from ‘typedef int prep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef int (prep_rq_fn) (struct request_queue *, struct request *);
+              ^
+fs/block_dev.acc:32732:13: warning: declaration of ‘void (* request_queue::unplug_fn)(request_queue*)’ [-fpermissive]
+  unplug_fn *unplug_fn;
+             ^
+fs/block_dev.acc:32660:15: warning: changes meaning of ‘unplug_fn’ from ‘typedef void unplug_fn(struct request_queue*)’ [-fpermissive]
+ typedef void (unplug_fn) (struct request_queue *);
+               ^
+fs/block_dev.acc:32733:17: warning: declaration of ‘int (* request_queue::merge_bvec_fn)(request_queue*, bvec_merge_data*, bio_vec*)’ [-fpermissive]
+  merge_bvec_fn *merge_bvec_fn;
+                 ^
+fs/block_dev.acc:32674:14: warning: changes meaning of ‘merge_bvec_fn’ from ‘typedef int merge_bvec_fn(struct request_queue*, struct bvec_merge_data*, struct bio_vec*)’ [-fpermissive]
+ typedef int (merge_bvec_fn) (struct request_queue *, struct bvec_merge_data *,
+              ^
+fs/block_dev.acc:32734:20: warning: declaration of ‘void (* request_queue::prepare_flush_fn)(request_queue*, request*)’ [-fpermissive]
+  prepare_flush_fn *prepare_flush_fn;
+                    ^
+fs/block_dev.acc:32676:15: warning: changes meaning of ‘prepare_flush_fn’ from ‘typedef void prepare_flush_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (prepare_flush_fn) (struct request_queue *, struct request *);
+               ^
+fs/block_dev.acc:32735:19: warning: declaration of ‘void (* request_queue::softirq_done_fn)(request*)’ [-fpermissive]
+  softirq_done_fn *softirq_done_fn;
+                   ^
+fs/block_dev.acc:32677:15: warning: changes meaning of ‘softirq_done_fn’ from ‘typedef void softirq_done_fn(struct request*)’ [-fpermissive]
+ typedef void (softirq_done_fn)(struct request *);
+               ^
+fs/block_dev.acc:34502:36: warning: ‘all_bdevs’ initialized and declared ‘extern’ [enabled by default]
+            extern struct list_head all_bdevs = { &(all_bdevs), &(all_bdevs) };
+                                    ^
+fs/block_dev.acc: In function ‘long int nr_blockdev_pages()’:
+fs/block_dev.acc:34788:311: warning: taking address of temporary [-fpermissive]
+  for (bdev = ({ typeof( ((typeof(*bdev) *)0)->bd_list ) *__mptr = (__get__ZN9list_head4nextE_1476(&(&all_bdevs)->next)); (typeof(*bdev) *)( (char *)__mptr - ((size_t) &((typeof(*bdev) *)0)->bd_list) );}); __builtin_prefetch(__get__ZN9list_head4nextE_1477(&__get__ZN12block_device7bd_listE_1478(&bdev->bd_list).next)), &bdev->bd_list != (&all_bdevs); bdev = ({ typeof( ((typeof(*bdev) *)0)->bd_list ) *__mptr = (__get__ZN9list_head4nextE_1479(&__get__ZN12block_device7bd_listE_1480(&bdev->bd_list).next)); (typeof(*bdev) *)( (char *)__mptr - ((size_t) &((typeof(*bdev) *)0)->bd_list) );})) {
+                                                                                                                                                                                                                                                                                                                       ^
+fs/block_dev.acc:34788:498: warning: taking address of temporary [-fpermissive]
+  for (bdev = ({ typeof( ((typeof(*bdev) *)0)->bd_list ) *__mptr = (__get__ZN9list_head4nextE_1476(&(&all_bdevs)->next)); (typeof(*bdev) *)( (char *)__mptr - ((size_t) &((typeof(*bdev) *)0)->bd_list) );}); __builtin_prefetch(__get__ZN9list_head4nextE_1477(&__get__ZN12block_device7bd_listE_1478(&bdev->bd_list).next)), &bdev->bd_list != (&all_bdevs); bdev = ({ typeof( ((typeof(*bdev) *)0)->bd_list ) *__mptr = (__get__ZN9list_head4nextE_1479(&__get__ZN12block_device7bd_listE_1480(&bdev->bd_list).next)); (typeof(*bdev) *)( (char *)__mptr - ((size_t) &((typeof(*bdev) *)0)->bd_list) );})) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^

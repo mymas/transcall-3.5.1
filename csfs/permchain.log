@@ -1,0 +1,4 @@
+permchain.cc: In function ‘permchain* permchain_create()’:
+permchain.cc:45:59: warning: invalid conversion from ‘void*’ to ‘permchain*’ [-fpermissive]
+     struct permchain *pc = malloc(sizeof(struct permchain));
+                                                           ^

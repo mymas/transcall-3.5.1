@@ -1,0 +1,15 @@
+ver.NEST
+elapsed time[sec]: 0.066705
+elapsed time[sec]: 0.046522
+elapsed time[sec]: 0.055879
+elapsed time[sec]: 0.047160
+elapsed time[sec]: 0.065162
+elapsed time[sec]: 0.049612
+elapsed time[sec]: 0.046919
+elapsed time[sec]: 0.047152
+elapsed time[sec]: 0.046693
+elapsed time[sec]: 0.047288
+---------------------------
+* メモリのマップの回数
+* キャッシュのヒット率
+

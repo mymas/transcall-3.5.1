@@ -1,0 +1,250 @@
+arch/x86/kernel/process_64.acc: In function ‘void list_del(list_head*)’:
+arch/x86/kernel/process_64.acc:890:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+arch/x86/kernel/process_64.acc:891:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+arch/x86/kernel/process_64.acc: In function ‘void hlist_del(hlist_node*)’:
+arch/x86/kernel/process_64.acc:1866:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+arch/x86/kernel/process_64.acc:1867:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/kernel/process_64.acc: In function ‘int timer_pending(timer_list*)’:
+arch/x86/kernel/process_64.acc:12892:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_241(&__get__ZN10timer_list5entryE_242(&timer->entry).next) != 0;
+                                                                                        ^
+arch/x86/kernel/process_64.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+arch/x86/kernel/process_64.acc:15854:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_332(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+arch/x86/kernel/process_64.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+arch/x86/kernel/process_64.acc:16072:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+arch/x86/kernel/process_64.acc:16078:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+arch/x86/kernel/process_64.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+arch/x86/kernel/process_64.acc:16104:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+arch/x86/kernel/process_64.acc:16110:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+arch/x86/kernel/process_64.acc: At global scope:
+arch/x86/kernel/process_64.acc:20406:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+arch/x86/kernel/process_64.acc:20407:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+arch/x86/kernel/process_64.acc:20408:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+arch/x86/kernel/process_64.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+arch/x86/kernel/process_64.acc:22313:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+arch/x86/kernel/process_64.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+arch/x86/kernel/process_64.acc:27056:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_676(&__get__ZN3pid7numbersE_677(&pid->numbers[__get__ZN3pid5levelE_678(&pid->level)]).ns);
+                                                                                                                 ^
+arch/x86/kernel/process_64.acc: In function ‘bool is_child_reaper(pid*)’:
+arch/x86/kernel/process_64.acc:27173:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_679(&__get__ZN3pid7numbersE_680(&pid->numbers[__get__ZN3pid5levelE_681(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+arch/x86/kernel/process_64.acc: In function ‘pid_t pid_nr(pid*)’:
+arch/x86/kernel/process_64.acc:27249:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_682(&__get__ZN3pid7numbersE_683(&pid->numbers[0]).nr);
+                                                                             ^
+arch/x86/kernel/process_64.acc: In function ‘void list_del_rcu(list_head*)’:
+arch/x86/kernel/process_64.acc:27733:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+arch/x86/kernel/process_64.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+arch/x86/kernel/process_64.acc:27819:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+arch/x86/kernel/process_64.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+arch/x86/kernel/process_64.acc:27953:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/kernel/process_64.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+arch/x86/kernel/process_64.acc:28035:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+arch/x86/kernel/process_64.acc: At global scope:
+arch/x86/kernel/process_64.acc:29847:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+arch/x86/kernel/process_64.acc:29803:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+arch/x86/kernel/process_64.acc: In function ‘task_struct* next_thread(task_struct*)’:
+arch/x86/kernel/process_64.acc:33217:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_803(&__get__ZN11task_struct12thread_groupE_804(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+arch/x86/kernel/process_64.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+arch/x86/kernel/process_64.acc:34518:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+arch/x86/kernel/process_64.acc:34519:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/kernel/process_64.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+arch/x86/kernel/process_64.acc:34606:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/kernel/process_64.acc: In function ‘int dname_external(dentry*)’:
+arch/x86/kernel/process_64.acc:34902:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_830(&__get__ZN6dentry6d_nameE_831(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_832(dentry->d_iname);
+                                                                                 ^
+arch/x86/kernel/process_64.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+arch/x86/kernel/process_64.acc:40154:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_945(&__get__ZN6dentry7d_inodeE_946(&__get__ZN4path6dentryE_947(&__get__ZN4file6f_pathE_948(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+arch/x86/kernel/process_64.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+arch/x86/kernel/process_64.acc:40229:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_951(&__get__ZN4file6f_pathE_952(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+arch/x86/kernel/process_64.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+arch/x86/kernel/process_64.acc:42104:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+arch/x86/kernel/process_64.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+arch/x86/kernel/process_64.acc:42191:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+arch/x86/kernel/process_64.acc: In function ‘zone_type page_zonenum(page*)’:
+arch/x86/kernel/process_64.acc:42236:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+arch/x86/kernel/process_64.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+arch/x86/kernel/process_64.acc:42481:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1363(&vm_stat[item]));
+                                                       ^
+arch/x86/kernel/process_64.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+arch/x86/kernel/process_64.acc:42521:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1364(&vm_stat[item]));
+                                                              ^
+arch/x86/kernel/process_64.acc: In function ‘void elf_core_copy_regs(elf_greg_t (*)[27], pt_regs*)’:
+arch/x86/kernel/process_64.acc:46848:1411: warning: taking address of temporary [-fpermissive]
+  do { unsigned v; ((*elfregs))[0] = __get__ZN7pt_regs3r15E_1462(&(regs)->r15); ((*elfregs))[1] = __get__ZN7pt_regs3r14E_1463(&(regs)->r14); ((*elfregs))[2] = __get__ZN7pt_regs3r13E_1464(&(regs)->r13); ((*elfregs))[3] = __get__ZN7pt_regs3r12E_1465(&(regs)->r12); ((*elfregs))[4] = __get__ZN7pt_regs2bpE_1466(&(regs)->bp); ((*elfregs))[5] = __get__ZN7pt_regs2bxE_1467(&(regs)->bx); ((*elfregs))[6] = __get__ZN7pt_regs3r11E_1468(&(regs)->r11); ((*elfregs))[7] = __get__ZN7pt_regs3r10E_1469(&(regs)->r10); ((*elfregs))[8] = __get__ZN7pt_regs2r9E_1470(&(regs)->r9); ((*elfregs))[9] = __get__ZN7pt_regs2r8E_1471(&(regs)->r8); ((*elfregs))[10] = __get__ZN7pt_regs2axE_1472(&(regs)->ax); ((*elfregs))[11] = __get__ZN7pt_regs2cxE_1473(&(regs)->cx); ((*elfregs))[12] = __get__ZN7pt_regs2dxE_1474(&(regs)->dx); ((*elfregs))[13] = __get__ZN7pt_regs2siE_1475(&(regs)->si); ((*elfregs))[14] = __get__ZN7pt_regs2diE_1476(&(regs)->di); ((*elfregs))[15] = __get__ZN7pt_regs7orig_axE_1477(&(regs)->orig_ax); ((*elfregs))[16] = __get__ZN7pt_regs2ipE_1478(&(regs)->ip); ((*elfregs))[17] = __get__ZN7pt_regs2csE_1479(&(regs)->cs); ((*elfregs))[18] = __get__ZN7pt_regs5flagsE_1480(&(regs)->flags); ((*elfregs))[19] = __get__ZN7pt_regs2spE_1481(&(regs)->sp); ((*elfregs))[20] = __get__ZN7pt_regs2ssE_1482(&(regs)->ss); ((*elfregs))[21] = __get__ZN13thread_struct2fsE_1483(&__get__ZN11task_struct6threadE_1484(&get_current()->thread).fs); ((*elfregs))[22] = __get__ZN13thread_struct2gsE_1485(&__get__ZN11task_struct6threadE_1486(&get_current()->thread).gs); asm("movl %%ds,%0" : "=r" (v)); ((*elfregs))[23] = v; asm("movl %%es,%0" : "=r" (v)); ((*elfregs))[24] = v; asm("movl %%fs,%0" : "=r" (v)); ((*elfregs))[25] = v; asm("movl %%gs,%0" : "=r" (v)); ((*elfregs))[26] = v; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+arch/x86/kernel/process_64.acc:46848:1530: warning: taking address of temporary [-fpermissive]
+  do { unsigned v; ((*elfregs))[0] = __get__ZN7pt_regs3r15E_1462(&(regs)->r15); ((*elfregs))[1] = __get__ZN7pt_regs3r14E_1463(&(regs)->r14); ((*elfregs))[2] = __get__ZN7pt_regs3r13E_1464(&(regs)->r13); ((*elfregs))[3] = __get__ZN7pt_regs3r12E_1465(&(regs)->r12); ((*elfregs))[4] = __get__ZN7pt_regs2bpE_1466(&(regs)->bp); ((*elfregs))[5] = __get__ZN7pt_regs2bxE_1467(&(regs)->bx); ((*elfregs))[6] = __get__ZN7pt_regs3r11E_1468(&(regs)->r11); ((*elfregs))[7] = __get__ZN7pt_regs3r10E_1469(&(regs)->r10); ((*elfregs))[8] = __get__ZN7pt_regs2r9E_1470(&(regs)->r9); ((*elfregs))[9] = __get__ZN7pt_regs2r8E_1471(&(regs)->r8); ((*elfregs))[10] = __get__ZN7pt_regs2axE_1472(&(regs)->ax); ((*elfregs))[11] = __get__ZN7pt_regs2cxE_1473(&(regs)->cx); ((*elfregs))[12] = __get__ZN7pt_regs2dxE_1474(&(regs)->dx); ((*elfregs))[13] = __get__ZN7pt_regs2siE_1475(&(regs)->si); ((*elfregs))[14] = __get__ZN7pt_regs2diE_1476(&(regs)->di); ((*elfregs))[15] = __get__ZN7pt_regs7orig_axE_1477(&(regs)->orig_ax); ((*elfregs))[16] = __get__ZN7pt_regs2ipE_1478(&(regs)->ip); ((*elfregs))[17] = __get__ZN7pt_regs2csE_1479(&(regs)->cs); ((*elfregs))[18] = __get__ZN7pt_regs5flagsE_1480(&(regs)->flags); ((*elfregs))[19] = __get__ZN7pt_regs2spE_1481(&(regs)->sp); ((*elfregs))[20] = __get__ZN7pt_regs2ssE_1482(&(regs)->ss); ((*elfregs))[21] = __get__ZN13thread_struct2fsE_1483(&__get__ZN11task_struct6threadE_1484(&get_current()->thread).fs); ((*elfregs))[22] = __get__ZN13thread_struct2gsE_1485(&__get__ZN11task_struct6threadE_1486(&get_current()->thread).gs); asm("movl %%ds,%0" : "=r" (v)); ((*elfregs))[23] = v; asm("movl %%es,%0" : "=r" (v)); ((*elfregs))[24] = v; asm("movl %%fs,%0" : "=r" (v)); ((*elfregs))[25] = v; asm("movl %%gs,%0" : "=r" (v)); ((*elfregs))[26] = v; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+arch/x86/kernel/process_64.acc: In function ‘int elf_core_copy_task_regs(task_struct*, elf_greg_t (*)[27])’:
+arch/x86/kernel/process_64.acc:46939:135: warning: taking address of temporary [-fpermissive]
+  elf_core_copy_regs(elfregs, ((struct pt_regs *)__get__ZN13thread_struct3sp0E_1487(&__get__ZN11task_struct6threadE_1488(&(t)->thread).sp0) - 1));
+                                                                                                                                       ^
+arch/x86/kernel/process_64.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+arch/x86/kernel/process_64.acc:49424:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1544(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1545(&__get__ZN11task_struct6threadE_1546(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+arch/x86/kernel/process_64.acc: In function ‘int user_has_fpu()’:
+arch/x86/kernel/process_64.acc:50915:105: warning: taking address of temporary [-fpermissive]
+  return __get__ZN13thread_struct3fpuE_1618(&__get__ZN11task_struct6threadE_1619(&get_current()->thread).fpu).has_fpu;
+                                                                                                         ^
+arch/x86/kernel/process_64.acc: In function ‘int restore_fpu_checking(task_struct*)’:
+arch/x86/kernel/process_64.acc:54703:106: warning: taking address of temporary [-fpermissive]
+    : : [addr] "m" (__get__ZN13thread_struct3fpuE_1740(&__get__ZN11task_struct6threadE_1741(&tsk->thread).fpu).has_fpu));
+                                                                                                          ^
+arch/x86/kernel/process_64.acc: In function ‘int __thread_has_fpu(task_struct*)’:
+arch/x86/kernel/process_64.acc:54786:95: warning: taking address of temporary [-fpermissive]
+  return __get__ZN13thread_struct3fpuE_1743(&__get__ZN11task_struct6threadE_1744(&tsk->thread).fpu).has_fpu;
+                                                                                               ^
+arch/x86/kernel/process_64.acc: In function ‘int fpu_lazy_restore(task_struct*, unsigned int)’:
+arch/x86/kernel/process_64.acc:54932:97: warning: taking address of temporary [-fpermissive]
+   cpu == __get__ZN13thread_struct3fpuE_1751(&__get__ZN11task_struct6threadE_1752(&_new->thread).fpu).last_cpu;
+                                                                                                 ^
+arch/x86/kernel/process_64.acc: In function ‘fpu_switch_t switch_fpu_prepare(task_struct*, task_struct*, int)’:
+arch/x86/kernel/process_64.acc:55189:107: warning: taking address of temporary [-fpermissive]
+           __get__ZN13thread_struct11fpu_counterE_1754(&__get__ZN11task_struct6threadE_1755(&_new->thread).fpu_counter) > 5);
+                                                                                                           ^
+arch/x86/kernel/process_64.acc:55200:100: warning: taking address of temporary [-fpermissive]
+    prefetch(__get__ZN13thread_struct3fpuE_1758(&__get__ZN11task_struct6threadE_1759(&_new->thread).fpu).state);
+                                                                                                    ^
+arch/x86/kernel/process_64.acc:55211:101: warning: taking address of temporary [-fpermissive]
+     prefetch(__get__ZN13thread_struct3fpuE_1762(&__get__ZN11task_struct6threadE_1763(&_new->thread).fpu).state);
+                                                                                                     ^
+arch/x86/kernel/process_64.acc: In function ‘short unsigned int get_fpu_cwd(task_struct*)’:
+arch/x86/kernel/process_64.acc:55442:96: warning: taking address of temporary [-fpermissive]
+   return __get__ZN13thread_struct3fpuE_1772(&__get__ZN11task_struct6threadE_1773(&tsk->thread).fpu).state->fxsave.cwd;
+                                                                                                ^
+arch/x86/kernel/process_64.acc:55444:112: warning: taking address of temporary [-fpermissive]
+   return (unsigned short)__get__ZN13thread_struct3fpuE_1777(&__get__ZN11task_struct6threadE_1778(&tsk->thread).fpu).state->fsave.cwd;
+                                                                                                                ^
+arch/x86/kernel/process_64.acc: In function ‘short unsigned int get_fpu_swd(task_struct*)’:
+arch/x86/kernel/process_64.acc:55591:96: warning: taking address of temporary [-fpermissive]
+   return __get__ZN13thread_struct3fpuE_1784(&__get__ZN11task_struct6threadE_1785(&tsk->thread).fpu).state->fxsave.swd;
+                                                                                                ^
+arch/x86/kernel/process_64.acc:55593:112: warning: taking address of temporary [-fpermissive]
+   return (unsigned short)__get__ZN13thread_struct3fpuE_1789(&__get__ZN11task_struct6threadE_1790(&tsk->thread).fpu).state->fsave.swd;
+                                                                                                                ^
+arch/x86/kernel/process_64.acc: In function ‘short unsigned int get_fpu_mxcsr(task_struct*)’:
+arch/x86/kernel/process_64.acc:55670:96: warning: taking address of temporary [-fpermissive]
+   return __get__ZN13thread_struct3fpuE_1796(&__get__ZN11task_struct6threadE_1797(&tsk->thread).fpu).state->fxsave.mxcsr;
+                                                                                                ^
+arch/x86/kernel/process_64.acc: In function ‘int fpu_alloc(fpu*)’:
+arch/x86/kernel/process_64.acc:55685:105: warning: invalid conversion from ‘void*’ to ‘thread_xstate*’ [-fpermissive]
+  fpu->state = kmem_cache_alloc(task_xstate_cachep, ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                                         ^
+arch/x86/kernel/process_64.acc: In function ‘int desc_empty(void*)’:
+arch/x86/kernel/process_64.acc:55860:14: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *desc = ptr;
+              ^
+arch/x86/kernel/process_64.acc: In function ‘void set_tssldt_descriptor(void*, long unsigned int, unsigned int, unsigned int)’:
+arch/x86/kernel/process_64.acc:55903:31: warning: invalid conversion from ‘void*’ to ‘ldttss_desc64*’ [-fpermissive]
+  struct ldttss_desc64 *desc = d;
+                               ^
+arch/x86/kernel/process_64.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+arch/x86/kernel/process_64.acc:56393:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+arch/x86/kernel/process_64.acc:56394:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+arch/x86/kernel/process_64.acc: In function ‘void copy_highpage(page*, page*)’:
+arch/x86/kernel/process_64.acc:56406:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+arch/x86/kernel/process_64.acc:56407:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+arch/x86/kernel/process_64.acc: In function ‘long unsigned int get_wchan(task_struct*)’:
+arch/x86/kernel/process_64.acc:58257:89: warning: taking address of temporary [-fpermissive]
+  if (__get__ZN13thread_struct2spE_2039(&__get__ZN11task_struct6threadE_2040(&p->thread).sp) < stack || __get__ZN13thread_struct2spE_2041(&__get__ZN11task_struct6threadE_2042(&p->thread).sp) >= stack+(((1UL) << 12) << 1))
+                                                                                         ^
+arch/x86/kernel/process_64.acc:58257:187: warning: taking address of temporary [-fpermissive]
+  if (__get__ZN13thread_struct2spE_2039(&__get__ZN11task_struct6threadE_2040(&p->thread).sp) < stack || __get__ZN13thread_struct2spE_2041(&__get__ZN11task_struct6threadE_2042(&p->thread).sp) >= stack+(((1UL) << 12) << 1))
+                                                                                                                                                                                           ^
+arch/x86/kernel/process_64.acc:58262:136: warning: taking address of temporary [-fpermissive]
+  fp = *(typeof((u64 *)(p->thread.sp)))g_map((u64 *)(__get__ZN13thread_struct2spE_2043(&__get__ZN11task_struct6threadE_2044(&p->thread).sp)), sizeof(*((u64 *)(p->thread.sp))));
+                                                                                                                                        ^
+arch/x86/kernel/process_64.acc: In function ‘long int do_arch_prctl(task_struct*, int, long unsigned int)’:
+arch/x86/kernel/process_64.acc:58757:98: warning: taking address of temporary [-fpermissive]
+   if (__get__ZN13thread_struct7fsindexE_2049(&__get__ZN11task_struct6threadE_2050(&task->thread).fsindex) == ((12 +0)*8 + 3))
+                                                                                                  ^
+arch/x86/kernel/process_64.acc:58762:97: warning: taking address of temporary [-fpermissive]
+    base = __get__ZN13thread_struct2fsE_2051(&__get__ZN11task_struct6threadE_2052(&task->thread).fs);
+                                                                                                 ^
+arch/x86/kernel/process_64.acc:58769:98: warning: taking address of temporary [-fpermissive]
+   if (__get__ZN13thread_struct7gsindexE_2053(&__get__ZN11task_struct6threadE_2054(&task->thread).gsindex) == ((12 +1)*8 + 3))
+                                                                                                  ^
+arch/x86/kernel/process_64.acc:58776:98: warning: taking address of temporary [-fpermissive]
+     base = __get__ZN13thread_struct2gsE_2055(&__get__ZN11task_struct6threadE_2056(&task->thread).gs);
+                                                                                                  ^
+arch/x86/kernel/process_64.acc:58778:97: warning: taking address of temporary [-fpermissive]
+    base = __get__ZN13thread_struct2gsE_2057(&__get__ZN11task_struct6threadE_2058(&task->thread).gs);
+                                                                                                 ^
+arch/x86/kernel/process_64.acc: In function ‘long unsigned int KSTK_ESP(task_struct*)’:
+arch/x86/kernel/process_64.acc:58968:141: warning: taking address of temporary [-fpermissive]
+    (__get__ZN7pt_regs2spE_2059(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_2060(&__get__ZN11task_struct6threadE_2061(&(task)->thread).sp0) - 1)->sp)) : (__get__ZN13thread_struct6userspE_2062(&__get__ZN11task_struct6threadE_2063(&(task)->thread).usersp));
+                                                                                                                                             ^
+arch/x86/kernel/process_64.acc:58968:252: warning: taking address of temporary [-fpermissive]
+    (__get__ZN7pt_regs2spE_2059(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_2060(&__get__ZN11task_struct6threadE_2061(&(task)->thread).sp0) - 1)->sp)) : (__get__ZN13thread_struct6userspE_2062(&__get__ZN11task_struct6threadE_2063(&(task)->thread).usersp));
+                                                                                                                                                                                                                                                            ^

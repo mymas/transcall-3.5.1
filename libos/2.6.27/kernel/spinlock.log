@@ -1,0 +1,34 @@
+kernel/spinlock.acc: In function ‘thread_info* current_thread_info()’:
+kernel/spinlock.acc:7008:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+kernel/spinlock.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/spinlock.acc:8331:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+kernel/spinlock.acc:8332:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+kernel/spinlock.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+kernel/spinlock.acc:14300:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+kernel/spinlock.acc:14293:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+kernel/spinlock.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/spinlock.acc:14442:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_713(&__get__ZN10timer_list5entryE_714(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/spinlock.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/spinlock.acc:16240:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_766(&__get__ZN3pid7numbersE_767(&pid->numbers[__get__ZN3pid5levelE_768(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/spinlock.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/spinlock.acc:16317:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_769(&__get__ZN3pid7numbersE_770(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/spinlock.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/spinlock.acc:19983:165: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_813(&__get__ZN11task_struct12thread_groupE_814(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                     ^

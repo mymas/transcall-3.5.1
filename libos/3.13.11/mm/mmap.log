@@ -1,0 +1,185 @@
+mm/mmap.acc: In function ‘void list_del(list_head*)’:
+mm/mmap.acc:3645:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+mm/mmap.acc:3646:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+mm/mmap.acc: In function ‘void hlist_del(hlist_node*)’:
+mm/mmap.acc:4621:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+mm/mmap.acc:4622:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/mmap.acc: In function ‘int timer_pending(timer_list*)’:
+mm/mmap.acc:15127:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_324(&__get__ZN10timer_list5entryE_325(&timer->entry).next) != 0;
+                                                                                        ^
+mm/mmap.acc: At global scope:
+mm/mmap.acc:19130:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+mm/mmap.acc:19131:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+mm/mmap.acc:19132:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+mm/mmap.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+mm/mmap.acc:21037:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+mm/mmap.acc: In function ‘void list_del_rcu(list_head*)’:
+mm/mmap.acc:22662:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+mm/mmap.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+mm/mmap.acc:22748:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+mm/mmap.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+mm/mmap.acc:22882:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/mmap.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+mm/mmap.acc:22964:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+mm/mmap.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+mm/mmap.acc:23485:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+mm/mmap.acc:23486:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/mmap.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+mm/mmap.acc:23573:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/mmap.acc: In function ‘int dname_external(dentry*)’:
+mm/mmap.acc:23869:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_534(&__get__ZN6dentry6d_nameE_535(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_536(dentry->d_iname);
+                                                                                 ^
+mm/mmap.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+mm/mmap.acc:24961:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_562(&__get__ZN3pid7numbersE_563(&pid->numbers[__get__ZN3pid5levelE_564(&pid->level)]).ns);
+                                                                                                                 ^
+mm/mmap.acc: In function ‘bool is_child_reaper(pid*)’:
+mm/mmap.acc:25078:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_565(&__get__ZN3pid7numbersE_566(&pid->numbers[__get__ZN3pid5levelE_567(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+mm/mmap.acc: In function ‘pid_t pid_nr(pid*)’:
+mm/mmap.acc:25154:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_568(&__get__ZN3pid7numbersE_569(&pid->numbers[0]).nr);
+                                                                             ^
+mm/mmap.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+mm/mmap.acc:30048:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_668(&__get__ZN6dentry7d_inodeE_669(&__get__ZN4path6dentryE_670(&__get__ZN4file6f_pathE_671(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+mm/mmap.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+mm/mmap.acc:30123:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_674(&__get__ZN4file6f_pathE_675(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+mm/mmap.acc: At global scope:
+mm/mmap.acc:34955:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+mm/mmap.acc:34911:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+mm/mmap.acc: In function ‘task_struct* next_thread(task_struct*)’:
+mm/mmap.acc:38273:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_894(&__get__ZN11task_struct12thread_groupE_895(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+mm/mmap.acc: At global scope:
+mm/mmap.acc:39362:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+mm/mmap.acc:39325:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+mm/mmap.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+mm/mmap.acc:46320:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+mm/mmap.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+mm/mmap.acc:46407:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+mm/mmap.acc: In function ‘zone_type page_zonenum(page*)’:
+mm/mmap.acc:46452:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+mm/mmap.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+mm/mmap.acc:46697:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1474(&vm_stat[item]));
+                                                       ^
+mm/mmap.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+mm/mmap.acc:46737:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1475(&vm_stat[item]));
+                                                              ^
+mm/mmap.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+mm/mmap.acc:49607:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+mm/mmap.acc:49608:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+mm/mmap.acc: In function ‘void copy_highpage(page*, page*)’:
+mm/mmap.acc:49620:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+mm/mmap.acc:49621:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+mm/mmap.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+mm/mmap.acc:52402:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1698(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+mm/mmap.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+mm/mmap.acc:52620:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+mm/mmap.acc:52626:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+mm/mmap.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+mm/mmap.acc:52652:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+mm/mmap.acc:52658:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+mm/mmap.acc: In function ‘long unsigned int stack_frame(task_struct*, pt_regs*)’:
+mm/mmap.acc:55754:113: warning: taking address of temporary [-fpermissive]
+  return *(unsigned long *)__get__ZN13thread_struct2spE_1752(&__get__ZN11task_struct6threadE_1753(&task->thread).sp);
+                                                                                                                 ^
+mm/mmap.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+mm/mmap.acc:56760:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1765(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1766(&__get__ZN11task_struct6threadE_1767(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+mm/mmap.acc: In function ‘hugetlbfs_sb_info* HUGETLBFS_SB(super_block*)’:
+mm/mmap.acc:60504:62: warning: invalid conversion from ‘void*’ to ‘hugetlbfs_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1854(&sb->s_fs_info);
+                                                              ^
+mm/mmap.acc: In function ‘hstate* hstate_sizelog(int)’:
+mm/mmap.acc:60737:92: warning: taking address of temporary [-fpermissive]
+   return &(__get_hstates_1858(&hstates[__get_default_hstate_idx_1859(&default_hstate_idx)]));
+                                                                                            ^
+mm/mmap.acc: In function ‘unsigned int hstate_index_to_shift(unsigned int)’:
+mm/mmap.acc:61209:75: warning: taking address of temporary [-fpermissive]
+  return __get__ZN6hstate5orderE_1866(&__get_hstates_1867(&hstates[index]).order) + 12;
+                                                                           ^
+mm/mmap.acc: In function ‘anon_vma* page_anon_vma(page*)’:
+mm/mmap.acc:61400:27: warning: invalid conversion from ‘void*’ to ‘anon_vma*’ [-fpermissive]
+  return page_rmapping(page);
+                           ^
+mm/mmap.acc: In function ‘int desc_empty(void*)’:
+mm/mmap.acc:63618:14: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *desc = ptr;
+              ^
+mm/mmap.acc: In function ‘void set_tssldt_descriptor(void*, long unsigned int, unsigned int, unsigned int)’:
+mm/mmap.acc:63661:31: warning: invalid conversion from ‘void*’ to ‘ldttss_desc64*’ [-fpermissive]
+  struct ldttss_desc64 *desc = d;
+                               ^

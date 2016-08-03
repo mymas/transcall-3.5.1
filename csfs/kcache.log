@@ -1,0 +1,139 @@
+kcache.acc: In function ‘void list_del(list_head*)’:
+kcache.acc:4153:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kcache.acc:4154:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kcache.acc: In function ‘void hlist_del(hlist_node*)’:
+kcache.acc:5129:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kcache.acc:5130:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kcache.acc: In function ‘int timer_pending(timer_list*)’:
+kcache.acc:15209:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_302(&__get__ZN10timer_list5entryE_303(&timer->entry).next) != 0;
+                                                                                        ^
+kcache.acc: At global scope:
+kcache.acc:19624:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kcache.acc:19625:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kcache.acc:19626:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kcache.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kcache.acc:22230:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kcache.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kcache.acc:24902:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_626(&__get__ZN3pid7numbersE_627(&pid->numbers[__get__ZN3pid5levelE_628(&pid->level)]).ns);
+                                                                                                                 ^
+kcache.acc: In function ‘bool is_child_reaper(pid*)’:
+kcache.acc:25019:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_629(&__get__ZN3pid7numbersE_630(&pid->numbers[__get__ZN3pid5levelE_631(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kcache.acc: In function ‘pid_t pid_nr(pid*)’:
+kcache.acc:25095:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_632(&__get__ZN3pid7numbersE_633(&pid->numbers[0]).nr);
+                                                                             ^
+kcache.acc: In function ‘void list_del_rcu(list_head*)’:
+kcache.acc:25579:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kcache.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kcache.acc:25665:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kcache.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kcache.acc:25799:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kcache.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kcache.acc:25881:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kcache.acc: At global scope:
+kcache.acc:27693:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kcache.acc:27649:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kcache.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kcache.acc:31063:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_753(&__get__ZN11task_struct12thread_groupE_754(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+kcache.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kcache.acc:32639:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kcache.acc:32640:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kcache.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kcache.acc:32727:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kcache.acc: In function ‘int dname_external(dentry*)’:
+kcache.acc:33023:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_786(&__get__ZN6dentry6d_nameE_787(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_788(dentry->d_iname);
+                                                                                 ^
+kcache.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kcache.acc:38192:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_897(&__get__ZN6dentry7d_inodeE_898(&__get__ZN4path6dentryE_899(&__get__ZN4file6f_pathE_900(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+kcache.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kcache.acc:38267:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_903(&__get__ZN4file6f_pathE_904(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+kcache.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kcache.acc:40188:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kcache.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kcache.acc:40275:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kcache.acc: In function ‘zone_type page_zonenum(page*)’:
+kcache.acc:40320:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kcache.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kcache.acc:40565:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1315(&vm_stat[item]));
+                                                       ^
+kcache.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kcache.acc:40605:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1316(&vm_stat[item]));
+                                                              ^
+kcache.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+kcache.acc:43297:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kcache.acc:43298:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kcache.acc: In function ‘void copy_highpage(page*, page*)’:
+kcache.acc:43310:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kcache.acc:43311:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kcache.acc: In function ‘dentry* lookup_dentry(char*, vfsmount**)’:
+kcache.acc:44476:185: warning: taking address of temporary [-fpermissive]
+     task = ({typeof (*(&init_task)->tasks.next) *__ptr = (typeof (*(&init_task)->tasks.next) *)__get__ZN9list_head4nextE_1479(&__get__ZN11task_struct5tasksE_1480(&(&init_task)->tasks).next); ({ typeof( ((struct task_struct *)0)->tasks ) *__mptr = ((typeof((&init_task)->tasks.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->tasks) );}); });
+                                                                                                                                                                                         ^
+kcache.acc: In function ‘void get_dir_cache(dentry*, strset*)’:
+kcache.acc:45063:425: warning: taking address of temporary [-fpermissive]
+     for (child = ({ typeof( ((typeof(*child) *)0)->d_u.d_child ) *__mptr = (__get__ZN9list_head4nextE_1491(&(&dentry->d_subdirs)->next)); (typeof(*child) *)( (char *)__mptr - ((size_t) &((typeof(*child) *)0)->d_u.d_child) );}); &child->d_u.d_child != (&dentry->d_subdirs); child = ({ typeof( ((typeof(*(child)) *)0)->d_u.d_child ) *__mptr = (__get__ZN9list_head4nextE_1492(&__get__ZN6dentry3d_uE_1494(&(child)->d_u).d_child.next)); (typeof(*(child)) *)( (char *)__mptr - ((size_t) &((typeof(*(child)) *)0)->d_u.d_child) );})) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+kcache.acc:45068:97: warning: taking address of temporary [-fpermissive]
+         name = (char *)__get__ZN4qstr4nameE_1496(&__get__ZN6dentry6d_nameE_1497(&child->d_name).name);
+                                                                                                 ^

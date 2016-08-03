@@ -1,0 +1,114 @@
+fs/seq_file.acc: In function ‘void list_del(list_head*)’:
+fs/seq_file.acc:814:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+fs/seq_file.acc:815:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/seq_file.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/seq_file.acc:1790:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/seq_file.acc:1791:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/seq_file.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/seq_file.acc:11774:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/seq_file.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/seq_file.acc:11860:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+fs/seq_file.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/seq_file.acc:11994:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/seq_file.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/seq_file.acc:12076:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+fs/seq_file.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+fs/seq_file.acc:12597:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/seq_file.acc:12598:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/seq_file.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+fs/seq_file.acc:12685:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/seq_file.acc: In function ‘int dname_external(dentry*)’:
+fs/seq_file.acc:12986:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_185(&__get__ZN6dentry6d_nameE_186(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_187(dentry->d_iname);
+                                                                                 ^
+fs/seq_file.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/seq_file.acc:16699:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_315(&__get__ZN3pid7numbersE_316(&pid->numbers[__get__ZN3pid5levelE_317(&pid->level)]).ns);
+                                                                                                                 ^
+fs/seq_file.acc: In function ‘bool is_child_reaper(pid*)’:
+fs/seq_file.acc:16816:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_318(&__get__ZN3pid7numbersE_319(&pid->numbers[__get__ZN3pid5levelE_320(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+fs/seq_file.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/seq_file.acc:16892:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_321(&__get__ZN3pid7numbersE_322(&pid->numbers[0]).nr);
+                                                                             ^
+fs/seq_file.acc: In function ‘int timer_pending(timer_list*)’:
+fs/seq_file.acc:19688:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_380(&__get__ZN10timer_list5entryE_381(&timer->entry).next) != 0;
+                                                                                        ^
+fs/seq_file.acc: At global scope:
+fs/seq_file.acc:21731:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+fs/seq_file.acc:21732:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+fs/seq_file.acc:21733:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+fs/seq_file.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+fs/seq_file.acc:27825:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_606(&__get__ZN6dentry7d_inodeE_607(&__get__ZN4path6dentryE_608(&__get__ZN4file6f_pathE_609(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+fs/seq_file.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+fs/seq_file.acc:27900:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_612(&__get__ZN4file6f_pathE_613(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+fs/seq_file.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+fs/seq_file.acc:28158:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_634(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+fs/seq_file.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+fs/seq_file.acc:29495:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+fs/seq_file.acc: At global scope:
+fs/seq_file.acc:31434:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/seq_file.acc:31390:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+fs/seq_file.acc: In function ‘hlist_node* seq_hlist_start_head(hlist_head*, loff_t)’:
+fs/seq_file.acc:32743:20: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+   return ((void *)1);
+                    ^
+fs/seq_file.acc: In function ‘hlist_node* seq_hlist_next(void*, hlist_head*, loff_t*)’:
+fs/seq_file.acc:32821:28: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  struct hlist_node *node = v;
+                            ^
+fs/seq_file.acc: In function ‘hlist_node* seq_hlist_start_head_rcu(hlist_head*, loff_t)’:
+fs/seq_file.acc:32915:20: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+   return ((void *)1);
+                    ^
+fs/seq_file.acc: In function ‘hlist_node* seq_hlist_next_rcu(void*, hlist_head*, loff_t*)’:
+fs/seq_file.acc:32994:28: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  struct hlist_node *node = v;
+                            ^
+fs/seq_file.acc: In function ‘hlist_node* seq_hlist_next_percpu(void*, hlist_head*, int*, loff_t*)’:
+fs/seq_file.acc:33441:28: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  struct hlist_node *node = v;
+                            ^

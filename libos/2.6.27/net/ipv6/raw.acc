@@ -1,0 +1,145 @@
+#ifndef __ac_FIRST__usr_local_etc_transcallX453_5_1_libos_2_6_27__
+#define __ac_FIRST__usr_local_etc_transcallX453_5_1_libos_2_6_27__
+#define __ac_FIRST_FILE__usr_local_etc_transcallX453_5_1_libos_2_6_27_net_ipv6_raw_cxx__
+#endif // __ac_FIRST__usr_local_etc_transcallX453_5_1_libos_2_6_27__
+class Introspect;
+class MyIntrospect;
+
+#ifndef __ac_h_
+#define __ac_h_
+#ifdef __cplusplus
+namespace AC {
+  typedef const char* Type;
+  enum JPType { CALL = 32768, EXECUTION = 65536, CONSTRUCTION = 131072, DESTRUCTION = 262144, GET = 33554432 };
+  enum Protection { PROT_NONE, PROT_PRIVATE, PROT_PROTECTED, PROT_PUBLIC };
+  enum Specifiers { SPEC_NONE = 0x0 , SPEC_STATIC = 0x1, SPEC_MUTABLE = 0x2, SPEC_VIRTUAL = 0x4 };
+  struct Action {
+    void **_args; void *_result; void *_target; void *_that; void *_fptr;
+    void *_source;
+    void (*_wrapper)(Action &);
+    inline void trigger () { _wrapper (*this); }
+  };
+  struct AnyResultBuffer {};
+  template <typename T> struct ResultBuffer : public AnyResultBuffer {
+    struct { char _array[sizeof (T)]; } _data;
+    ~ResultBuffer () { ((T&)_data).T::~T(); }
+    operator T& () const { return (T&)_data; }
+  };
+  template <typename T, typename N> struct TL {
+    typedef T type; typedef N next; enum { ARGS = next::ARGS + 1 };
+  };
+  struct TLE { enum { ARGS = 0 }; };
+  template <typename T> struct Referred { typedef T type; };
+  template <typename T> struct Referred<T &> { typedef T type; };
+  template <typename TL, int I> struct Arg {
+    typedef typename Arg<typename TL::next, I - 1>::Type Type;
+    typedef typename Referred<Type>::type ReferredType;
+  };
+  template <typename TL> struct Arg<TL, 0> {
+    typedef typename TL::type Type;
+    typedef typename Referred<Type>::type ReferredType;
+  };
+  template <typename T> int ttest(...);
+  template <typename T> char ttest(typename T::__TI const volatile *);
+  template<typename T> struct HasTypeInfo {
+    enum { RET=((sizeof(ttest<T>(0))==1)?1:0) };
+  };
+  template<typename T, int HAVE = HasTypeInfo<T>::RET> struct TypeInfo {
+    enum { AVAILABLE = 0 };
+  };
+  template<typename T> struct TypeInfo<T, 1> : T::__TI {
+    enum { AVAILABLE = 1 };
+	 };
+  template<typename T> struct RT {};
+  template<typename T> RT<T> rt_deduce (const T&) { return RT<T>(); }
+  struct Cnv { template<typename T> operator RT<T>() const { return RT<T>(); }};
+  #define __AC_TYPEOF(expr) (1?AC::Cnv():AC::rt_deduce(expr))
+  template <class Aspect, int Index>
+  struct CFlow {
+    static int &instance () {
+      static int counter = 0;
+      return counter;
+    }
+    CFlow () { instance ()++; }
+    ~CFlow () { instance ()--; }
+    static bool active () { return instance () > 0; }
+  };
+}
+inline void * operator new (unsigned long int, AC::AnyResultBuffer *p) { return p; }
+inline void operator delete (void *, AC::AnyResultBuffer *) { } // for VC++
+#endif // __cplusplus
+#endif // __ac_h_
+
+
+
+
+extern "C" {
+
+
+extern void g_pause(void);
+extern void g_unpause(void);
+extern void g_init(int domain_id);
+extern void g_exit(void);
+extern void *g_map(void *addr, unsigned long size);
+extern void g_unmap(void *laddr);
+extern void *g_proc_map(void *addr, unsigned long size, void *pgd);
+
+
+
+
+
+}
+
+
+
+
+extern int pid_max;
+extern int ngroups_max;
+
+
+
+struct seq_file;
+struct dentry_operations;
+struct dentry;
+struct inode_operations;
+struct nameidata;
+struct super_operations;
+struct kstatfs;
+struct vfsmount;
+struct statfs;
+
+struct seq_file *seq_get(char *data, int size);
+struct seq_file *seq_renew(struct seq_file *m);
+
+char *dentry_op_dname(struct dentry_operations *op,
+                      struct dentry *dentry, char *buffer, int buflen);
+void *inode_op_follow_link(struct inode_operations *op,
+                           struct dentry *dentry, struct nameidata *nd);
+int super_op_statfs(struct super_operations *op,
+                    struct dentry *dentry, struct kstatfs *buf);
+
+
+struct vfsmount *lookup_vfsmount(struct vfsmount *mnt, struct dentry *dentry);
+int get_stat(struct vfsmount *mnt, struct dentry *dentry,
+             struct kstat *stat);
+int get_statfs(struct vfsmount *mnt, struct dentry *dentry,
+               struct statfs *buf);
+
+
+
+
+int uptime_proc_show(struct seq_file *m, void *v);
+int meminfo_proc_show(struct seq_file *m, void *v);
+int filesystems_proc_show(struct seq_file *m, void *v);
+int version_proc_show(struct seq_file *m, void *v);
+
+#ifdef __ac_FIRST_FILE__usr_local_etc_transcallX453_5_1_libos_2_6_27_net_ipv6_raw_cxx__
+#ifdef __ac_need__usr_local_etc_transcallX453_5_1_libos_2_6_27_MyIntrospect_ah__
+#ifndef __ac_have__usr_local_etc_transcallX453_5_1_libos_2_6_27_MyIntrospect_ah__
+#define __ac_have__usr_local_etc_transcallX453_5_1_libos_2_6_27_MyIntrospect_ah__
+#include "MyIntrospect.ah"
+#endif
+#endif
+#undef __ac_FIRST__usr_local_etc_transcallX453_5_1_libos_2_6_27__
+#undef __ac_FIRST_FILE__usr_local_etc_transcallX453_5_1_libos_2_6_27_net_ipv6_raw_cxx__
+#endif // __ac_FIRST_FILE__usr_local_etc_transcallX453_5_1_libos_2_6_27_net_ipv6_raw_cxx__

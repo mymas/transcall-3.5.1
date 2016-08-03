@@ -1,0 +1,26 @@
+lib/percpu_counter.acc: In function ‘thread_info* current_thread_info()’:
+lib/percpu_counter.acc:7016:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+lib/percpu_counter.acc: In function ‘void hlist_del(hlist_node*)’:
+lib/percpu_counter.acc:8339:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+lib/percpu_counter.acc:8340:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+lib/percpu_counter.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+lib/percpu_counter.acc:13330:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+lib/percpu_counter.acc:13323:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+lib/percpu_counter.acc: In function ‘int timer_pending(timer_list*)’:
+lib/percpu_counter.acc:13472:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_700(&__get__ZN10timer_list5entryE_701(&timer->entry).next) != 0;
+                                                                                        ^
+lib/percpu_counter.acc: In function ‘s64 __percpu_counter_sum(percpu_counter*, int)’:
+lib/percpu_counter.acc:16057:98: warning: taking address of temporary [-fpermissive]
+  for (((cpu)) = -1; ((cpu)) = __next_cpu((((cpu))), &((__get_cpu_online_map_725(&cpu_online_map)))), ((cpu)) < 64; ) {
+                                                                                                  ^

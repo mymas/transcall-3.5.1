@@ -1,0 +1,17 @@
+lib/hexdump.acc: In function ‘void hex_dump_to_buffer(void*, size_t, int, int, char*, size_t, bool)’:
+lib/hexdump.acc:3450:12: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+  u8 *ptr = buf;
+            ^
+lib/hexdump.acc:3467:15: warning: invalid conversion from ‘void*’ to ‘u64* {aka long long unsigned int*}’ [-fpermissive]
+   u64 *ptr8 = buf;
+               ^
+lib/hexdump.acc:3479:15: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+   u32 *ptr4 = buf;
+               ^
+lib/hexdump.acc:3490:15: warning: invalid conversion from ‘void*’ to ‘u16* {aka short unsigned int*}’ [-fpermissive]
+   u16 *ptr2 = buf;
+               ^
+lib/hexdump.acc: In function ‘void print_hex_dump(char*, char*, int, int, int, void*, size_t, bool)’:
+lib/hexdump.acc:3530:12: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+  u8 *ptr = buf;
+            ^

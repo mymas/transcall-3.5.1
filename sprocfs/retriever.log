@@ -1,0 +1,334 @@
+retriever.acc: In function ‘void list_del(list_head*)’:
+retriever.acc:4153:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+retriever.acc:4154:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+retriever.acc: In function ‘void hlist_del(hlist_node*)’:
+retriever.acc:5129:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+retriever.acc:5130:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+retriever.acc: In function ‘int timer_pending(timer_list*)’:
+retriever.acc:15209:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_302(&__get__ZN10timer_list5entryE_303(&timer->entry).next) != 0;
+                                                                                        ^
+retriever.acc: At global scope:
+retriever.acc:19624:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+retriever.acc:19625:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+retriever.acc:19626:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+retriever.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+retriever.acc:22230:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+retriever.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+retriever.acc:24902:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_626(&__get__ZN3pid7numbersE_627(&pid->numbers[__get__ZN3pid5levelE_628(&pid->level)]).ns);
+                                                                                                                 ^
+retriever.acc: In function ‘bool is_child_reaper(pid*)’:
+retriever.acc:25019:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_629(&__get__ZN3pid7numbersE_630(&pid->numbers[__get__ZN3pid5levelE_631(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+retriever.acc: In function ‘pid_t pid_nr(pid*)’:
+retriever.acc:25095:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_632(&__get__ZN3pid7numbersE_633(&pid->numbers[0]).nr);
+                                                                             ^
+retriever.acc: In function ‘void list_del_rcu(list_head*)’:
+retriever.acc:25579:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+retriever.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+retriever.acc:25665:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+retriever.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+retriever.acc:25799:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+retriever.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+retriever.acc:25881:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+retriever.acc: At global scope:
+retriever.acc:27693:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+retriever.acc:27649:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+retriever.acc: In function ‘task_struct* next_thread(task_struct*)’:
+retriever.acc:31063:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_753(&__get__ZN11task_struct12thread_groupE_754(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+retriever.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+retriever.acc:32518:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_792(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+retriever.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+retriever.acc:33128:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+retriever.acc:33129:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+retriever.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+retriever.acc:33216:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+retriever.acc: In function ‘int dname_external(dentry*)’:
+retriever.acc:33512:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_803(&__get__ZN6dentry6d_nameE_804(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_805(dentry->d_iname);
+                                                                                 ^
+retriever.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+retriever.acc:38839:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_918(&__get__ZN6dentry7d_inodeE_919(&__get__ZN4path6dentryE_920(&__get__ZN4file6f_pathE_921(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+retriever.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+retriever.acc:38914:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_924(&__get__ZN4file6f_pathE_925(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+retriever.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+retriever.acc:39845:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+retriever.acc:39851:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+retriever.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+retriever.acc:39877:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+retriever.acc:39883:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+retriever.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+retriever.acc:42892:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+retriever.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+retriever.acc:42979:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+retriever.acc: In function ‘zone_type page_zonenum(page*)’:
+retriever.acc:43024:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+retriever.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+retriever.acc:43269:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1389(&vm_stat[item]));
+                                                       ^
+retriever.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+retriever.acc:43309:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1390(&vm_stat[item]));
+                                                              ^
+retriever.acc: In function ‘bool dmaf_p_disabled_continue(dma_ctrl_flags)’:
+retriever.acc:46388:49: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  enum dma_ctrl_flags mask = DMA_PREP_CONTINUE | DMA_PREP_PQ_DISABLE_P;
+                                                 ^
+retriever.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+retriever.acc:46449:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+retriever.acc: In function ‘void async_tx_clear_ack(dma_async_tx_descriptor*)’:
+retriever.acc:46454:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags &= ~DMA_CTRL_ACK;
+            ^
+retriever.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+retriever.acc:47545:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1561(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1562(&__get__ZN11task_struct6threadE_1563(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+retriever.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+retriever.acc:49101:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+retriever.acc:49103:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+retriever.acc: In function ‘void hlist_nulls_del(hlist_nulls_node*)’:
+retriever.acc:55329:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+retriever.acc: In function ‘netdev_queue* netdev_get_tx_queue(net_device*, unsigned int)’:
+retriever.acc:62303:92: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10net_device3_txE_2027(&__get__ZN10net_device3_txE_2028(&dev->_tx)[index]);
+                                                                                            ^
+retriever.acc: In function ‘void netdev_for_each_tx_queue(net_device*, void (*)(net_device*, netdev_queue*, void*), void*)’:
+retriever.acc:62420:89: warning: taking address of temporary [-fpermissive]
+   f(dev, &__get__ZN10net_device3_txE_2030(&__get__ZN10net_device3_txE_2031(&dev->_tx)[i]), arg);
+                                                                                         ^
+retriever.acc: In function ‘net_device* next_net_device(net_device*)’:
+retriever.acc:62893:92: warning: taking address of temporary [-fpermissive]
+  lh = __get__ZN9list_head4nextE_2038(&__get__ZN10net_device8dev_listE_2039(&dev->dev_list).next);
+                                                                                            ^
+retriever.acc: In function ‘net_device* first_net_device(net*)’:
+retriever.acc:62980:150: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct net_device *)0)->dev_list ) *__mptr = (__get__ZN9list_head4nextE_2040(&__get__ZN3net13dev_base_headE_2041(&net->dev_base_head).next)); (struct net_device *)( (char *)__mptr - ((size_t) &((struct net_device *)0)->dev_list) );});
+                                                                                                                                                      ^
+retriever.acc: In function ‘u32 jhash(void*, u32, u32)’:
+retriever.acc:65604:10: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+  u8 *k = key;
+          ^
+retriever.acc: In function ‘void hlist_nulls_del_rcu(hlist_nulls_node*)’:
+retriever.acc:66509:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+retriever.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+retriever.acc:67466:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+retriever.acc: In function ‘sock* sk_next(sock*)’:
+retriever.acc:69794:104: warning: taking address of temporary [-fpermissive]
+  return __get__ZN10hlist_node4nextE_2311(&__get__ZN4sock11__sk_commonE_2313(&sk->__sk_common).skc_node.next) ?
+                                                                                                        ^
+retriever.acc:69795:163: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_node ) *__mptr = (__get__ZN10hlist_node4nextE_2314(&__get__ZN4sock11__sk_commonE_2316(&sk->__sk_common).skc_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_node) );}) : 0;
+                                                                                                                                                                   ^
+retriever.acc: In function ‘sock* sk_nulls_next(sock*)’:
+retriever.acc:69940:129: warning: taking address of temporary [-fpermissive]
+  return (!is_a_nulls(__get__ZN16hlist_nulls_node4nextE_2317(&__get__ZN4sock11__sk_commonE_2319(&sk->__sk_common).skc_nulls_node.next))) ?
+                                                                                                                                 ^
+retriever.acc:69941:181: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_nulls_node ) *__mptr = (__get__ZN16hlist_nulls_node4nextE_2320(&__get__ZN4sock11__sk_commonE_2322(&sk->__sk_common).skc_nulls_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_nulls_node) );})
+                                                                                                                                                                                     ^
+retriever.acc: In function ‘request_sock* reqsk_alloc(request_sock_ops*)’:
+retriever.acc:74439:115: warning: invalid conversion from ‘void*’ to ‘request_sock*’ [-fpermissive]
+  struct request_sock *req = kmem_cache_alloc(__get__ZN16request_sock_ops4slabE_2524(&ops->slab), ((( gfp_t)0x20u)));
+                                                                                                                   ^
+retriever.acc: In function ‘int fastopen_init_queue(sock*, int)’:
+retriever.acc:78072:62: warning: invalid conversion from ‘void*’ to ‘fastopen_queue*’ [-fpermissive]
+       __get__ZN4sock13sk_allocationE_2604(&sk->sk_allocation));
+                                                              ^
+retriever.acc: In function ‘u32 ndisc_hashfn(void*, net_device*, __u32*)’:
+retriever.acc:79483:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+retriever.acc: In function ‘neighbour* __ipv6_neigh_lookup_noref(net_device*, void*)’:
+retriever.acc:79494:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+retriever.acc: In function ‘int __ipv6_addr_diff32(void*, void*, int)’:
+retriever.acc:80430:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+               ^
+retriever.acc:80430:29: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+                             ^
+retriever.acc: In function ‘int __ipv6_addr_diff64(void*, void*, int)’:
+retriever.acc:80446:15: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+               ^
+retriever.acc:80446:29: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+                             ^
+retriever.acc: In function ‘void ip_select_ident(sk_buff*, dst_entry*, sock*)’:
+retriever.acc:81855:102: warning: taking address of temporary [-fpermissive]
+   iph->id = (sk && __get__ZN4sock11__sk_commonE_2727(&__get__ZN9inet_sock2skE_2728(&inet_sk(sk)->sk).__sk_common).skc_daddr) ?
+                                                                                                      ^
+retriever.acc: In function ‘void ip_select_ident_more(sk_buff*, dst_entry*, sock*, int)’:
+retriever.acc:82076:95: warning: taking address of temporary [-fpermissive]
+   if (sk && __get__ZN4sock11__sk_commonE_2732(&__get__ZN9inet_sock2skE_2733(&inet_sk(sk)->sk).__sk_common).skc_daddr) {
+                                                                                               ^
+retriever.acc: In function ‘udp_hslot* udp_hashslot(_udp_table*, net*, unsigned int)’:
+retriever.acc:82570:160: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10_udp_table4hashE_2746(&__get__ZN10_udp_table4hashE_2747(&table->hash)[udp_hashfn(net, num, __get__ZN10_udp_table4maskE_2748(&table->mask))]);
+                                                                                                                                                                ^
+retriever.acc: In function ‘udp_hslot* udp_hashslot2(_udp_table*, unsigned int)’:
+retriever.acc:82681:148: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10_udp_table5hash2E_2749(&__get__ZN10_udp_table5hash2E_2750(&table->hash2)[hash & __get__ZN10_udp_table4maskE_2751(&table->mask)]);
+                                                                                                                                                    ^
+retriever.acc: In function ‘ablkcipher_request* ablkcipher_request_alloc(crypto_ablkcipher*, gfp_t)’:
+retriever.acc:83444:44: warning: invalid conversion from ‘void*’ to ‘ablkcipher_request*’ [-fpermissive]
+         crypto_ablkcipher_reqsize(tfm), gfp);
+                                            ^
+retriever.acc: In function ‘aead_request* aead_request_alloc(crypto_aead*, gfp_t)’:
+retriever.acc:83575:60: warning: invalid conversion from ‘void*’ to ‘aead_request*’ [-fpermissive]
+  req = kmalloc(sizeof(*req) + crypto_aead_reqsize(tfm), gfp);
+                                                            ^
+retriever.acc: In function ‘inet_ehash_bucket* inet_ehash_bucket_(inet_hashinfo*, unsigned int)’:
+retriever.acc:84629:176: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN13inet_hashinfo5ehashE_2825(&__get__ZN13inet_hashinfo5ehashE_2826(&hashinfo->ehash)[hash & __get__ZN13inet_hashinfo10ehash_maskE_2827(&hashinfo->ehash_mask)]);
+                                                                                                                                                                                ^
+retriever.acc: In function ‘spinlock_t* inet_ehash_lockp(inet_hashinfo*, unsigned int)’:
+retriever.acc:84741:208: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN13inet_hashinfo11ehash_locksE_2828(&__get__ZN13inet_hashinfo11ehash_locksE_2829(&hashinfo->ehash_locks)[hash & __get__ZN13inet_hashinfo16ehash_locks_maskE_2830(&hashinfo->ehash_locks_mask)]);
+                                                                                                                                                                                                                ^
+retriever.acc: In function ‘int inet_ehash_locks_alloc(inet_hashinfo*)’:
+retriever.acc:84833:61: warning: invalid conversion from ‘void*’ to ‘spinlock_t* {aka spinlock*}’ [-fpermissive]
+    hashinfo->ehash_locks = vmalloc(size * sizeof(spinlock_t));
+                                                             ^
+retriever.acc:84837:60: warning: invalid conversion from ‘void*’ to ‘spinlock_t* {aka spinlock*}’ [-fpermissive]
+       ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                            ^
+retriever.acc: In function ‘int inet_sk_listen_hashfn(sock*)’:
+retriever.acc:85096:118: warning: taking address of temporary [-fpermissive]
+  return inet_lhashfn(sock_net(sk), __get__ZN4sock11__sk_commonE_2838(&__get__ZN9inet_sock2skE_2839(&inet_sk(sk)->sk).__sk_common).skc_num);
+                                                                                                                      ^
+retriever.acc: In function ‘raw_iter_state* raw_seq_private(seq_file*)’:
+retriever.acc:96605:14: warning: invalid conversion from ‘void*’ to ‘raw_iter_state*’ [-fpermissive]
+  return seq->_private;
+              ^
+retriever.acc: In function ‘unsigned int name_to_int(dentry*)’:
+retriever.acc:97063:89: warning: taking address of temporary [-fpermissive]
+  char *name = __get__ZN4qstr4nameE_3484(&__get__ZN6dentry6d_nameE_3485(&dentry->d_name).name);
+                                                                                         ^
+retriever.acc:97063:93: warning: invalid conversion from ‘unsigned char*’ to ‘char*’ [-fpermissive]
+  char *name = __get__ZN4qstr4nameE_3484(&__get__ZN6dentry6d_nameE_3485(&dentry->d_name).name);
+                                                                                             ^
+retriever.acc: In function ‘void create_pids(fuse_node*)’:
+retriever.acc:97610:185: warning: taking address of temporary [-fpermissive]
+     task = ({typeof (*(&init_task)->tasks.next) *__ptr = (typeof (*(&init_task)->tasks.next) *)__get__ZN9list_head4nextE_3515(&__get__ZN11task_struct5tasksE_3516(&(&init_task)->tasks).next); ({ typeof( ((struct task_struct *)0)->tasks ) *__mptr = ((typeof((&init_task)->tasks.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->tasks) );}); });
+                                                                                                                                                                                         ^
+retriever.acc:97615:171: warning: taking address of temporary [-fpermissive]
+         task = ({typeof (*(task)->tasks.next) *__ptr = (typeof (*(task)->tasks.next) *)__get__ZN9list_head4nextE_3518(&__get__ZN11task_struct5tasksE_3519(&(task)->tasks).next); ({ typeof( ((struct task_struct *)0)->tasks ) *__mptr = ((typeof((task)->tasks.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->tasks) );}); });
+                                                                                                                                                                           ^
+retriever.acc: In function ‘void update_pid_task(fuse_node*)’:
+retriever.acc:97660:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^
+retriever.acc: In function ‘void update_pid_fd(fuse_node*)’:
+retriever.acc:97755:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^
+retriever.acc: In function ‘void update_pid_stat(fuse_node*)’:
+retriever.acc:97880:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^
+retriever.acc:97887:81: warning: taking address of temporary [-fpermissive]
+     ns = __get__ZN4upid2nsE_3526(&__get__ZN3pid7numbersE_3527(&pid->numbers[0]).ns);
+                                                                                 ^
+retriever.acc: In function ‘void update_pid_status(fuse_node*)’:
+retriever.acc:97972:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^
+retriever.acc:97979:81: warning: taking address of temporary [-fpermissive]
+     ns = __get__ZN4upid2nsE_3532(&__get__ZN3pid7numbersE_3533(&pid->numbers[0]).ns);
+                                                                                 ^
+retriever.acc: In function ‘void update_pid_cmdline(fuse_node*)’:
+retriever.acc:97992:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^
+retriever.acc: In function ‘void update_pid_auxv(fuse_node*)’:
+retriever.acc:98008:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^
+retriever.acc: In function ‘void update_pid_exe(fuse_node*)’:
+retriever.acc:98026:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^
+retriever.acc: In function ‘void update_pid_maps(fuse_node*)’:
+retriever.acc:98133:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^
+retriever.acc: In function ‘void update_tid_maps(fuse_node*)’:
+retriever.acc:98150:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+     nr = (int)get_update_arg(node);
+                                  ^

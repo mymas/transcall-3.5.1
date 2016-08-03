@@ -1,0 +1,32 @@
+#!/bin/bash
+
+ABSPATH=$(cd $(dirname "$1") && pwd)/$(basename "$1")
+
+while read LINE
+do
+	for arg in ${LINE}
+	do
+		DATA[${CNT}]=${arg}
+		CNT=`expr ${CNT} + 1`
+	done
+	if [ "${DATA[2]}" = "${ABSPATH}" ]; then
+		umount ${DATA[2]}
+		umount ${DATA[2]}r
+
+		if [ "${DATA[3]}" != "NULL" ];then
+			umount ${DATA[3]}
+		fi
+		if [ "${DATA[1]}" != "NULL" ]; then
+			vgchange -an ${DATA[1]} > /dev/null 2>&1
+		fi
+		kpartx -d ${DATA[0]} > /dev/null 2>&1
+		losetup -d ${DATA[0]} > /dev/null 2>&1
+	else
+		echo ${LINE} >> /tmp/mount.tmp
+	fi
+	CNT=0
+done < /tmp/mount.dat
+
+rm -f /tmp/mount.dat
+mv /tmp/mount.tmp /tmp/mount.dat 2> /dev/null
+

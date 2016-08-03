@@ -1,0 +1,174 @@
+mm/hugetlb.acc: In function ‘void list_del(list_head*)’:
+mm/hugetlb.acc:791:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+mm/hugetlb.acc:792:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+mm/hugetlb.acc: In function ‘void hlist_del(hlist_node*)’:
+mm/hugetlb.acc:1767:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+mm/hugetlb.acc:1768:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/hugetlb.acc: In function ‘int timer_pending(timer_list*)’:
+mm/hugetlb.acc:15323:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_326(&__get__ZN10timer_list5entryE_327(&timer->entry).next) != 0;
+                                                                                        ^
+mm/hugetlb.acc: At global scope:
+mm/hugetlb.acc:19326:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+mm/hugetlb.acc:19327:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+mm/hugetlb.acc:19328:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+mm/hugetlb.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+mm/hugetlb.acc:21233:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+mm/hugetlb.acc: At global scope:
+mm/hugetlb.acc:22306:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+mm/hugetlb.acc:22262:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+mm/hugetlb.acc: In function ‘void list_del_rcu(list_head*)’:
+mm/hugetlb.acc:25317:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+mm/hugetlb.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+mm/hugetlb.acc:25403:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+mm/hugetlb.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+mm/hugetlb.acc:25537:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/hugetlb.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+mm/hugetlb.acc:25619:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+mm/hugetlb.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+mm/hugetlb.acc:26053:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+mm/hugetlb.acc:26054:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/hugetlb.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+mm/hugetlb.acc:26141:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+mm/hugetlb.acc: In function ‘int dname_external(dentry*)’:
+mm/hugetlb.acc:26437:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_542(&__get__ZN6dentry6d_nameE_543(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_544(dentry->d_iname);
+                                                                                 ^
+mm/hugetlb.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+mm/hugetlb.acc:27673:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_572(&__get__ZN3pid7numbersE_573(&pid->numbers[__get__ZN3pid5levelE_574(&pid->level)]).ns);
+                                                                                                                 ^
+mm/hugetlb.acc: In function ‘bool is_child_reaper(pid*)’:
+mm/hugetlb.acc:27790:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_575(&__get__ZN3pid7numbersE_576(&pid->numbers[__get__ZN3pid5levelE_577(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+mm/hugetlb.acc: In function ‘pid_t pid_nr(pid*)’:
+mm/hugetlb.acc:27866:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_578(&__get__ZN3pid7numbersE_579(&pid->numbers[0]).nr);
+                                                                             ^
+mm/hugetlb.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+mm/hugetlb.acc:32898:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_682(&__get__ZN6dentry7d_inodeE_683(&__get__ZN4path6dentryE_684(&__get__ZN4file6f_pathE_685(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+mm/hugetlb.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+mm/hugetlb.acc:32973:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_688(&__get__ZN4file6f_pathE_689(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+mm/hugetlb.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+mm/hugetlb.acc:34727:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+mm/hugetlb.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+mm/hugetlb.acc:34814:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+mm/hugetlb.acc: In function ‘zone_type page_zonenum(page*)’:
+mm/hugetlb.acc:34859:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+mm/hugetlb.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+mm/hugetlb.acc:35104:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1098(&vm_stat[item]));
+                                                       ^
+mm/hugetlb.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+mm/hugetlb.acc:35144:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1099(&vm_stat[item]));
+                                                              ^
+mm/hugetlb.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+mm/hugetlb.acc:37675:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1199(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+mm/hugetlb.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+mm/hugetlb.acc:39825:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+mm/hugetlb.acc:39826:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+mm/hugetlb.acc: In function ‘void copy_highpage(page*, page*)’:
+mm/hugetlb.acc:39838:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+mm/hugetlb.acc:39839:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+mm/hugetlb.acc: In function ‘task_struct* next_thread(task_struct*)’:
+mm/hugetlb.acc:46163:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1498(&__get__ZN11task_struct12thread_groupE_1499(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+mm/hugetlb.acc: In function ‘anon_vma* page_anon_vma(page*)’:
+mm/hugetlb.acc:49300:27: warning: invalid conversion from ‘void*’ to ‘anon_vma*’ [-fpermissive]
+  return page_rmapping(page);
+                           ^
+mm/hugetlb.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+mm/hugetlb.acc:49609:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+mm/hugetlb.acc:49615:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+mm/hugetlb.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+mm/hugetlb.acc:49641:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+mm/hugetlb.acc:49647:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+mm/hugetlb.acc: In function ‘hugetlbfs_sb_info* HUGETLBFS_SB(super_block*)’:
+mm/hugetlb.acc:51754:62: warning: invalid conversion from ‘void*’ to ‘hugetlbfs_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1647(&sb->s_fs_info);
+                                                              ^
+mm/hugetlb.acc: In function ‘hstate* hstate_sizelog(int)’:
+mm/hugetlb.acc:51987:92: warning: taking address of temporary [-fpermissive]
+   return &(__get_hstates_1651(&hstates[__get_default_hstate_idx_1652(&default_hstate_idx)]));
+                                                                                            ^
+mm/hugetlb.acc: In function ‘unsigned int hstate_index_to_shift(unsigned int)’:
+mm/hugetlb.acc:52459:75: warning: taking address of temporary [-fpermissive]
+  return __get__ZN6hstate5orderE_1659(&__get_hstates_1660(&hstates[index]).order) + 12;
+                                                                           ^
+mm/hugetlb.acc: In function ‘int set_hugetlb_cgroup(page*, hugetlb_cgroup*)’:
+mm/hugetlb.acc:52749:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[2].lru.next = (void *)h_cg;
+                   ^
+mm/hugetlb.acc: In function ‘void hugetlb_report_meminfo(seq_file*)’:
+mm/hugetlb.acc:53332:103: warning: taking address of temporary [-fpermissive]
+  struct hstate *h = &(__get_hstates_1688(&hstates[__get_default_hstate_idx_1689(&default_hstate_idx)]));
+                                                                                                       ^
+mm/hugetlb.acc: In function ‘long unsigned int hugetlb_total_pages()’:
+mm/hugetlb.acc:53461:52: warning: taking address of temporary [-fpermissive]
+                 h = &__get_hstates_1695(&hstates[i]);
+                                                    ^

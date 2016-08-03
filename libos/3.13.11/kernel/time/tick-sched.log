@@ -1,0 +1,144 @@
+kernel/time/tick-sched.acc: In function ‘void list_del(list_head*)’:
+kernel/time/tick-sched.acc:890:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/time/tick-sched.acc:891:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/time/tick-sched.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/time/tick-sched.acc:1866:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/time/tick-sched.acc:1867:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/time/tick-sched.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/time/tick-sched.acc:12892:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_241(&__get__ZN10timer_list5entryE_242(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/time/tick-sched.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+kernel/time/tick-sched.acc:15854:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_332(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+kernel/time/tick-sched.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+kernel/time/tick-sched.acc:16072:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+kernel/time/tick-sched.acc:16078:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/time/tick-sched.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+kernel/time/tick-sched.acc:16104:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+kernel/time/tick-sched.acc:16110:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/time/tick-sched.acc: At global scope:
+kernel/time/tick-sched.acc:20406:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/time/tick-sched.acc:20407:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/time/tick-sched.acc:20408:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/time/tick-sched.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/time/tick-sched.acc:22313:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/time/tick-sched.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/time/tick-sched.acc:27933:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_759(&__get__ZN3pid7numbersE_760(&pid->numbers[__get__ZN3pid5levelE_761(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/time/tick-sched.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/time/tick-sched.acc:28050:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_762(&__get__ZN3pid7numbersE_763(&pid->numbers[__get__ZN3pid5levelE_764(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/time/tick-sched.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/time/tick-sched.acc:28126:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_765(&__get__ZN3pid7numbersE_766(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/time/tick-sched.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/time/tick-sched.acc:28610:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/time/tick-sched.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/time/tick-sched.acc:28696:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/time/tick-sched.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/time/tick-sched.acc:28830:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/time/tick-sched.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/time/tick-sched.acc:28912:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/time/tick-sched.acc: At global scope:
+kernel/time/tick-sched.acc:30358:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/time/tick-sched.acc:30314:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/time/tick-sched.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/time/tick-sched.acc:33728:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_846(&__get__ZN11task_struct12thread_groupE_847(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+kernel/time/tick-sched.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kernel/time/tick-sched.acc:38547:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/time/tick-sched.acc:38548:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/time/tick-sched.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kernel/time/tick-sched.acc:38635:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/time/tick-sched.acc: In function ‘int dname_external(dentry*)’:
+kernel/time/tick-sched.acc:38931:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_935(&__get__ZN6dentry6d_nameE_936(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_937(dentry->d_iname);
+                                                                                 ^
+kernel/time/tick-sched.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kernel/time/tick-sched.acc:44183:139: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_1050(&__get__ZN6dentry7d_inodeE_1051(&__get__ZN4path6dentryE_1052(&__get__ZN4file6f_pathE_1053(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                           ^
+kernel/time/tick-sched.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kernel/time/tick-sched.acc:44258:89: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_1056(&__get__ZN4file6f_pathE_1057(&file->f_path).dentry)), 4) == 0;
+                                                                                         ^
+kernel/time/tick-sched.acc: In function ‘long unsigned int stack_frame(task_struct*, pt_regs*)’:
+kernel/time/tick-sched.acc:45942:113: warning: taking address of temporary [-fpermissive]
+  return *(unsigned long *)__get__ZN13thread_struct2spE_1081(&__get__ZN11task_struct6threadE_1082(&task->thread).sp);
+                                                                                                                 ^
+kernel/time/tick-sched.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/time/tick-sched.acc:48011:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/time/tick-sched.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/time/tick-sched.acc:48098:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/time/tick-sched.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/time/tick-sched.acc:48143:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/time/tick-sched.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/time/tick-sched.acc:48388:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1497(&vm_stat[item]));
+                                                       ^
+kernel/time/tick-sched.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/time/tick-sched.acc:48428:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1498(&vm_stat[item]));
+                                                              ^
+kernel/time/tick-sched.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+kernel/time/tick-sched.acc:51520:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1585(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1586(&__get__ZN11task_struct6threadE_1587(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+kernel/time/tick-sched.acc: In function ‘ctx_state exception_enter()’:
+kernel/time/tick-sched.acc:52896:10: warning: invalid conversion from ‘int’ to ‘ctx_state’ [-fpermissive]
+   return 0;
+          ^

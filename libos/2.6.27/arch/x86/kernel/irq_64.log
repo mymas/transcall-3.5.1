@@ -1,0 +1,38 @@
+arch/x86/kernel/irq_64.acc: In function ‘void hlist_del(hlist_node*)’:
+arch/x86/kernel/irq_64.acc:8107:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+arch/x86/kernel/irq_64.acc:8108:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+arch/x86/kernel/irq_64.acc: In function ‘thread_info* current_thread_info()’:
+arch/x86/kernel/irq_64.acc:8574:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_477(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_478(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_479(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+arch/x86/kernel/irq_64.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+arch/x86/kernel/irq_64.acc:13318:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+arch/x86/kernel/irq_64.acc:13311:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+arch/x86/kernel/irq_64.acc: In function ‘int timer_pending(timer_list*)’:
+arch/x86/kernel/irq_64.acc:13460:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_700(&__get__ZN10timer_list5entryE_701(&timer->entry).next) != 0;
+                                                                                        ^
+arch/x86/kernel/irq_64.acc: In function ‘int kstat_irqs(int)’:
+arch/x86/kernel/irq_64.acc:14468:102: warning: taking address of temporary [-fpermissive]
+  for (((cpu)) = -1; ((cpu)) = __next_cpu((((cpu))), &((__get_cpu_possible_map_706(&cpu_possible_map)))), ((cpu)) < 64; )
+                                                                                                      ^
+arch/x86/kernel/irq_64.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+arch/x86/kernel/irq_64.acc:16489:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_771(&__get__ZN3pid7numbersE_772(&pid->numbers[__get__ZN3pid5levelE_773(&pid->level)]).ns);
+                                                                                                                 ^
+arch/x86/kernel/irq_64.acc: In function ‘pid_t pid_nr(pid*)’:
+arch/x86/kernel/irq_64.acc:16566:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_774(&__get__ZN3pid7numbersE_775(&pid->numbers[0]).nr);
+                                                                             ^
+arch/x86/kernel/irq_64.acc: In function ‘task_struct* next_thread(task_struct*)’:
+arch/x86/kernel/irq_64.acc:20232:165: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_818(&__get__ZN11task_struct12thread_groupE_819(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                     ^

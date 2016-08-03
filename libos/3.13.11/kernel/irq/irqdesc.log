@@ -1,0 +1,75 @@
+kernel/irq/irqdesc.acc: In function ‘void list_del(list_head*)’:
+kernel/irq/irqdesc.acc:792:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/irq/irqdesc.acc:793:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/irq/irqdesc.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/irq/irqdesc.acc:1768:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/irq/irqdesc.acc:1769:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/irq/irqdesc.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/irq/irqdesc.acc:13591:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_251(&__get__ZN10timer_list5entryE_252(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/irq/irqdesc.acc: At global scope:
+kernel/irq/irqdesc.acc:18059:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/irq/irqdesc.acc:18060:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/irq/irqdesc.acc:18061:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/irq/irqdesc.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/irq/irqdesc.acc:21051:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/irq/irqdesc.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/irq/irqdesc.acc:26713:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_714(&__get__ZN3pid7numbersE_715(&pid->numbers[__get__ZN3pid5levelE_716(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/irq/irqdesc.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/irq/irqdesc.acc:26830:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_717(&__get__ZN3pid7numbersE_718(&pid->numbers[__get__ZN3pid5levelE_719(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/irq/irqdesc.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/irq/irqdesc.acc:26906:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_720(&__get__ZN3pid7numbersE_721(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/irq/irqdesc.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/irq/irqdesc.acc:27390:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/irq/irqdesc.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/irq/irqdesc.acc:27476:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/irq/irqdesc.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/irq/irqdesc.acc:27610:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/irq/irqdesc.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/irq/irqdesc.acc:27692:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/irq/irqdesc.acc: At global scope:
+kernel/irq/irqdesc.acc:29138:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/irq/irqdesc.acc:29094:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/irq/irqdesc.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/irq/irqdesc.acc:32508:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_801(&__get__ZN11task_struct12thread_groupE_802(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+kernel/irq/irqdesc.acc: In function ‘irq_desc* irq_to_desc(unsigned int)’:
+kernel/irq/irqdesc.acc:37063:46: warning: invalid conversion from ‘void*’ to ‘irq_desc*’ [-fpermissive]
+  return radix_tree_lookup(&irq_desc_tree, irq);
+                                              ^

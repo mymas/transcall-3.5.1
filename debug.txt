@@ -1,0 +1,20 @@
+mkdir /tmp/vm1
+./mount_vdisk.sh /xen/disk.img /tmp/vm1
+
+cd ../csfs
+gdb ./csfs
+> r -d --perms=a-w /tmp/vm1c /tmp/vm1r 1
+
+cd ../scripts
+./mount_aufs.sh /tmp/vm1
+
+cd ../sprocfs
+gdb ./shadow_procfs
+> r -d /tmp/vm1/proc 1
+
+cd ../transcall
+gdb ./transcall
+> r /tmp/vm1 1 bash
+
+
+% use fstab

@@ -1,0 +1,188 @@
+fs/namei.acc: In function ‘void list_del(list_head*)’:
+fs/namei.acc:3656:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+fs/namei.acc:3657:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/namei.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/namei.acc:4632:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/namei.acc:4633:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/namei.acc: In function ‘int timer_pending(timer_list*)’:
+fs/namei.acc:15138:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_324(&__get__ZN10timer_list5entryE_325(&timer->entry).next) != 0;
+                                                                                        ^
+fs/namei.acc: At global scope:
+fs/namei.acc:19141:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+fs/namei.acc:19142:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+fs/namei.acc:19143:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+fs/namei.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+fs/namei.acc:21048:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+fs/namei.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/namei.acc:22399:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/namei.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/namei.acc:22485:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+fs/namei.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/namei.acc:22619:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/namei.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/namei.acc:22701:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+fs/namei.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+fs/namei.acc:23222:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/namei.acc:23223:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/namei.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+fs/namei.acc:23310:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/namei.acc: In function ‘int dname_external(dentry*)’:
+fs/namei.acc:23606:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_530(&__get__ZN6dentry6d_nameE_531(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_532(dentry->d_iname);
+                                                                                 ^
+fs/namei.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/namei.acc:24698:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_558(&__get__ZN3pid7numbersE_559(&pid->numbers[__get__ZN3pid5levelE_560(&pid->level)]).ns);
+                                                                                                                 ^
+fs/namei.acc: In function ‘bool is_child_reaper(pid*)’:
+fs/namei.acc:24815:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_561(&__get__ZN3pid7numbersE_562(&pid->numbers[__get__ZN3pid5levelE_563(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+fs/namei.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/namei.acc:24891:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_564(&__get__ZN3pid7numbersE_565(&pid->numbers[0]).nr);
+                                                                             ^
+fs/namei.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+fs/namei.acc:29969:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_668(&__get__ZN6dentry7d_inodeE_669(&__get__ZN4path6dentryE_670(&__get__ZN4file6f_pathE_671(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+fs/namei.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+fs/namei.acc:30044:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_674(&__get__ZN4file6f_pathE_675(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+fs/namei.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/namei.acc:32651:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/namei.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/namei.acc:32738:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/namei.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/namei.acc:32783:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/namei.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/namei.acc:33028:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1092(&vm_stat[item]));
+                                                       ^
+fs/namei.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/namei.acc:33068:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1093(&vm_stat[item]));
+                                                              ^
+fs/namei.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+fs/namei.acc:37374:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+fs/namei.acc:37375:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+fs/namei.acc: In function ‘void copy_highpage(page*, page*)’:
+fs/namei.acc:37387:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+fs/namei.acc:37388:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+fs/namei.acc: At global scope:
+fs/namei.acc:38283:10: warning: ‘struct fsnotify_group::<anonymous union>::inotify_group_private_data’ invalid; an anonymous union can only have non-static data members [-fpermissive]
+   struct inotify_group_private_data {
+          ^
+fs/namei.acc:38293:10: warning: ‘struct fsnotify_group::<anonymous union>::fanotify_group_private_data’ invalid; an anonymous union can only have non-static data members [-fpermissive]
+   struct fanotify_group_private_data {
+          ^
+fs/namei.acc:41249:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/namei.acc:41205:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+fs/namei.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/namei.acc:44567:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1470(&__get__ZN11task_struct12thread_groupE_1471(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+fs/namei.acc: In function ‘void fsnotify_move(inode*, inode*, unsigned char*, int, inode*, dentry*)’:
+fs/namei.acc:46893:101: warning: taking address of temporary [-fpermissive]
+  unsigned char *new_name = __get__ZN4qstr4nameE_1511(&__get__ZN6dentry6d_nameE_1512(&moved->d_name).name);
+                                                                                                     ^
+fs/namei.acc: In function ‘void fsnotify_create(inode*, dentry*)’:
+fs/namei.acc:47064:157: warning: taking address of temporary [-fpermissive]
+  fsnotify(inode, 0x00000100, __get__ZN6dentry7d_inodeE_1514(&dentry->d_inode), 2, __get__ZN4qstr4nameE_1515(&__get__ZN6dentry6d_nameE_1516(&dentry->d_name).name), 0);
+                                                                                                                                                             ^
+fs/namei.acc: In function ‘void fsnotify_link(inode*, inode*, dentry*)’:
+fs/namei.acc:47147:116: warning: taking address of temporary [-fpermissive]
+  fsnotify(dir, 0x00000100, inode, 2, __get__ZN4qstr4nameE_1517(&__get__ZN6dentry6d_nameE_1518(&new_dentry->d_name).name), 0);
+                                                                                                                    ^
+fs/namei.acc: In function ‘void fsnotify_mkdir(inode*, dentry*)’:
+fs/namei.acc:47265:110: warning: taking address of temporary [-fpermissive]
+  fsnotify(inode, mask, d_inode, 2, __get__ZN4qstr4nameE_1520(&__get__ZN6dentry6d_nameE_1521(&dentry->d_name).name), 0);
+                                                                                                              ^
+fs/namei.acc: In function ‘unsigned char* fsnotify_oldname_init(unsigned char*)’:
+fs/namei.acc:47820:84: warning: invalid conversion from ‘char*’ to ‘unsigned char*’ [-fpermissive]
+  return kstrdup((char *)name, ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                    ^
+fs/namei.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+fs/namei.acc:49032:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1556(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+fs/namei.acc: In function ‘long unsigned int stack_frame(task_struct*, pt_regs*)’:
+fs/namei.acc:50133:113: warning: taking address of temporary [-fpermissive]
+  return *(unsigned long *)__get__ZN13thread_struct2spE_1565(&__get__ZN11task_struct6threadE_1566(&task->thread).sp);
+                                                                                                                 ^
+fs/namei.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+fs/namei.acc:51139:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1578(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1579(&__get__ZN11task_struct6threadE_1580(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+fs/namei.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+fs/namei.acc:51819:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+fs/namei.acc:51825:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+fs/namei.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+fs/namei.acc:51851:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+fs/namei.acc:51857:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+fs/namei.acc: In function ‘void forget_cached_acl(inode*, int)’:
+fs/namei.acc:55121:5: warning: invalid conversion from ‘void*’ to ‘posix_acl*’ [-fpermissive]
+  *p = ((void *)(-1));
+     ^
+fs/namei.acc: In function ‘void forget_all_cached_acls(inode*)’:
+fs/namei.acc:55203:38: warning: invalid conversion from ‘void*’ to ‘posix_acl*’ [-fpermissive]
+  inode->i_acl = inode->i_default_acl = ((void *)(-1));
+                                      ^

@@ -1,0 +1,71 @@
+csfs.cc: In function ‘int csfs_getattr(const char*, stat*)’:
+csfs.cc:384:38: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     dentry = lookup_dentry(path, &mnt);
+                                      ^
+In file included from csfs.cc:69:0:
+csfs.h:10:16: warning:   initializing argument 1 of ‘dentry* lookup_dentry(char*, vfsmount**)’ [-fpermissive]
+ struct dentry *lookup_dentry(char *path, struct vfsmount **mntp = NULL);
+                ^
+csfs.cc: In function ‘int csfs_fgetattr(const char*, stat*, fuse_file_info*)’:
+csfs.cc:411:38: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     dentry = lookup_dentry(path, &mnt);
+                                      ^
+In file included from csfs.cc:69:0:
+csfs.h:10:16: warning:   initializing argument 1 of ‘dentry* lookup_dentry(char*, vfsmount**)’ [-fpermissive]
+ struct dentry *lookup_dentry(char *path, struct vfsmount **mntp = NULL);
+                ^
+csfs.cc: In function ‘int csfs_readlink(const char*, char*, size_t)’:
+csfs.cc:439:32: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     dentry = lookup_dentry(path);
+                                ^
+In file included from csfs.cc:69:0:
+csfs.h:10:16: warning:   initializing argument 1 of ‘dentry* lookup_dentry(char*, vfsmount**)’ [-fpermissive]
+ struct dentry *lookup_dentry(char *path, struct vfsmount **mntp = NULL);
+                ^
+csfs.cc: In function ‘int csfs_opendir(const char*, fuse_file_info*)’:
+csfs.cc:478:32: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     dentry = lookup_dentry(path);
+                                ^
+In file included from csfs.cc:69:0:
+csfs.h:10:16: warning:   initializing argument 1 of ‘dentry* lookup_dentry(char*, vfsmount**)’ [-fpermissive]
+ struct dentry *lookup_dentry(char *path, struct vfsmount **mntp = NULL);
+                ^
+csfs.cc: In function ‘int csfs_open(const char*, fuse_file_info*)’:
+csfs.cc:933:32: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     dentry = lookup_dentry(path);
+                                ^
+In file included from csfs.cc:69:0:
+csfs.h:10:16: warning:   initializing argument 1 of ‘dentry* lookup_dentry(char*, vfsmount**)’ [-fpermissive]
+ struct dentry *lookup_dentry(char *path, struct vfsmount **mntp = NULL);
+                ^
+csfs.cc: In function ‘int csfs_statfs(const char*, statvfs*)’:
+csfs.cc:1071:38: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     dentry = lookup_dentry(path, &mnt);
+                                      ^
+In file included from csfs.cc:69:0:
+csfs.h:10:16: warning:   initializing argument 1 of ‘dentry* lookup_dentry(char*, vfsmount**)’ [-fpermissive]
+ struct dentry *lookup_dentry(char *path, struct vfsmount **mntp = NULL);
+                ^
+csfs.cc: In function ‘int csfs_setxattr(const char*, const char*, const char*, size_t, int)’:
+csfs.cc:1143:19: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     char *path0 = path;
+                   ^
+csfs.cc: In function ‘int csfs_getxattr(const char*, const char*, char*, size_t)’:
+csfs.cc:1174:19: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     char *path0 = path;
+                   ^
+csfs.cc: In function ‘int csfs_listxattr(const char*, char*, size_t)’:
+csfs.cc:1203:19: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     char *path0 = path;
+                   ^
+csfs.cc: In function ‘int csfs_removexattr(const char*, const char*)’:
+csfs.cc:1232:19: warning: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     char *path0 = path;
+                   ^
+csfs.cc: In function ‘int main(int, char**)’:
+csfs.cc:1662:83: warning: invalid conversion from ‘void*’ to ‘uid_t* {aka unsigned int*}’ [-fpermissive]
+         settings.mirrored_users = malloc(settings.num_mirrored_users*sizeof(uid_t));
+                                                                                   ^
+csfs.cc:1663:87: warning: invalid conversion from ‘void*’ to ‘gid_t* {aka unsigned int*}’ [-fpermissive]
+         settings.mirrored_members = malloc(settings.num_mirrored_members*sizeof(gid_t));
+                                                                                       ^

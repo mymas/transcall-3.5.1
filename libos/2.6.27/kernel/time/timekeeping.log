@@ -1,0 +1,54 @@
+kernel/time/timekeeping.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/time/timekeeping.acc:8101:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+kernel/time/timekeeping.acc:8102:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+kernel/time/timekeeping.acc: In function ‘thread_info* current_thread_info()’:
+kernel/time/timekeeping.acc:8617:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_477(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_478(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_479(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+kernel/time/timekeeping.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+kernel/time/timekeeping.acc:14378:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+kernel/time/timekeeping.acc:14371:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+kernel/time/timekeeping.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/time/timekeeping.acc:14520:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_704(&__get__ZN10timer_list5entryE_705(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/time/timekeeping.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/time/timekeeping.acc:17551:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_782(&__get__ZN3pid7numbersE_783(&pid->numbers[__get__ZN3pid5levelE_784(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/time/timekeeping.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/time/timekeeping.acc:17628:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_785(&__get__ZN3pid7numbersE_786(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/time/timekeeping.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/time/timekeeping.acc:21294:165: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_829(&__get__ZN11task_struct12thread_groupE_830(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                     ^
+kernel/time/timekeeping.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/time/timekeeping.acc:23610:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/time/timekeeping.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/time/timekeeping.acc:23697:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/time/timekeeping.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/time/timekeeping.acc:23701:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/time/timekeeping.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/time/timekeeping.acc:23876:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1025(&vm_stat[item]));
+                                                       ^
+kernel/time/timekeeping.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/time/timekeeping.acc:23916:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1026(&vm_stat[item]));
+                                                              ^

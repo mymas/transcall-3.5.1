@@ -1,0 +1,343 @@
+kernel/fork.acc: In function ‘thread_info* current_thread_info()’:
+kernel/fork.acc:7021:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+kernel/fork.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/fork.acc:8344:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+kernel/fork.acc:8345:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+kernel/fork.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+kernel/fork.acc:13310:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+kernel/fork.acc:13303:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+kernel/fork.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/fork.acc:13452:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_700(&__get__ZN10timer_list5entryE_701(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/fork.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/fork.acc:18392:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_783(&__get__ZN3pid7numbersE_784(&pid->numbers[__get__ZN3pid5levelE_785(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/fork.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/fork.acc:18469:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_786(&__get__ZN3pid7numbersE_787(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/fork.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/fork.acc:21486:165: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_830(&__get__ZN11task_struct12thread_groupE_831(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                     ^
+kernel/fork.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/fork.acc:23198:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/fork.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/fork.acc:23285:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/fork.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/fork.acc:23289:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/fork.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/fork.acc:23464:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1009(&vm_stat[item]));
+                                                       ^
+kernel/fork.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/fork.acc:23504:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1010(&vm_stat[item]));
+                                                              ^
+kernel/fork.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/fork.acc:24490:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+kernel/fork.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/fork.acc:24576:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+kernel/fork.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/fork.acc:24706:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+kernel/fork.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/fork.acc:24788:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+kernel/fork.acc: In function ‘int dname_external(dentry*)’:
+kernel/fork.acc:25251:83: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_1047(&__get__ZN6dentry6d_nameE_1048(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_1049(dentry->d_iname);
+                                                                                   ^
+kernel/fork.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+kernel/fork.acc:28469:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+kernel/fork.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+kernel/fork.acc:28897:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+kernel/fork.acc:28898:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+kernel/fork.acc: In function ‘void copy_highpage(page*, page*)’:
+kernel/fork.acc:28910:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+kernel/fork.acc:28911:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+kernel/fork.acc: At global scope:
+kernel/fork.acc:31815:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/fork.acc:31775:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+kernel/fork.acc: In function ‘hugetlbfs_sb_info* HUGETLBFS_SB(super_block*)’:
+kernel/fork.acc:34996:62: warning: invalid conversion from ‘void*’ to ‘hugetlbfs_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1179(&sb->s_fs_info);
+                                                              ^
+kernel/fork.acc: In function ‘anon_vma* anon_vma_alloc()’:
+kernel/fork.acc:38000:96: warning: invalid conversion from ‘void*’ to ‘anon_vma*’ [-fpermissive]
+  return kmem_cache_alloc(anon_vma_cachep, ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                                ^
+kernel/fork.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+kernel/fork.acc:39103:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+kernel/fork.acc:39105:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+kernel/fork.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+kernel/fork.acc:41196:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+kernel/fork.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+kernel/fork.acc:42752:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+kernel/fork.acc: In function ‘int nla_nest_compat_end(sk_buff*, nlattr*)’:
+kernel/fork.acc:43185:38: warning: invalid conversion from ‘void*’ to ‘nlattr*’ [-fpermissive]
+  struct nlattr *nest = (void *)start + ( ((start->nla_len)+4 -1) & ~(4 -1) );
+                                      ^
+kernel/fork.acc: In function ‘void* genlmsg_put(sk_buff*, u32, u32, genl_family*, int, u8)’:
+kernel/fork.acc:43281:22: warning: invalid conversion from ‘void*’ to ‘genlmsghdr*’ [-fpermissive]
+  hdr = nlmsg_data(nlh);
+                      ^
+kernel/fork.acc: In function ‘net* PDE_NET(proc_dir_entry*)’:
+kernel/fork.acc:44778:22: warning: invalid conversion from ‘void*’ to ‘net*’ [-fpermissive]
+  return pde->parent->data;
+                      ^
+kernel/fork.acc: In function ‘void disk_stat_set_all(gendisk*, int)’:
+kernel/fork.acc:45022:97: warning: taking address of temporary [-fpermissive]
+  for (((i)) = -1; ((i)) = __next_cpu((((i))), &((__get_cpu_possible_map_1510(&cpu_possible_map)))), ((i)) < 64; )
+                                                                                                 ^
+kernel/fork.acc: In function ‘void part_stat_set_all(hd_struct*, int)’:
+kernel/fork.acc:45100:97: warning: taking address of temporary [-fpermissive]
+  for (((i)) = -1; ((i)) = __next_cpu((((i))), &((__get_cpu_possible_map_1513(&cpu_possible_map)))), ((i)) < 64; )
+                                                                                                 ^
+kernel/fork.acc: In function ‘int init_disk_stats(gendisk*)’:
+kernel/fork.acc:45141:195: warning: taking address of temporary [-fpermissive]
+  disk->dkstats = (struct disk_stats *)__percpu_alloc_mask(((sizeof(struct disk_stats))), (((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u))), &(__get_cpu_possible_map_1516(&cpu_possible_map)));
+                                                                                                                                                                                                   ^
+kernel/fork.acc: In function ‘int init_part_stats(hd_struct*)’:
+kernel/fork.acc:45189:195: warning: taking address of temporary [-fpermissive]
+  part->dkstats = (struct disk_stats *)__percpu_alloc_mask(((sizeof(struct disk_stats))), (((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u))), &(__get_cpu_possible_map_1519(&cpu_possible_map)));
+                                                                                                                                                                                                   ^
+kernel/fork.acc: At global scope:
+kernel/fork.acc:45499:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+kernel/fork.acc:45483:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+kernel/fork.acc: In function ‘char* __bio_kmap_irq(bio*, short unsigned int, long unsigned int*)’:
+kernel/fork.acc:46189:71: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  return (lowmem_page_address(((&((bio)->bi_io_vec[(idx)])))->bv_page) + ((&((bio)->bi_io_vec[(idx)])))->bv_offset);
+                                                                       ^
+kernel/fork.acc: At global scope:
+kernel/fork.acc:46529:21: warning: declaration of ‘int (* elevator_ops::elevator_merge_fn)(request_queue*, request**, bio*)’ [-fpermissive]
+  elevator_merge_fn *elevator_merge_fn;
+                     ^
+kernel/fork.acc:46500:14: warning: changes meaning of ‘elevator_merge_fn’ from ‘typedef int elevator_merge_fn(struct request_queue*, struct request**, struct bio*)’ [-fpermissive]
+ typedef int (elevator_merge_fn) (struct request_queue *, struct request **,
+              ^
+kernel/fork.acc:46530:22: warning: declaration of ‘void (* elevator_ops::elevator_merged_fn)(request_queue*, request*, int)’ [-fpermissive]
+  elevator_merged_fn *elevator_merged_fn;
+                      ^
+kernel/fork.acc:46505:15: warning: changes meaning of ‘elevator_merged_fn’ from ‘typedef void elevator_merged_fn(struct request_queue*, struct request*, int)’ [-fpermissive]
+ typedef void (elevator_merged_fn) (struct request_queue *, struct request *, int);
+               ^
+kernel/fork.acc:46531:25: warning: declaration of ‘void (* elevator_ops::elevator_merge_req_fn)(request_queue*, request*, request*)’ [-fpermissive]
+  elevator_merge_req_fn *elevator_merge_req_fn;
+                         ^
+kernel/fork.acc:46503:15: warning: changes meaning of ‘elevator_merge_req_fn’ from ‘typedef void elevator_merge_req_fn(struct request_queue*, struct request*, struct request*)’ [-fpermissive]
+ typedef void (elevator_merge_req_fn) (struct request_queue *, struct request *, struct request *);
+               ^
+kernel/fork.acc:46532:27: warning: declaration of ‘int (* elevator_ops::elevator_allow_merge_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_allow_merge_fn *elevator_allow_merge_fn;
+                           ^
+kernel/fork.acc:46507:14: warning: changes meaning of ‘elevator_allow_merge_fn’ from ‘typedef int elevator_allow_merge_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef int (elevator_allow_merge_fn) (struct request_queue *, struct request *, struct bio *);
+              ^
+kernel/fork.acc:46534:24: warning: declaration of ‘int (* elevator_ops::elevator_dispatch_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_dispatch_fn *elevator_dispatch_fn;
+                        ^
+kernel/fork.acc:46509:14: warning: changes meaning of ‘elevator_dispatch_fn’ from ‘typedef int elevator_dispatch_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_dispatch_fn) (struct request_queue *, int);
+              ^
+kernel/fork.acc:46535:23: warning: declaration of ‘void (* elevator_ops::elevator_add_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_add_req_fn *elevator_add_req_fn;
+                       ^
+kernel/fork.acc:46511:15: warning: changes meaning of ‘elevator_add_req_fn’ from ‘typedef void elevator_add_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_add_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:46536:28: warning: declaration of ‘void (* elevator_ops::elevator_activate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_activate_req_fn *elevator_activate_req_fn;
+                            ^
+kernel/fork.acc:46519:15: warning: changes meaning of ‘elevator_activate_req_fn’ from ‘typedef void elevator_activate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_activate_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:46537:30: warning: declaration of ‘void (* elevator_ops::elevator_deactivate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_deactivate_req_fn *elevator_deactivate_req_fn;
+                              ^
+kernel/fork.acc:46520:15: warning: changes meaning of ‘elevator_deactivate_req_fn’ from ‘typedef void elevator_deactivate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_deactivate_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:46539:27: warning: declaration of ‘int (* elevator_ops::elevator_queue_empty_fn)(request_queue*)’ [-fpermissive]
+  elevator_queue_empty_fn *elevator_queue_empty_fn;
+                           ^
+kernel/fork.acc:46512:14: warning: changes meaning of ‘elevator_queue_empty_fn’ from ‘typedef int elevator_queue_empty_fn(struct request_queue*)’ [-fpermissive]
+ typedef int (elevator_queue_empty_fn) (struct request_queue *);
+              ^
+kernel/fork.acc:46540:29: warning: declaration of ‘void (* elevator_ops::elevator_completed_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_completed_req_fn *elevator_completed_req_fn;
+                             ^
+kernel/fork.acc:46514:15: warning: changes meaning of ‘elevator_completed_req_fn’ from ‘typedef void elevator_completed_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_completed_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:46545:23: warning: declaration of ‘int (* elevator_ops::elevator_set_req_fn)(request_queue*, request*, gfp_t)’ [-fpermissive]
+  elevator_set_req_fn *elevator_set_req_fn;
+                       ^
+kernel/fork.acc:46517:14: warning: changes meaning of ‘elevator_set_req_fn’ from ‘typedef int elevator_set_req_fn(struct request_queue*, struct request*, gfp_t)’ [-fpermissive]
+ typedef int (elevator_set_req_fn) (struct request_queue *, struct request *, gfp_t);
+              ^
+kernel/fork.acc:46546:23: warning: declaration of ‘void (* elevator_ops::elevator_put_req_fn)(request*)’ [-fpermissive]
+  elevator_put_req_fn *elevator_put_req_fn;
+                       ^
+kernel/fork.acc:46518:15: warning: changes meaning of ‘elevator_put_req_fn’ from ‘typedef void elevator_put_req_fn(struct request*)’ [-fpermissive]
+ typedef void (elevator_put_req_fn) (struct request *);
+               ^
+kernel/fork.acc:46548:25: warning: declaration of ‘int (* elevator_ops::elevator_may_queue_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_may_queue_fn *elevator_may_queue_fn;
+                         ^
+kernel/fork.acc:46515:14: warning: changes meaning of ‘elevator_may_queue_fn’ from ‘typedef int elevator_may_queue_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_may_queue_fn) (struct request_queue *, int);
+              ^
+kernel/fork.acc:46550:20: warning: declaration of ‘void* (* elevator_ops::elevator_init_fn)(request_queue*)’ [-fpermissive]
+  elevator_init_fn *elevator_init_fn;
+                    ^
+kernel/fork.acc:46522:16: warning: changes meaning of ‘elevator_init_fn’ from ‘typedef void* elevator_init_fn(struct request_queue*)’ [-fpermissive]
+ typedef void *(elevator_init_fn) (struct request_queue *);
+                ^
+kernel/fork.acc:46551:20: warning: declaration of ‘void (* elevator_ops::elevator_exit_fn)(elevator_t*)’ [-fpermissive]
+  elevator_exit_fn *elevator_exit_fn;
+                    ^
+kernel/fork.acc:46523:15: warning: changes meaning of ‘elevator_exit_fn’ from ‘typedef void elevator_exit_fn(elevator_t*)’ [-fpermissive]
+ typedef void (elevator_exit_fn) (elevator_t *);
+               ^
+kernel/fork.acc:46738:19: warning: declaration of ‘int (* request_queue::make_request_fn)(request_queue*, bio*)’ [-fpermissive]
+  make_request_fn *make_request_fn;
+                   ^
+kernel/fork.acc:46666:14: warning: changes meaning of ‘make_request_fn’ from ‘typedef int make_request_fn(struct request_queue*, struct bio*)’ [-fpermissive]
+ typedef int (make_request_fn) (struct request_queue *q, struct bio *bio);
+              ^
+kernel/fork.acc:46739:14: warning: declaration of ‘int (* request_queue::prep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  prep_rq_fn *prep_rq_fn;
+              ^
+kernel/fork.acc:46667:14: warning: changes meaning of ‘prep_rq_fn’ from ‘typedef int prep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef int (prep_rq_fn) (struct request_queue *, struct request *);
+              ^
+kernel/fork.acc:46740:13: warning: declaration of ‘void (* request_queue::unplug_fn)(request_queue*)’ [-fpermissive]
+  unplug_fn *unplug_fn;
+             ^
+kernel/fork.acc:46668:15: warning: changes meaning of ‘unplug_fn’ from ‘typedef void unplug_fn(struct request_queue*)’ [-fpermissive]
+ typedef void (unplug_fn) (struct request_queue *);
+               ^
+kernel/fork.acc:46741:17: warning: declaration of ‘int (* request_queue::merge_bvec_fn)(request_queue*, bvec_merge_data*, bio_vec*)’ [-fpermissive]
+  merge_bvec_fn *merge_bvec_fn;
+                 ^
+kernel/fork.acc:46682:14: warning: changes meaning of ‘merge_bvec_fn’ from ‘typedef int merge_bvec_fn(struct request_queue*, struct bvec_merge_data*, struct bio_vec*)’ [-fpermissive]
+ typedef int (merge_bvec_fn) (struct request_queue *, struct bvec_merge_data *,
+              ^
+kernel/fork.acc:46742:20: warning: declaration of ‘void (* request_queue::prepare_flush_fn)(request_queue*, request*)’ [-fpermissive]
+  prepare_flush_fn *prepare_flush_fn;
+                    ^
+kernel/fork.acc:46684:15: warning: changes meaning of ‘prepare_flush_fn’ from ‘typedef void prepare_flush_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (prepare_flush_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:46743:19: warning: declaration of ‘void (* request_queue::softirq_done_fn)(request*)’ [-fpermissive]
+  softirq_done_fn *softirq_done_fn;
+                   ^
+kernel/fork.acc:46685:15: warning: changes meaning of ‘softirq_done_fn’ from ‘typedef void softirq_done_fn(struct request*)’ [-fpermissive]
+ typedef void (softirq_done_fn)(struct request *);
+               ^
+kernel/fork.acc: In function ‘int desc_empty(void*)’:
+kernel/fork.acc:47718:14: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *desc = ptr;
+              ^
+kernel/fork.acc: In function ‘void set_tssldt_descriptor(void*, long unsigned int, unsigned int, unsigned int)’:
+kernel/fork.acc:47767:31: warning: invalid conversion from ‘void*’ to ‘ldttss_desc64*’ [-fpermissive]
+  struct ldttss_desc64 *desc = d;
+                               ^
+kernel/fork.acc: In function ‘void enter_lazy_tlb(mm_struct*, task_struct*)’:
+kernel/fork.acc:48333:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1784(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1785(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1786(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+kernel/fork.acc:48333:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1784(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1785(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1786(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+kernel/fork.acc:48333:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1784(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1785(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1786(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+kernel/fork.acc: In function ‘void switch_mm(mm_struct*, mm_struct*, task_struct*)’:
+kernel/fork.acc:49113:82: warning: taking address of temporary [-fpermissive]
+   __cpu_clear((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1790(&prev->cpu_vm_mask)));
+                                                                                  ^
+kernel/fork.acc:49115:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1791(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1792(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1793(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+kernel/fork.acc:49115:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1791(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1792(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1793(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+kernel/fork.acc:49115:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1791(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1792(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1793(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+kernel/fork.acc:49116:288: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1794(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1795(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1796(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                ^
+kernel/fork.acc:49116:458: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1794(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1795(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1796(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+kernel/fork.acc:49116:626: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1794(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1795(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1796(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+kernel/fork.acc:49118:80: warning: taking address of temporary [-fpermissive]
+   __cpu_set((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1797(&next->cpu_vm_mask)));
+                                                                                ^
+kernel/fork.acc:49126:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1803(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1804(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1805(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+kernel/fork.acc:49126:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1803(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1804(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1805(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+kernel/fork.acc:49126:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1803(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1804(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1805(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+kernel/fork.acc:49129:94: warning: taking address of temporary [-fpermissive]
+   if (!__cpu_test_and_set((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1809(&next->cpu_vm_mask)))) {
+                                                                                              ^

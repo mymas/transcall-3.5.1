@@ -1,0 +1,198 @@
+fs/proc/task_mmu.acc: In function ‘void list_del(list_head*)’:
+fs/proc/task_mmu.acc:819:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+fs/proc/task_mmu.acc:820:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/proc/task_mmu.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/proc/task_mmu.acc:1795:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/proc/task_mmu.acc:1796:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/proc/task_mmu.acc: In function ‘int timer_pending(timer_list*)’:
+fs/proc/task_mmu.acc:15136:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_324(&__get__ZN10timer_list5entryE_325(&timer->entry).next) != 0;
+                                                                                        ^
+fs/proc/task_mmu.acc: At global scope:
+fs/proc/task_mmu.acc:19139:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+fs/proc/task_mmu.acc:19140:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+fs/proc/task_mmu.acc:19141:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+fs/proc/task_mmu.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+fs/proc/task_mmu.acc:21046:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+fs/proc/task_mmu.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/proc/task_mmu.acc:22096:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/proc/task_mmu.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/proc/task_mmu.acc:22182:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+fs/proc/task_mmu.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/proc/task_mmu.acc:22316:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/proc/task_mmu.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/proc/task_mmu.acc:22398:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+fs/proc/task_mmu.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+fs/proc/task_mmu.acc:22832:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/proc/task_mmu.acc:22833:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/proc/task_mmu.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+fs/proc/task_mmu.acc:22920:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/proc/task_mmu.acc: In function ‘int dname_external(dentry*)’:
+fs/proc/task_mmu.acc:23216:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_527(&__get__ZN6dentry6d_nameE_528(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_529(dentry->d_iname);
+                                                                                 ^
+fs/proc/task_mmu.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/proc/task_mmu.acc:24647:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_559(&__get__ZN3pid7numbersE_560(&pid->numbers[__get__ZN3pid5levelE_561(&pid->level)]).ns);
+                                                                                                                 ^
+fs/proc/task_mmu.acc: In function ‘bool is_child_reaper(pid*)’:
+fs/proc/task_mmu.acc:24764:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_562(&__get__ZN3pid7numbersE_563(&pid->numbers[__get__ZN3pid5levelE_564(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+fs/proc/task_mmu.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/proc/task_mmu.acc:24840:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_565(&__get__ZN3pid7numbersE_566(&pid->numbers[0]).nr);
+                                                                             ^
+fs/proc/task_mmu.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+fs/proc/task_mmu.acc:29872:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_669(&__get__ZN6dentry7d_inodeE_670(&__get__ZN4path6dentryE_671(&__get__ZN4file6f_pathE_672(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+fs/proc/task_mmu.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+fs/proc/task_mmu.acc:29947:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_675(&__get__ZN4file6f_pathE_676(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+fs/proc/task_mmu.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/proc/task_mmu.acc:31701:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/proc/task_mmu.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/proc/task_mmu.acc:31788:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/proc/task_mmu.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/proc/task_mmu.acc:31833:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/proc/task_mmu.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/proc/task_mmu.acc:32078:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1085(&vm_stat[item]));
+                                                       ^
+fs/proc/task_mmu.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/proc/task_mmu.acc:32118:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1086(&vm_stat[item]));
+                                                              ^
+fs/proc/task_mmu.acc: At global scope:
+fs/proc/task_mmu.acc:38618:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/proc/task_mmu.acc:38574:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+fs/proc/task_mmu.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/proc/task_mmu.acc:41936:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1381(&__get__ZN11task_struct12thread_groupE_1382(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+fs/proc/task_mmu.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+fs/proc/task_mmu.acc:45431:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+fs/proc/task_mmu.acc:45432:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+fs/proc/task_mmu.acc: In function ‘void copy_highpage(page*, page*)’:
+fs/proc/task_mmu.acc:45444:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+fs/proc/task_mmu.acc:45445:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+fs/proc/task_mmu.acc: In function ‘hugetlbfs_sb_info* HUGETLBFS_SB(super_block*)’:
+fs/proc/task_mmu.acc:46770:62: warning: invalid conversion from ‘void*’ to ‘hugetlbfs_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1556(&sb->s_fs_info);
+                                                              ^
+fs/proc/task_mmu.acc: In function ‘hstate* hstate_sizelog(int)’:
+fs/proc/task_mmu.acc:47003:92: warning: taking address of temporary [-fpermissive]
+   return &(__get_hstates_1560(&hstates[__get_default_hstate_idx_1561(&default_hstate_idx)]));
+                                                                                            ^
+fs/proc/task_mmu.acc: In function ‘unsigned int hstate_index_to_shift(unsigned int)’:
+fs/proc/task_mmu.acc:47475:75: warning: taking address of temporary [-fpermissive]
+  return __get__ZN6hstate5orderE_1568(&__get_hstates_1569(&hstates[index]).order) + 12;
+                                                                           ^
+fs/proc/task_mmu.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+fs/proc/task_mmu.acc:47800:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1586(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+fs/proc/task_mmu.acc: In function ‘anon_vma* page_anon_vma(page*)’:
+fs/proc/task_mmu.acc:48985:27: warning: invalid conversion from ‘void*’ to ‘anon_vma*’ [-fpermissive]
+  return page_rmapping(page);
+                           ^
+fs/proc/task_mmu.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+fs/proc/task_mmu.acc:49294:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+fs/proc/task_mmu.acc:49300:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+fs/proc/task_mmu.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+fs/proc/task_mmu.acc:49326:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+fs/proc/task_mmu.acc:49332:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+fs/proc/task_mmu.acc: In function ‘unsigned int name_to_int(dentry*)’:
+fs/proc/task_mmu.acc:51732:89: warning: taking address of temporary [-fpermissive]
+  char *name = __get__ZN4qstr4nameE_1664(&__get__ZN6dentry6d_nameE_1665(&dentry->d_name).name);
+                                                                                         ^
+fs/proc/task_mmu.acc:51732:93: warning: invalid conversion from ‘unsigned char*’ to ‘char*’ [-fpermissive]
+  char *name = __get__ZN4qstr4nameE_1664(&__get__ZN6dentry6d_nameE_1665(&dentry->d_name).name);
+                                                                                             ^
+fs/proc/task_mmu.acc: In function ‘void* m_start(seq_file*, loff_t*)’:
+fs/proc/task_mmu.acc:52955:38: warning: invalid conversion from ‘void*’ to ‘proc_maps_private*’ [-fpermissive]
+  struct proc_maps_private *priv = m->_private;
+                                      ^
+fs/proc/task_mmu.acc: In function ‘void* m_next(seq_file*, void*, loff_t*)’:
+fs/proc/task_mmu.acc:53085:38: warning: invalid conversion from ‘void*’ to ‘proc_maps_private*’ [-fpermissive]
+  struct proc_maps_private *priv = m->_private;
+                                      ^
+fs/proc/task_mmu.acc:53086:31: warning: invalid conversion from ‘void*’ to ‘vm_area_struct*’ [-fpermissive]
+  struct vm_area_struct *vma = v;
+                               ^
+fs/proc/task_mmu.acc: In function ‘void m_stop(seq_file*, void*)’:
+fs/proc/task_mmu.acc:53098:38: warning: invalid conversion from ‘void*’ to ‘proc_maps_private*’ [-fpermissive]
+  struct proc_maps_private *priv = m->_private;
+                                      ^
+fs/proc/task_mmu.acc:53099:31: warning: invalid conversion from ‘void*’ to ‘vm_area_struct*’ [-fpermissive]
+  struct vm_area_struct *vma = v;
+                               ^
+fs/proc/task_mmu.acc: In function ‘void show_map_vma(seq_file*, vm_area_struct*, int)’:
+fs/proc/task_mmu.acc:53706:38: warning: invalid conversion from ‘void*’ to ‘proc_maps_private*’ [-fpermissive]
+  struct proc_maps_private *priv = m->_private;
+                                      ^
+fs/proc/task_mmu.acc: In function ‘int show_map(seq_file*, void*, int)’:
+fs/proc/task_mmu.acc:53866:31: warning: invalid conversion from ‘void*’ to ‘vm_area_struct*’ [-fpermissive]
+  struct vm_area_struct *vma = v;
+                               ^
+fs/proc/task_mmu.acc:53867:38: warning: invalid conversion from ‘void*’ to ‘proc_maps_private*’ [-fpermissive]
+  struct proc_maps_private *priv = m->_private;
+                                      ^

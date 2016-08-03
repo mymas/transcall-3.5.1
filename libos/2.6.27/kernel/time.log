@@ -1,0 +1,65 @@
+kernel/time.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/time.acc:8101:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+kernel/time.acc:8102:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+kernel/time.acc: In function ‘thread_info* current_thread_info()’:
+kernel/time.acc:8617:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_477(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_478(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_479(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+kernel/time.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+kernel/time.acc:14378:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+kernel/time.acc:14371:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+kernel/time.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/time.acc:14520:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_704(&__get__ZN10timer_list5entryE_705(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/time.acc: At global scope:
+kernel/time.acc:18907:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/time.acc:18867:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+kernel/time.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/time.acc:19969:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+kernel/time.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/time.acc:20055:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+kernel/time.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/time.acc:20185:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+kernel/time.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/time.acc:20267:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+kernel/time.acc: In function ‘int dname_external(dentry*)’:
+kernel/time.acc:20730:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_765(&__get__ZN6dentry6d_nameE_766(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_767(dentry->d_iname);
+                                                                                 ^
+kernel/time.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/time.acc:21336:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_775(&__get__ZN3pid7numbersE_776(&pid->numbers[__get__ZN3pid5levelE_777(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/time.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/time.acc:21413:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_778(&__get__ZN3pid7numbersE_779(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/time.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+kernel/time.acc:24015:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+kernel/time.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/time.acc:28426:165: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_906(&__get__ZN11task_struct12thread_groupE_907(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                     ^

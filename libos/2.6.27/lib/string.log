@@ -1,0 +1,61 @@
+lib/string.acc: In function ‘void hlist_del(hlist_node*)’:
+lib/string.acc:8112:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+lib/string.acc:8113:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+lib/string.acc: In function ‘thread_info* current_thread_info()’:
+lib/string.acc:8628:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_479(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_480(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_481(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+lib/string.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+lib/string.acc:14389:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+lib/string.acc:14382:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+lib/string.acc: In function ‘int timer_pending(timer_list*)’:
+lib/string.acc:14531:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_706(&__get__ZN10timer_list5entryE_707(&timer->entry).next) != 0;
+                                                                                        ^
+lib/string.acc: In function ‘void* memset(void*, int, size_t)’:
+lib/string.acc:15857:13: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  char *xs = s;
+             ^
+lib/string.acc: In function ‘void* memcpy(void*, void*, size_t)’:
+lib/string.acc:15866:14: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  char *tmp = dest;
+              ^
+lib/string.acc:15867:12: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  char *s = src;
+            ^
+lib/string.acc: In function ‘void* memmove(void*, void*, size_t)’:
+lib/string.acc:15880:7: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   tmp = dest;
+       ^
+lib/string.acc:15881:5: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   s = src;
+     ^
+lib/string.acc:15885:7: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   tmp = dest;
+       ^
+lib/string.acc:15887:5: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   s = src;
+     ^
+lib/string.acc: In function ‘int memcmp(void*, void*, size_t)’:
+lib/string.acc:15900:11: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  for (su1 = cs, su2 = ct; 0 < count; ++su1, ++su2, count--)
+           ^
+lib/string.acc:15900:21: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  for (su1 = cs, su2 = ct; 0 < count; ++su1, ++su2, count--)
+                     ^
+lib/string.acc: In function ‘void* memscan(void*, int, size_t)’:
+lib/string.acc:15908:21: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *p = addr;
+                     ^
+lib/string.acc: In function ‘void* memchr(void*, int, size_t)’:
+lib/string.acc:15938:21: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *p = s;
+                     ^

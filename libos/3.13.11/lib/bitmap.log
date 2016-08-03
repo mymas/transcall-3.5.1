@@ -1,0 +1,4 @@
+lib/bitmap.acc: In function ‘void bitmap_copy_le(void*, long unsigned int*, int)’:
+lib/bitmap.acc:10698:21: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+  unsigned long *d = dst;
+                     ^

@@ -1,0 +1,43 @@
+lib/string.acc: In function ‘void* memset(void*, int, size_t)’:
+lib/string.acc:3788:13: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  char *xs = s;
+             ^
+lib/string.acc: In function ‘void* memcpy(void*, void*, size_t)’:
+lib/string.acc:3797:14: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  char *tmp = dest;
+              ^
+lib/string.acc:3798:12: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  char *s = src;
+            ^
+lib/string.acc: In function ‘void* memmove(void*, void*, size_t)’:
+lib/string.acc:3811:7: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   tmp = dest;
+       ^
+lib/string.acc:3812:5: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   s = src;
+     ^
+lib/string.acc:3816:7: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   tmp = dest;
+       ^
+lib/string.acc:3818:5: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+   s = src;
+     ^
+lib/string.acc: In function ‘int memcmp(void*, void*, size_t)’:
+lib/string.acc:3831:11: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  for (su1 = cs, su2 = ct; 0 < count; ++su1, ++su2, count--)
+           ^
+lib/string.acc:3831:21: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  for (su1 = cs, su2 = ct; 0 < count; ++su1, ++su2, count--)
+                     ^
+lib/string.acc: In function ‘void* memscan(void*, int, size_t)’:
+lib/string.acc:3839:21: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *p = addr;
+                     ^
+lib/string.acc: In function ‘void* memchr(void*, int, size_t)’:
+lib/string.acc:3885:21: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *p = s;
+                     ^
+lib/string.acc: In function ‘void* memchr_inv(void*, int, size_t)’:
+lib/string.acc:3930:46: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+   r = check_bytes8((u8 *)start, value, prefix);
+                                              ^

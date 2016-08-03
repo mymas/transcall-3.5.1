@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+# usage: aspectgen.sh structs.lst variables.lst
+#
+
+echo "#include \"Introspect.ah\""
+echo ""
+echo "aspect MyIntrospect : public Introspect {"
+echo "    pointcut kernel_data() ="
+
+FIRST=1
+
+while read LINE
+do
+    if [[ ${LINE} =~ ^[a-zA-Z0-9_]+$ ]]; then
+        if [ ${FIRST} -eq 1 ]; then
+            FIRST=0
+        else
+            echo " ||"
+        fi
+        echo -n "        get(\"% ${LINE}::%\")"
+    else
+        echo "  ignore '${LINE}'" >&2
+    fi
+done < $1
+
+while read LINE
+do
+    if [[ ${LINE} =~ ^[a-zA-Z0-9_]+$ ]]; then
+        if [ ${FIRST} -eq 1 ]; then
+            FIRST=0
+        else
+            echo " ||"
+        fi
+        echo -n "        get(\"% ${LINE}\")"
+    else
+        echo "  ignore '${LINE}'" >&2
+    fi
+done < $2
+
+echo ";"
+echo "};"

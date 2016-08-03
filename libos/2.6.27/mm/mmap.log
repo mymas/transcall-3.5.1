@@ -1,0 +1,173 @@
+mm/mmap.acc: In function ‘thread_info* current_thread_info()’:
+mm/mmap.acc:7021:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+mm/mmap.acc: In function ‘void hlist_del(hlist_node*)’:
+mm/mmap.acc:8344:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+mm/mmap.acc:8345:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+mm/mmap.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+mm/mmap.acc:13310:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+mm/mmap.acc:13303:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+mm/mmap.acc: In function ‘int timer_pending(timer_list*)’:
+mm/mmap.acc:13452:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_700(&__get__ZN10timer_list5entryE_701(&timer->entry).next) != 0;
+                                                                                        ^
+mm/mmap.acc: In function ‘void list_del_rcu(list_head*)’:
+mm/mmap.acc:15136:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+mm/mmap.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+mm/mmap.acc:15222:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+mm/mmap.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+mm/mmap.acc:15352:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+mm/mmap.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+mm/mmap.acc:15434:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+mm/mmap.acc: In function ‘int dname_external(dentry*)’:
+mm/mmap.acc:15897:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_730(&__get__ZN6dentry6d_nameE_731(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_732(dentry->d_iname);
+                                                                                 ^
+mm/mmap.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+mm/mmap.acc:16582:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_740(&__get__ZN3pid7numbersE_741(&pid->numbers[__get__ZN3pid5levelE_742(&pid->level)]).ns);
+                                                                                                                 ^
+mm/mmap.acc: In function ‘pid_t pid_nr(pid*)’:
+mm/mmap.acc:16659:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_743(&__get__ZN3pid7numbersE_744(&pid->numbers[0]).nr);
+                                                                             ^
+mm/mmap.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+mm/mmap.acc:20031:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+mm/mmap.acc: At global scope:
+mm/mmap.acc:20104:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+mm/mmap.acc:20088:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+mm/mmap.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+mm/mmap.acc:21369:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+mm/mmap.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+mm/mmap.acc:21456:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+mm/mmap.acc: In function ‘zone_type page_zonenum(page*)’:
+mm/mmap.acc:21460:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+mm/mmap.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+mm/mmap.acc:21635:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1113(&vm_stat[item]));
+                                                       ^
+mm/mmap.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+mm/mmap.acc:21675:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1114(&vm_stat[item]));
+                                                              ^
+mm/mmap.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+mm/mmap.acc:23008:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+mm/mmap.acc:23009:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+mm/mmap.acc: In function ‘void copy_highpage(page*, page*)’:
+mm/mmap.acc:23021:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+mm/mmap.acc:23022:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+mm/mmap.acc: In function ‘task_struct* next_thread(task_struct*)’:
+mm/mmap.acc:27009:167: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_1232(&__get__ZN11task_struct12thread_groupE_1233(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                       ^
+mm/mmap.acc: At global scope:
+mm/mmap.acc:30245:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+mm/mmap.acc:30205:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+mm/mmap.acc: In function ‘hugetlbfs_sb_info* HUGETLBFS_SB(super_block*)’:
+mm/mmap.acc:33129:62: warning: invalid conversion from ‘void*’ to ‘hugetlbfs_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1298(&sb->s_fs_info);
+                                                              ^
+mm/mmap.acc: In function ‘anon_vma* anon_vma_alloc()’:
+mm/mmap.acc:34999:96: warning: invalid conversion from ‘void*’ to ‘anon_vma*’ [-fpermissive]
+  return kmem_cache_alloc(anon_vma_cachep, ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                                ^
+mm/mmap.acc: In function ‘mmu_gather* tlb_gather_mmu(mm_struct*, unsigned int)’:
+mm/mmap.acc:35558:70: warning: taking address of temporary [-fpermissive]
+  tlb->nr = __cpus_weight(&(__get_cpu_online_map_1335(&cpu_online_map)), 64) > 1 ? 0U : ~0U;
+                                                                      ^
+mm/mmap.acc: In function ‘int desc_empty(void*)’:
+mm/mmap.acc:35799:14: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *desc = ptr;
+              ^
+mm/mmap.acc: In function ‘void set_tssldt_descriptor(void*, long unsigned int, unsigned int, unsigned int)’:
+mm/mmap.acc:35848:31: warning: invalid conversion from ‘void*’ to ‘ldttss_desc64*’ [-fpermissive]
+  struct ldttss_desc64 *desc = d;
+                               ^
+mm/mmap.acc: In function ‘void enter_lazy_tlb(mm_struct*, task_struct*)’:
+mm/mmap.acc:36414:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1388(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1389(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1390(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+mm/mmap.acc:36414:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1388(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1389(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1390(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+mm/mmap.acc:36414:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (2); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1388(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1389(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1390(&_proxy_pda).mmu_state) : "ri" ((T__)2), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+mm/mmap.acc: In function ‘void switch_mm(mm_struct*, mm_struct*, task_struct*)’:
+mm/mmap.acc:37194:82: warning: taking address of temporary [-fpermissive]
+   __cpu_clear((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1394(&prev->cpu_vm_mask)));
+                                                                                  ^
+mm/mmap.acc:37196:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1395(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1396(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1397(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+mm/mmap.acc:37196:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1395(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1396(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1397(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+mm/mmap.acc:37196:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1395(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1396(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1397(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+mm/mmap.acc:37197:288: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1398(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1399(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1400(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                ^
+mm/mmap.acc:37197:458: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1398(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1399(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1400(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+mm/mmap.acc:37197:626: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.active_mm) T__; if (0) { T__ tmp__; tmp__ = (next); } switch (sizeof(_proxy_pda.active_mm)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1398(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1399(&_proxy_pda).active_mm) : "ri" ((T__)next), "i" (((size_t) &((struct x8664_pda *)0)->active_mm))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1400(&_proxy_pda).active_mm) : "ri" ((T__)next), "i"(((size_t) &((struct x8664_pda *)0)->active_mm))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+mm/mmap.acc:37199:80: warning: taking address of temporary [-fpermissive]
+   __cpu_set((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1401(&next->cpu_vm_mask)));
+                                                                                ^
+mm/mmap.acc:37207:282: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1407(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1408(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1409(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                          ^
+mm/mmap.acc:37207:449: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1407(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1408(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1409(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+mm/mmap.acc:37207:614: warning: using temporary as lvalue [-fpermissive]
+   do { typedef typeof(_proxy_pda.mmu_state) T__; if (0) { T__ tmp__; tmp__ = (1); } switch (sizeof(_proxy_pda.mmu_state)) { case 2: asm("mov" "w %1,%%gs:%c2" : "+m" (__get__proxy_pda_1407(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 4: asm("mov" "l %1,%%gs:%c2" : "+m" (__get__proxy_pda_1408(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i" (((size_t) &((struct x8664_pda *)0)->mmu_state))); break; case 8: asm("mov" "q %1,%%gs:%c2": "+m" (__get__proxy_pda_1409(&_proxy_pda).mmu_state) : "ri" ((T__)1), "i"(((size_t) &((struct x8664_pda *)0)->mmu_state))); break; default: __bad_pda_field(); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+mm/mmap.acc:37210:94: warning: taking address of temporary [-fpermissive]
+   if (!__cpu_test_and_set((cpu), &(__get__ZN9mm_struct11cpu_vm_maskE_1413(&next->cpu_vm_mask)))) {
+                                                                                              ^

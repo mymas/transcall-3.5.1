@@ -1,0 +1,170 @@
+arch/x86/mm/init_64.acc: In function ‘void list_del(list_head*)’:
+arch/x86/mm/init_64.acc:788:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+arch/x86/mm/init_64.acc:789:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+arch/x86/mm/init_64.acc: In function ‘void hlist_del(hlist_node*)’:
+arch/x86/mm/init_64.acc:1764:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+arch/x86/mm/init_64.acc:1765:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/mm/init_64.acc: In function ‘int timer_pending(timer_list*)’:
+arch/x86/mm/init_64.acc:15633:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_343(&__get__ZN10timer_list5entryE_344(&timer->entry).next) != 0;
+                                                                                        ^
+arch/x86/mm/init_64.acc: At global scope:
+arch/x86/mm/init_64.acc:20048:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+arch/x86/mm/init_64.acc:20049:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+arch/x86/mm/init_64.acc:20050:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+arch/x86/mm/init_64.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+arch/x86/mm/init_64.acc:22654:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+arch/x86/mm/init_64.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+arch/x86/mm/init_64.acc:24900:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_626(&__get__ZN3pid7numbersE_627(&pid->numbers[__get__ZN3pid5levelE_628(&pid->level)]).ns);
+                                                                                                                 ^
+arch/x86/mm/init_64.acc: In function ‘bool is_child_reaper(pid*)’:
+arch/x86/mm/init_64.acc:25017:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_629(&__get__ZN3pid7numbersE_630(&pid->numbers[__get__ZN3pid5levelE_631(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+arch/x86/mm/init_64.acc: In function ‘pid_t pid_nr(pid*)’:
+arch/x86/mm/init_64.acc:25093:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_632(&__get__ZN3pid7numbersE_633(&pid->numbers[0]).nr);
+                                                                             ^
+arch/x86/mm/init_64.acc: In function ‘void list_del_rcu(list_head*)’:
+arch/x86/mm/init_64.acc:25577:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+arch/x86/mm/init_64.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+arch/x86/mm/init_64.acc:25663:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+arch/x86/mm/init_64.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+arch/x86/mm/init_64.acc:25797:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/mm/init_64.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+arch/x86/mm/init_64.acc:25879:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+arch/x86/mm/init_64.acc: At global scope:
+arch/x86/mm/init_64.acc:27691:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+arch/x86/mm/init_64.acc:27647:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+arch/x86/mm/init_64.acc: In function ‘task_struct* next_thread(task_struct*)’:
+arch/x86/mm/init_64.acc:31061:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_753(&__get__ZN11task_struct12thread_groupE_754(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+arch/x86/mm/init_64.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+arch/x86/mm/init_64.acc:32914:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+arch/x86/mm/init_64.acc:32915:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/mm/init_64.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+arch/x86/mm/init_64.acc:33002:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+arch/x86/mm/init_64.acc: In function ‘int dname_external(dentry*)’:
+arch/x86/mm/init_64.acc:33298:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_792(&__get__ZN6dentry6d_nameE_793(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_794(dentry->d_iname);
+                                                                                 ^
+arch/x86/mm/init_64.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+arch/x86/mm/init_64.acc:38723:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_909(&__get__ZN6dentry7d_inodeE_910(&__get__ZN4path6dentryE_911(&__get__ZN4file6f_pathE_912(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+arch/x86/mm/init_64.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+arch/x86/mm/init_64.acc:38798:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_915(&__get__ZN4file6f_pathE_916(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+arch/x86/mm/init_64.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+arch/x86/mm/init_64.acc:40552:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+arch/x86/mm/init_64.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+arch/x86/mm/init_64.acc:40639:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+arch/x86/mm/init_64.acc: In function ‘zone_type page_zonenum(page*)’:
+arch/x86/mm/init_64.acc:40684:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+arch/x86/mm/init_64.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+arch/x86/mm/init_64.acc:40929:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1325(&vm_stat[item]));
+                                                       ^
+arch/x86/mm/init_64.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+arch/x86/mm/init_64.acc:40969:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1326(&vm_stat[item]));
+                                                              ^
+arch/x86/mm/init_64.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+arch/x86/mm/init_64.acc:46433:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1514(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+arch/x86/mm/init_64.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+arch/x86/mm/init_64.acc:46651:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+arch/x86/mm/init_64.acc:46657:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+arch/x86/mm/init_64.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+arch/x86/mm/init_64.acc:46683:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+arch/x86/mm/init_64.acc:46689:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+arch/x86/mm/init_64.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+arch/x86/mm/init_64.acc:48303:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+arch/x86/mm/init_64.acc:48304:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+arch/x86/mm/init_64.acc: In function ‘void copy_highpage(page*, page*)’:
+arch/x86/mm/init_64.acc:48316:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+arch/x86/mm/init_64.acc:48317:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+arch/x86/mm/init_64.acc: In function ‘int pci_domain_nr(pci_bus*)’:
+arch/x86/mm/init_64.acc:51169:32: warning: invalid conversion from ‘void*’ to ‘pci_sysdata*’ [-fpermissive]
+  struct pci_sysdata *sd = bus->sysdata;
+                                ^
+arch/x86/mm/init_64.acc: In function ‘void* pci_iommu(pci_bus*)’:
+arch/x86/mm/init_64.acc:51238:32: warning: invalid conversion from ‘void*’ to ‘pci_sysdata*’ [-fpermissive]
+  struct pci_sysdata *sd = bus->sysdata;
+                                ^
+arch/x86/mm/init_64.acc: In function ‘void set_pci_iommu(pci_bus*, void*)’:
+arch/x86/mm/init_64.acc:51244:32: warning: invalid conversion from ‘void*’ to ‘pci_sysdata*’ [-fpermissive]
+  struct pci_sysdata *sd = bus->sysdata;
+                                ^
+arch/x86/mm/init_64.acc: In function ‘int __pcibus_to_node(pci_bus*)’:
+arch/x86/mm/init_64.acc:52537:32: warning: invalid conversion from ‘void*’ to ‘pci_sysdata*’ [-fpermissive]
+  struct pci_sysdata *sd = bus->sysdata;
+                                ^
+arch/x86/mm/init_64.acc: In function ‘int desc_empty(void*)’:
+arch/x86/mm/init_64.acc:54858:14: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *desc = ptr;
+              ^
+arch/x86/mm/init_64.acc: In function ‘void set_tssldt_descriptor(void*, long unsigned int, unsigned int, unsigned int)’:
+arch/x86/mm/init_64.acc:54901:31: warning: invalid conversion from ‘void*’ to ‘ldttss_desc64*’ [-fpermissive]
+  struct ldttss_desc64 *desc = d;
+                               ^

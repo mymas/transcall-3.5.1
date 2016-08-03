@@ -1,0 +1,149 @@
+net/socket.acc: In function ‘thread_info* current_thread_info()’:
+net/socket.acc:7030:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+net/socket.acc: In function ‘void hlist_del(hlist_node*)’:
+net/socket.acc:8353:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+net/socket.acc:8354:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+net/socket.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+net/socket.acc:13661:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+net/socket.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+net/socket.acc:13748:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+net/socket.acc: In function ‘zone_type page_zonenum(page*)’:
+net/socket.acc:13752:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+net/socket.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+net/socket.acc:14632:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+net/socket.acc:14625:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+net/socket.acc: In function ‘int timer_pending(timer_list*)’:
+net/socket.acc:14774:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_865(&__get__ZN10timer_list5entryE_866(&timer->entry).next) != 0;
+                                                                                        ^
+net/socket.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+net/socket.acc:15634:54: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_872(&vm_stat[item]));
+                                                      ^
+net/socket.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+net/socket.acc:15674:61: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_873(&vm_stat[item]));
+                                                             ^
+net/socket.acc: At global scope:
+net/socket.acc:17813:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+net/socket.acc:17773:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+net/socket.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+net/socket.acc:19546:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_954(&__get__ZN3pid7numbersE_955(&pid->numbers[__get__ZN3pid5levelE_956(&pid->level)]).ns);
+                                                                                                                 ^
+net/socket.acc: In function ‘pid_t pid_nr(pid*)’:
+net/socket.acc:19623:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_957(&__get__ZN3pid7numbersE_958(&pid->numbers[0]).nr);
+                                                                             ^
+net/socket.acc: In function ‘task_struct* next_thread(task_struct*)’:
+net/socket.acc:23257:167: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_1000(&__get__ZN11task_struct12thread_groupE_1001(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                       ^
+net/socket.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+net/socket.acc:26394:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+net/socket.acc:26396:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+net/socket.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+net/socket.acc:28855:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+net/socket.acc: In function ‘netdev_queue* netdev_get_tx_queue(net_device*, unsigned int)’:
+net/socket.acc:31819:92: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10net_device3_txE_1269(&__get__ZN10net_device3_txE_1270(&dev->_tx)[index]);
+                                                                                            ^
+net/socket.acc: In function ‘void netdev_for_each_tx_queue(net_device*, void (*)(net_device*, netdev_queue*, void*), void*)’:
+net/socket.acc:31936:89: warning: taking address of temporary [-fpermissive]
+   f(dev, &__get__ZN10net_device3_txE_1272(&__get__ZN10net_device3_txE_1273(&dev->_tx)[i]), arg);
+                                                                                         ^
+net/socket.acc: In function ‘net_device* next_net_device(net_device*)’:
+net/socket.acc:32102:92: warning: taking address of temporary [-fpermissive]
+  lh = __get__ZN9list_head4nextE_1275(&__get__ZN10net_device8dev_listE_1276(&dev->dev_list).next);
+                                                                                            ^
+net/socket.acc: In function ‘net_device* first_net_device(net*)’:
+net/socket.acc:32179:150: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct net_device *)0)->dev_list ) *__mptr = (__get__ZN9list_head4nextE_1277(&__get__ZN3net13dev_base_headE_1278(&net->dev_base_head).next)); (struct net_device *)( (char *)__mptr - ((size_t) &((struct net_device *)0)->dev_list) );});
+                                                                                                                                                      ^
+net/socket.acc: In function ‘void list_del_rcu(list_head*)’:
+net/socket.acc:34584:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+net/socket.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+net/socket.acc:34670:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+net/socket.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+net/socket.acc:34800:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+net/socket.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+net/socket.acc:34882:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+net/socket.acc: In function ‘int dname_external(dentry*)’:
+net/socket.acc:35345:83: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_1391(&__get__ZN6dentry6d_nameE_1392(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_1393(dentry->d_iname);
+                                                                                   ^
+net/socket.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+net/socket.acc:38496:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+net/socket.acc: In function ‘net* PDE_NET(proc_dir_entry*)’:
+net/socket.acc:38726:22: warning: invalid conversion from ‘void*’ to ‘net*’ [-fpermissive]
+  return pde->parent->data;
+                      ^
+net/socket.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+net/socket.acc:39807:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+net/socket.acc:39808:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+net/socket.acc: In function ‘void copy_highpage(page*, page*)’:
+net/socket.acc:39820:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+net/socket.acc:39821:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+net/socket.acc: In function ‘void* compat_alloc_user_space(long int)’:
+net/socket.acc:42739:142: warning: taking address of temporary [-fpermissive]
+  struct pt_regs *regs = ((struct pt_regs *)__get__ZN13thread_struct3sp0E_1483(&__get__ZN11task_struct6threadE_1484(&(get_current())->thread).sp0) - 1);
+                                                                                                                                              ^
+net/socket.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+net/socket.acc:45236:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+net/socket.acc: In function ‘int nla_nest_compat_end(sk_buff*, nlattr*)’:
+net/socket.acc:45669:38: warning: invalid conversion from ‘void*’ to ‘nlattr*’ [-fpermissive]
+  struct nlattr *nest = (void *)start + ( ((start->nla_len)+4 -1) & ~(4 -1) );
+                                      ^
+net/socket.acc: In function ‘sock* sk_next(sock*)’:
+net/socket.acc:46817:104: warning: taking address of temporary [-fpermissive]
+  return __get__ZN10hlist_node4nextE_1566(&__get__ZN4sock11__sk_commonE_1568(&sk->__sk_common).skc_node.next) ?
+                                                                                                        ^
+net/socket.acc:46818:163: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_node ) *__mptr = (__get__ZN10hlist_node4nextE_1569(&__get__ZN4sock11__sk_commonE_1571(&sk->__sk_common).skc_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_node) );}) : 0;
+                                                                                                                                                                   ^

@@ -1,0 +1,111 @@
+mm/hugetlb.acc: In function ‘thread_info* current_thread_info()’:
+mm/hugetlb.acc:7025:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+mm/hugetlb.acc: In function ‘void hlist_del(hlist_node*)’:
+mm/hugetlb.acc:8348:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+mm/hugetlb.acc:8349:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+mm/hugetlb.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+mm/hugetlb.acc:14384:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+mm/hugetlb.acc:14377:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+mm/hugetlb.acc: In function ‘int timer_pending(timer_list*)’:
+mm/hugetlb.acc:14526:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_704(&__get__ZN10timer_list5entryE_705(&timer->entry).next) != 0;
+                                                                                        ^
+mm/hugetlb.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+mm/hugetlb.acc:16688:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+mm/hugetlb.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+mm/hugetlb.acc:16775:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+mm/hugetlb.acc: In function ‘zone_type page_zonenum(page*)’:
+mm/hugetlb.acc:16779:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+mm/hugetlb.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+mm/hugetlb.acc:16954:54: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_888(&vm_stat[item]));
+                                                      ^
+mm/hugetlb.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+mm/hugetlb.acc:16994:61: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_889(&vm_stat[item]));
+                                                             ^
+mm/hugetlb.acc: At global scope:
+mm/hugetlb.acc:18700:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+mm/hugetlb.acc:18660:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+mm/hugetlb.acc: In function ‘void list_del_rcu(list_head*)’:
+mm/hugetlb.acc:19376:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+mm/hugetlb.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+mm/hugetlb.acc:19462:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+mm/hugetlb.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+mm/hugetlb.acc:19592:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+mm/hugetlb.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+mm/hugetlb.acc:19674:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+mm/hugetlb.acc: In function ‘int dname_external(dentry*)’:
+mm/hugetlb.acc:20137:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_932(&__get__ZN6dentry6d_nameE_933(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_934(dentry->d_iname);
+                                                                                 ^
+mm/hugetlb.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+mm/hugetlb.acc:20654:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_938(&__get__ZN3pid7numbersE_939(&pid->numbers[__get__ZN3pid5levelE_940(&pid->level)]).ns);
+                                                                                                                 ^
+mm/hugetlb.acc: In function ‘pid_t pid_nr(pid*)’:
+mm/hugetlb.acc:20731:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_941(&__get__ZN3pid7numbersE_942(&pid->numbers[0]).nr);
+                                                                             ^
+mm/hugetlb.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+mm/hugetlb.acc:24103:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+mm/hugetlb.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+mm/hugetlb.acc:24526:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+mm/hugetlb.acc:24527:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+mm/hugetlb.acc: In function ‘void copy_highpage(page*, page*)’:
+mm/hugetlb.acc:24539:36: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from, KM_USER0);
+                                    ^
+mm/hugetlb.acc:24540:32: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to, KM_USER1);
+                                ^
+mm/hugetlb.acc: In function ‘task_struct* next_thread(task_struct*)’:
+mm/hugetlb.acc:29023:167: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_1096(&__get__ZN11task_struct12thread_groupE_1097(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                       ^
+mm/hugetlb.acc: In function ‘hugetlbfs_sb_info* HUGETLBFS_SB(super_block*)’:
+mm/hugetlb.acc:32828:62: warning: invalid conversion from ‘void*’ to ‘hugetlbfs_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1165(&sb->s_fs_info);
+                                                              ^
+mm/hugetlb.acc: In function ‘int hugetlb_report_meminfo(char*)’:
+mm/hugetlb.acc:33650:103: warning: taking address of temporary [-fpermissive]
+  struct hstate *h = &(__get_hstates_1179(&hstates[__get_default_hstate_idx_1180(&default_hstate_idx)]));
+                                                                                                       ^
+mm/hugetlb.acc: In function ‘long unsigned int hugetlb_total_pages()’:
+mm/hugetlb.acc:33770:103: warning: taking address of temporary [-fpermissive]
+  struct hstate *h = &(__get_hstates_1185(&hstates[__get_default_hstate_idx_1186(&default_hstate_idx)]));
+                                                                                                       ^

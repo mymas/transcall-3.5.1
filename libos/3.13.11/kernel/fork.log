@@ -1,0 +1,359 @@
+kernel/fork.acc: In function ‘void list_del(list_head*)’:
+kernel/fork.acc:807:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/fork.acc:808:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/fork.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/fork.acc:1783:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/fork.acc:1784:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/fork.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/fork.acc:15129:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_324(&__get__ZN10timer_list5entryE_325(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/fork.acc: At global scope:
+kernel/fork.acc:19132:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/fork.acc:19133:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/fork.acc:19134:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/fork.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/fork.acc:21039:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/fork.acc: At global scope:
+kernel/fork.acc:23183:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/fork.acc:23139:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/fork.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/fork.acc:25699:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/fork.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/fork.acc:25785:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/fork.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/fork.acc:25919:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/fork.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/fork.acc:26001:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/fork.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kernel/fork.acc:26435:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/fork.acc:26436:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/fork.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kernel/fork.acc:26523:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/fork.acc: In function ‘int dname_external(dentry*)’:
+kernel/fork.acc:26819:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_544(&__get__ZN6dentry6d_nameE_545(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_546(dentry->d_iname);
+                                                                                 ^
+kernel/fork.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/fork.acc:28055:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_574(&__get__ZN3pid7numbersE_575(&pid->numbers[__get__ZN3pid5levelE_576(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/fork.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/fork.acc:28172:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_577(&__get__ZN3pid7numbersE_578(&pid->numbers[__get__ZN3pid5levelE_579(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/fork.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/fork.acc:28248:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_580(&__get__ZN3pid7numbersE_581(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/fork.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kernel/fork.acc:33280:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_684(&__get__ZN6dentry7d_inodeE_685(&__get__ZN4path6dentryE_686(&__get__ZN4file6f_pathE_687(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+kernel/fork.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kernel/fork.acc:33355:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_690(&__get__ZN4file6f_pathE_691(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+kernel/fork.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/fork.acc:35109:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/fork.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/fork.acc:35196:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/fork.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/fork.acc:35241:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/fork.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/fork.acc:35486:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1100(&vm_stat[item]));
+                                                       ^
+kernel/fork.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/fork.acc:35526:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1101(&vm_stat[item]));
+                                                              ^
+kernel/fork.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+kernel/fork.acc:39832:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kernel/fork.acc:39833:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kernel/fork.acc: In function ‘void copy_highpage(page*, page*)’:
+kernel/fork.acc:39845:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+kernel/fork.acc:39846:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+kernel/fork.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/fork.acc:46077:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1487(&__get__ZN11task_struct12thread_groupE_1488(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+kernel/fork.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+kernel/fork.acc:47658:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1524(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+kernel/fork.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+kernel/fork.acc:47876:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+kernel/fork.acc:47882:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/fork.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+kernel/fork.acc:47908:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+kernel/fork.acc:47914:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/fork.acc: In function ‘hugetlbfs_sb_info* HUGETLBFS_SB(super_block*)’:
+kernel/fork.acc:51460:62: warning: invalid conversion from ‘void*’ to ‘hugetlbfs_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_1630(&sb->s_fs_info);
+                                                              ^
+kernel/fork.acc: In function ‘hstate* hstate_sizelog(int)’:
+kernel/fork.acc:51693:92: warning: taking address of temporary [-fpermissive]
+   return &(__get_hstates_1634(&hstates[__get_default_hstate_idx_1635(&default_hstate_idx)]));
+                                                                                            ^
+kernel/fork.acc: In function ‘unsigned int hstate_index_to_shift(unsigned int)’:
+kernel/fork.acc:52165:75: warning: taking address of temporary [-fpermissive]
+  return __get__ZN6hstate5orderE_1642(&__get_hstates_1643(&hstates[index]).order) + 12;
+                                                                           ^
+kernel/fork.acc: In function ‘long unsigned int stack_frame(task_struct*, pt_regs*)’:
+kernel/fork.acc:54706:113: warning: taking address of temporary [-fpermissive]
+  return *(unsigned long *)__get__ZN13thread_struct2spE_1682(&__get__ZN11task_struct6threadE_1683(&task->thread).sp);
+                                                                                                                 ^
+kernel/fork.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+kernel/fork.acc:55626:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1694(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1695(&__get__ZN11task_struct6threadE_1696(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+kernel/fork.acc: In function ‘anon_vma* page_anon_vma(page*)’:
+kernel/fork.acc:60141:27: warning: invalid conversion from ‘void*’ to ‘anon_vma*’ [-fpermissive]
+  return page_rmapping(page);
+                           ^
+kernel/fork.acc: In function ‘stable_node* page_stable_node(page*)’:
+kernel/fork.acc:60386:47: warning: invalid conversion from ‘void*’ to ‘stable_node*’ [-fpermissive]
+  return PageKsm(page) ? page_rmapping(page) : 0;
+                                               ^
+kernel/fork.acc: In function ‘void set_page_stable_node(page*, stable_node*)’:
+kernel/fork.acc:60392:38: warning: invalid conversion from ‘void*’ to ‘address_space*’ [-fpermissive]
+  page->mapping = (void *)stable_node +
+                                      ^
+kernel/fork.acc: In function ‘partition_meta_info* alloc_part_info(gendisk*)’:
+kernel/fork.acc:62928:77: warning: invalid conversion from ‘void*’ to ‘partition_meta_info*’ [-fpermissive]
+         ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)), disk->node_id);
+                                                                             ^
+kernel/fork.acc:62929:106: warning: invalid conversion from ‘void*’ to ‘partition_meta_info*’ [-fpermissive]
+  return kzalloc(sizeof(struct partition_meta_info), ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                                          ^
+kernel/fork.acc: At global scope:
+kernel/fork.acc:63544:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+kernel/fork.acc:63507:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+kernel/fork.acc: In function ‘char* bvec_kmap_irq(bio_vec*, long unsigned int*)’:
+kernel/fork.acc:69054:44: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  return lowmem_page_address(bvec->bv_page) + bvec->bv_offset;
+                                            ^
+kernel/fork.acc: At global scope:
+kernel/fork.acc:69685:21: warning: declaration of ‘int (* elevator_ops::elevator_merge_fn)(request_queue*, request**, bio*)’ [-fpermissive]
+  elevator_merge_fn *elevator_merge_fn;
+                     ^
+kernel/fork.acc:69650:14: warning: changes meaning of ‘elevator_merge_fn’ from ‘typedef int elevator_merge_fn(struct request_queue*, struct request**, struct bio*)’ [-fpermissive]
+ typedef int (elevator_merge_fn) (struct request_queue *, struct request **,
+              ^
+kernel/fork.acc:69686:22: warning: declaration of ‘void (* elevator_ops::elevator_merged_fn)(request_queue*, request*, int)’ [-fpermissive]
+  elevator_merged_fn *elevator_merged_fn;
+                      ^
+kernel/fork.acc:69655:15: warning: changes meaning of ‘elevator_merged_fn’ from ‘typedef void elevator_merged_fn(struct request_queue*, struct request*, int)’ [-fpermissive]
+ typedef void (elevator_merged_fn) (struct request_queue *, struct request *, int);
+               ^
+kernel/fork.acc:69687:25: warning: declaration of ‘void (* elevator_ops::elevator_merge_req_fn)(request_queue*, request*, request*)’ [-fpermissive]
+  elevator_merge_req_fn *elevator_merge_req_fn;
+                         ^
+kernel/fork.acc:69653:15: warning: changes meaning of ‘elevator_merge_req_fn’ from ‘typedef void elevator_merge_req_fn(struct request_queue*, struct request*, struct request*)’ [-fpermissive]
+ typedef void (elevator_merge_req_fn) (struct request_queue *, struct request *, struct request *);
+               ^
+kernel/fork.acc:69688:27: warning: declaration of ‘int (* elevator_ops::elevator_allow_merge_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_allow_merge_fn *elevator_allow_merge_fn;
+                           ^
+kernel/fork.acc:69657:14: warning: changes meaning of ‘elevator_allow_merge_fn’ from ‘typedef int elevator_allow_merge_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef int (elevator_allow_merge_fn) (struct request_queue *, struct request *, struct bio *);
+              ^
+kernel/fork.acc:69689:26: warning: declaration of ‘void (* elevator_ops::elevator_bio_merged_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_bio_merged_fn *elevator_bio_merged_fn;
+                          ^
+kernel/fork.acc:69659:15: warning: changes meaning of ‘elevator_bio_merged_fn’ from ‘typedef void elevator_bio_merged_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef void (elevator_bio_merged_fn) (struct request_queue *,
+               ^
+kernel/fork.acc:69691:24: warning: declaration of ‘int (* elevator_ops::elevator_dispatch_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_dispatch_fn *elevator_dispatch_fn;
+                        ^
+kernel/fork.acc:69662:14: warning: changes meaning of ‘elevator_dispatch_fn’ from ‘typedef int elevator_dispatch_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_dispatch_fn) (struct request_queue *, int);
+              ^
+kernel/fork.acc:69692:23: warning: declaration of ‘void (* elevator_ops::elevator_add_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_add_req_fn *elevator_add_req_fn;
+                       ^
+kernel/fork.acc:69664:15: warning: changes meaning of ‘elevator_add_req_fn’ from ‘typedef void elevator_add_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_add_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:69693:28: warning: declaration of ‘void (* elevator_ops::elevator_activate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_activate_req_fn *elevator_activate_req_fn;
+                            ^
+kernel/fork.acc:69674:15: warning: changes meaning of ‘elevator_activate_req_fn’ from ‘typedef void elevator_activate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_activate_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:69694:30: warning: declaration of ‘void (* elevator_ops::elevator_deactivate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_deactivate_req_fn *elevator_deactivate_req_fn;
+                              ^
+kernel/fork.acc:69675:15: warning: changes meaning of ‘elevator_deactivate_req_fn’ from ‘typedef void elevator_deactivate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_deactivate_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:69696:29: warning: declaration of ‘void (* elevator_ops::elevator_completed_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_completed_req_fn *elevator_completed_req_fn;
+                             ^
+kernel/fork.acc:69666:15: warning: changes meaning of ‘elevator_completed_req_fn’ from ‘typedef void elevator_completed_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_completed_req_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:69701:24: warning: declaration of ‘void (* elevator_ops::elevator_init_icq_fn)(io_cq*)’ [-fpermissive]
+  elevator_init_icq_fn *elevator_init_icq_fn;
+                        ^
+kernel/fork.acc:69669:15: warning: changes meaning of ‘elevator_init_icq_fn’ from ‘typedef void elevator_init_icq_fn(struct io_cq*)’ [-fpermissive]
+ typedef void (elevator_init_icq_fn) (struct io_cq *);
+               ^
+kernel/fork.acc:69702:24: warning: declaration of ‘void (* elevator_ops::elevator_exit_icq_fn)(io_cq*)’ [-fpermissive]
+  elevator_exit_icq_fn *elevator_exit_icq_fn;
+                        ^
+kernel/fork.acc:69670:15: warning: changes meaning of ‘elevator_exit_icq_fn’ from ‘typedef void elevator_exit_icq_fn(struct io_cq*)’ [-fpermissive]
+ typedef void (elevator_exit_icq_fn) (struct io_cq *);
+               ^
+kernel/fork.acc:69704:23: warning: declaration of ‘int (* elevator_ops::elevator_set_req_fn)(request_queue*, request*, bio*, gfp_t)’ [-fpermissive]
+  elevator_set_req_fn *elevator_set_req_fn;
+                       ^
+kernel/fork.acc:69671:14: warning: changes meaning of ‘elevator_set_req_fn’ from ‘typedef int elevator_set_req_fn(struct request_queue*, struct request*, struct bio*, gfp_t)’ [-fpermissive]
+ typedef int (elevator_set_req_fn) (struct request_queue *, struct request *,
+              ^
+kernel/fork.acc:69705:23: warning: declaration of ‘void (* elevator_ops::elevator_put_req_fn)(request*)’ [-fpermissive]
+  elevator_put_req_fn *elevator_put_req_fn;
+                       ^
+kernel/fork.acc:69673:15: warning: changes meaning of ‘elevator_put_req_fn’ from ‘typedef void elevator_put_req_fn(struct request*)’ [-fpermissive]
+ typedef void (elevator_put_req_fn) (struct request *);
+               ^
+kernel/fork.acc:69707:25: warning: declaration of ‘int (* elevator_ops::elevator_may_queue_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_may_queue_fn *elevator_may_queue_fn;
+                         ^
+kernel/fork.acc:69667:14: warning: changes meaning of ‘elevator_may_queue_fn’ from ‘typedef int elevator_may_queue_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_may_queue_fn) (struct request_queue *, int);
+              ^
+kernel/fork.acc:69709:20: warning: declaration of ‘int (* elevator_ops::elevator_init_fn)(request_queue*, elevator_type*)’ [-fpermissive]
+  elevator_init_fn *elevator_init_fn;
+                    ^
+kernel/fork.acc:69677:14: warning: changes meaning of ‘elevator_init_fn’ from ‘typedef int elevator_init_fn(struct request_queue*, struct elevator_type*)’ [-fpermissive]
+ typedef int (elevator_init_fn) (struct request_queue *,
+              ^
+kernel/fork.acc:69710:20: warning: declaration of ‘void (* elevator_ops::elevator_exit_fn)(elevator_queue*)’ [-fpermissive]
+  elevator_exit_fn *elevator_exit_fn;
+                    ^
+kernel/fork.acc:69679:15: warning: changes meaning of ‘elevator_exit_fn’ from ‘typedef void elevator_exit_fn(struct elevator_queue*)’ [-fpermissive]
+ typedef void (elevator_exit_fn) (struct elevator_queue *);
+               ^
+kernel/fork.acc:69947:19: warning: declaration of ‘void (* request_queue::make_request_fn)(request_queue*, bio*)’ [-fpermissive]
+  make_request_fn *make_request_fn;
+                   ^
+kernel/fork.acc:69842:15: warning: changes meaning of ‘make_request_fn’ from ‘typedef void make_request_fn(struct request_queue*, struct bio*)’ [-fpermissive]
+ typedef void (make_request_fn) (struct request_queue *q, struct bio *bio);
+               ^
+kernel/fork.acc:69948:14: warning: declaration of ‘int (* request_queue::prep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  prep_rq_fn *prep_rq_fn;
+              ^
+kernel/fork.acc:69843:14: warning: changes meaning of ‘prep_rq_fn’ from ‘typedef int prep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef int (prep_rq_fn) (struct request_queue *, struct request *);
+              ^
+kernel/fork.acc:69949:16: warning: declaration of ‘void (* request_queue::unprep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  unprep_rq_fn *unprep_rq_fn;
+                ^
+kernel/fork.acc:69844:15: warning: changes meaning of ‘unprep_rq_fn’ from ‘typedef void unprep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (unprep_rq_fn) (struct request_queue *, struct request *);
+               ^
+kernel/fork.acc:69950:17: warning: declaration of ‘int (* request_queue::merge_bvec_fn)(request_queue*, bvec_merge_data*, bio_vec*)’ [-fpermissive]
+  merge_bvec_fn *merge_bvec_fn;
+                 ^
+kernel/fork.acc:69858:14: warning: changes meaning of ‘merge_bvec_fn’ from ‘typedef int merge_bvec_fn(struct request_queue*, struct bvec_merge_data*, struct bio_vec*)’ [-fpermissive]
+ typedef int (merge_bvec_fn) (struct request_queue *, struct bvec_merge_data *,
+              ^
+kernel/fork.acc:69951:19: warning: declaration of ‘void (* request_queue::softirq_done_fn)(request*)’ [-fpermissive]
+  softirq_done_fn *softirq_done_fn;
+                   ^
+kernel/fork.acc:69860:15: warning: changes meaning of ‘softirq_done_fn’ from ‘typedef void softirq_done_fn(struct request*)’ [-fpermissive]
+ typedef void (softirq_done_fn)(struct request *);
+               ^
+kernel/fork.acc:69952:19: warning: declaration of ‘blk_eh_timer_return (* request_queue::rq_timed_out_fn)(request*)’ [-fpermissive]
+  rq_timed_out_fn *rq_timed_out_fn;
+                   ^
+kernel/fork.acc:69871:35: warning: changes meaning of ‘rq_timed_out_fn’ from ‘typedef enum blk_eh_timer_return rq_timed_out_fn(struct request*)’ [-fpermissive]
+ typedef enum blk_eh_timer_return (rq_timed_out_fn)(struct request *);
+                                   ^
+kernel/fork.acc:69954:15: warning: declaration of ‘int (* request_queue::lld_busy_fn)(request_queue*)’ [-fpermissive]
+  lld_busy_fn *lld_busy_fn;
+               ^
+kernel/fork.acc:69862:14: warning: changes meaning of ‘lld_busy_fn’ from ‘typedef int lld_busy_fn(struct request_queue*)’ [-fpermissive]
+ typedef int (lld_busy_fn) (struct request_queue *q);
+              ^
+kernel/fork.acc:70101:14: warning: declaration of ‘int (* request_queue::bsg_job_fn)(bsg_job*)’ [-fpermissive]
+  bsg_job_fn *bsg_job_fn;
+              ^
+kernel/fork.acc:69863:14: warning: changes meaning of ‘bsg_job_fn’ from ‘typedef int bsg_job_fn(struct bsg_job*)’ [-fpermissive]
+ typedef int (bsg_job_fn) (struct bsg_job *);
+              ^
+kernel/fork.acc: In function ‘int desc_empty(void*)’:
+kernel/fork.acc:73102:14: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *desc = ptr;
+              ^
+kernel/fork.acc: In function ‘void set_tssldt_descriptor(void*, long unsigned int, unsigned int, unsigned int)’:
+kernel/fork.acc:73145:31: warning: invalid conversion from ‘void*’ to ‘ldttss_desc64*’ [-fpermissive]
+  struct ldttss_desc64 *desc = d;
+                               ^
+kernel/fork.acc: In function ‘mm_struct* mm_access(task_struct*, unsigned int)’:
+kernel/fork.acc:74013:21: warning: invalid conversion from ‘void*’ to ‘mm_struct*’ [-fpermissive]
+   return ERR_PTR(err);
+                     ^

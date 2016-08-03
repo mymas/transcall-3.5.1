@@ -1,0 +1,132 @@
+kernel/cpu.acc: In function ‘void list_del(list_head*)’:
+kernel/cpu.acc:820:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/cpu.acc:821:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/cpu.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/cpu.acc:1796:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/cpu.acc:1797:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/cpu.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/cpu.acc:11780:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/cpu.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/cpu.acc:11866:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/cpu.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/cpu.acc:12000:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/cpu.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/cpu.acc:12082:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/cpu.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+kernel/cpu.acc:12603:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/cpu.acc:12604:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/cpu.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+kernel/cpu.acc:12691:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/cpu.acc: In function ‘int dname_external(dentry*)’:
+kernel/cpu.acc:12992:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_185(&__get__ZN6dentry6d_nameE_186(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_187(dentry->d_iname);
+                                                                                 ^
+kernel/cpu.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/cpu.acc:16705:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_315(&__get__ZN3pid7numbersE_316(&pid->numbers[__get__ZN3pid5levelE_317(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/cpu.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/cpu.acc:16822:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_318(&__get__ZN3pid7numbersE_319(&pid->numbers[__get__ZN3pid5levelE_320(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/cpu.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/cpu.acc:16898:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_321(&__get__ZN3pid7numbersE_322(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/cpu.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/cpu.acc:19694:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_380(&__get__ZN10timer_list5entryE_381(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/cpu.acc: At global scope:
+kernel/cpu.acc:21737:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/cpu.acc:21738:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/cpu.acc:21739:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/cpu.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+kernel/cpu.acc:27831:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_606(&__get__ZN6dentry7d_inodeE_607(&__get__ZN4path6dentryE_608(&__get__ZN4file6f_pathE_609(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+kernel/cpu.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+kernel/cpu.acc:27906:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_612(&__get__ZN4file6f_pathE_613(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+kernel/cpu.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/cpu.acc:29846:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/cpu.acc: At global scope:
+kernel/cpu.acc:34051:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/cpu.acc:34007:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/cpu.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/cpu.acc:37369:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_889(&__get__ZN11task_struct12thread_groupE_890(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+kernel/cpu.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+kernel/cpu.acc:39000:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_926(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+kernel/cpu.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+kernel/cpu.acc:39218:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+kernel/cpu.acc:39224:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/cpu.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+kernel/cpu.acc:39250:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+kernel/cpu.acc:39256:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+kernel/cpu.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+kernel/cpu.acc:45186:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+kernel/cpu.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+kernel/cpu.acc:45273:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+kernel/cpu.acc: In function ‘zone_type page_zonenum(page*)’:
+kernel/cpu.acc:45318:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+kernel/cpu.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+kernel/cpu.acc:45506:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1453(&vm_stat[item]));
+                                                       ^
+kernel/cpu.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+kernel/cpu.acc:45546:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1454(&vm_stat[item]));
+                                                              ^

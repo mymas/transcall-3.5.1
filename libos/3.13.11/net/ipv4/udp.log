@@ -1,0 +1,329 @@
+net/ipv4/udp.acc: In function ‘void list_del(list_head*)’:
+net/ipv4/udp.acc:10177:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+net/ipv4/udp.acc:10178:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+net/ipv4/udp.acc: In function ‘void hlist_del(hlist_node*)’:
+net/ipv4/udp.acc:11153:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+net/ipv4/udp.acc:11154:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/udp.acc: In function ‘int timer_pending(timer_list*)’:
+net/ipv4/udp.acc:15456:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_324(&__get__ZN10timer_list5entryE_325(&timer->entry).next) != 0;
+                                                                                        ^
+net/ipv4/udp.acc: At global scope:
+net/ipv4/udp.acc:19459:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+net/ipv4/udp.acc:19460:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+net/ipv4/udp.acc:19461:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+net/ipv4/udp.acc: In function ‘void list_del_rcu(list_head*)’:
+net/ipv4/udp.acc:21484:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+net/ipv4/udp.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+net/ipv4/udp.acc:21570:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+net/ipv4/udp.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+net/ipv4/udp.acc:21704:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/udp.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+net/ipv4/udp.acc:21786:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+net/ipv4/udp.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+net/ipv4/udp.acc:22307:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+net/ipv4/udp.acc:22308:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/udp.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+net/ipv4/udp.acc:22395:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/udp.acc: In function ‘int dname_external(dentry*)’:
+net/ipv4/udp.acc:22691:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_510(&__get__ZN6dentry6d_nameE_511(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_512(dentry->d_iname);
+                                                                                 ^
+net/ipv4/udp.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+net/ipv4/udp.acc:23978:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_540(&__get__ZN3pid7numbersE_541(&pid->numbers[__get__ZN3pid5levelE_542(&pid->level)]).ns);
+                                                                                                                 ^
+net/ipv4/udp.acc: In function ‘bool is_child_reaper(pid*)’:
+net/ipv4/udp.acc:24095:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_543(&__get__ZN3pid7numbersE_544(&pid->numbers[__get__ZN3pid5levelE_545(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+net/ipv4/udp.acc: In function ‘pid_t pid_nr(pid*)’:
+net/ipv4/udp.acc:24171:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_546(&__get__ZN3pid7numbersE_547(&pid->numbers[0]).nr);
+                                                                             ^
+net/ipv4/udp.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+net/ipv4/udp.acc:29442:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_650(&__get__ZN6dentry7d_inodeE_651(&__get__ZN4path6dentryE_652(&__get__ZN4file6f_pathE_653(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+net/ipv4/udp.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+net/ipv4/udp.acc:29517:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_656(&__get__ZN4file6f_pathE_657(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+net/ipv4/udp.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+net/ipv4/udp.acc:29684:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+net/ipv4/udp.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+net/ipv4/udp.acc:32271:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+net/ipv4/udp.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+net/ipv4/udp.acc:32358:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+net/ipv4/udp.acc: In function ‘zone_type page_zonenum(page*)’:
+net/ipv4/udp.acc:32403:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+net/ipv4/udp.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+net/ipv4/udp.acc:32648:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1085(&vm_stat[item]));
+                                                       ^
+net/ipv4/udp.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+net/ipv4/udp.acc:32688:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1086(&vm_stat[item]));
+                                                              ^
+net/ipv4/udp.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+net/ipv4/udp.acc:36685:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+net/ipv4/udp.acc:36686:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+net/ipv4/udp.acc: In function ‘void copy_highpage(page*, page*)’:
+net/ipv4/udp.acc:36698:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+net/ipv4/udp.acc:36699:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+net/ipv4/udp.acc: At global scope:
+net/ipv4/udp.acc:39216:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+net/ipv4/udp.acc:39172:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+net/ipv4/udp.acc: In function ‘task_struct* next_thread(task_struct*)’:
+net/ipv4/udp.acc:42534:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1427(&__get__ZN11task_struct12thread_groupE_1428(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+net/ipv4/udp.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+net/ipv4/udp.acc:46338:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1513(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+net/ipv4/udp.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+net/ipv4/udp.acc:46556:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+net/ipv4/udp.acc:46562:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+net/ipv4/udp.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+net/ipv4/udp.acc:46588:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+net/ipv4/udp.acc:46594:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+net/ipv4/udp.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+net/ipv4/udp.acc:50054:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+net/ipv4/udp.acc:50056:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+net/ipv4/udp.acc: In function ‘bool dmaf_p_disabled_continue(dma_ctrl_flags)’:
+net/ipv4/udp.acc:50980:49: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  enum dma_ctrl_flags mask = DMA_PREP_CONTINUE | DMA_PREP_PQ_DISABLE_P;
+                                                 ^
+net/ipv4/udp.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+net/ipv4/udp.acc:51041:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+net/ipv4/udp.acc: In function ‘void async_tx_clear_ack(dma_async_tx_descriptor*)’:
+net/ipv4/udp.acc:51046:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags &= ~DMA_CTRL_ACK;
+            ^
+net/ipv4/udp.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+net/ipv4/udp.acc:55425:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1932(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1933(&__get__ZN11task_struct6threadE_1934(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+net/ipv4/udp.acc: In function ‘void hlist_nulls_del(hlist_nulls_node*)’:
+net/ipv4/udp.acc:59158:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/udp.acc: In function ‘netdev_queue* netdev_get_tx_queue(net_device*, unsigned int)’:
+net/ipv4/udp.acc:64696:92: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10net_device3_txE_2055(&__get__ZN10net_device3_txE_2056(&dev->_tx)[index]);
+                                                                                            ^
+net/ipv4/udp.acc: In function ‘void netdev_for_each_tx_queue(net_device*, void (*)(net_device*, netdev_queue*, void*), void*)’:
+net/ipv4/udp.acc:64813:89: warning: taking address of temporary [-fpermissive]
+   f(dev, &__get__ZN10net_device3_txE_2058(&__get__ZN10net_device3_txE_2059(&dev->_tx)[i]), arg);
+                                                                                         ^
+net/ipv4/udp.acc: In function ‘net_device* next_net_device(net_device*)’:
+net/ipv4/udp.acc:65286:92: warning: taking address of temporary [-fpermissive]
+  lh = __get__ZN9list_head4nextE_2066(&__get__ZN10net_device8dev_listE_2067(&dev->dev_list).next);
+                                                                                            ^
+net/ipv4/udp.acc: In function ‘net_device* first_net_device(net*)’:
+net/ipv4/udp.acc:65373:150: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct net_device *)0)->dev_list ) *__mptr = (__get__ZN9list_head4nextE_2068(&__get__ZN3net13dev_base_headE_2069(&net->dev_base_head).next)); (struct net_device *)( (char *)__mptr - ((size_t) &((struct net_device *)0)->dev_list) );});
+                                                                                                                                                      ^
+net/ipv4/udp.acc: In function ‘u32 jhash(void*, u32, u32)’:
+net/ipv4/udp.acc:68076:10: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+  u8 *k = key;
+          ^
+net/ipv4/udp.acc: In function ‘void hlist_nulls_del_rcu(hlist_nulls_node*)’:
+net/ipv4/udp.acc:68545:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/udp.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+net/ipv4/udp.acc:69502:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+net/ipv4/udp.acc: In function ‘sock* sk_next(sock*)’:
+net/ipv4/udp.acc:71830:104: warning: taking address of temporary [-fpermissive]
+  return __get__ZN10hlist_node4nextE_2324(&__get__ZN4sock11__sk_commonE_2326(&sk->__sk_common).skc_node.next) ?
+                                                                                                        ^
+net/ipv4/udp.acc:71831:163: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_node ) *__mptr = (__get__ZN10hlist_node4nextE_2327(&__get__ZN4sock11__sk_commonE_2329(&sk->__sk_common).skc_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_node) );}) : 0;
+                                                                                                                                                                   ^
+net/ipv4/udp.acc: In function ‘sock* sk_nulls_next(sock*)’:
+net/ipv4/udp.acc:71976:129: warning: taking address of temporary [-fpermissive]
+  return (!is_a_nulls(__get__ZN16hlist_nulls_node4nextE_2330(&__get__ZN4sock11__sk_commonE_2332(&sk->__sk_common).skc_nulls_node.next))) ?
+                                                                                                                                 ^
+net/ipv4/udp.acc:71977:181: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_nulls_node ) *__mptr = (__get__ZN16hlist_nulls_node4nextE_2333(&__get__ZN4sock11__sk_commonE_2335(&sk->__sk_common).skc_nulls_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_nulls_node) );})
+                                                                                                                                                                                     ^
+net/ipv4/udp.acc: In function ‘request_sock* reqsk_alloc(request_sock_ops*)’:
+net/ipv4/udp.acc:76475:115: warning: invalid conversion from ‘void*’ to ‘request_sock*’ [-fpermissive]
+  struct request_sock *req = kmem_cache_alloc(__get__ZN16request_sock_ops4slabE_2537(&ops->slab), ((( gfp_t)0x20u)));
+                                                                                                                   ^
+net/ipv4/udp.acc: In function ‘int fastopen_init_queue(sock*, int)’:
+net/ipv4/udp.acc:80474:62: warning: invalid conversion from ‘void*’ to ‘fastopen_queue*’ [-fpermissive]
+       __get__ZN4sock13sk_allocationE_2625(&sk->sk_allocation));
+                                                              ^
+net/ipv4/udp.acc: In function ‘u32 ndisc_hashfn(void*, net_device*, __u32*)’:
+net/ipv4/udp.acc:81883:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+net/ipv4/udp.acc: In function ‘neighbour* __ipv6_neigh_lookup_noref(net_device*, void*)’:
+net/ipv4/udp.acc:81894:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+net/ipv4/udp.acc: In function ‘int __ipv6_addr_diff32(void*, void*, int)’:
+net/ipv4/udp.acc:82830:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+               ^
+net/ipv4/udp.acc:82830:29: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+                             ^
+net/ipv4/udp.acc: In function ‘int __ipv6_addr_diff64(void*, void*, int)’:
+net/ipv4/udp.acc:82846:15: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+               ^
+net/ipv4/udp.acc:82846:29: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+                             ^
+net/ipv4/udp.acc: In function ‘inet_ehash_bucket* inet_ehash_bucket_(inet_hashinfo*, unsigned int)’:
+net/ipv4/udp.acc:83989:176: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN13inet_hashinfo5ehashE_2728(&__get__ZN13inet_hashinfo5ehashE_2729(&hashinfo->ehash)[hash & __get__ZN13inet_hashinfo10ehash_maskE_2730(&hashinfo->ehash_mask)]);
+                                                                                                                                                                                ^
+net/ipv4/udp.acc: In function ‘spinlock_t* inet_ehash_lockp(inet_hashinfo*, unsigned int)’:
+net/ipv4/udp.acc:84101:208: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN13inet_hashinfo11ehash_locksE_2731(&__get__ZN13inet_hashinfo11ehash_locksE_2732(&hashinfo->ehash_locks)[hash & __get__ZN13inet_hashinfo16ehash_locks_maskE_2733(&hashinfo->ehash_locks_mask)]);
+                                                                                                                                                                                                                ^
+net/ipv4/udp.acc: In function ‘int inet_ehash_locks_alloc(inet_hashinfo*)’:
+net/ipv4/udp.acc:84193:61: warning: invalid conversion from ‘void*’ to ‘spinlock_t* {aka spinlock*}’ [-fpermissive]
+    hashinfo->ehash_locks = vmalloc(size * sizeof(spinlock_t));
+                                                             ^
+net/ipv4/udp.acc:84197:60: warning: invalid conversion from ‘void*’ to ‘spinlock_t* {aka spinlock*}’ [-fpermissive]
+       ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                            ^
+net/ipv4/udp.acc: In function ‘int inet_sk_listen_hashfn(sock*)’:
+net/ipv4/udp.acc:84456:118: warning: taking address of temporary [-fpermissive]
+  return inet_lhashfn(sock_net(sk), __get__ZN4sock11__sk_commonE_2741(&__get__ZN9inet_sock2skE_2742(&inet_sk(sk)->sk).__sk_common).skc_num);
+                                                                                                                      ^
+net/ipv4/udp.acc: In function ‘void ip_select_ident(sk_buff*, dst_entry*, sock*)’:
+net/ipv4/udp.acc:86561:102: warning: taking address of temporary [-fpermissive]
+   iph->id = (sk && __get__ZN4sock11__sk_commonE_2784(&__get__ZN9inet_sock2skE_2785(&inet_sk(sk)->sk).__sk_common).skc_daddr) ?
+                                                                                                      ^
+net/ipv4/udp.acc: In function ‘void ip_select_ident_more(sk_buff*, dst_entry*, sock*, int)’:
+net/ipv4/udp.acc:86782:95: warning: taking address of temporary [-fpermissive]
+   if (sk && __get__ZN4sock11__sk_commonE_2789(&__get__ZN9inet_sock2skE_2790(&inet_sk(sk)->sk).__sk_common).skc_daddr) {
+                                                                                               ^
+net/ipv4/udp.acc: In function ‘bool addr_match(void*, void*, int)’:
+net/ipv4/udp.acc:88156:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1;
+               ^
+net/ipv4/udp.acc:88157:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a2 = token2;
+               ^
+net/ipv4/udp.acc: In function ‘udp_hslot* udp_hashslot(_udp_table*, net*, unsigned int)’:
+net/ipv4/udp.acc:91461:160: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10_udp_table4hashE_3114(&__get__ZN10_udp_table4hashE_3115(&table->hash)[udp_hashfn(net, num, __get__ZN10_udp_table4maskE_3116(&table->mask))]);
+                                                                                                                                                                ^
+net/ipv4/udp.acc: In function ‘udp_hslot* udp_hashslot2(_udp_table*, unsigned int)’:
+net/ipv4/udp.acc:91572:148: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10_udp_table5hash2E_3117(&__get__ZN10_udp_table5hash2E_3118(&table->hash2)[hash & __get__ZN10_udp_table4maskE_3119(&table->mask)]);
+                                                                                                                                                    ^
+net/ipv4/udp.acc: In function ‘sock* udp_get_first(seq_file*, int)’:
+net/ipv4/udp.acc:92166:38: warning: invalid conversion from ‘void*’ to ‘udp_iter_state*’ [-fpermissive]
+  struct udp_iter_state *state = seq->_private;
+                                      ^
+net/ipv4/udp.acc:92172:136: warning: taking address of temporary [-fpermissive]
+   struct udp_hslot *hslot = &__get__ZN10_udp_table4hashE_3166(&__get__ZN10_udp_table4hashE_3167(&state->udp_table->hash)[state->bucket]);
+                                                                                                                                        ^
+net/ipv4/udp.acc: In function ‘sock* udp_get_next(seq_file*, sock*)’:
+net/ipv4/udp.acc:92263:38: warning: invalid conversion from ‘void*’ to ‘udp_iter_state*’ [-fpermissive]
+  struct udp_iter_state *state = seq->_private;
+                                      ^
+net/ipv4/udp.acc: In function ‘void* udp_seq_start(seq_file*, loff_t*)’:
+net/ipv4/udp.acc:92293:38: warning: invalid conversion from ‘void*’ to ‘udp_iter_state*’ [-fpermissive]
+  struct udp_iter_state *state = seq->_private;
+                                      ^
+net/ipv4/udp.acc: In function ‘void udp_seq_stop(seq_file*, void*)’:
+net/ipv4/udp.acc:92359:38: warning: invalid conversion from ‘void*’ to ‘udp_iter_state*’ [-fpermissive]
+  struct udp_iter_state *state = seq->_private;
+                                      ^
+net/ipv4/udp.acc: In function ‘void udp4_format_sock(sock*, seq_file*, int)’:
+net/ipv4/udp.acc:92963:91: warning: taking address of temporary [-fpermissive]
+  __be32 dest = __get__ZN4sock11__sk_commonE_3189(&__get__ZN9inet_sock2skE_3190(&inet->sk).__sk_common).skc_daddr;
+                                                                                           ^
+net/ipv4/udp.acc:92964:90: warning: taking address of temporary [-fpermissive]
+  __be32 src = __get__ZN4sock11__sk_commonE_3192(&__get__ZN9inet_sock2skE_3193(&inet->sk).__sk_common).skc_rcv_saddr;
+                                                                                          ^
+net/ipv4/udp.acc:92965:138: warning: taking address of temporary [-fpermissive]
+  __u16 destp = (__builtin_constant_p((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3195(&__get__ZN9inet_sock2skE_3196(&inet->sk).__sk_common).skc_dport))) ? ((__u16)( (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3198(&__get__ZN9inet_sock2skE_3199(&inet->sk).__sk_common).skc_dport)) & (__u16)0x00ffU) << 8) | (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3201(&__get__ZN9inet_sock2skE_3202(&inet->sk).__sk_common).skc_dport)) & (__u16)0xff00U) >> 8))) : __fswab16(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3204(&__get__ZN9inet_sock2skE_3205(&inet->sk).__sk_common).skc_dport)));
+                                                                                                                                          ^
+net/ipv4/udp.acc:92965:278: warning: taking address of temporary [-fpermissive]
+  __u16 destp = (__builtin_constant_p((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3195(&__get__ZN9inet_sock2skE_3196(&inet->sk).__sk_common).skc_dport))) ? ((__u16)( (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3198(&__get__ZN9inet_sock2skE_3199(&inet->sk).__sk_common).skc_dport)) & (__u16)0x00ffU) << 8) | (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3201(&__get__ZN9inet_sock2skE_3202(&inet->sk).__sk_common).skc_dport)) & (__u16)0xff00U) >> 8))) : __fswab16(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3204(&__get__ZN9inet_sock2skE_3205(&inet->sk).__sk_common).skc_dport)));
+                                                                                                                                                                                                                                                                                      ^
+net/ipv4/udp.acc:92965:431: warning: taking address of temporary [-fpermissive]
+  __u16 destp = (__builtin_constant_p((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3195(&__get__ZN9inet_sock2skE_3196(&inet->sk).__sk_common).skc_dport))) ? ((__u16)( (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3198(&__get__ZN9inet_sock2skE_3199(&inet->sk).__sk_common).skc_dport)) & (__u16)0x00ffU) << 8) | (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3201(&__get__ZN9inet_sock2skE_3202(&inet->sk).__sk_common).skc_dport)) & (__u16)0xff00U) >> 8))) : __fswab16(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3204(&__get__ZN9inet_sock2skE_3205(&inet->sk).__sk_common).skc_dport)));
+                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
+net/ipv4/udp.acc:92965:586: warning: taking address of temporary [-fpermissive]
+  __u16 destp = (__builtin_constant_p((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3195(&__get__ZN9inet_sock2skE_3196(&inet->sk).__sk_common).skc_dport))) ? ((__u16)( (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3198(&__get__ZN9inet_sock2skE_3199(&inet->sk).__sk_common).skc_dport)) & (__u16)0x00ffU) << 8) | (((__u16)(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3201(&__get__ZN9inet_sock2skE_3202(&inet->sk).__sk_common).skc_dport)) & (__u16)0xff00U) >> 8))) : __fswab16(( __u16)(__be16)(__get__ZN4sock11__sk_commonE_3204(&__get__ZN9inet_sock2skE_3205(&inet->sk).__sk_common).skc_dport)));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+net/ipv4/udp.acc: In function ‘int udp4_seq_show(seq_file*, void*)’:
+net/ipv4/udp.acc:92988:39: warning: invalid conversion from ‘void*’ to ‘udp_iter_state*’ [-fpermissive]
+   struct udp_iter_state *state = seq->_private;
+                                       ^

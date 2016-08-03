@@ -1,0 +1,71 @@
+kernel/sched/clock.acc: In function ‘void list_del(list_head*)’:
+kernel/sched/clock.acc:798:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+kernel/sched/clock.acc:799:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/sched/clock.acc: In function ‘void hlist_del(hlist_node*)’:
+kernel/sched/clock.acc:1774:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+kernel/sched/clock.acc:1775:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/clock.acc: In function ‘int timer_pending(timer_list*)’:
+kernel/sched/clock.acc:13612:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_251(&__get__ZN10timer_list5entryE_252(&timer->entry).next) != 0;
+                                                                                        ^
+kernel/sched/clock.acc: At global scope:
+kernel/sched/clock.acc:18080:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+kernel/sched/clock.acc:18081:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+kernel/sched/clock.acc:18082:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+kernel/sched/clock.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+kernel/sched/clock.acc:21072:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+kernel/sched/clock.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+kernel/sched/clock.acc:25041:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_661(&__get__ZN3pid7numbersE_662(&pid->numbers[__get__ZN3pid5levelE_663(&pid->level)]).ns);
+                                                                                                                 ^
+kernel/sched/clock.acc: In function ‘bool is_child_reaper(pid*)’:
+kernel/sched/clock.acc:25158:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_664(&__get__ZN3pid7numbersE_665(&pid->numbers[__get__ZN3pid5levelE_666(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+kernel/sched/clock.acc: In function ‘pid_t pid_nr(pid*)’:
+kernel/sched/clock.acc:25234:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_667(&__get__ZN3pid7numbersE_668(&pid->numbers[0]).nr);
+                                                                             ^
+kernel/sched/clock.acc: In function ‘void list_del_rcu(list_head*)’:
+kernel/sched/clock.acc:25718:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+kernel/sched/clock.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+kernel/sched/clock.acc:25804:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+kernel/sched/clock.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+kernel/sched/clock.acc:25938:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+kernel/sched/clock.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+kernel/sched/clock.acc:26020:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+kernel/sched/clock.acc: At global scope:
+kernel/sched/clock.acc:27832:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+kernel/sched/clock.acc:27788:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+kernel/sched/clock.acc: In function ‘task_struct* next_thread(task_struct*)’:
+kernel/sched/clock.acc:31202:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_788(&__get__ZN11task_struct12thread_groupE_789(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^

@@ -1,0 +1,355 @@
+fs/ext4/super.acc: In function ‘void list_del(list_head*)’:
+fs/ext4/super.acc:785:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+fs/ext4/super.acc:786:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/ext4/super.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/ext4/super.acc:1761:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/ext4/super.acc:1762:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/ext4/super.acc: In function ‘int timer_pending(timer_list*)’:
+fs/ext4/super.acc:15316:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_326(&__get__ZN10timer_list5entryE_327(&timer->entry).next) != 0;
+                                                                                        ^
+fs/ext4/super.acc: At global scope:
+fs/ext4/super.acc:19319:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+fs/ext4/super.acc:19320:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+fs/ext4/super.acc:19321:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+fs/ext4/super.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+fs/ext4/super.acc:21226:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+fs/ext4/super.acc: At global scope:
+fs/ext4/super.acc:22299:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+fs/ext4/super.acc:22255:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+fs/ext4/super.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/ext4/super.acc:24555:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+fs/ext4/super.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/ext4/super.acc:24641:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+fs/ext4/super.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/ext4/super.acc:24775:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/ext4/super.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/ext4/super.acc:24857:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+fs/ext4/super.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+fs/ext4/super.acc:25378:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+fs/ext4/super.acc:25379:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/ext4/super.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+fs/ext4/super.acc:25466:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+fs/ext4/super.acc: In function ‘int dname_external(dentry*)’:
+fs/ext4/super.acc:25762:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_538(&__get__ZN6dentry6d_nameE_539(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_540(dentry->d_iname);
+                                                                                 ^
+fs/ext4/super.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/ext4/super.acc:26854:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_566(&__get__ZN3pid7numbersE_567(&pid->numbers[__get__ZN3pid5levelE_568(&pid->level)]).ns);
+                                                                                                                 ^
+fs/ext4/super.acc: In function ‘bool is_child_reaper(pid*)’:
+fs/ext4/super.acc:26971:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_569(&__get__ZN3pid7numbersE_570(&pid->numbers[__get__ZN3pid5levelE_571(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+fs/ext4/super.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/ext4/super.acc:27047:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_572(&__get__ZN3pid7numbersE_573(&pid->numbers[0]).nr);
+                                                                             ^
+fs/ext4/super.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+fs/ext4/super.acc:32125:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_676(&__get__ZN6dentry7d_inodeE_677(&__get__ZN4path6dentryE_678(&__get__ZN4file6f_pathE_679(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+fs/ext4/super.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+fs/ext4/super.acc:32200:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_682(&__get__ZN4file6f_pathE_683(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+fs/ext4/super.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+fs/ext4/super.acc:34735:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+fs/ext4/super.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+fs/ext4/super.acc:34822:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+fs/ext4/super.acc: In function ‘zone_type page_zonenum(page*)’:
+fs/ext4/super.acc:34867:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+fs/ext4/super.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+fs/ext4/super.acc:35112:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1098(&vm_stat[item]));
+                                                       ^
+fs/ext4/super.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+fs/ext4/super.acc:35152:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1099(&vm_stat[item]));
+                                                              ^
+fs/ext4/super.acc: In function ‘void copy_user_highpage(page*, page*, long unsigned int, vm_area_struct*)’:
+fs/ext4/super.acc:39458:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+fs/ext4/super.acc:39459:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+fs/ext4/super.acc: In function ‘void copy_highpage(page*, page*)’:
+fs/ext4/super.acc:39471:26: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vfrom = kmap_atomic(from);
+                          ^
+fs/ext4/super.acc:39472:22: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  vto = kmap_atomic(to);
+                      ^
+fs/ext4/super.acc: In function ‘ablkcipher_request* ablkcipher_request_alloc(crypto_ablkcipher*, gfp_t)’:
+fs/ext4/super.acc:41971:44: warning: invalid conversion from ‘void*’ to ‘ablkcipher_request*’ [-fpermissive]
+         crypto_ablkcipher_reqsize(tfm), gfp);
+                                            ^
+fs/ext4/super.acc: In function ‘aead_request* aead_request_alloc(crypto_aead*, gfp_t)’:
+fs/ext4/super.acc:42102:60: warning: invalid conversion from ‘void*’ to ‘aead_request*’ [-fpermissive]
+  req = kmalloc(sizeof(*req) + crypto_aead_reqsize(tfm), gfp);
+                                                            ^
+fs/ext4/super.acc: In function ‘ahash_request* ahash_request_alloc(crypto_ahash*, gfp_t)’:
+fs/ext4/super.acc:42796:39: warning: invalid conversion from ‘void*’ to ‘ahash_request*’ [-fpermissive]
+         crypto_ahash_reqsize(tfm), gfp);
+                                       ^
+fs/ext4/super.acc: In function ‘task_struct* next_thread(task_struct*)’:
+fs/ext4/super.acc:47814:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1647(&__get__ZN11task_struct12thread_groupE_1648(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+fs/ext4/super.acc: In function ‘journal_head* bh2jh(buffer_head*)’:
+fs/ext4/super.acc:48721:13: warning: invalid conversion from ‘void*’ to ‘journal_head*’ [-fpermissive]
+  return bh->b_private;
+             ^
+fs/ext4/super.acc: In function ‘handle_t* journal_current_handle()’:
+fs/ext4/super.acc:49387:80: warning: invalid conversion from ‘void*’ to ‘handle_t* {aka jbd2_journal_handle*}’ [-fpermissive]
+  return __get__ZN11task_struct12journal_infoE_1721(&get_current()->journal_info);
+                                                                                ^
+fs/ext4/super.acc: In function ‘handle_t* jbd2_alloc_handle(gfp_t)’:
+fs/ext4/super.acc:49471:55: warning: invalid conversion from ‘void*’ to ‘handle_t* {aka jbd2_journal_handle*}’ [-fpermissive]
+  return kmem_cache_zalloc(jbd2_handle_cache, gfp_flags);
+                                                       ^
+fs/ext4/super.acc: In function ‘jbd2_inode* jbd2_alloc_inode(gfp_t)’:
+fs/ext4/super.acc:49487:53: warning: invalid conversion from ‘void*’ to ‘jbd2_inode*’ [-fpermissive]
+  return kmem_cache_alloc(jbd2_inode_cache, gfp_flags);
+                                                     ^
+fs/ext4/super.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+fs/ext4/super.acc:49902:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1752(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+fs/ext4/super.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+fs/ext4/super.acc:50120:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+fs/ext4/super.acc:50126:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+fs/ext4/super.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+fs/ext4/super.acc:50152:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+fs/ext4/super.acc:50158:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+fs/ext4/super.acc: In function ‘partition_meta_info* alloc_part_info(gendisk*)’:
+fs/ext4/super.acc:51494:77: warning: invalid conversion from ‘void*’ to ‘partition_meta_info*’ [-fpermissive]
+         ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)), disk->node_id);
+                                                                             ^
+fs/ext4/super.acc:51495:106: warning: invalid conversion from ‘void*’ to ‘partition_meta_info*’ [-fpermissive]
+  return kzalloc(sizeof(struct partition_meta_info), ((( gfp_t)0x10u) | (( gfp_t)0x40u) | (( gfp_t)0x80u)));
+                                                                                                          ^
+fs/ext4/super.acc: At global scope:
+fs/ext4/super.acc:52110:16: warning: declaration of ‘int (* backing_dev_info::congested_fn)(void*, int)’ [-fpermissive]
+  congested_fn *congested_fn;
+                ^
+fs/ext4/super.acc:52073:14: warning: changes meaning of ‘congested_fn’ from ‘typedef int congested_fn(void*, int)’ [-fpermissive]
+ typedef int (congested_fn)(void *, int);
+              ^
+fs/ext4/super.acc: In function ‘char* bvec_kmap_irq(bio_vec*, long unsigned int*)’:
+fs/ext4/super.acc:57715:44: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+  return lowmem_page_address(bvec->bv_page) + bvec->bv_offset;
+                                            ^
+fs/ext4/super.acc: At global scope:
+fs/ext4/super.acc:58346:21: warning: declaration of ‘int (* elevator_ops::elevator_merge_fn)(request_queue*, request**, bio*)’ [-fpermissive]
+  elevator_merge_fn *elevator_merge_fn;
+                     ^
+fs/ext4/super.acc:58311:14: warning: changes meaning of ‘elevator_merge_fn’ from ‘typedef int elevator_merge_fn(struct request_queue*, struct request**, struct bio*)’ [-fpermissive]
+ typedef int (elevator_merge_fn) (struct request_queue *, struct request **,
+              ^
+fs/ext4/super.acc:58347:22: warning: declaration of ‘void (* elevator_ops::elevator_merged_fn)(request_queue*, request*, int)’ [-fpermissive]
+  elevator_merged_fn *elevator_merged_fn;
+                      ^
+fs/ext4/super.acc:58316:15: warning: changes meaning of ‘elevator_merged_fn’ from ‘typedef void elevator_merged_fn(struct request_queue*, struct request*, int)’ [-fpermissive]
+ typedef void (elevator_merged_fn) (struct request_queue *, struct request *, int);
+               ^
+fs/ext4/super.acc:58348:25: warning: declaration of ‘void (* elevator_ops::elevator_merge_req_fn)(request_queue*, request*, request*)’ [-fpermissive]
+  elevator_merge_req_fn *elevator_merge_req_fn;
+                         ^
+fs/ext4/super.acc:58314:15: warning: changes meaning of ‘elevator_merge_req_fn’ from ‘typedef void elevator_merge_req_fn(struct request_queue*, struct request*, struct request*)’ [-fpermissive]
+ typedef void (elevator_merge_req_fn) (struct request_queue *, struct request *, struct request *);
+               ^
+fs/ext4/super.acc:58349:27: warning: declaration of ‘int (* elevator_ops::elevator_allow_merge_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_allow_merge_fn *elevator_allow_merge_fn;
+                           ^
+fs/ext4/super.acc:58318:14: warning: changes meaning of ‘elevator_allow_merge_fn’ from ‘typedef int elevator_allow_merge_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef int (elevator_allow_merge_fn) (struct request_queue *, struct request *, struct bio *);
+              ^
+fs/ext4/super.acc:58350:26: warning: declaration of ‘void (* elevator_ops::elevator_bio_merged_fn)(request_queue*, request*, bio*)’ [-fpermissive]
+  elevator_bio_merged_fn *elevator_bio_merged_fn;
+                          ^
+fs/ext4/super.acc:58320:15: warning: changes meaning of ‘elevator_bio_merged_fn’ from ‘typedef void elevator_bio_merged_fn(struct request_queue*, struct request*, struct bio*)’ [-fpermissive]
+ typedef void (elevator_bio_merged_fn) (struct request_queue *,
+               ^
+fs/ext4/super.acc:58352:24: warning: declaration of ‘int (* elevator_ops::elevator_dispatch_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_dispatch_fn *elevator_dispatch_fn;
+                        ^
+fs/ext4/super.acc:58323:14: warning: changes meaning of ‘elevator_dispatch_fn’ from ‘typedef int elevator_dispatch_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_dispatch_fn) (struct request_queue *, int);
+              ^
+fs/ext4/super.acc:58353:23: warning: declaration of ‘void (* elevator_ops::elevator_add_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_add_req_fn *elevator_add_req_fn;
+                       ^
+fs/ext4/super.acc:58325:15: warning: changes meaning of ‘elevator_add_req_fn’ from ‘typedef void elevator_add_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_add_req_fn) (struct request_queue *, struct request *);
+               ^
+fs/ext4/super.acc:58354:28: warning: declaration of ‘void (* elevator_ops::elevator_activate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_activate_req_fn *elevator_activate_req_fn;
+                            ^
+fs/ext4/super.acc:58335:15: warning: changes meaning of ‘elevator_activate_req_fn’ from ‘typedef void elevator_activate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_activate_req_fn) (struct request_queue *, struct request *);
+               ^
+fs/ext4/super.acc:58355:30: warning: declaration of ‘void (* elevator_ops::elevator_deactivate_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_deactivate_req_fn *elevator_deactivate_req_fn;
+                              ^
+fs/ext4/super.acc:58336:15: warning: changes meaning of ‘elevator_deactivate_req_fn’ from ‘typedef void elevator_deactivate_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_deactivate_req_fn) (struct request_queue *, struct request *);
+               ^
+fs/ext4/super.acc:58357:29: warning: declaration of ‘void (* elevator_ops::elevator_completed_req_fn)(request_queue*, request*)’ [-fpermissive]
+  elevator_completed_req_fn *elevator_completed_req_fn;
+                             ^
+fs/ext4/super.acc:58327:15: warning: changes meaning of ‘elevator_completed_req_fn’ from ‘typedef void elevator_completed_req_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (elevator_completed_req_fn) (struct request_queue *, struct request *);
+               ^
+fs/ext4/super.acc:58362:24: warning: declaration of ‘void (* elevator_ops::elevator_init_icq_fn)(io_cq*)’ [-fpermissive]
+  elevator_init_icq_fn *elevator_init_icq_fn;
+                        ^
+fs/ext4/super.acc:58330:15: warning: changes meaning of ‘elevator_init_icq_fn’ from ‘typedef void elevator_init_icq_fn(struct io_cq*)’ [-fpermissive]
+ typedef void (elevator_init_icq_fn) (struct io_cq *);
+               ^
+fs/ext4/super.acc:58363:24: warning: declaration of ‘void (* elevator_ops::elevator_exit_icq_fn)(io_cq*)’ [-fpermissive]
+  elevator_exit_icq_fn *elevator_exit_icq_fn;
+                        ^
+fs/ext4/super.acc:58331:15: warning: changes meaning of ‘elevator_exit_icq_fn’ from ‘typedef void elevator_exit_icq_fn(struct io_cq*)’ [-fpermissive]
+ typedef void (elevator_exit_icq_fn) (struct io_cq *);
+               ^
+fs/ext4/super.acc:58365:23: warning: declaration of ‘int (* elevator_ops::elevator_set_req_fn)(request_queue*, request*, bio*, gfp_t)’ [-fpermissive]
+  elevator_set_req_fn *elevator_set_req_fn;
+                       ^
+fs/ext4/super.acc:58332:14: warning: changes meaning of ‘elevator_set_req_fn’ from ‘typedef int elevator_set_req_fn(struct request_queue*, struct request*, struct bio*, gfp_t)’ [-fpermissive]
+ typedef int (elevator_set_req_fn) (struct request_queue *, struct request *,
+              ^
+fs/ext4/super.acc:58366:23: warning: declaration of ‘void (* elevator_ops::elevator_put_req_fn)(request*)’ [-fpermissive]
+  elevator_put_req_fn *elevator_put_req_fn;
+                       ^
+fs/ext4/super.acc:58334:15: warning: changes meaning of ‘elevator_put_req_fn’ from ‘typedef void elevator_put_req_fn(struct request*)’ [-fpermissive]
+ typedef void (elevator_put_req_fn) (struct request *);
+               ^
+fs/ext4/super.acc:58368:25: warning: declaration of ‘int (* elevator_ops::elevator_may_queue_fn)(request_queue*, int)’ [-fpermissive]
+  elevator_may_queue_fn *elevator_may_queue_fn;
+                         ^
+fs/ext4/super.acc:58328:14: warning: changes meaning of ‘elevator_may_queue_fn’ from ‘typedef int elevator_may_queue_fn(struct request_queue*, int)’ [-fpermissive]
+ typedef int (elevator_may_queue_fn) (struct request_queue *, int);
+              ^
+fs/ext4/super.acc:58370:20: warning: declaration of ‘int (* elevator_ops::elevator_init_fn)(request_queue*, elevator_type*)’ [-fpermissive]
+  elevator_init_fn *elevator_init_fn;
+                    ^
+fs/ext4/super.acc:58338:14: warning: changes meaning of ‘elevator_init_fn’ from ‘typedef int elevator_init_fn(struct request_queue*, struct elevator_type*)’ [-fpermissive]
+ typedef int (elevator_init_fn) (struct request_queue *,
+              ^
+fs/ext4/super.acc:58371:20: warning: declaration of ‘void (* elevator_ops::elevator_exit_fn)(elevator_queue*)’ [-fpermissive]
+  elevator_exit_fn *elevator_exit_fn;
+                    ^
+fs/ext4/super.acc:58340:15: warning: changes meaning of ‘elevator_exit_fn’ from ‘typedef void elevator_exit_fn(struct elevator_queue*)’ [-fpermissive]
+ typedef void (elevator_exit_fn) (struct elevator_queue *);
+               ^
+fs/ext4/super.acc:58608:19: warning: declaration of ‘void (* request_queue::make_request_fn)(request_queue*, bio*)’ [-fpermissive]
+  make_request_fn *make_request_fn;
+                   ^
+fs/ext4/super.acc:58503:15: warning: changes meaning of ‘make_request_fn’ from ‘typedef void make_request_fn(struct request_queue*, struct bio*)’ [-fpermissive]
+ typedef void (make_request_fn) (struct request_queue *q, struct bio *bio);
+               ^
+fs/ext4/super.acc:58609:14: warning: declaration of ‘int (* request_queue::prep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  prep_rq_fn *prep_rq_fn;
+              ^
+fs/ext4/super.acc:58504:14: warning: changes meaning of ‘prep_rq_fn’ from ‘typedef int prep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef int (prep_rq_fn) (struct request_queue *, struct request *);
+              ^
+fs/ext4/super.acc:58610:16: warning: declaration of ‘void (* request_queue::unprep_rq_fn)(request_queue*, request*)’ [-fpermissive]
+  unprep_rq_fn *unprep_rq_fn;
+                ^
+fs/ext4/super.acc:58505:15: warning: changes meaning of ‘unprep_rq_fn’ from ‘typedef void unprep_rq_fn(struct request_queue*, struct request*)’ [-fpermissive]
+ typedef void (unprep_rq_fn) (struct request_queue *, struct request *);
+               ^
+fs/ext4/super.acc:58611:17: warning: declaration of ‘int (* request_queue::merge_bvec_fn)(request_queue*, bvec_merge_data*, bio_vec*)’ [-fpermissive]
+  merge_bvec_fn *merge_bvec_fn;
+                 ^
+fs/ext4/super.acc:58519:14: warning: changes meaning of ‘merge_bvec_fn’ from ‘typedef int merge_bvec_fn(struct request_queue*, struct bvec_merge_data*, struct bio_vec*)’ [-fpermissive]
+ typedef int (merge_bvec_fn) (struct request_queue *, struct bvec_merge_data *,
+              ^
+fs/ext4/super.acc:58612:19: warning: declaration of ‘void (* request_queue::softirq_done_fn)(request*)’ [-fpermissive]
+  softirq_done_fn *softirq_done_fn;
+                   ^
+fs/ext4/super.acc:58521:15: warning: changes meaning of ‘softirq_done_fn’ from ‘typedef void softirq_done_fn(struct request*)’ [-fpermissive]
+ typedef void (softirq_done_fn)(struct request *);
+               ^
+fs/ext4/super.acc:58613:19: warning: declaration of ‘blk_eh_timer_return (* request_queue::rq_timed_out_fn)(request*)’ [-fpermissive]
+  rq_timed_out_fn *rq_timed_out_fn;
+                   ^
+fs/ext4/super.acc:58532:35: warning: changes meaning of ‘rq_timed_out_fn’ from ‘typedef enum blk_eh_timer_return rq_timed_out_fn(struct request*)’ [-fpermissive]
+ typedef enum blk_eh_timer_return (rq_timed_out_fn)(struct request *);
+                                   ^
+fs/ext4/super.acc:58615:15: warning: declaration of ‘int (* request_queue::lld_busy_fn)(request_queue*)’ [-fpermissive]
+  lld_busy_fn *lld_busy_fn;
+               ^
+fs/ext4/super.acc:58523:14: warning: changes meaning of ‘lld_busy_fn’ from ‘typedef int lld_busy_fn(struct request_queue*)’ [-fpermissive]
+ typedef int (lld_busy_fn) (struct request_queue *q);
+              ^
+fs/ext4/super.acc:58762:14: warning: declaration of ‘int (* request_queue::bsg_job_fn)(bsg_job*)’ [-fpermissive]
+  bsg_job_fn *bsg_job_fn;
+              ^
+fs/ext4/super.acc:58524:14: warning: changes meaning of ‘bsg_job_fn’ from ‘typedef int bsg_job_fn(struct bsg_job*)’ [-fpermissive]
+ typedef int (bsg_job_fn) (struct bsg_job *);
+              ^
+fs/ext4/super.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+fs/ext4/super.acc:63078:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_2225(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_2226(&__get__ZN11task_struct6threadE_2227(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+fs/ext4/super.acc: In function ‘ext4_sb_info* EXT4_SB(super_block*)’:
+fs/ext4/super.acc:64664:62: warning: invalid conversion from ‘void*’ to ‘ext4_sb_info*’ [-fpermissive]
+  return __get__ZN11super_block9s_fs_infoE_2251(&sb->s_fs_info);
+                                                              ^
+fs/ext4/super.acc: In function ‘ext4_io_end_t* ext4_inode_aio(inode*)’:
+fs/ext4/super.acc:64945:58: warning: invalid conversion from ‘void*’ to ‘ext4_io_end_t* {aka ext4_io_end*}’ [-fpermissive]
+  return __get__ZN5inode9i_privateE_2259(&inode->i_private);
+                                                          ^

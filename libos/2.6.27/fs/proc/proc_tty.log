@@ -1,0 +1,65 @@
+fs/proc/proc_tty.acc: In function ‘thread_info* current_thread_info()’:
+fs/proc/proc_tty.acc:7022:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+fs/proc/proc_tty.acc: In function ‘void hlist_del(hlist_node*)’:
+fs/proc/proc_tty.acc:8591:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+fs/proc/proc_tty.acc:8592:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/proc/proc_tty.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+fs/proc/proc_tty.acc:14609:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+fs/proc/proc_tty.acc:14602:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+fs/proc/proc_tty.acc: In function ‘int timer_pending(timer_list*)’:
+fs/proc/proc_tty.acc:14751:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_704(&__get__ZN10timer_list5entryE_705(&timer->entry).next) != 0;
+                                                                                        ^
+fs/proc/proc_tty.acc: In function ‘void list_del_rcu(list_head*)’:
+fs/proc/proc_tty.acc:16414:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+fs/proc/proc_tty.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+fs/proc/proc_tty.acc:16500:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+fs/proc/proc_tty.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+fs/proc/proc_tty.acc:16630:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+fs/proc/proc_tty.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+fs/proc/proc_tty.acc:16712:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+fs/proc/proc_tty.acc: In function ‘int dname_external(dentry*)’:
+fs/proc/proc_tty.acc:17175:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_744(&__get__ZN6dentry6d_nameE_745(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_746(dentry->d_iname);
+                                                                                 ^
+fs/proc/proc_tty.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+fs/proc/proc_tty.acc:17781:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_754(&__get__ZN3pid7numbersE_755(&pid->numbers[__get__ZN3pid5levelE_756(&pid->level)]).ns);
+                                                                                                                 ^
+fs/proc/proc_tty.acc: In function ‘pid_t pid_nr(pid*)’:
+fs/proc/proc_tty.acc:17858:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_757(&__get__ZN3pid7numbersE_758(&pid->numbers[0]).nr);
+                                                                             ^
+fs/proc/proc_tty.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+fs/proc/proc_tty.acc:21230:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+fs/proc/proc_tty.acc: In function ‘net* PDE_NET(proc_dir_entry*)’:
+fs/proc/proc_tty.acc:21460:22: warning: invalid conversion from ‘void*’ to ‘net*’ [-fpermissive]
+  return pde->parent->data;
+                      ^
+fs/proc/proc_tty.acc: In function ‘int show_tty_driver(seq_file*, void*)’:
+fs/proc/proc_tty.acc:22792:88: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  struct tty_driver *p = ({ typeof( ((struct tty_driver *)0)->tty_drivers ) *__mptr = (v); (struct tty_driver *)( (char *)__mptr - ((size_t) &((struct tty_driver *)0)->tty_drivers) );});
+                                                                                        ^
+fs/proc/proc_tty.acc:22796:92: warning: taking address of temporary [-fpermissive]
+  if (&p->tty_drivers == __get__ZN9list_head4nextE_841(&__get_tty_drivers_842(&tty_drivers).next)) {
+                                                                                            ^

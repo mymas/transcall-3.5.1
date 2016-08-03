@@ -1,0 +1,239 @@
+net/ipv4/devinet.acc: In function ‘void list_del(list_head*)’:
+net/ipv4/devinet.acc:10654:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+net/ipv4/devinet.acc:10655:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+net/ipv4/devinet.acc: In function ‘void hlist_del(hlist_node*)’:
+net/ipv4/devinet.acc:11630:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+net/ipv4/devinet.acc:11631:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/devinet.acc: In function ‘int timer_pending(timer_list*)’:
+net/ipv4/devinet.acc:16126:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_335(&__get__ZN10timer_list5entryE_336(&timer->entry).next) != 0;
+                                                                                        ^
+net/ipv4/devinet.acc: At global scope:
+net/ipv4/devinet.acc:20129:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+net/ipv4/devinet.acc:20130:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+net/ipv4/devinet.acc:20131:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+net/ipv4/devinet.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+net/ipv4/devinet.acc:22036:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+net/ipv4/devinet.acc: At global scope:
+net/ipv4/devinet.acc:23109:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+net/ipv4/devinet.acc:23065:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+net/ipv4/devinet.acc: In function ‘void list_del_rcu(list_head*)’:
+net/ipv4/devinet.acc:26123:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+net/ipv4/devinet.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+net/ipv4/devinet.acc:26209:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+net/ipv4/devinet.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+net/ipv4/devinet.acc:26343:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/devinet.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+net/ipv4/devinet.acc:26425:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+net/ipv4/devinet.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+net/ipv4/devinet.acc:26859:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+net/ipv4/devinet.acc:26860:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/devinet.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+net/ipv4/devinet.acc:26947:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/devinet.acc: In function ‘int dname_external(dentry*)’:
+net/ipv4/devinet.acc:27243:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_551(&__get__ZN6dentry6d_nameE_552(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_553(dentry->d_iname);
+                                                                                 ^
+net/ipv4/devinet.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+net/ipv4/devinet.acc:28479:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_581(&__get__ZN3pid7numbersE_582(&pid->numbers[__get__ZN3pid5levelE_583(&pid->level)]).ns);
+                                                                                                                 ^
+net/ipv4/devinet.acc: In function ‘bool is_child_reaper(pid*)’:
+net/ipv4/devinet.acc:28596:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_584(&__get__ZN3pid7numbersE_585(&pid->numbers[__get__ZN3pid5levelE_586(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+net/ipv4/devinet.acc: In function ‘pid_t pid_nr(pid*)’:
+net/ipv4/devinet.acc:28672:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_587(&__get__ZN3pid7numbersE_588(&pid->numbers[0]).nr);
+                                                                             ^
+net/ipv4/devinet.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+net/ipv4/devinet.acc:33217:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_682(&__get__ZN6dentry7d_inodeE_683(&__get__ZN4path6dentryE_684(&__get__ZN4file6f_pathE_685(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+net/ipv4/devinet.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+net/ipv4/devinet.acc:33292:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_688(&__get__ZN4file6f_pathE_689(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+net/ipv4/devinet.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+net/ipv4/devinet.acc:35046:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+net/ipv4/devinet.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+net/ipv4/devinet.acc:35133:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+net/ipv4/devinet.acc: In function ‘zone_type page_zonenum(page*)’:
+net/ipv4/devinet.acc:35178:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+net/ipv4/devinet.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+net/ipv4/devinet.acc:35423:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1098(&vm_stat[item]));
+                                                       ^
+net/ipv4/devinet.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+net/ipv4/devinet.acc:35463:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1099(&vm_stat[item]));
+                                                              ^
+net/ipv4/devinet.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+net/ipv4/devinet.acc:41257:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+net/ipv4/devinet.acc:41259:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+net/ipv4/devinet.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+net/ipv4/devinet.acc:41695:121: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_1368(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                         ^
+net/ipv4/devinet.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+net/ipv4/devinet.acc:41913:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+net/ipv4/devinet.acc:41919:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+net/ipv4/devinet.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+net/ipv4/devinet.acc:41945:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+net/ipv4/devinet.acc:41951:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+net/ipv4/devinet.acc: In function ‘bool dmaf_p_disabled_continue(dma_ctrl_flags)’:
+net/ipv4/devinet.acc:43645:49: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  enum dma_ctrl_flags mask = DMA_PREP_CONTINUE | DMA_PREP_PQ_DISABLE_P;
+                                                 ^
+net/ipv4/devinet.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+net/ipv4/devinet.acc:43706:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+net/ipv4/devinet.acc: In function ‘void async_tx_clear_ack(dma_async_tx_descriptor*)’:
+net/ipv4/devinet.acc:43711:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags &= ~DMA_CTRL_ACK;
+            ^
+net/ipv4/devinet.acc: In function ‘task_struct* next_thread(task_struct*)’:
+net/ipv4/devinet.acc:51754:178: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_1850(&__get__ZN11task_struct12thread_groupE_1851(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                  ^
+net/ipv4/devinet.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+net/ipv4/devinet.acc:54404:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1908(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1909(&__get__ZN11task_struct6threadE_1910(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+net/ipv4/devinet.acc: In function ‘void hlist_nulls_del(hlist_nulls_node*)’:
+net/ipv4/devinet.acc:58122:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/devinet.acc: In function ‘netdev_queue* netdev_get_tx_queue(net_device*, unsigned int)’:
+net/ipv4/devinet.acc:63604:92: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10net_device3_txE_2034(&__get__ZN10net_device3_txE_2035(&dev->_tx)[index]);
+                                                                                            ^
+net/ipv4/devinet.acc: In function ‘void netdev_for_each_tx_queue(net_device*, void (*)(net_device*, netdev_queue*, void*), void*)’:
+net/ipv4/devinet.acc:63721:89: warning: taking address of temporary [-fpermissive]
+   f(dev, &__get__ZN10net_device3_txE_2037(&__get__ZN10net_device3_txE_2038(&dev->_tx)[i]), arg);
+                                                                                         ^
+net/ipv4/devinet.acc: In function ‘net_device* next_net_device(net_device*)’:
+net/ipv4/devinet.acc:64194:92: warning: taking address of temporary [-fpermissive]
+  lh = __get__ZN9list_head4nextE_2045(&__get__ZN10net_device8dev_listE_2046(&dev->dev_list).next);
+                                                                                            ^
+net/ipv4/devinet.acc: In function ‘net_device* first_net_device(net*)’:
+net/ipv4/devinet.acc:64281:150: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct net_device *)0)->dev_list ) *__mptr = (__get__ZN9list_head4nextE_2047(&__get__ZN3net13dev_base_headE_2048(&net->dev_base_head).next)); (struct net_device *)( (char *)__mptr - ((size_t) &((struct net_device *)0)->dev_list) );});
+                                                                                                                                                      ^
+net/ipv4/devinet.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+net/ipv4/devinet.acc:69005:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+net/ipv4/devinet.acc: In function ‘u32 jhash(void*, u32, u32)’:
+net/ipv4/devinet.acc:70316:10: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+  u8 *k = key;
+          ^
+net/ipv4/devinet.acc: In function ‘void hlist_nulls_del_rcu(hlist_nulls_node*)’:
+net/ipv4/devinet.acc:71221:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/ipv4/devinet.acc: In function ‘sock* sk_next(sock*)’:
+net/ipv4/devinet.acc:72561:104: warning: taking address of temporary [-fpermissive]
+  return __get__ZN10hlist_node4nextE_2352(&__get__ZN4sock11__sk_commonE_2354(&sk->__sk_common).skc_node.next) ?
+                                                                                                        ^
+net/ipv4/devinet.acc:72562:163: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_node ) *__mptr = (__get__ZN10hlist_node4nextE_2355(&__get__ZN4sock11__sk_commonE_2357(&sk->__sk_common).skc_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_node) );}) : 0;
+                                                                                                                                                                   ^
+net/ipv4/devinet.acc: In function ‘sock* sk_nulls_next(sock*)’:
+net/ipv4/devinet.acc:72707:129: warning: taking address of temporary [-fpermissive]
+  return (!is_a_nulls(__get__ZN16hlist_nulls_node4nextE_2358(&__get__ZN4sock11__sk_commonE_2360(&sk->__sk_common).skc_nulls_node.next))) ?
+                                                                                                                                 ^
+net/ipv4/devinet.acc:72708:181: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_nulls_node ) *__mptr = (__get__ZN16hlist_nulls_node4nextE_2361(&__get__ZN4sock11__sk_commonE_2363(&sk->__sk_common).skc_nulls_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_nulls_node) );})
+                                                                                                                                                                                     ^
+net/ipv4/devinet.acc: In function ‘request_sock* reqsk_alloc(request_sock_ops*)’:
+net/ipv4/devinet.acc:77206:115: warning: invalid conversion from ‘void*’ to ‘request_sock*’ [-fpermissive]
+  struct request_sock *req = kmem_cache_alloc(__get__ZN16request_sock_ops4slabE_2565(&ops->slab), ((( gfp_t)0x20u)));
+                                                                                                                   ^
+net/ipv4/devinet.acc: In function ‘int fastopen_init_queue(sock*, int)’:
+net/ipv4/devinet.acc:80709:62: warning: invalid conversion from ‘void*’ to ‘fastopen_queue*’ [-fpermissive]
+       __get__ZN4sock13sk_allocationE_2645(&sk->sk_allocation));
+                                                              ^
+net/ipv4/devinet.acc: In function ‘u32 ndisc_hashfn(void*, net_device*, __u32*)’:
+net/ipv4/devinet.acc:81910:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+net/ipv4/devinet.acc: In function ‘neighbour* __ipv6_neigh_lookup_noref(net_device*, void*)’:
+net/ipv4/devinet.acc:81921:13: warning: invalid conversion from ‘void*’ to ‘u32* {aka unsigned int*}’ [-fpermissive]
+  u32 *p32 = pkey;
+             ^
+net/ipv4/devinet.acc: In function ‘int __ipv6_addr_diff32(void*, void*, int)’:
+net/ipv4/devinet.acc:82857:15: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+               ^
+net/ipv4/devinet.acc:82857:29: warning: invalid conversion from ‘void*’ to ‘__be32* {aka unsigned int*}’ [-fpermissive]
+  __be32 *a1 = token1, *a2 = token2;
+                             ^
+net/ipv4/devinet.acc: In function ‘int __ipv6_addr_diff64(void*, void*, int)’:
+net/ipv4/devinet.acc:82873:15: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+               ^
+net/ipv4/devinet.acc:82873:29: warning: invalid conversion from ‘void*’ to ‘__be64* {aka long long unsigned int*}’ [-fpermissive]
+  __be64 *a1 = token1, *a2 = token2;
+                             ^
+net/ipv4/devinet.acc: In function ‘void ip_select_ident(sk_buff*, dst_entry*, sock*)’:
+net/ipv4/devinet.acc:84282:102: warning: taking address of temporary [-fpermissive]
+   iph->id = (sk && __get__ZN4sock11__sk_commonE_2765(&__get__ZN9inet_sock2skE_2766(&inet_sk(sk)->sk).__sk_common).skc_daddr) ?
+                                                                                                      ^
+net/ipv4/devinet.acc: In function ‘void ip_select_ident_more(sk_buff*, dst_entry*, sock*, int)’:
+net/ipv4/devinet.acc:84503:95: warning: taking address of temporary [-fpermissive]
+   if (sk && __get__ZN4sock11__sk_commonE_2770(&__get__ZN9inet_sock2skE_2771(&inet_sk(sk)->sk).__sk_common).skc_daddr) {
+                                                                                               ^

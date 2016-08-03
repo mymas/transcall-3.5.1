@@ -1,0 +1,209 @@
+net/unix/af_unix.acc: In function ‘void list_del(list_head*)’:
+net/unix/af_unix.acc:785:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+              ^
+net/unix/af_unix.acc:786:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+net/unix/af_unix.acc: In function ‘void hlist_del(hlist_node*)’:
+net/unix/af_unix.acc:1761:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+net/unix/af_unix.acc:1762:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/unix/af_unix.acc: In function ‘int timer_pending(timer_list*)’:
+net/unix/af_unix.acc:15316:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_326(&__get__ZN10timer_list5entryE_327(&timer->entry).next) != 0;
+                                                                                        ^
+net/unix/af_unix.acc: At global scope:
+net/unix/af_unix.acc:19319:80: warning: invalid conversion from ‘void*’ to ‘long unsigned int*’ [-fpermissive]
+ static unsigned long * vvaraddr_jiffies = (void *)((-10*1024*1024 - 4096) + (0));
+                                                                                ^
+net/unix/af_unix.acc:19320:76: warning: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+ static int * vvaraddr_vgetcpu_mode = (void *)((-10*1024*1024 - 4096) + (16));
+                                                                            ^
+net/unix/af_unix.acc:19321:105: warning: invalid conversion from ‘void*’ to ‘vsyscall_gtod_data*’ [-fpermissive]
+ static struct vsyscall_gtod_data * vvaraddr_vsyscall_gtod_data = (void *)((-10*1024*1024 - 4096) + (128));
+                                                                                                         ^
+net/unix/af_unix.acc: In function ‘zone_type gfp_zone(gfp_t)’:
+net/unix/af_unix.acc:21226:274: warning: invalid conversion from ‘int’ to ‘zone_type’ [-fpermissive]
+  z = (( (ZONE_NORMAL << 0 * 2) | (ZONE_DMA << 0x01u * 2) | (ZONE_NORMAL << 0x02u * 2) | (ZONE_DMA32 << 0x04u * 2) | (ZONE_NORMAL << 0x08u * 2) | (ZONE_DMA << (0x08u | 0x01u) * 2) | (ZONE_MOVABLE << (0x08u | 0x02u) * 2) | (ZONE_DMA32 << (0x08u | 0x04u) * 2) ) >> (bit * 2)) &
+                                                                                                                                                                                                                                                                                  ^
+net/unix/af_unix.acc: At global scope:
+net/unix/af_unix.acc:22299:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+net/unix/af_unix.acc:22255:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write,
+             ^
+net/unix/af_unix.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+net/unix/af_unix.acc:27989:113: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_639(&__get__ZN3pid7numbersE_640(&pid->numbers[__get__ZN3pid5levelE_641(&pid->level)]).ns);
+                                                                                                                 ^
+net/unix/af_unix.acc: In function ‘bool is_child_reaper(pid*)’:
+net/unix/af_unix.acc:28106:114: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4upid2nrE_642(&__get__ZN3pid7numbersE_643(&pid->numbers[__get__ZN3pid5levelE_644(&pid->level)]).nr) == 1;
+                                                                                                                  ^
+net/unix/af_unix.acc: In function ‘pid_t pid_nr(pid*)’:
+net/unix/af_unix.acc:28182:77: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_645(&__get__ZN3pid7numbersE_646(&pid->numbers[0]).nr);
+                                                                             ^
+net/unix/af_unix.acc: In function ‘void list_del_rcu(list_head*)’:
+net/unix/af_unix.acc:28666:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+              ^
+net/unix/af_unix.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+net/unix/af_unix.acc:28752:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200 + (0xdead000000000000UL));
+            ^
+net/unix/af_unix.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+net/unix/af_unix.acc:28886:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/unix/af_unix.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+net/unix/af_unix.acc:28968:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+             ^
+net/unix/af_unix.acc: In function ‘task_struct* next_thread(task_struct*)’:
+net/unix/af_unix.acc:33073:176: warning: taking address of temporary [-fpermissive]
+  return ({typeof (*p->thread_group.next) *__ptr = (typeof (*p->thread_group.next) *)__get__ZN9list_head4nextE_766(&__get__ZN11task_struct12thread_groupE_767(&p->thread_group).next); ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((typeof(p->thread_group.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );}); })
+                                                                                                                                                                                ^
+net/unix/af_unix.acc: In function ‘void hlist_bl_del(hlist_bl_node*)’:
+net/unix/af_unix.acc:34300:10: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100 + (0xdead000000000000UL));
+          ^
+net/unix/af_unix.acc:34301:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/unix/af_unix.acc: In function ‘void hlist_bl_del_rcu(hlist_bl_node*)’:
+net/unix/af_unix.acc:34388:11: warning: invalid conversion from ‘void*’ to ‘hlist_bl_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/unix/af_unix.acc: In function ‘int dname_external(dentry*)’:
+net/unix/af_unix.acc:34684:81: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_793(&__get__ZN6dentry6d_nameE_794(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_795(dentry->d_iname);
+                                                                                 ^
+net/unix/af_unix.acc: In function ‘bool dir_emit_dot(file*, dir_context*)’:
+net/unix/af_unix.acc:41077:135: warning: taking address of temporary [-fpermissive]
+      __get__ZN5inode5i_inoE_936(&__get__ZN6dentry7d_inodeE_937(&__get__ZN4path6dentryE_938(&__get__ZN4file6f_pathE_939(&file->f_path).dentry)->d_inode)->i_ino), 4) == 0;
+                                                                                                                                       ^
+net/unix/af_unix.acc: In function ‘bool dir_emit_dotdot(file*, dir_context*)’:
+net/unix/af_unix.acc:41152:87: warning: taking address of temporary [-fpermissive]
+      parent_ino(__get__ZN4path6dentryE_942(&__get__ZN4file6f_pathE_943(&file->f_path).dentry)), 4) == 0;
+                                                                                       ^
+net/unix/af_unix.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+net/unix/af_unix.acc:41673:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+net/unix/af_unix.acc:41675:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+net/unix/af_unix.acc: In function ‘int seq_nodemask(seq_file*, nodemask_t*)’:
+net/unix/af_unix.acc:42111:120: warning: ISO C++ forbids casting to an array type ‘long unsigned int [1]’ [-fpermissive]
+         return seq_bitmap(m, (typeof(mask->bits))g_map(__get__ZN9_nodemask4bitsE_974(mask->bits), sizeof(*(mask->bits))), (1 << 6));
+                                                                                                                        ^
+net/unix/af_unix.acc: In function ‘pinctrl* pinctrl_get_select(device*, char*)’:
+net/unix/af_unix.acc:42329:28: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(PTR_ERR(s));
+                            ^
+net/unix/af_unix.acc:42335:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+net/unix/af_unix.acc: In function ‘pinctrl* devm_pinctrl_get_select(device*, char*)’:
+net/unix/af_unix.acc:42361:20: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_CAST(s);
+                    ^
+net/unix/af_unix.acc:42367:21: warning: invalid conversion from ‘void*’ to ‘pinctrl*’ [-fpermissive]
+   return ERR_PTR(ret);
+                     ^
+net/unix/af_unix.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+net/unix/af_unix.acc:45137:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+net/unix/af_unix.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+net/unix/af_unix.acc:45224:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+net/unix/af_unix.acc: In function ‘zone_type page_zonenum(page*)’:
+net/unix/af_unix.acc:45269:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 6) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+net/unix/af_unix.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+net/unix/af_unix.acc:45514:55: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_1411(&vm_stat[item]));
+                                                       ^
+net/unix/af_unix.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+net/unix/af_unix.acc:45554:62: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_1412(&vm_stat[item]));
+                                                              ^
+net/unix/af_unix.acc: In function ‘bool dmaf_p_disabled_continue(dma_ctrl_flags)’:
+net/unix/af_unix.acc:48633:49: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  enum dma_ctrl_flags mask = DMA_PREP_CONTINUE | DMA_PREP_PQ_DISABLE_P;
+                                                 ^
+net/unix/af_unix.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+net/unix/af_unix.acc:48694:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+net/unix/af_unix.acc: In function ‘void async_tx_clear_ack(dma_async_tx_descriptor*)’:
+net/unix/af_unix.acc:48699:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags &= ~DMA_CTRL_ACK;
+            ^
+net/unix/af_unix.acc: In function ‘void* arch_compat_alloc_user_space(long int)’:
+net/unix/af_unix.acc:52642:153: warning: taking address of temporary [-fpermissive]
+   sp = __get__ZN7pt_regs2spE_1851(&((struct pt_regs *)__get__ZN13thread_struct3sp0E_1852(&__get__ZN11task_struct6threadE_1853(&(get_current())->thread).sp0) - 1)->sp);
+                                                                                                                                                         ^
+net/unix/af_unix.acc: In function ‘void hlist_nulls_del(hlist_nulls_node*)’:
+net/unix/af_unix.acc:56381:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/unix/af_unix.acc: In function ‘netdev_queue* netdev_get_tx_queue(net_device*, unsigned int)’:
+net/unix/af_unix.acc:63446:92: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10net_device3_txE_2041(&__get__ZN10net_device3_txE_2042(&dev->_tx)[index]);
+                                                                                            ^
+net/unix/af_unix.acc: In function ‘void netdev_for_each_tx_queue(net_device*, void (*)(net_device*, netdev_queue*, void*), void*)’:
+net/unix/af_unix.acc:63563:89: warning: taking address of temporary [-fpermissive]
+   f(dev, &__get__ZN10net_device3_txE_2044(&__get__ZN10net_device3_txE_2045(&dev->_tx)[i]), arg);
+                                                                                         ^
+net/unix/af_unix.acc: In function ‘net_device* next_net_device(net_device*)’:
+net/unix/af_unix.acc:64036:92: warning: taking address of temporary [-fpermissive]
+  lh = __get__ZN9list_head4nextE_2052(&__get__ZN10net_device8dev_listE_2053(&dev->dev_list).next);
+                                                                                            ^
+net/unix/af_unix.acc: In function ‘net_device* first_net_device(net*)’:
+net/unix/af_unix.acc:64123:150: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct net_device *)0)->dev_list ) *__mptr = (__get__ZN9list_head4nextE_2054(&__get__ZN3net13dev_base_headE_2055(&net->dev_base_head).next)); (struct net_device *)( (char *)__mptr - ((size_t) &((struct net_device *)0)->dev_list) );});
+                                                                                                                                                      ^
+net/unix/af_unix.acc: In function ‘void hlist_nulls_del_rcu(hlist_nulls_node*)’:
+net/unix/af_unix.acc:67500:11: warning: invalid conversion from ‘void*’ to ‘hlist_nulls_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200 + (0xdead000000000000UL));
+           ^
+net/unix/af_unix.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+net/unix/af_unix.acc:68457:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+net/unix/af_unix.acc: In function ‘sock* sk_next(sock*)’:
+net/unix/af_unix.acc:70785:104: warning: taking address of temporary [-fpermissive]
+  return __get__ZN10hlist_node4nextE_2322(&__get__ZN4sock11__sk_commonE_2324(&sk->__sk_common).skc_node.next) ?
+                                                                                                        ^
+net/unix/af_unix.acc:70786:163: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_node ) *__mptr = (__get__ZN10hlist_node4nextE_2325(&__get__ZN4sock11__sk_commonE_2327(&sk->__sk_common).skc_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_node) );}) : 0;
+                                                                                                                                                                   ^
+net/unix/af_unix.acc: In function ‘sock* sk_nulls_next(sock*)’:
+net/unix/af_unix.acc:70931:129: warning: taking address of temporary [-fpermissive]
+  return (!is_a_nulls(__get__ZN16hlist_nulls_node4nextE_2328(&__get__ZN4sock11__sk_commonE_2330(&sk->__sk_common).skc_nulls_node.next))) ?
+                                                                                                                                 ^
+net/unix/af_unix.acc:70932:181: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_nulls_node ) *__mptr = (__get__ZN16hlist_nulls_node4nextE_2331(&__get__ZN4sock11__sk_commonE_2333(&sk->__sk_common).skc_nulls_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_nulls_node) );})
+                                                                                                                                                                                     ^
+net/unix/af_unix.acc: In function ‘hlist_head* unix_sockets_unbound(void*)’:
+net/unix/af_unix.acc:75809:69: warning: taking address of temporary [-fpermissive]
+  return &__get_unix_socket_table_2541(&unix_socket_table[256 + hash]);
+                                                                     ^
+net/unix/af_unix.acc: In function ‘sock* unix_from_bucket(seq_file*, loff_t*)’:
+net/unix/af_unix.acc:75853:76: warning: taking address of temporary [-fpermissive]
+  for (sk = sk_head(&__get_unix_socket_table_2542(&unix_socket_table[bucket])); sk; sk = sk_next(sk)) {
+                                                                            ^
+net/unix/af_unix.acc: In function ‘int unix_seq_show(seq_file*, void*)’:
+net/unix/af_unix.acc:76382:20: warning: invalid conversion from ‘void*’ to ‘sock*’ [-fpermissive]
+   struct sock *s = v;
+                    ^

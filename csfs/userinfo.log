@@ -1,0 +1,30 @@
+userinfo.cc: In function ‘int user_uid(const char*, uid_t*)’:
+userinfo.cc:40:28: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+         buf = malloc(buflen);
+                            ^
+userinfo.cc:55:24: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+     buf = malloc(buflen);
+                        ^
+userinfo.cc:60:34: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+         buf = realloc(buf, buflen);
+                                  ^
+userinfo.cc: In function ‘int group_gid(const char*, gid_t*)’:
+userinfo.cc:89:28: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+         buf = malloc(buflen);
+                            ^
+userinfo.cc:104:24: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+     buf = malloc(buflen);
+                        ^
+userinfo.cc:109:34: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+         buf = realloc(buf, buflen);
+                                  ^
+userinfo.cc: In function ‘int user_belongs_to_group(uid_t, gid_t)’:
+userinfo.cc:137:24: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+     buf = malloc(buflen);
+                        ^
+userinfo.cc:142:34: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+         buf = realloc(buf, buflen);
+                                  ^
+userinfo.cc:156:34: warning: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+         buf = realloc(buf, buflen);
+                                  ^

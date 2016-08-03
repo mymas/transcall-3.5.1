@@ -1,0 +1,151 @@
+net/packet/af_packet.acc: In function ‘thread_info* current_thread_info()’:
+net/packet/af_packet.acc:7029:5: warning: invalid conversion from ‘void*’ to ‘thread_info*’ [-fpermissive]
+  ti = (void *)(({ typeof(_proxy_pda.kernelstack) ret__; switch (sizeof(_proxy_pda.kernelstack)) { case 2: asm("mov" "w %%gs:%c1,%0" : "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_442(&_proxy_pda).kernelstack)); break; case 4: asm("mov" "l %%gs:%c1,%0": "=r" (ret__): "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_443(&_proxy_pda).kernelstack)); break; case 8: asm("mov" "q %%gs:%c1,%0": "=r" (ret__) : "i" (((size_t) &((struct x8664_pda *)0)->kernelstack)), "m" (__get__proxy_pda_444(&_proxy_pda).kernelstack)); break; default: __bad_pda_field(); } ret__; }) + (5*8) - (((1UL) << 12) << 1));
+     ^
+net/packet/af_packet.acc: In function ‘void hlist_del(hlist_node*)’:
+net/packet/af_packet.acc:8352:10: warning: invalid conversion from ‘void*’ to ‘hlist_node*’ [-fpermissive]
+  n->next = ((void *) 0x00100100);
+          ^
+net/packet/af_packet.acc:8353:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+net/packet/af_packet.acc: In function ‘void set_compound_page_dtor(page*, void (*)(page*))’:
+net/packet/af_packet.acc:13660:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.next = (void *)dtor;
+                   ^
+net/packet/af_packet.acc: In function ‘void set_compound_order(page*, long unsigned int)’:
+net/packet/af_packet.acc:13747:19: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  page[1].lru.prev = (void *)order;
+                   ^
+net/packet/af_packet.acc: In function ‘zone_type page_zonenum(page*)’:
+net/packet/af_packet.acc:13751:83: warning: invalid conversion from ‘long unsigned int’ to ‘zone_type’ [-fpermissive]
+  return (page->flags >> (((((sizeof(unsigned long)*8) - 0) - 9) - 2) * (2 != 0))) & ((1UL << 2) - 1);
+                                                                                   ^
+net/packet/af_packet.acc: In function ‘void timer_stats_account_hrtimer(hrtimer*)’:
+net/packet/af_packet.acc:14631:43: warning: invalid conversion from ‘hrtimer_restart (*)(hrtimer*)’ to ‘void*’ [-fpermissive]
+      timer->function, timer->start_comm, 0);
+                                           ^
+net/packet/af_packet.acc:14624:13: warning:   initializing argument 4 of ‘void timer_stats_update_stats(void*, pid_t, void*, void*, char*, unsigned int)’ [-fpermissive]
+ extern void timer_stats_update_stats(void *timer, pid_t pid, void *startf,
+             ^
+net/packet/af_packet.acc: In function ‘int timer_pending(timer_list*)’:
+net/packet/af_packet.acc:14773:88: warning: taking address of temporary [-fpermissive]
+  return __get__ZN9list_head4nextE_865(&__get__ZN10timer_list5entryE_866(&timer->entry).next) != 0;
+                                                                                        ^
+net/packet/af_packet.acc: In function ‘void zone_page_state_add(long int, zone*, zone_stat_item)’:
+net/packet/af_packet.acc:15633:54: warning: taking address of temporary [-fpermissive]
+  atomic_long_add(x, &__get_vm_stat_872(&vm_stat[item]));
+                                                      ^
+net/packet/af_packet.acc: In function ‘long unsigned int global_page_state(zone_stat_item)’:
+net/packet/af_packet.acc:15673:61: warning: taking address of temporary [-fpermissive]
+  long x = atomic_long_read(&__get_vm_stat_873(&vm_stat[item]));
+                                                             ^
+net/packet/af_packet.acc: At global scope:
+net/packet/af_packet.acc:18627:16: warning: declaration of ‘int (* ctl_table::proc_handler)(ctl_table*, int, file*, void*, size_t*, loff_t*)’ [-fpermissive]
+  proc_handler *proc_handler;
+                ^
+net/packet/af_packet.acc:18587:13: warning: changes meaning of ‘proc_handler’ from ‘typedef int proc_handler(struct ctl_table*, int, struct file*, void*, size_t*, loff_t*)’ [-fpermissive]
+ typedef int proc_handler (struct ctl_table *ctl, int write, struct file * filp,
+             ^
+net/packet/af_packet.acc: In function ‘ts_config* alloc_ts_config(size_t, gfp_t)’:
+net/packet/af_packet.acc:20143:73: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+  conf = kzalloc((((sizeof(*conf)) + 8 -1) & ~(8 -1)) + payload, gfp_mask);
+                                                                         ^
+net/packet/af_packet.acc:20145:21: warning: invalid conversion from ‘void*’ to ‘ts_config*’ [-fpermissive]
+   return ERR_PTR(-12);
+                     ^
+net/packet/af_packet.acc: In function ‘void async_tx_ack(dma_async_tx_descriptor*)’:
+net/packet/af_packet.acc:22937:12: warning: invalid conversion from ‘int’ to ‘dma_ctrl_flags’ [-fpermissive]
+  tx->flags |= DMA_CTRL_ACK;
+            ^
+net/packet/af_packet.acc: In function ‘netdev_queue* netdev_get_tx_queue(net_device*, unsigned int)’:
+net/packet/af_packet.acc:25901:92: warning: taking address of temporary [-fpermissive]
+  return &__get__ZN10net_device3_txE_1148(&__get__ZN10net_device3_txE_1149(&dev->_tx)[index]);
+                                                                                            ^
+net/packet/af_packet.acc: In function ‘void netdev_for_each_tx_queue(net_device*, void (*)(net_device*, netdev_queue*, void*), void*)’:
+net/packet/af_packet.acc:26018:89: warning: taking address of temporary [-fpermissive]
+   f(dev, &__get__ZN10net_device3_txE_1151(&__get__ZN10net_device3_txE_1152(&dev->_tx)[i]), arg);
+                                                                                         ^
+net/packet/af_packet.acc: In function ‘pid_namespace* ns_of_pid(pid*)’:
+net/packet/af_packet.acc:26985:116: warning: taking address of temporary [-fpermissive]
+   ns = __get__ZN4upid2nsE_1195(&__get__ZN3pid7numbersE_1196(&pid->numbers[__get__ZN3pid5levelE_1197(&pid->level)]).ns);
+                                                                                                                    ^
+net/packet/af_packet.acc: In function ‘pid_t pid_nr(pid*)’:
+net/packet/af_packet.acc:27062:79: warning: taking address of temporary [-fpermissive]
+   nr = __get__ZN4upid2nrE_1198(&__get__ZN3pid7numbersE_1199(&pid->numbers[0]).nr);
+                                                                               ^
+net/packet/af_packet.acc: In function ‘task_struct* next_thread(task_struct*)’:
+net/packet/af_packet.acc:30696:167: warning: taking address of temporary [-fpermissive]
+  return ({ typeof( ((struct task_struct *)0)->thread_group ) *__mptr = ((__get__ZN9list_head4nextE_1241(&__get__ZN11task_struct12thread_groupE_1242(&p->thread_group).next))); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->thread_group) );})
+                                                                                                                                                                       ^
+net/packet/af_packet.acc: In function ‘net_device* next_net_device(net_device*)’:
+net/packet/af_packet.acc:32288:92: warning: taking address of temporary [-fpermissive]
+  lh = __get__ZN9list_head4nextE_1275(&__get__ZN10net_device8dev_listE_1276(&dev->dev_list).next);
+                                                                                            ^
+net/packet/af_packet.acc: In function ‘net_device* first_net_device(net*)’:
+net/packet/af_packet.acc:32365:150: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct net_device *)0)->dev_list ) *__mptr = (__get__ZN9list_head4nextE_1277(&__get__ZN3net13dev_base_headE_1278(&net->dev_base_head).next)); (struct net_device *)( (char *)__mptr - ((size_t) &((struct net_device *)0)->dev_list) );});
+                                                                                                                                                      ^
+net/packet/af_packet.acc: In function ‘void* compat_alloc_user_space(long int)’:
+net/packet/af_packet.acc:34969:142: warning: taking address of temporary [-fpermissive]
+  struct pt_regs *regs = ((struct pt_regs *)__get__ZN13thread_struct3sp0E_1375(&__get__ZN11task_struct6threadE_1376(&(get_current())->thread).sp0) - 1);
+                                                                                                                                              ^
+net/packet/af_packet.acc: In function ‘u32 jhash(void*, u32, u32)’:
+net/packet/af_packet.acc:35825:10: warning: invalid conversion from ‘void*’ to ‘u8* {aka unsigned char*}’ [-fpermissive]
+  u8 *k = key;
+          ^
+net/packet/af_packet.acc: In function ‘void list_del_rcu(list_head*)’:
+net/packet/af_packet.acc:36357:14: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  entry->prev = ((void *) 0x00200200);
+              ^
+net/packet/af_packet.acc: In function ‘void list_replace_rcu(list_head*, list_head*)’:
+net/packet/af_packet.acc:36443:12: warning: invalid conversion from ‘void*’ to ‘list_head*’ [-fpermissive]
+  old->prev = ((void *) 0x00200200);
+            ^
+net/packet/af_packet.acc: In function ‘void hlist_del_rcu(hlist_node*)’:
+net/packet/af_packet.acc:36573:11: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  n->pprev = ((void *) 0x00200200);
+           ^
+net/packet/af_packet.acc: In function ‘void hlist_replace_rcu(hlist_node*, hlist_node*)’:
+net/packet/af_packet.acc:36655:13: warning: invalid conversion from ‘void*’ to ‘hlist_node**’ [-fpermissive]
+  old->pprev = ((void *) 0x00200200);
+             ^
+net/packet/af_packet.acc: In function ‘int dname_external(dentry*)’:
+net/packet/af_packet.acc:37118:83: warning: taking address of temporary [-fpermissive]
+  return __get__ZN4qstr4nameE_1409(&__get__ZN6dentry6d_nameE_1410(&dentry->d_name).name) != __get__ZN6dentry7d_inameE_1411(dentry->d_iname);
+                                                                                   ^
+net/packet/af_packet.acc: In function ‘void simple_transaction_set(file*, size_t)’:
+net/packet/af_packet.acc:40269:48: warning: invalid conversion from ‘void*’ to ‘simple_transaction_argresp*’ [-fpermissive]
+  struct simple_transaction_argresp *ar = file->private_data;
+                                                ^
+net/packet/af_packet.acc: In function ‘nlattr* nlmsg_attrdata(nlmsghdr*, int)’:
+net/packet/af_packet.acc:43162:38: warning: invalid conversion from ‘void*’ to ‘unsigned char*’ [-fpermissive]
+  unsigned char *data = nlmsg_data(nlh);
+                                      ^
+net/packet/af_packet.acc: In function ‘int nla_nest_compat_end(sk_buff*, nlattr*)’:
+net/packet/af_packet.acc:43595:38: warning: invalid conversion from ‘void*’ to ‘nlattr*’ [-fpermissive]
+  struct nlattr *nest = (void *)start + ( ((start->nla_len)+4 -1) & ~(4 -1) );
+                                      ^
+net/packet/af_packet.acc: In function ‘sock* sk_next(sock*)’:
+net/packet/af_packet.acc:44743:104: warning: taking address of temporary [-fpermissive]
+  return __get__ZN10hlist_node4nextE_1531(&__get__ZN4sock11__sk_commonE_1533(&sk->__sk_common).skc_node.next) ?
+                                                                                                        ^
+net/packet/af_packet.acc:44744:163: warning: taking address of temporary [-fpermissive]
+   ({ typeof( ((struct sock *)0)->__sk_common.skc_node ) *__mptr = (__get__ZN10hlist_node4nextE_1534(&__get__ZN4sock11__sk_commonE_1536(&sk->__sk_common).skc_node.next)); (struct sock *)( (char *)__mptr - ((size_t) &((struct sock *)0)->__sk_common.skc_node) );}) : 0;
+                                                                                                                                                                   ^
+net/packet/af_packet.acc: In function ‘request_sock* reqsk_alloc(request_sock_ops*)’:
+net/packet/af_packet.acc:47219:115: warning: invalid conversion from ‘void*’ to ‘request_sock*’ [-fpermissive]
+  struct request_sock *req = kmem_cache_alloc(__get__ZN16request_sock_ops4slabE_1608(&ops->slab), ((( gfp_t)0x20u)));
+                                                                                                                   ^
+net/packet/af_packet.acc: In function ‘net* PDE_NET(proc_dir_entry*)’:
+net/packet/af_packet.acc:52198:22: warning: invalid conversion from ‘void*’ to ‘net*’ [-fpermissive]
+  return pde->parent->data;
+                      ^
+net/packet/af_packet.acc: In function ‘void* packet_seq_next(seq_file*, void*, loff_t*)’:
+net/packet/af_packet.acc:52539:76: warning: taking address of temporary [-fpermissive]
+                 ? sk_head(&(__get__ZN3net6packetE_1732(&net->packet).sklist))
+                                                                            ^
+net/packet/af_packet.acc: In function ‘int packet_seq_show(seq_file*, void*)’:
+net/packet/af_packet.acc:52765:20: warning: invalid conversion from ‘void*’ to ‘sock*’ [-fpermissive]
+   struct sock *s = v;
+                    ^

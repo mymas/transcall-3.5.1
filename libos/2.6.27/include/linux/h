@@ -1,0 +1,68 @@
+binfmts.h:	kernel_cap_t cap_post_exec_permitted;
+capability.h:} kernel_cap_t;
+capability.h:#define _KERNEL_CAP_T_SIZE     (sizeof(kernel_cap_t))
+capability.h:# define CAP_EMPTY_SET    ((kernel_cap_t){{ 0, 0 }})
+capability.h:# define CAP_FULL_SET     ((kernel_cap_t){{ ~0, ~0 }})
+capability.h:# define CAP_INIT_EFF_SET ((kernel_cap_t){{ ~CAP_TO_MASK(CAP_SETPCAP), ~0 }})
+capability.h:# define CAP_FS_SET       ((kernel_cap_t){{ CAP_FS_MASK_B0 \
+capability.h:# define CAP_NFSD_SET     ((kernel_cap_t){{ CAP_FS_MASK_B0 \
+capability.h:static inline kernel_cap_t cap_combine(const kernel_cap_t a,
+capability.h:				       const kernel_cap_t b)
+capability.h:	kernel_cap_t dest;
+capability.h:static inline kernel_cap_t cap_intersect(const kernel_cap_t a,
+capability.h:					 const kernel_cap_t b)
+capability.h:	kernel_cap_t dest;
+capability.h:static inline kernel_cap_t cap_drop(const kernel_cap_t a,
+capability.h:				    const kernel_cap_t drop)
+capability.h:	kernel_cap_t dest;
+capability.h:static inline kernel_cap_t cap_invert(const kernel_cap_t c)
+capability.h:	kernel_cap_t dest;
+capability.h:static inline int cap_isclear(const kernel_cap_t a)
+capability.h:static inline int cap_issubset(const kernel_cap_t a, const kernel_cap_t set)
+capability.h:	kernel_cap_t dest;
+capability.h:	const kernel_cap_t __cap_fs_set = CAP_FS_SET;
+capability.h:static inline kernel_cap_t cap_drop_fs_set(const kernel_cap_t a)
+capability.h:	const kernel_cap_t __cap_fs_set = CAP_FS_SET;
+capability.h:static inline kernel_cap_t cap_raise_fs_set(const kernel_cap_t a,
+capability.h:					    const kernel_cap_t permitted)
+capability.h:	const kernel_cap_t __cap_fs_set = CAP_FS_SET;
+capability.h:static inline kernel_cap_t cap_drop_nfsd_set(const kernel_cap_t a)
+capability.h:	const kernel_cap_t __cap_fs_set = CAP_NFSD_SET;
+capability.h:static inline kernel_cap_t cap_raise_nfsd_set(const kernel_cap_t a,
+capability.h:					      const kernel_cap_t permitted)
+capability.h:	const kernel_cap_t __cap_nfsd_set = CAP_NFSD_SET;
+capability.h:extern const kernel_cap_t __cap_empty_set;
+capability.h:extern const kernel_cap_t __cap_full_set;
+capability.h:extern const kernel_cap_t __cap_init_eff_set;
+capability.h:kernel_cap_t cap_set_effective(const kernel_cap_t pE_new);
+netlink.h:	kernel_cap_t		eff_cap;
+sched.h:	kernel_cap_t   cap_effective, cap_inheritable, cap_permitted, cap_bset;
+security.h:extern int cap_capget(struct task_struct *target, kernel_cap_t *effective, kernel_cap_t *inheritable, kernel_cap_t *permitted);
+security.h:extern int cap_capset_check(struct task_struct *target, kernel_cap_t *effective, kernel_cap_t *inheritable, kernel_cap_t *permitted);
+security.h:extern void cap_capset_set(struct task_struct *target, kernel_cap_t *effective, kernel_cap_t *inheritable, kernel_cap_t *permitted);
+security.h:		       kernel_cap_t *effective,
+security.h:		       kernel_cap_t *inheritable, kernel_cap_t *permitted);
+security.h:			     kernel_cap_t *effective,
+security.h:			     kernel_cap_t *inheritable,
+security.h:			     kernel_cap_t *permitted);
+security.h:			    kernel_cap_t *effective,
+security.h:			    kernel_cap_t *inheritable,
+security.h:			    kernel_cap_t *permitted);
+security.h:		    kernel_cap_t *effective,
+security.h:		    kernel_cap_t *inheritable,
+security.h:		    kernel_cap_t *permitted);
+security.h:			  kernel_cap_t *effective,
+security.h:			  kernel_cap_t *inheritable,
+security.h:			  kernel_cap_t *permitted);
+security.h:			 kernel_cap_t *effective,
+security.h:			 kernel_cap_t *inheritable,
+security.h:			 kernel_cap_t *permitted);
+security.h:				   kernel_cap_t *effective,
+security.h:				   kernel_cap_t *inheritable,
+security.h:				   kernel_cap_t *permitted)
+security.h:					 kernel_cap_t *effective,
+security.h:					 kernel_cap_t *inheritable,
+security.h:					 kernel_cap_t *permitted)
+security.h:					kernel_cap_t *effective,
+security.h:					kernel_cap_t *inheritable,
+security.h:					kernel_cap_t *permitted)

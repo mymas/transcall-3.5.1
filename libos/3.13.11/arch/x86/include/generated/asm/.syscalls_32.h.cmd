@@ -1,0 +1,1 @@
+cmd_arch/x86/syscalls/../include/generated/asm/syscalls_32.h := /bin/bash '/home/kourai/src/linux-source-3.13.0/arch/x86/syscalls/syscalltbl.sh' /home/kourai/src/linux-source-3.13.0/arch/x86/syscalls/syscall_32.tbl arch/x86/syscalls/../include/generated/asm/syscalls_32.h

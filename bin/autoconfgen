@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+print "#define AUTOCONF_INCLUDED\n";
+
+while (<STDIN>) {
+    if (($config, $value) = /^(CONFIG_[^\s]+)=(.+)$/) {
+        if ($value eq "y") {
+            print "#define $config 1\n";
+        }
+        elsif ($value eq "m") {
+            print "#define $config" . "_MODULE 1\n";
+        }
+        else {
+            print "#define $config $value\n";
+        }
+    }
+}
