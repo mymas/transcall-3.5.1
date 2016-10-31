@@ -1,0 +1,27 @@
+# ネストした仮想化でのTripwireの実行時間計測
+* perf statコマンドで計測
+	* nfs上のゲストVMのイメージをマウント
+      14.029888849 seconds time elapsed
+      13.865638690 seconds time elapsed
+      12.715886100 seconds time elapsed
+      13.742006320 seconds time elapsed
+      14.031423897 seconds time elapsed
+      13.975989028 seconds time elapsed
+      13.958378108 seconds time elapsed
+      13.402986873 seconds time elapsed
+      13.221607253 seconds time elapsed
+      13.910060983 seconds time elapsed
+------------------------------------------
+* ポリシーを修正
+       9.001529872 seconds time elapsed
+       8.976979074 seconds time elapsed
+       9.200714797 seconds time elapsed
+       8.922214651 seconds time elapsed
+       9.300409078 seconds time elapsed
+       8.612481736 seconds time elapsed
+       8.937343713 seconds time elapsed
+       9.117674908 seconds time elapsed
+       9.016011497 seconds time elapsed
+       8.904059889 seconds time elapsed
+------------------------------------------
+

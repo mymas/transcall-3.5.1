@@ -11,12 +11,29 @@
 #include <sys/time.h>
 #include <sys/xattr.h>
 #include "shadow_procfs.h"
-#include "addr.h"
+#include "../libos/common/addr.h"
 
 #define SNAPSHOT
 
 #define MAX_PATH 256
 #define MAX_NAME 64
+//#define KOURAI
+//#define MEASURE
+#define MIYAMA_VM_LIST
+
+#ifdef MIYAMA_VM_LIST
+//int vm_id;
+#endif /*MIYAMA_VM_LIST*/
+
+#ifdef KOURAI
+extern int notrans_count, map_count, total_count;
+extern int map2_count, total2_count;
+extern int total3_count;
+#endif /*KOURAI*/
+
+#ifdef MEASURE
+extern double cr3_res_time, ept_res_time;
+#endif /*MEASURE*/
 
 double t1, t2;
 double gettimeofday_sec()
@@ -809,23 +826,17 @@ static struct fuse_operations proc_oper = {
     shadow_proc_readdir,  /* readdir */
 };
 
-/*
-#include <sys/time.h>
-
-extern int notrans_count, map_count, total_count;
-extern int map2_count, total2_count;
-extern int total3_count;
-*/
 
 extern unsigned long total_swapcache_pages(void);
 int main(int argc, char *argv[])
 {
     int domid;
     int rc;
+    int vm_id = 123;
 
-    if (argc < 3) {
+    if (argc < 4) {
         fprintf(stderr,
-                "usage: shadow_procfs procdir [option...] domid\n");
+                "usage: shadow_procfs procdir [option...] domid vm_domid \n");
         return -1;
     }
 
@@ -834,11 +845,17 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    domid = strtoul(argv[argc - 1], NULL, 0);
+    domid = strtoul(argv[argc - 2], NULL, 0);
+
+#ifdef MIYAMA_VM_LIST
+    //vm_id = strtoul(argv[argc - 1], NULL, 0);
+#endif /*MIYAMA_VM_LIST*/
+
     if (domid == 0) {
-        fprintf(stderr, "domid is invalid: %s\n", argv[argc - 1]);
+        fprintf(stderr, "domid is invalid: %s\n", argv[argc - 2]);
         return -1;
     }
+
     argc--;	
 
     g_init(domid);
@@ -846,6 +863,18 @@ int main(int argc, char *argv[])
 
     init_shadow_proc(domid);
 
+#ifdef KOURAI
+    printf("notrans: %d, map: %d, total: %d\n",
+		    notrans_count, map_count, total_count);
+    printf("map2: %d, total2: %d\n",
+		    map2_count, total2_count);
+    printf("total3: %d\n", total3_count);
+    rc = fuse_main(argc, argv, &proc_oper, NULL);
+
+#endif 
+#ifdef MEASURE
+    printf("<time> cr3|%lf , ept|%lf \n",cr3_res_time,ept_res_time);
+#endif
     rc = fuse_main(argc, argv, &proc_oper, NULL);
 
     g_exit();

@@ -15,6 +15,7 @@ void create_pid_dirent(struct fuse_node *parent, int pid);
 void create_tid_dirent(struct fuse_node *parent, int tid);
 void create_fd_dirent(struct fuse_node *parent, int fd, int pid);
 
+
 // retriever.c
 #define PROTO_UPDATE_FUNC(fname) \
 void update_##fname(struct fuse_node *node);

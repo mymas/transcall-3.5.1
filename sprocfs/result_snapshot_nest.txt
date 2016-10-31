@@ -1,0 +1,41 @@
+ver.NEST
+elapsed time[sec]: 0.066705
+elapsed time[sec]: 0.046522
+elapsed time[sec]: 0.055879
+elapsed time[sec]: 0.047160
+elapsed time[sec]: 0.065162
+elapsed time[sec]: 0.049612
+elapsed time[sec]: 0.046919
+elapsed time[sec]: 0.047152
+elapsed time[sec]: 0.046693
+elapsed time[sec]: 0.047288
+---------------------------
+# memo
+* メモリのマップの回数
+* キャッシュのヒット率
+---------------------------
+* nfs 上にディスクを置いてマウントした
+elapsed time[sec]: 0.088409
+elapsed time[sec]: 0.086809
+elapsed time[sec]: 0.098220
+elapsed time[sec]: 0.096117
+elapsed time[sec]: 0.088559
+elapsed time[sec]: 0.098520
+elapsed time[sec]: 0.086297
+elapsed time[sec]: 0.086622
+elapsed time[sec]: 0.085159
+elapsed time[sec]: 0.091197
+---------------------------
+* 8/8(Mon)
+
+
+elapsed time[sec]: 0.099574
+elapsed time[sec]: 0.108603
+elapsed time[sec]: 0.100178
+elapsed time[sec]: 0.106810
+elapsed time[sec]: 0.106812
+elapsed time[sec]: 0.103293
+elapsed time[sec]: 0.095289
+elapsed time[sec]: 0.095135
+elapsed time[sec]: 0.098743
+elapsed time[sec]: 0.094146
