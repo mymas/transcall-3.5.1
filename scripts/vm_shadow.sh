@@ -19,7 +19,7 @@ PROC_DIR="/tmp/vm${2}/proc"
 mkdir ${MOUNT_DIR} 
 
 ./mount_vdi "${1}" "${MOUNT_DIR}" "${2}"
-../sprocfs/shadow_procfs "${PROC_DIR}" "${2}"
+../sprocfs/shadow_procfs "${PROC_DIR}" "${2}" "${3}"
 if [ $? -ne 0 ]; then
     ./umount_vdi "${MOUNT_DIR}"
     if [ $? -ne 0 ]; then
@@ -31,7 +31,7 @@ fi
 
 #ls ${PROC_DIR}
 (cd ../transcall;
-./transcall "${MOUNT_DIR}" ${2} "bash")
+./transcall "${MOUNT_DIR}" "${2}" "${3}" "bash" )
 
 umount "${PROC_DIR}" 
 if [ $? -ne 0 ]; then

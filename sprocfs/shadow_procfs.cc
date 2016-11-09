@@ -12,6 +12,7 @@
 #include <sys/xattr.h>
 #include "shadow_procfs.h"
 #include "../libos/common/addr.h"
+#include "../libos/common/vm_id.h"
 
 #define SNAPSHOT
 
@@ -20,10 +21,6 @@
 //#define KOURAI
 //#define MEASURE
 #define MIYAMA_VM_LIST
-
-#ifdef MIYAMA_VM_LIST
-//int vm_id;
-#endif /*MIYAMA_VM_LIST*/
 
 #ifdef KOURAI
 extern int notrans_count, map_count, total_count;
@@ -832,11 +829,10 @@ int main(int argc, char *argv[])
 {
     int domid;
     int rc;
-    int vm_id = 123;
 
     if (argc < 4) {
         fprintf(stderr,
-                "usage: shadow_procfs procdir [option...] domid vm_domid \n");
+                "usage: shadow_procfs procdir [option...] domid vm_id \n");
         return -1;
     }
 
@@ -848,7 +844,8 @@ int main(int argc, char *argv[])
     domid = strtoul(argv[argc - 2], NULL, 0);
 
 #ifdef MIYAMA_VM_LIST
-    //vm_id = strtoul(argv[argc - 1], NULL, 0);
+    vm_id = strtoul(argv[argc - 1], NULL, 0);
+    printf("vm_id %d\n", vm_id);
 #endif /*MIYAMA_VM_LIST*/
 
     if (domid == 0) {
@@ -856,7 +853,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    argc--;	
+    argc = argc -2;	
 
     g_init(domid);
 

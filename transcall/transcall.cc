@@ -21,7 +21,8 @@
 #include <stddef.h>
 #include <signal.h>
 #include "transcall.h"
-#include "addr.h"
+#include "../libos/common/addr.h"
+#include "../libos/common/vm_id.h"
 
 #define MAX_PATH 256
 #define DB_SIZE 100
@@ -32,6 +33,11 @@
 
 //#define DEB
 //#define DEBUG
+
+#define MIYAMA_VM_LIST
+#ifdef MIYAMA_VM_LIST
+    
+#endif /* MIYAMA_VM_LIST */
 
 #if defined(DEB) || defined(DEBUG)
 #include "syscall_64.h"
@@ -945,14 +951,19 @@ int main(int argc, char *argv[])
     pid_t pid;
     int result;
 
-    if (argc < 3) {
-        fprintf(stderr, "usage: transcall dir domid command\n");
+    if (argc < 4) {
+        fprintf(stderr, "usage: transcall dir domid vm_id command  \n");
         return 0;
     }
 
-    dir = argv[1];
-    domid = atoi(argv[2]);
-    filename = argv[3];
+    dir = argv[argc-4];
+    domid = atoi(argv[argc-3]);
+    filename = argv[argc-1];
+
+#ifdef MIYAMA_VM_LIST
+    vm_id = strtoul(argv[argc - 2], NULL, 0);
+    printf("vm_id %d\n", vm_id);
+#endif /*MIYAMA_VM_LIST*/
 
 #if defined(DEB) || defined(DEBUG)
     debug_fp = fopen("/tmp/transcall.log", "a");
@@ -976,7 +987,7 @@ int main(int argc, char *argv[])
     }
     else {
         //child
-        result = child_main(filename, &argv[3]);
+	    result = child_main(filename, &argv[argc-1]);
     }
 
     g_exit();

@@ -4,7 +4,6 @@
 #include <xenctrl.h>
 #include "htable.h"
 #include <sys/time.h>
-//#include "../../sprocfs/vm_id.h"
 
 #define PAGE_SHIFT 12
 #define PAGE_SIZE (1UL << PAGE_SHIFT)
@@ -39,7 +38,7 @@ double gettimeofday_sec()
 #endif
 
 #ifdef MIYAMA_VM_LIST
-int vm_id =123;
+int vm_id;
 #endif /*MIYAMA_VM_LIST*/
 
 void g_pause(void)
