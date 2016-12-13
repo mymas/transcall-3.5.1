@@ -12,3 +12,11 @@
 ./vm_shadow.sh /mnt/fs/mnt_img/disk.img 1 123
 
 ```
+* VMのタグを16進数に対応させた
+
+```sh
+// (スクリプト)　(マウントするイメージ) (ホストVMのID) (ユーザVMのID)
+
+./vm_shadow.sh /mnt/fs/mnt_img/disk.img 1 0xaaaa1234
+
+```

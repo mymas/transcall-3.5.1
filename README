@@ -1,6 +1,0 @@
-- using kernel source code as much as possible
-
-
-* Trancallの実行スクリプト(vm_shadow.sh)の実行方法
-
-`./vm_shadow.sh /mnt/fs/mnt_img/disk.img 1 0xaaaa1234`
