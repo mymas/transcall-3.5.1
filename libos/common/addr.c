@@ -17,6 +17,7 @@
 
 #define MEASURE
 #define MIYAMA_VM_LIST
+//#define HOST_ID
 
 static xc_interface *xch;
 static int dom;
@@ -38,7 +39,7 @@ double gettimeofday_sec()
 #endif
 
 #ifdef MIYAMA_VM_LIST
-int vm_id;
+unsigned long vm_tag;
 #endif /*MIYAMA_VM_LIST*/
 
 void g_pause(void)
@@ -66,13 +67,27 @@ void g_unpause(void)
 
 void g_init(int domain_id)
 {
-    dom = domain_id;
+#ifdef HOST_ID
+	unsigned short host_id;
+	xch = xc_interface_open(NULL, NULL, 0);
+	host_id = xc_get_host_id(xch);
+	printf("host_id %x\n", host_id);
 
-    ht = htable_new();  // for virtual address
-    ht_phys = htable_new();  // for physical address
-    ht_pse = htable_new();  // for large page
+	if (host_id < 0) {
+		perror("init_nest");
+		exit(1);
+	}
+	dom = (int)host_id;
+	xc_interface_close(xch);
+#else
+	dom = domain_id;
+#endif /* HOST_ID */
 
-    xch = xc_interface_open(NULL, NULL, 0);
+	ht = htable_new();  // for virtual address
+	ht_phys = htable_new();  // for physical address
+	ht_pse = htable_new();  // for large page
+
+	xch = xc_interface_open(NULL, NULL, 0);
 }    
 
 void g_exit(void)
@@ -108,11 +123,11 @@ static unsigned long translate_kern_address(xc_interface *xch, int dom,
 
 #ifdef MEASURE   
     cr3_t1 = gettimeofday_sec();
-    rc = xc_get_cr3(xch, &cr3,vm_id);
+    rc = xc_get_cr3(xch, &cr3,vm_tag);
     cr3_t2 = gettimeofday_sec();
     cr3_res_time = cr3_res_time +(cr3_t2 - cr3_t1);
 #else
-    rc = xc_get_cr3(xch, &cr3,vm_id);
+    rc = xc_get_cr3(xch, &cr3,vm_tag);
 #endif
     if (rc < 0) {
         perror("xc_get_cr3");
@@ -120,7 +135,7 @@ static unsigned long translate_kern_address(xc_interface *xch, int dom,
     }
 
     /* 64-bit fixed */
-    size = 8;
+   size = 8;
     paddr = cr3 & ~0xfffull;
 
     virt &= 0x0000ffffffffffffull;
@@ -134,11 +149,11 @@ static unsigned long translate_kern_address(xc_interface *xch, int dom,
         if (!map) {
 #ifdef MEASURE
 		ept_t1 = gettimeofday_sec();
-		rc = xc_conv_ept(xch, paddr >> PAGE_SHIFT, &l1gfn, vm_id);
+		rc = xc_conv_ept(xch, paddr >> PAGE_SHIFT, &l1gfn, vm_tag);
 		ept_t2 = gettimeofday_sec();
 		ept_res_time = ept_res_time + (ept_t2 - ept_t1);
 #else
-		rc = xc_conv_ept(xch, paddr >> PAGE_SHIFT, &l1gfn, vm_id);
+		rc = xc_conv_ept(xch, paddr >> PAGE_SHIFT, &l1gfn, vm_tag);
 #endif
             if (rc < 0) {
                 perror("xc_conv_ept here");
@@ -214,11 +229,11 @@ void *g_map(void *vaddr, unsigned long size)
             }
 #ifdef MEASURE
 	    ept_t1 = gettimeofday_sec();
-	    rc = xc_conv_ept(xch, mfn, &l1gfn, vm_id);
+	    rc = xc_conv_ept(xch, mfn, &l1gfn, vm_tag);
 	    ept_t2 = gettimeofday_sec();
 	    ept_res_time = ept_res_time + (ept_t2 - ept_t1);
 #else
-	    rc = xc_conv_ept(xch, mfn, &l1gfn, vm_id);
+	    rc = xc_conv_ept(xch, mfn, &l1gfn, vm_tag);
 #endif
 
             if (rc < 0) {
@@ -261,11 +276,11 @@ void *g_map(void *vaddr, unsigned long size)
                 }
 #ifdef MEASURE
 		ept_t1 = gettimeofday_sec();
-		rc = xc_conv_ept(xch, mfn, &arr[i], vm_id);
+		rc = xc_conv_ept(xch, mfn, &arr[i], vm_tag);
 		ept_t2 = gettimeofday_sec();
 		ept_res_time = ept_res_time + (ept_t2 - ept_t1);
 #else
-		rc = xc_conv_ept(xch, mfn, &arr[i], vm_id);
+		rc = xc_conv_ept(xch, mfn, &arr[i], vm_tag);
 #endif
                 if (rc < 0) {
                     perror("xc_conv_ept");
@@ -330,11 +345,11 @@ static unsigned long translate_proc_address(xc_interface *xch, int dom,
 
 #ifdef MEASURE   
 	ept_t1 = gettimeofday_sec();
-	rc = xc_conv_ept(xch, paddr >> PAGE_SHIFT, &l1gfn, vm_id);
+	rc = xc_conv_ept(xch, paddr >> PAGE_SHIFT, &l1gfn, vm_tag);
 	ept_t2 = gettimeofday_sec();
 	ept_res_time = ept_res_time + (ept_t2 - ept_t1);
 #else
-	rc = xc_conv_ept(xch, paddr >> PAGE_SHIFT, &l1gfn, vm_id);
+	rc = xc_conv_ept(xch, paddr >> PAGE_SHIFT, &l1gfn, vm_tag);
 #endif
         if (rc < 0) {
             perror("xc_conv_ept");
@@ -394,11 +409,11 @@ void *g_proc_map(void *vaddr, unsigned long size, void *pgd)
         
 #ifdef MEASURE   
 	ept_t1 = gettimeofday_sec();
-	rc = xc_conv_ept(xch, mfn, &l1gfn, vm_id);
+	rc = xc_conv_ept(xch, mfn, &l1gfn, vm_tag);
 	ept_t2 = gettimeofday_sec();
 	ept_res_time = ept_res_time + (ept_t2 - ept_t1);
 #else
-	rc = xc_conv_ept(xch, mfn, &l1gfn, vm_id);
+	rc = xc_conv_ept(xch, mfn, &l1gfn, vm_tag);
 #endif
         if (rc < 0) {
             perror("xc_conv_ept");
@@ -430,11 +445,11 @@ void *g_proc_map(void *vaddr, unsigned long size, void *pgd)
 
 #ifdef MEASURE   
 	    ept_t1 = gettimeofday_sec();
-	    rc = xc_conv_ept(xch, mfn, &arr[i], vm_id);
+	    rc = xc_conv_ept(xch, mfn, &arr[i], vm_tag);
 	    ept_t2 = gettimeofday_sec();
 	    ept_res_time = ept_res_time + (ept_t2 - ept_t1);
 #else
-	    rc = xc_conv_ept(xch, mfn, &arr[i], vm_id);
+	    rc = xc_conv_ept(xch, mfn, &arr[i], vm_tag);
 #endif
             if (rc < 0) {
                 perror("xc_conv_ept");

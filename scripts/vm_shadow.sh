@@ -31,6 +31,7 @@ fi
 
 #ls ${PROC_DIR}
 (cd ../transcall;
+echo "${MOUNT_DIR}" "${2}" "${3}";
 ./transcall "${MOUNT_DIR}" "${2}" "${3}" "bash" )
 
 umount "${PROC_DIR}" 

@@ -1,1 +1,1 @@
-extern int vm_id;
+extern unsigned long vm_tag;
