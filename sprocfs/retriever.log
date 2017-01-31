@@ -284,51 +284,51 @@ retriever.acc:97063:93: warning: invalid conversion from ‘unsigned char*’ to
   char *name = __get__ZN4qstr4nameE_3484(&__get__ZN6dentry6d_nameE_3485(&dentry->d_name).name);
                                                                                              ^
 retriever.acc: In function ‘void create_pids(fuse_node*)’:
-retriever.acc:97610:185: warning: taking address of temporary [-fpermissive]
+retriever.acc:97611:185: warning: taking address of temporary [-fpermissive]
      task = ({typeof (*(&init_task)->tasks.next) *__ptr = (typeof (*(&init_task)->tasks.next) *)__get__ZN9list_head4nextE_3515(&__get__ZN11task_struct5tasksE_3516(&(&init_task)->tasks).next); ({ typeof( ((struct task_struct *)0)->tasks ) *__mptr = ((typeof((&init_task)->tasks.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->tasks) );}); });
                                                                                                                                                                                          ^
-retriever.acc:97615:171: warning: taking address of temporary [-fpermissive]
+retriever.acc:97616:171: warning: taking address of temporary [-fpermissive]
          task = ({typeof (*(task)->tasks.next) *__ptr = (typeof (*(task)->tasks.next) *)__get__ZN9list_head4nextE_3518(&__get__ZN11task_struct5tasksE_3519(&(task)->tasks).next); ({ typeof( ((struct task_struct *)0)->tasks ) *__mptr = ((typeof((task)->tasks.next))(__ptr)); (struct task_struct *)( (char *)__mptr - ((size_t) &((struct task_struct *)0)->tasks) );}); });
                                                                                                                                                                            ^
 retriever.acc: In function ‘void update_pid_task(fuse_node*)’:
-retriever.acc:97660:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:97661:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
 retriever.acc: In function ‘void update_pid_fd(fuse_node*)’:
-retriever.acc:97755:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:97756:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
 retriever.acc: In function ‘void update_pid_stat(fuse_node*)’:
-retriever.acc:97880:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:97881:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
-retriever.acc:97887:81: warning: taking address of temporary [-fpermissive]
+retriever.acc:97888:81: warning: taking address of temporary [-fpermissive]
      ns = __get__ZN4upid2nsE_3526(&__get__ZN3pid7numbersE_3527(&pid->numbers[0]).ns);
                                                                                  ^
 retriever.acc: In function ‘void update_pid_status(fuse_node*)’:
-retriever.acc:97972:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:97973:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
-retriever.acc:97979:81: warning: taking address of temporary [-fpermissive]
+retriever.acc:97980:81: warning: taking address of temporary [-fpermissive]
      ns = __get__ZN4upid2nsE_3532(&__get__ZN3pid7numbersE_3533(&pid->numbers[0]).ns);
                                                                                  ^
 retriever.acc: In function ‘void update_pid_cmdline(fuse_node*)’:
-retriever.acc:97992:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:97993:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
 retriever.acc: In function ‘void update_pid_auxv(fuse_node*)’:
-retriever.acc:98008:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:98009:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
 retriever.acc: In function ‘void update_pid_exe(fuse_node*)’:
-retriever.acc:98026:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:98027:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
 retriever.acc: In function ‘void update_pid_maps(fuse_node*)’:
-retriever.acc:98133:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:98134:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
 retriever.acc: In function ‘void update_tid_maps(fuse_node*)’:
-retriever.acc:98150:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+retriever.acc:98151:34: warning: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
      nr = (int)get_update_arg(node);
                                   ^
